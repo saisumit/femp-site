@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Femp</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Femp is the first employee for your online store. It watches stock, ads, search and your store inbox for Shopify and Amazon sellers, messages you on WhatsApp when something needs you, and makes the fixes you approve.">
+<meta property="og:title" content="Femp, your store's first employee">
+<meta property="og:description" content="Play a week at a real store with and without Femp. Stock, ads, search and inbox, handled on WhatsApp.">
+<meta property="og:image" content="https://femp.ai/img/og.jpg">
+<meta property="og:url" content="https://femp.ai/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Gochi+Hand&display=swap">
+<style>
+/* Layout: a ruled engineering grid (thin lines, corner ticks, mono labels) holding a playable story in chapters. */
+:root {
+  --paper: #f6f8f5;
+  --panel: #ffffff;
+  --ink: #0c1510;
+  --muted: #56655d;
+  --faint: #8a988f;
+  --rule: #dfe6e0;
+  --mint: #5cc596;
+  --forest: #17694b;
+  --accent: #146043;
+  --tint: #e6f4ec;
+  --warn: #b7791f;
+  --warn-bg: #fbf1de;
+  --bad: #c2413a;
+  --bad-bg: #fbe7e5;
+  --night: #0b1a13;
+  --night-ink: #e9f3ed;
+  --night-muted: #9fb7aa;
+  --chat: #ecf0ed;
+  --mine: #d6f2e2;
+  --sans: "Geist", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --hand: "Gochi Hand", "Comic Sans MS", "Chalkboard SE", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #09120d; --panel: #0f1b15; --ink: #e7f0ea; --muted: #9db0a5; --faint: #6d8075; --rule: #1d2d24;
+    --accent: #6fd3a5; --tint: #12291e; --warn: #e3ad55; --warn-bg: #2b2212; --bad: #ef7a72; --bad-bg: #2c1513;
+    --chat: #17241d; --mine: #173a29; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #09120d; --panel: #0f1b15; --ink: #e7f0ea; --muted: #9db0a5; --faint: #6d8075; --rule: #1d2d24;
+  --accent: #6fd3a5; --tint: #12291e; --warn: #e3ad55; --warn-bg: #2b2212; --bad: #ef7a72; --bad-bg: #2c1513;
+  --chat: #17241d; --mine: #173a29; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-underline-offset: 3px; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
+h1, h2, h3 { margin: 0; line-height: 1.02; letter-spacing: -0.035em; text-wrap: balance; font-weight: 700; }
+p { margin: 0; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mono { font-family: var(--mono); }
+.label { font: 500 0.75rem/1.3 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.label b { color: var(--accent); font-weight: 500; }
+.muted { color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* ruled frame: each section is a box on the grid, with + ticks at its corners */
+.frame { border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); position: relative; }
+.ruled { border-top: 1px solid var(--rule); position: relative; }
+.ruled::before, .ruled::after { content: "+"; position: absolute; top: -0.78em; font: 400 15px/1 var(--mono); color: var(--faint); background: var(--paper); padding: 0 2px; }
+.ruled::before { left: -6px; } .ruled::after { right: -6px; }
+
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 10px; font: 600 0.98rem/1 var(--sans); text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn.solid { background: var(--ink); color: var(--paper); }
+.btn.green { background: var(--forest); color: #fff; }
+.btn.green:hover { background: #12573e; }
+.btn.line { border-color: var(--rule); background: var(--panel); color: var(--ink); }
+.btn.line:hover { border-color: var(--faint); }
+.btn svg { width: 17px; height: 17px; flex: none; }
+.btn[disabled] { opacity: .45; cursor: default; transform: none; }
+
+/* nav */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 6; background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 11px; }
+.brand { display: flex; align-items: center; gap: 10px; font: 700 1.3rem/1 var(--sans); letter-spacing: -0.03em; color: var(--ink); text-decoration: none; }
+.brand img { width: 30px; height: 30px; border-radius: 8px; }
+.nav nav { display: flex; align-items: center; gap: 26px; }
+.nav nav a:not(.btn) { font: 500 0.8rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); text-decoration: none; }
+.nav nav a:not(.btn):hover { color: var(--ink); }
+.nav .btn { padding: 10px 16px; font-size: 0.9rem; }
+@media (max-width: 760px) { .nav nav a:not(.btn) { display: none; } }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+.hero-copy { padding: 72px 48px 56px 40px; display: grid; gap: 26px; align-content: center; border-right: 1px solid var(--rule); }
+.hero h1 { font-size: clamp(2.8rem, 1.4rem + 5.2vw, 5.6rem); font-weight: 800; letter-spacing: -0.05em; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 1.2rem; color: var(--muted); max-width: 33em; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.stage { position: relative; display: grid; place-items: center; padding: 56px 24px 40px; min-height: 460px;
+  background-image: linear-gradient(var(--rule) 1px, transparent 1px), linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+  background-size: 32px 32px; background-position: -1px -1px; }
+.stage::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 55%, transparent 30%, var(--paper) 78%); pointer-events: none; }
+.buddy { position: relative; z-index: 1; display: grid; justify-items: center; gap: 0; }
+.bubble { position: relative; max-width: 290px; background: var(--panel); border: 2px solid var(--ink); border-radius: 18px; padding: 12px 16px; font: 400 1.35rem/1.2 var(--hand); margin-bottom: 18px; min-height: 3.2em; }
+.bubble::after { content: ""; position: absolute; bottom: -11px; left: 50%; width: 18px; height: 18px; margin-left: -9px; background: var(--panel); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: rotate(45deg); }
+.femp-char { width: 210px; height: 210px; cursor: pointer; filter: drop-shadow(0 18px 22px rgba(23, 105, 75, .28)); animation: bob 3.4s ease-in-out infinite; }
+.femp-char .arm { transform-box: fill-box; transform-origin: 0% 50%; animation: wave 3.4s ease-in-out infinite; }
+.femp-char .eyes { transform-box: fill-box; transform-origin: center; animation: blink 5s infinite; }
+.buddy .hint { margin-top: 10px; font: 400 1rem/1 var(--hand); color: var(--faint); }
+@keyframes bob { 50% { transform: translateY(-8px); } }
+@keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 70% { transform: rotate(-9deg); } 80% { transform: rotate(4deg); } 90% { transform: rotate(-6deg); } }
+@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(0.1); } }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.facts div { padding: 22px 24px; border-right: 1px solid var(--rule); display: grid; gap: 4px; }
+.facts div:last-child { border-right: 0; }
+.facts b { font: 700 1.9rem/1 var(--sans); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+@media (max-width: 900px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy { border-right: 0; padding: 48px 20px 32px; }
+  .stage { min-height: 380px; border-top: 1px solid var(--rule); }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facts div:nth-child(2) { border-right: 0; }
+  .facts div:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+}
+
+/* chapters */
+.chapter { padding: 64px 40px; }
+.chapter-head { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 24px; margin-bottom: 40px; }
+.chapter-head h2 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.3rem); }
+.chapter-head p { color: var(--muted); max-width: 40em; margin-top: 14px; font-size: 1.1rem; }
+@media (max-width: 760px) { .chapter { padding: 48px 20px; } .chapter-head { grid-template-columns: minmax(0, 1fr); gap: 10px; } }
+
+/* the game */
+.game { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); border: 1px solid var(--rule); border-radius: 18px; background: var(--panel); overflow: hidden; }
+.store { padding: 24px; display: grid; gap: 18px; align-content: start; border-right: 1px solid var(--rule); min-width: 0; }
+.store-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.store-top h3 { font-size: 1.35rem; letter-spacing: -0.03em; }
+.mode { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; background: var(--paper); }
+.mode button { border: 0; background: none; padding: 7px 14px; border-radius: 999px; font: 500 0.8rem/1 var(--mono); cursor: pointer; color: var(--muted); }
+.mode button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.mode button[disabled] { cursor: default; }
+.week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.week span { text-align: center; padding: 7px 0; border-radius: 7px; background: var(--paper); font: 500 0.75rem/1 var(--mono); color: var(--faint); border: 1px solid transparent; }
+.week span.done { background: var(--tint); color: var(--accent); }
+.week span.now { border-color: var(--ink); color: var(--ink); background: var(--panel); }
+.items { display: grid; gap: 4px; }
+.item { display: grid; grid-template-columns: minmax(0, 8rem) minmax(0, 1fr) 9.5rem; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--rule); }
+.item:last-child { border-bottom: 0; }
+.item b { display: block; font-weight: 600; font-size: 0.98rem; }
+.item small { font: 400 0.74rem/1.3 var(--mono); color: var(--faint); }
+.bar { height: 10px; border-radius: 99px; background: var(--paper); border: 1px solid var(--rule); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 50%; background: var(--mint); border-radius: inherit; transition: width .7s cubic-bezier(.3, .7, .2, 1), background .3s; }
+.bar i.low { background: var(--warn); } .bar i.out { background: var(--bad); }
+.item .qty { text-align: right; font: 500 0.85rem/1.2 var(--mono); font-variant-numeric: tabular-nums; }
+.item .ad { font: 400 0.72rem/1.3 var(--mono); color: var(--muted); white-space: nowrap; }
+.item .ad.losing { color: var(--bad); }
+.tally { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; }
+.tally div { padding: 12px 14px; border-right: 1px solid var(--rule); display: grid; gap: 2px; min-width: 0; }
+.tally div:last-child { border-right: 0; }
+.tally b { font: 600 1.15rem/1.2 var(--mono); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.tally .neg b { color: var(--bad); }
+.log { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; min-height: 1.5em; }
+.log li { font-size: 0.9rem; padding: 8px 12px; border-radius: 9px; background: var(--bad-bg); color: var(--ink); display: flex; gap: 10px; animation: pop .35s ease both; }
+.log li.good { background: var(--tint); }
+.log li span { font: 500 0.75rem/1.6 var(--mono); color: var(--muted); flex: none; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.controls p { font-size: 0.92rem; color: var(--muted); flex: 1 1 14rem; }
+@keyframes pop { from { transform: translateY(6px); opacity: .4; } to { transform: none; opacity: 1; } }
+
+.phone { padding: 18px; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 12px; background: var(--paper); min-width: 0; max-height: 640px; }
+.phone-head { display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+.phone-head img { width: 34px; height: 34px; border-radius: 50%; }
+.phone-head b { display: block; font-size: 0.95rem; line-height: 1.2; }
+.phone-head small { font: 400 0.72rem/1 var(--mono); color: var(--faint); }
+.thread { overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 4px 2px; min-height: 260px; }
+.msg { max-width: 92%; padding: 10px 12px 8px; border-radius: 14px 14px 14px 4px; background: var(--panel); border: 1px solid var(--rule); font-size: 0.93rem; line-height: 1.45; animation: pop .35s ease both; }
+.msg time { display: block; font: 400 0.68rem/1 var(--mono); color: var(--faint); margin-top: 6px; }
+.msg.me { align-self: flex-end; background: var(--mine); border-color: transparent; border-radius: 14px 14px 4px 14px; }
+.msg.sys { align-self: center; background: none; border: 1px dashed var(--rule); color: var(--muted); font: 400 1.1rem/1.25 var(--hand); text-align: center; border-radius: 12px; }
+.msg .tag { display: inline-block; font: 500 0.66rem/1 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--accent); margin-bottom: 5px; }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; min-height: 42px; }
+.choices button { flex: 1 1 8rem; border: 1px solid var(--forest); background: var(--panel); color: var(--accent); border-radius: 10px; padding: 10px 12px; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+.choices button.yes { background: var(--forest); color: #fff; }
+.choices button:hover { transform: translateY(-1px); }
+
+.score { margin-top: 28px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px; align-items: start; }
+.score[hidden] { display: none; }
+.score-copy { display: grid; gap: 14px; }
+.score-copy h3 { font-size: 1.8rem; }
+.score-copy .say { font: 400 1.4rem/1.25 var(--hand); color: var(--accent); }
+.tbl { overflow-x: auto; border: 1px solid var(--rule); border-radius: 14px; background: var(--panel); }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { padding: 12px 16px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; white-space: normal; }
+thead th { font: 500 0.72rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+td { font-family: var(--mono); font-size: 0.92rem; }
+td:first-child { font-family: var(--sans); font-size: 0.95rem; }
+tbody tr:last-child td { border-bottom: 0; font-weight: 600; }
+td.bad { color: var(--bad); } td.good { color: var(--accent); }
+@media (max-width: 960px) {
+  .game { grid-template-columns: minmax(0, 1fr); }
+  .store { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .phone { max-height: 520px; }
+  .score { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .store, .phone { padding: 16px; }
+  .item { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
+  .item .bar { grid-column: 1 / -1; grid-row: 2; }
+  .tally { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tally div:nth-child(2) { border-right: 0; }
+  .tally div:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+}
+
+/* schedule */
+.sched { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; background: var(--panel); }
+.slot { padding: 22px; border-right: 1px solid var(--rule); display: grid; gap: 10px; align-content: start; min-width: 0; }
+.slot:last-child { border-right: 0; }
+.slot time { font: 500 1.6rem/1 var(--mono); letter-spacing: -0.04em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.slot time small { font-size: 0.85rem; letter-spacing: 0; margin-left: 3px; }
+.slot h3 { font-size: 1.2rem; letter-spacing: -0.02em; }
+.slot p { color: var(--muted); font-size: 0.95rem; }
+.cron { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; padding: 14px 18px; border: 1px dashed var(--rule); border-radius: 12px; font-size: 0.95rem; }
+.cron code { font: 500 0.8rem/1 var(--mono); color: var(--accent); background: var(--tint); padding: 5px 8px; border-radius: 6px; }
+@media (max-width: 860px) { .sched { grid-template-columns: repeat(2, minmax(0, 1fr)); } .slot:nth-child(2) { border-right: 0; } .slot:nth-child(-n+2) { border-bottom: 1px solid var(--rule); } }
+@media (max-width: 480px) { .sched { grid-template-columns: minmax(0, 1fr); } .slot { border-right: 0; border-bottom: 1px solid var(--rule); } .slot:last-child { border-bottom: 0; } }
+
+/* capabilities grid */
+.caps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+.cap { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 26px; display: grid; gap: 12px; align-content: start; min-width: 0; transition: background .2s; }
+.cap:hover { background: var(--panel); }
+.cap h3 { font-size: 1.3rem; letter-spacing: -0.03em; }
+.cap p { color: var(--muted); font-size: 0.97rem; }
+.viz { height: 118px; border: 1px solid var(--rule); border-radius: 12px; background: var(--panel); padding: 14px; display: grid; align-content: center; gap: 8px; font: 400 0.76rem/1.2 var(--mono); color: var(--muted); overflow: hidden; }
+.vrow { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr) 2.6rem; gap: 10px; align-items: center; }
+.vrow .bar { height: 8px; }
+.vrow em { font-style: normal; text-align: right; color: var(--ink); }
+.vrow em.bad { color: var(--bad); } .vrow em.good { color: var(--accent); }
+.dial { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: center; }
+.dial svg { width: 88px; height: 88px; }
+.mail { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px; align-items: center; }
+.pill { font: 500 0.64rem/1 var(--mono); text-transform: uppercase; letter-spacing: .04em; padding: 4px 7px; border-radius: 99px; background: var(--bad-bg); color: var(--bad); }
+.pill.w { background: var(--warn-bg); color: var(--warn); } .pill.g { background: var(--tint); color: var(--accent); }
+.mail span:last-child { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cols { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; align-items: end; height: 74px; }
+.cols i { display: grid; align-content: end; height: 100%; }
+.cols i b { display: block; background: var(--mint); border-radius: 3px 3px 0 0; }
+.cols i b + b { background: var(--forest); border-radius: 0; }
+.mini-chat { display: grid; gap: 6px; }
+.mini-chat span { justify-self: end; background: var(--mine); color: var(--ink); padding: 7px 10px; border-radius: 10px 10px 3px 10px; font: 400 0.82rem/1.3 var(--sans); }
+.mini-chat span + span { justify-self: start; background: var(--chat); border-radius: 10px 10px 10px 3px; }
+@media (max-width: 900px) { .caps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 580px) { .caps { grid-template-columns: minmax(0, 1fr); } }
+
+/* screens */
+.night { background: var(--night); color: var(--night-ink); }
+.night .ruled::before, .night .ruled::after { background: var(--night); }
+.night .chapter-head p, .night .label { color: var(--night-muted); }
+.night .label b { color: var(--mint); }
+.shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; }
+.shots figure { margin: 0; display: grid; gap: 14px; }
+.shots .scr { border-radius: 26px; border: 6px solid #020604; overflow: hidden; background: #000; box-shadow: 0 30px 60px -30px rgba(92, 197, 150, .35); }
+.shots figcaption b { display: block; font-size: 1.1rem; letter-spacing: -0.02em; }
+.shots figcaption span { color: var(--night-muted); font-size: 0.93rem; }
+.demo { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 22px; border: 1px solid rgba(159, 183, 170, .25); border-radius: 14px; }
+.demo p { color: var(--night-muted); } .demo b { color: var(--night-ink); }
+.demo .btn { background: var(--mint); color: #06150e; }
+@media (max-width: 860px) { .shots { grid-template-columns: minmax(0, 1fr); max-width: 330px; margin: 0 auto; } }
+
+/* rules */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; background: var(--panel); }
+.split > div { padding: 30px; display: grid; gap: 18px; align-content: start; min-width: 0; }
+.split > div + div { border-left: 1px solid var(--rule); }
+.split h3 { font-size: 1.45rem; letter-spacing: -0.03em; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.chips li { padding: 9px 14px; border: 1px solid var(--rule); border-radius: 9px; font-weight: 500; font-size: 0.95rem; background: var(--paper); }
+.chips small { color: var(--faint); font: 400 0.75rem/1 var(--mono); margin-left: 6px; }
+.rules { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.rules li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; font-size: 0.98rem; }
+.rules svg { width: 20px; height: 20px; color: var(--accent); margin-top: 3px; }
+@media (max-width: 800px) { .split { grid-template-columns: minmax(0, 1fr); } .split > div + div { border-left: 0; border-top: 1px solid var(--rule); } }
+
+/* close */
+.closer { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; padding: 64px 40px; }
+.closer h2 { font-size: clamp(2.2rem, 1.4rem + 3vw, 3.8rem); letter-spacing: -0.045em; }
+.closer p { color: var(--muted); margin-top: 14px; max-width: 34em; font-size: 1.1rem; }
+.closer .mini { width: 120px; height: 120px; }
+@media (max-width: 760px) { .closer { grid-template-columns: minmax(0, 1fr); padding: 48px 20px; } .closer .mini { display: none; } }
+footer .wrap > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 28px; padding: 24px 40px; font: 400 0.82rem/1.4 var(--mono); color: var(--muted); }
+footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+footer a { color: var(--muted); }
+@media (max-width: 760px) { footer .wrap > div { padding: 22px 20px; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5cc596"/><stop offset="1" stop-color="#17694b"/></linearGradient>
+  </defs>
+  <symbol id="femp" viewBox="420 230 1220 1640">
+    <circle cx="740" cy="520" r="230" fill="url(#fg)"/>
+    <rect x="570" y="800" width="340" height="1000" rx="170" fill="url(#fg)"/>
+    <rect class="arm" x="570" y="800" width="910" height="260" rx="130" fill="url(#fg)"/>
+    <rect x="570" y="1220" width="690" height="220" rx="110" fill="url(#fg)"/>
+    <g class="eyes" fill="none" stroke="#fff" stroke-width="26" stroke-linecap="round">
+      <path d="M655 505 q25 -32 50 0"/><path d="M775 505 q25 -32 50 0"/>
+    </g>
+    <path d="M675 590 q65 60 130 0" fill="none" stroke="#fff" stroke-width="28" stroke-linecap="round"/>
+    <path d="M692 815 h96 l-48 65z M710 880 h60 l28 270 -58 65 -58 -65z" fill="#fff"/>
+  </symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/icon-512.png" alt="">Femp</a>
+    <nav aria-label="Main">
+      <a href="#game">Play a week</a>
+      <a href="#shift">The shift</a>
+      <a href="#skills">Skills</a>
+      <a href="#rules">Ground rules</a>
+      <a class="btn green" href="https://wa.me/919351808066?text=Hi%20Femp">Say hi on WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="frame">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="label"><b>●</b> Femp · operations for Shopify &amp; Amazon sellers</p>
+          <h1>Hire your store's <span>first employee.</span></h1>
+          <p class="lede">Femp watches your stock, ads, search ranking and store inbox. When something needs you, it messages you on WhatsApp with the fix ready. You reply yes, and it's done.</p>
+          <div class="ctas">
+            <a class="btn solid" href="#game">Play a week at a store
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+            <a class="btn line" href="https://youtu.be/W9z4sHcGYgk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>Watch the demo</a>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="buddy">
+            <p class="bubble" id="bubble" aria-live="polite">Hi! I'm Femp. I'll watch the boring stuff so you can run the store.</p>
+            <svg class="femp-char" id="buddy" role="button" tabindex="0" aria-label="Femp, tap to hear more"><use href="#femp"/></svg>
+            <p class="hint">(poke me)</p>
+          </div>
+        </div>
+      </section>
+      <div class="facts ruled">
+        <div><b>4</b><span class="label">check-ins a day</span></div>
+        <div><b>6</b><span class="label">platforms it reads</span></div>
+        <div><b>0</b><span class="label">changes without your yes</span></div>
+        <div><b>$0</b><span class="label">during the beta</span></div>
+      </div>
+
+      <section class="chapter ruled" id="game">
+        <div class="chapter-head">
+          <p class="label"><b>01</b> / the game</p>
+          <div>
+            <h2>Play one week at Sereva.</h2>
+            <p>Sereva is a small beauty store with three products and two ad campaigns. First, run the week on your own and see what slips. Then hire Femp, run it again, and answer its messages yourself.</p>
+          </div>
+        </div>
+
+        <div class="game">
+          <div class="store">
+            <div class="store-top">
+              <h3>Sereva · this week</h3>
+              <div class="mode" role="group" aria-label="Who's watching the store">
+                <button type="button" id="modeOff" aria-pressed="true">On your own</button>
+                <button type="button" id="modeOn" aria-pressed="false">With Femp</button>
+              </div>
+            </div>
+            <div class="week" id="week" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div class="items" id="items"></div>
+            <div class="tally">
+              <div><span class="label">Sales</span><b id="tSales">$0</b></div>
+              <div class="neg"><span class="label">Missed sales</span><b id="tMissed">$0</b></div>
+              <div class="neg"><span class="label">Ads wasted</span><b id="tAds">$0</b></div>
+              <div class="neg"><span class="label">Chargebacks</span><b id="tCb">$0</b></div>
+            </div>
+            <ul class="log" id="log" aria-live="polite"></ul>
+            <div class="controls">
+              <button class="btn solid" type="button" id="play">Play the week on your own</button>
+              <p id="hintText">You're busy packing orders all week. Nobody is watching the numbers.</p>
+            </div>
+          </div>
+          <div class="phone">
+            <div class="phone-head"><img src="img/icon-512.png" alt=""><div><b>Femp</b><small id="status">not hired yet</small></div></div>
+            <div class="thread" id="thread" aria-live="polite">
+              <div class="msg sys">No messages.<br>Femp isn't on the team yet.</div>
+            </div>
+            <div class="choices" id="choices"></div>
+          </div>
+        </div>
+
+        <div class="score" id="score" hidden>
+          <div class="score-copy">
+            <p class="label"><b>Result</b></p>
+            <h3 id="scoreTitle">How the week went</h3>
+            <p class="muted" id="scoreText"></p>
+            <p class="say" id="scoreSay"></p>
+            <div class="ctas"><button class="btn green" type="button" id="next">Hire Femp and replay</button><button class="btn line" type="button" id="reset">Start over</button></div>
+          </div>
+          <div class="tbl">
+            <table>
+              <thead><tr><th>This week</th><th>On your own</th><th>With Femp</th></tr></thead>
+              <tbody id="scoreBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter ruled" id="shift">
+        <div class="chapter-head">
+          <p class="label"><b>02</b> / the shift</p>
+          <div>
+            <h2>Four check-ins a day. Quiet when nothing's wrong.</h2>
+            <p>Every report runs on your store's real data, in your time zone. If a check finds nothing worth your time, Femp doesn't message you.</p>
+          </div>
+        </div>
+        <div class="sched">
+          <div class="slot"><time>9:00<small>am</small></time><h3>Stock check</h3><p>What's out, what runs out within a week at today's pace, and whether you're still advertising it.</p></div>
+          <div class="slot"><time>11:00<small>am</small></time><h3>Ads review</h3><p>Yesterday's Meta and Google spend against real Shopify sales, with the budget change it would make.</p></div>
+          <div class="slot"><time>3:00<small>pm</small></time><h3>Search &amp; SEO</h3><p>Your findability score plus 3 fresh ideas, researched on the web. Reply with a number to do one.</p></div>
+          <div class="slot"><time>6:00<small>pm</small></time><h3>Wrap-up</h3><p>What's waiting for you, what's still open, and the one thing most worth doing tomorrow.</p></div>
+        </div>
+        <p class="cron"><code>every hour</code><span class="muted">Reads your store's Gmail for chargebacks, supplier delays, account warnings and reviews, and drafts the replies.</span></p>
+        <p class="cron"><code>your own</code><span class="muted">“Every Monday at 9, review my ads.” Say it in chat and it becomes a standing job.</span></p>
+      </section>
+
+      <section class="chapter ruled" id="skills">
+        <div class="chapter-head">
+          <p class="label"><b>03</b> / skills</p>
+          <div>
+            <h2>Ask it anything about the store.</h2>
+            <p>It answers from your connected data, in plain words, and suggests the next step.</p>
+          </div>
+        </div>
+        <div class="caps">
+          <div class="cap">
+            <div class="viz" aria-hidden="true">
+              <div class="vrow"><span>Lip Oil</span><span class="bar"><i class="low" style="width:14%"></i></span><em class="bad">4d</em></div>
+              <div class="vrow"><span>Clay Mask</span><span class="bar"><i style="width:80%"></i></span><em>35d</em></div>
+              <div class="vrow"><span>Rose Serum</span><span class="bar"><i style="width:62%"></i></span><em>24d</em></div>
+            </div>
+            <p class="label">Stock</p><h3>Days of cover, not just counts</h3>
+            <p>Live levels from Shopify and Amazon FBA, alerts at your own limits, and how long each item lasts at the current pace.</p>
+          </div>
+          <div class="cap">
+            <div class="viz" aria-hidden="true">
+              <div class="vrow"><span>Lip Oil ads</span><span class="bar"><i style="width:90%"></i></span><em class="good">3.2×</em></div>
+              <div class="vrow"><span>Clay Mask ads</span><span class="bar"><i class="out" style="width:18%"></i></span><em class="bad">0.6×</em></div>
+              <div class="vrow"><span>Retargeting</span><span class="bar"><i style="width:55%"></i></span><em>1.9×</em></div>
+            </div>
+            <p class="label">Ads</p><h3>Spend checked against real sales</h3>
+            <p>Meta and Google spend compared with what actually sold, so losing ad sets show up the next morning. It never edits your ads.</p>
+          </div>
+          <div class="cap">
+            <div class="viz dial" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="var(--rule)" stroke-width="10"/><circle cx="50" cy="50" r="40" fill="none" stroke="var(--warn)" stroke-width="10" stroke-linecap="round" stroke-dasharray="80 252" transform="rotate(-90 50 50)"/><text x="50" y="57" text-anchor="middle" font-family="Geist Mono, monospace" font-size="22" fill="var(--ink)">32</text></svg>
+              <div style="display:grid;gap:6px"><span>Google · ranks</span><span>ChatGPT · not mentioned</span><span>Perplexity · not mentioned</span></div>
+            </div>
+            <p class="label">Findability</p><h3>Found on Google and in ChatGPT</h3>
+            <p>A 0–100 score across Google, marketplaces and AI assistants. It rewrites titles, descriptions, alt text and blog posts once you say yes.</p>
+          </div>
+          <div class="cap">
+            <div class="viz" aria-hidden="true">
+              <div class="mail"><span class="pill">Chargeback</span><span>Order #1043 · reply due in 5 days</span></div>
+              <div class="mail"><span class="pill w">Supplier</span><span>Packaging delayed to the 24th</span></div>
+              <div class="mail"><span class="pill g">Review</span><span>★★★★★ “Lip oil is perfect”</span></div>
+            </div>
+            <p class="label">Inbox</p><h3>The emails that matter, flagged</h3>
+            <p>Checks your store's Gmail every hour and drafts replies to chargebacks, suppliers and customers for you to send.</p>
+          </div>
+          <div class="cap">
+            <div class="viz" aria-hidden="true">
+              <div class="cols"><i><b style="height:30px"></b><b style="height:12px"></b></i><i><b style="height:38px"></b><b style="height:14px"></b></i><i><b style="height:26px"></b><b style="height:18px"></b></i><i><b style="height:44px"></b><b style="height:16px"></b></i><i><b style="height:40px"></b><b style="height:22px"></b></i><i><b style="height:52px"></b><b style="height:20px"></b></i><i><b style="height:34px"></b><b style="height:24px"></b></i></div>
+              <span>new · repeat buyers, Mon–Sun</span>
+            </div>
+            <p class="label">Orders</p><h3>Who's buying, and buying again</h3>
+            <p>Sales by day or week, new versus repeat buyers, what sold, where orders came from and what's still to ship.</p>
+          </div>
+          <div class="cap">
+            <div class="viz" aria-hidden="true">
+              <div class="mini-chat"><span>Ani handles packing, add her</span><span>Added. I've messaged Ani on WhatsApp.</span></div>
+            </div>
+            <p class="label">Team &amp; memory</p><h3>Your teammates can ask too</h3>
+            <p>Add a teammate and they chat with Femp from their own WhatsApp. It remembers your preferences so nobody repeats themselves.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="frame">
+      <section class="chapter ruled" id="rules">
+        <div class="chapter-head">
+          <p class="label"><b>04</b> / ground rules</p>
+          <div><h2>It works for you. You stay in charge.</h2></div>
+        </div>
+        <div class="split">
+          <div>
+            <p class="label">Connects to</p>
+            <h3>Your tools, through their own approval screens.</h3>
+            <ul class="chips">
+              <li>Shopify</li><li>Amazon <small>Seller Central</small></li><li>Meta Ads</li><li>Google Ads</li><li>Google Search Console</li><li>Gmail</li>
+            </ul>
+            <p class="muted">Disconnect any of them from the app at any time.</p>
+          </div>
+          <div>
+            <p class="label">Promises</p>
+            <h3>What it will and won't do.</h3>
+            <ul class="rules">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Never touches your prices, stock or checkout.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Edits product SEO and blog posts only after your yes, and every edit can be undone.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Reads buyers' order history, not their names, emails or addresses.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Access tokens encrypted with AES-256. Never keeps passwords or codes.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Chat history deleted after 90 days. Delete your account from the app in one step.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="closer ruled">
+        <div>
+          <h2>Put Femp on shift today.</h2>
+          <p>Say hi on WhatsApp, connect your store, and your first stock check arrives a few minutes later. Free while we're in beta.</p>
+          <div class="ctas" style="margin-top:26px">
+            <a class="btn green" href="https://wa.me/919351808066?text=Hi%20Femp">Say hi on WhatsApp</a>
+            <a class="btn line" href="https://youtu.be/W9z4sHcGYgk">Watch the demo</a>
+          </div>
+        </div>
+        <svg class="mini femp-char" aria-hidden="true"><use href="#femp"/></svg>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><div class="frame ruled" style="border-bottom:0"><div>
+    <span>Femp is made by Neobrix · saisumit@neobrix.io</span>
+    <nav aria-label="Footer"><a href="https://api.neobrix.io/support">Support</a><a href="https://api.neobrix.io/privacy">Privacy</a><a href="https://youtu.be/W9z4sHcGYgk">Demo</a></nav>
+  </div></div></div>
+</footer>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+
+  /* hero character */
+  const lines = [
+    "Hi! I'm Femp. I'll watch the boring stuff so you can run the store.",
+    "Lip Oil runs out Friday. Want me to draft the reorder?",
+    "Your Clay Mask ads spent $45 and sold $27. Maybe cut them?",
+    "I checked the inbox. One chargeback, reply drafted.",
+    "I never touch prices, stock or checkout. Promise.",
+    "Scroll down and play a week with me!",
+  ];
+  let li = 0;
+  const poke = () => { li = (li + 1) % lines.length; $("bubble").textContent = lines[li]; };
+  $("buddy").addEventListener("click", poke);
+  $("buddy").addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); poke(); } });
+
+  /* the game */
+  const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const PRODUCTS = [
+    { id: "lip", name: "Lip Oil", price: 24, stock: 40, pace: 9, ad: 60, roas: 3.2 },
+    { id: "mask", name: "Clay Mask", price: 32, stock: 210, pace: 6, ad: 45, roas: 0.6 },
+    { id: "serum", name: "Rose Serum", price: 48, stock: 120, pace: 5, ad: 0, roas: 0 },
+  ];
+  const CAP = { lip: 200, mask: 220, serum: 130 };
+  const CHARGEBACK = 111;
+  const EVENTS = [
+    { day: 0, time: "9:00 am", tag: "Stock check", text: "Lip Oil runs out on <b>Friday</b> at 9 a day, and you're spending $60 a day advertising it. Reorder 150? Your supplier delivers in 3 days.", yes: "Reorder 150", no: "Not now", reply: "Yes, reorder 150", key: "reorder" },
+    { day: 1, time: "11:00 am", tag: "Ads review", text: "Clay Mask ads spent <b>$45</b> yesterday and sold $27 (0.6×). Cut the budget to $15 in Ads Manager? I'll keep an eye on it.", yes: "I'll cut it", no: "Leave it", reply: "Done, cut to $15", key: "ads" },
+    { day: 2, time: "2:14 pm", tag: "Inbox", text: "Chargeback on order #1043 ($96). The reply is due in 5 days. I drafted it with the tracking proof. Send it?", yes: "Send the reply", no: "Later", reply: "Send it", key: "cb" },
+    { day: 4, time: "3:00 pm", tag: "Search & SEO", text: "Findability <b>32/100</b>. “Rose serum” searches don't find you. Rewrite 3 product titles? You can undo it.", yes: "Rewrite them", no: "Skip", reply: "1, go ahead", key: "seo" },
+  ];
+  const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
+  const results = { off: null, on: null };
+  let mode = "off", running = false, state;
+
+  function fresh() {
+    return { day: -1, stock: Object.fromEntries(PRODUCTS.map((p) => [p.id, p.stock])), sales: 0, missed: 0, ads: 0, cb: 0, choices: {}, replies: 0, arrivals: {} };
+  }
+
+  function renderItems() {
+    $("items").innerHTML = PRODUCTS.map((p) => {
+      const s = state.stock[p.id], pct = Math.max(0, Math.min(100, (s / CAP[p.id]) * 100));
+      const cls = s === 0 ? "out" : s / pace(p) < 4 ? "low" : "";
+      const budget = adBudget(p);
+      const ad = p.ad ? `<span class="ad ${p.roas < 1 ? "losing" : ""}">ads $${budget}/day · ${p.roas}×</span>` : `<span class="ad">no ads</span>`;
+      return `<div class="item"><div><b>${p.name}</b><small>$${p.price} · sells ${pace(p)}/day</small></div><span class="bar"><i class="${cls}" style="width:${pct}%"></i></span><div class="qty">${s} left<br>${ad}</div></div>`;
+    }).join("");
+  }
+  const pace = (p) => p.id === "serum" && state.choices.seo && state.day >= 5 ? p.pace + 3 : p.pace;
+  const adBudget = (p) => p.id === "mask" && state.choices.ads ? 15 : p.ad;
+
+  function renderTally() {
+    $("tSales").textContent = money(state.sales);
+    $("tMissed").textContent = money(state.missed);
+    $("tAds").textContent = money(state.ads);
+    $("tCb").textContent = money(state.cb);
+    [...$("week").children].forEach((el, i) => { el.className = i < state.day ? "done" : i === state.day ? "now" : ""; });
+  }
+  const log = (when, text, good) => { const li = document.createElement("li"); if (good) li.className = "good"; li.innerHTML = `<span>${when}</span>${text}`; $("log").append(li); };
+  const say = (html, cls = "", time = "") => {
+    const el = document.createElement("div");
+    el.className = "msg " + cls;
+    el.innerHTML = html + (time ? `<time>${time}</time>` : "");
+    $("thread").append(el);
+    $("thread").scrollTop = $("thread").scrollHeight;
+  };
+  const wait = (ms) => new Promise((r) => setTimeout(r, matchMedia("(prefers-reduced-motion: reduce)").matches ? 60 : ms));
+  const ask = (ev) => new Promise((resolve) => {
+    const c = $("choices");
+    c.innerHTML = `<button type="button" class="yes">${ev.yes}</button><button type="button">${ev.no}</button>`;
+    const [y, n] = c.querySelectorAll("button");
+    y.focus({ preventScroll: true });
+    const done = (val) => { c.innerHTML = ""; resolve(val); };
+    y.onclick = () => done(true); n.onclick = () => done(false);
+  });
+
+  function simulateDay(d) {
+    for (const p of PRODUCTS) {
+      const start = state.stock[p.id], want = pace(p), sold = Math.min(want, start);
+      state.stock[p.id] -= sold;
+      state.sales += sold * p.price;
+      state.missed += (want - sold) * p.price;
+      const budget = adBudget(p);
+      if (budget) {
+        if (start === 0) state.ads += budget;
+        else if (sold < want) state.ads += budget * (want - sold) / want;
+        if (p.roas < 1) state.ads += budget * (1 - p.roas);
+      }
+      if (start > 0 && state.stock[p.id] === 0) log(DAYS[d], `${p.name} sold out. ${budget ? `Its ads keep spending $${budget} a day.` : ""}`);
+    }
+  }
+
+  async function play() {
+    running = true; state = fresh();
+    $("play").disabled = true; $("modeOff").disabled = $("modeOn").disabled = true;
+    $("log").innerHTML = ""; $("thread").innerHTML = ""; $("score").hidden = true;
+    $("status").textContent = mode === "on" ? "online · on shift" : "not hired yet";
+    if (mode === "on") say("Morning! I'm on shift. I'll message you only when something needs you.", "", "Mon 8:58 am");
+    else say("No messages.<br>Femp isn't on the team yet.", "sys");
+    for (let d = 0; d < 7; d++) {
+      state.day = d;
+      if (state.arrivals[d]) { state.stock.lip += state.arrivals[d]; log(DAYS[d], `150 Lip Oil arrived from the supplier.`, true); }
+      renderItems(); renderTally();
+      await wait(450);
+      const ev = mode === "on" && EVENTS.find((e) => e.day === d);
+      if (ev) {
+        $("hintText").textContent = "Femp needs an answer. Reply on the phone.";
+        say(`<span class="tag">${ev.tag}</span><br>${ev.text}`, "", `${DAYS[d]} ${ev.time}`);
+        const yes = await ask(ev);
+        state.choices[ev.key] = yes; state.replies++;
+        say(yes ? ev.reply : ev.no, "me", `${DAYS[d]} ${ev.time}`);
+        await wait(350);
+        if (yes && ev.key === "reorder") { state.arrivals[3] = 150; say("Ordered. It arrives Thursday morning.", "", `${DAYS[d]} ${ev.time}`); }
+        if (yes && ev.key === "ads") say("Thanks. That saves about $12 a day. I'll check again tomorrow.", "", `${DAYS[d]} ${ev.time}`);
+        if (yes && ev.key === "cb") say("Sent. I'll tell you when the bank decides.", "", `${DAYS[d]} ${ev.time}`);
+        if (yes && ev.key === "seo") say("Done. 3 titles updated. Say “undo” any time.", "", `${DAYS[d]} ${ev.time}`);
+        $("hintText").textContent = "The week is running…";
+      } else if (d === 0 && mode === "off") $("hintText").textContent = "The week is running…";
+      simulateDay(d);
+      if (d === 6 && !state.choices.cb) { state.cb = CHARGEBACK; log("Sun", "Chargeback #1043 went unanswered: lost $96 plus a $15 fee."); }
+      renderItems(); renderTally();
+      await wait(650);
+    }
+    if (mode === "on") say(`Wrap-up: ${money(state.sales)} in sales this week. ${state.missed ? `${money(state.missed)} missed while items were out.` : "Nothing went out of stock."} Tomorrow's top job: check the new serum titles are ranking.`, "", "Sun 6:00 pm");
+    state.day = 7; renderTally();
+    results[mode] = { ...state };
+    running = false; showScore();
+  }
+
+  function showScore() {
+    const a = results.off, b = results.on;
+    const lost = (r) => r.missed + r.ads + r.cb;
+    const cell = (r, k, neg) => r ? `<td class="${neg && r[k] > 0 ? "bad" : ""}">${money(r[k])}</td>` : `<td class="muted">play it</td>`;
+    const time = (r) => r ? `<td>${r.replies ? `${r.replies} replies, ~${Math.max(1, Math.round(r.replies * 0.25))} min` : "0 min (you weren't told)"}</td>` : `<td class="muted">play it</td>`;
+    $("scoreBody").innerHTML = `
+      <tr><td>Sales</td>${cell(a, "sales")}${cell(b, "sales")}</tr>
+      <tr><td>Missed while sold out</td>${cell(a, "missed", 1)}${cell(b, "missed", 1)}</tr>
+      <tr><td>Ad spend wasted</td>${cell(a, "ads", 1)}${cell(b, "ads", 1)}</tr>
+      <tr><td>Chargebacks lost</td>${cell(a, "cb", 1)}${cell(b, "cb", 1)}</tr>
+      <tr><td>Your time on it</td>${time(a)}${time(b)}</tr>
+      <tr><td>Money left on the table</td>${a ? `<td class="bad">${money(lost(a))}</td>` : `<td class="muted">play it</td>`}${b ? `<td class="${lost(b) ? "bad" : "good"}">${money(lost(b))}</td>` : `<td class="muted">play it</td>`}</tr>`;
+    const r = results[mode];
+    if (mode === "off") {
+      $("scoreTitle").textContent = `You left ${money(lost(r))} on the table.`;
+      $("scoreText").textContent = "Lip Oil sold out on Friday while its ads kept running, the Clay Mask ads lost money every day, and a chargeback expired unanswered. None of it was hard to fix. Nobody was watching.";
+      $("scoreSay").textContent = "Let me try. I'll message you when something needs you.";
+      $("next").textContent = "Hire Femp and replay"; $("next").hidden = false;
+    } else {
+      const saved = a ? lost(a) - lost(r) : 0;
+      const yesCount = Object.values(r.choices).filter(Boolean).length;
+      $("scoreTitle").textContent = a && saved > 0 ? `Femp saved you ${money(saved)} this week.` : `${money(lost(r))} left on the table.`;
+      $("scoreText").textContent = yesCount === EVENTS.length
+        ? `You answered ${r.replies} messages and said yes to all of them. ${r.sales > (a ? a.sales : 0) && a ? `Sales also went up ${money(r.sales - a.sales)}, from staying in stock and the new serum titles.` : ""}`
+        : `You said yes to ${yesCount} of ${EVENTS.length}. Femp only acts when you agree, so the ones you skipped still cost money. Try again and say yes to all four.`;
+      $("scoreSay").textContent = yesCount === EVENTS.length ? "Same time next week?" : "No pressure. I'll ask again tomorrow.";
+      $("next").textContent = "Play again with Femp";
+    }
+    $("score").hidden = false;
+    $("play").disabled = false; $("modeOff").disabled = $("modeOn").disabled = false;
+    $("play").textContent = mode === "on" ? "Play again with Femp" : "Play the week on your own";
+    $("hintText").textContent = "Week over. See the result below.";
+  }
+
+  function setMode(m) {
+    if (running) return;
+    mode = m;
+    $("modeOff").setAttribute("aria-pressed", m === "off"); $("modeOn").setAttribute("aria-pressed", m === "on");
+    $("play").textContent = m === "on" ? "Play the week with Femp" : "Play the week on your own";
+    $("hintText").textContent = m === "on" ? "Femp watches the store and messages you. You decide." : "You're busy packing orders all week. Nobody is watching the numbers.";
+    $("status").textContent = m === "on" ? "online · ready" : "not hired yet";
+    state = fresh(); $("log").innerHTML = ""; renderItems(); renderTally();
+    $("thread").innerHTML = "";
+    say(m === "on" ? "Hi! Press play and I'll start my shift." : "No messages.<br>Femp isn't on the team yet.", m === "on" ? "" : "sys");
+  }
+
+  $("modeOff").onclick = () => setMode("off");
+  $("modeOn").onclick = () => setMode("on");
+  $("play").onclick = play;
+  $("next").onclick = () => { setMode("on"); $("game").scrollIntoView({ block: "start" }); play(); };
+  $("reset").onclick = () => { results.off = results.on = null; $("score").hidden = true; setMode("off"); $("game").scrollIntoView({ block: "start" }); };
+
+  state = fresh(); renderItems(); renderTally();
+})();
+</script>
+</body>
+</html>
