@@ -41,12 +41,16 @@ FONTS = (
 MAIN_NAV = [("/features/", "Features"), ("/how-it-works/", "How it works"), ("/pricing/", "Pricing"), ("/faq/", "FAQ")]
 
 
+BAR = """<div class="topbar"><span class="pill">Early access</span><span>Femp is coming to the Shopify App Store and the App Store. Join the waitlist and get <b>$100 in free credits</b>.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>"""
+
+
 def nav(current: str = "") -> str:
     links = "".join(
         f'<a class="hide-sm" href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for h, t in MAIN_NAV
     )
     blog = ' aria-current="page"' if current == "/blog/" else ""
-    return f"""<header class="nav"><div class="wrap">
+    bar = "" if current == "/waitlist/" else BAR
+    return f"""{bar}<header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="Femp" width="30" height="30">Femp</a>
   <nav aria-label="Main">{links}<a href="/blog/"{blog}>Blog</a>
   <a class="btn green" href="{WA}">Say hi on WhatsApp</a></nav>
@@ -219,6 +223,114 @@ def page(p: dict, pages: list[dict]) -> str:
 """
 
 
+WAITLIST_API = "https://auth.femp.ai/waitlist"
+# country calling codes for the WhatsApp field, most common first; the script preselects the visitor's region
+CODES = [
+    ("US", "+1"), ("IN", "+91"), ("GB", "+44"), ("CA", "+1"), ("AU", "+61"), ("AE", "+971"), ("DE", "+49"), ("FR", "+33"),
+    ("NL", "+31"), ("ES", "+34"), ("IT", "+39"), ("SG", "+65"), ("NZ", "+64"), ("IE", "+353"), ("SE", "+46"), ("SA", "+966"),
+    ("MX", "+52"), ("BR", "+55"), ("ZA", "+27"), ("PK", "+92"), ("BD", "+880"), ("ID", "+62"), ("MY", "+60"), ("PH", "+63"),
+    ("JP", "+81"), ("KR", "+82"), ("HK", "+852"), ("IL", "+972"), ("TR", "+90"), ("PL", "+48"), ("NG", "+234"), ("KE", "+254"),
+]
+
+
+def flag(cc: str) -> str:
+    return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in cc)
+
+
+def waitlist() -> str:
+    url = f"{SITE}/waitlist/"
+    title = "Join the Femp AI Waitlist: $100 in Free Credits"
+    description = ("Join the Femp AI waitlist for the Shopify App Store and iPhone app launch. Get an early invite and "
+                   "$100 in free credits.")
+    schema = {
+        "@context": "https://schema.org", "@type": "WebPage", "name": "Femp waitlist", "description": description,
+        "url": url, "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "Femp", "url": f"{SITE}/"},
+        "publisher": ORG, "about": SOFTWARE,
+    }
+    options = "".join(f'<option value="{code}" data-cc="{cc}">{flag(cc)} {code}</option>' for cc, code in CODES)
+    return f"""{head(title, description, url, extra=ld(schema))}
+<body>
+{nav("/waitlist/")}
+<main><div class="wrap"><div class="frame">
+<section class="wl">
+  <div class="wl-copy">
+    <p class="label"><b>●</b> Early access</p>
+    <p class="credit"><strong>$100</strong> in free credits for everyone on the list</p>
+    <h1>Get Femp first, with $100 in free credits.</h1>
+    <p class="lede">We're finishing the Shopify App Store listing and the iPhone app. Join the list and we'll message you on WhatsApp as soon as you can install it.</p>
+    <ul>
+      <li>An invite before the public launch</li>
+      <li>$100 in free credits on your account when you install</li>
+      <li>Setup with the founder over WhatsApp, if you want it</li>
+    </ul>
+  </div>
+  <div class="wl-form" id="join">
+    <form id="wl" novalidate>
+      <div class="field"><label for="email">Work email</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourstore.com" required></div>
+      <div class="field"><label for="phone">WhatsApp number</label>
+        <div class="phone"><select id="cc" aria-label="Country code">{options}</select>
+        <input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="Phone number" required></div></div>
+      <div class="field"><label for="store">Store link <small>(optional)</small></label>
+        <input id="store" name="store" type="text" inputmode="url" autocomplete="url" placeholder="yourstore.com or your Amazon storefront"></div>
+      <div class="field"><span id="plat-label">You sell on <small>(optional)</small></span>
+        <div class="seg" role="radiogroup" aria-labelledby="plat-label">
+          <label><input type="radio" name="platform" id="p-shopify" value="shopify">Shopify</label>
+          <label><input type="radio" name="platform" id="p-amazon" value="amazon">Amazon</label>
+          <label><input type="radio" name="platform" id="p-both" value="both">Both</label></div></div>
+      <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+      <label class="consent" for="consent"><input id="consent" type="checkbox" checked><span>Femp can contact me on WhatsApp and email about early access. No spam, and you can leave any time.</span></label>
+      <p class="fine bad" id="err" role="alert" hidden></p>
+      <button class="btn green" type="submit" id="go">Join and claim $100 in credits</button>
+      <p class="fine">Credits apply to Femp after launch, one per store. We use your details only for Femp early access. <a href="https://auth.femp.ai/privacy">Privacy</a></p>
+    </form>
+    <div class="done" id="done" hidden>
+      <div class="tick" aria-hidden="true">✓</div>
+      <h2 tabindex="-1" id="done-title">You're on the list.</h2>
+      <p class="credit"><strong>$100</strong> in free credits saved for you</p>
+      <p>We'll message you on WhatsApp when Femp is ready to install, and the credits will be on your account. You can say hi now if you want to talk about your store.</p>
+      <div class="ctas" style="justify-content:center"><a class="btn green" href="{WA}">Say hi on WhatsApp</a><a class="btn line" href="https://youtu.be/W9z4sHcGYgk">Watch the demo</a></div>
+    </div>
+  </div>
+</section>
+</div></div></main>
+{FOOTER}
+<script>
+(() => {{
+  const $ = id => document.getElementById(id), form = $("wl"), err = $("err"), go = $("go");
+  const region = (navigator.languages || [navigator.language]).map(l => (l.split("-")[1] || "").toUpperCase()).find(Boolean);
+  const pick = [...$("cc").options].find(o => o.dataset.cc === region);
+  if (pick) pick.selected = true;
+  const show = text => {{ err.textContent = text; err.hidden = !text; }};
+  form.addEventListener("submit", async e => {{
+    e.preventDefault();
+    const email = $("email").value.trim(), digits = $("phone").value.replace(/\\D/g, "");
+    if (!/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(email)) return show("Enter your email address."), $("email").focus();
+    if (digits.length < 6) return show("Enter your WhatsApp number."), $("phone").focus();
+    if (!$("consent").checked) return show("Tick the box so we can contact you about early access.");
+    const phone = $("phone").value.trim().startsWith("+") ? "+" + digits : $("cc").value + digits.replace(/^0+/, "");
+    const body = {{
+      email, phone, store: $("store").value.trim(), consent: true, company: $("company").value,
+      platform: (form.querySelector("input[name=platform]:checked") || {{}}).value || "",
+      source: new URLSearchParams(location.search).get("from") || (document.referrer ? new URL(document.referrer).pathname : "direct"),
+    }};
+    show(""); go.disabled = true; go.textContent = "Joining…";
+    try {{
+      const res = await fetch("{WAITLIST_API}", {{ method: "POST", headers: {{ "content-type": "application/json" }}, body: JSON.stringify(body) }});
+      const out = await res.json().catch(() => ({{}}));
+      if (!res.ok) throw new Error(out.error || "Something went wrong. Try again in a minute.");
+      form.hidden = true; $("done").hidden = false; $("done-title").focus();
+    }} catch (problem) {{
+      show(problem instanceof TypeError ? "Couldn't reach Femp. Check your connection and try again." : problem.message);
+      go.disabled = false; go.textContent = "Join and claim $100 in credits";
+    }}
+  }});
+}})();
+</script>
+</body></html>
+"""
+
+
 def index(posts: list[dict]) -> str:
     url = f"{SITE}/blog/"
     title = "Femp blog: running a DTC brand without drowning in ops"
@@ -271,7 +383,7 @@ def feed(posts: list[dict]) -> str:
 
 def sitemap(posts: list[dict], pages: list[dict]) -> str:
     latest = max(p["updated"] for p in posts)
-    urls = [(f"{SITE}/", HOME_UPDATED)] + [(p["url"], p["updated"]) for p in pages]
+    urls = [(f"{SITE}/", HOME_UPDATED), (f"{SITE}/waitlist/", HOME_UPDATED)] + [(p["url"], p["updated"]) for p in pages]
     urls += [(f"{SITE}/blog/", latest)] + [(p["url"], p["updated"]) for p in posts]
     body = "".join(f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>\n" for u, d in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}</urlset>\n'
@@ -330,6 +442,8 @@ def main() -> None:
         out = ROOT / "blog" / p["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(article(p, posts), encoding="utf-8")
+    (ROOT / "waitlist").mkdir(exist_ok=True)
+    (ROOT / "waitlist" / "index.html").write_text(waitlist(), encoding="utf-8")
     (ROOT / "blog" / "index.html").write_text(index(posts), encoding="utf-8")
     (ROOT / "blog" / "feed.xml").write_text(feed(posts), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(posts, pages), encoding="utf-8")

@@ -38,6 +38,7 @@ p { margin: 0; }
 
 .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 10px; font: 600 0.98rem/1 var(--sans); text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background .15s ease; }
 .btn:hover { transform: translateY(-1px); }
+.btn.solid { background: var(--ink); color: var(--paper); }
 .btn.green { background: var(--forest); color: #fff; }
 .btn.green:hover { background: #12573e; }
 .btn.line { border-color: var(--rule); background: var(--panel); color: var(--ink); }
@@ -129,3 +130,47 @@ footer .wrap > div { display: flex; flex-wrap: wrap; justify-content: space-betw
 footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
 footer a { color: var(--muted); }
 @media (max-width: 760px) { footer .wrap > div { padding: 22px 20px; } }
+
+/* launch waitlist: top bar on every page, $100 credit badge, /waitlist/ form (bar and badge are mirrored in index.html) */
+.topbar { background: var(--forest); color: #fff; font: 500 0.88rem/1.35 var(--sans); padding: 9px max(16px, env(safe-area-inset-left, 0px)); display: flex; justify-content: center; align-items: center; gap: 6px 12px; flex-wrap: wrap; text-align: center; }
+.topbar a { color: #fff; font-weight: 700; text-underline-offset: 3px; white-space: nowrap; }
+.topbar .pill { font: 500 0.7rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; background: rgba(255,255,255,.16); padding: 5px 8px; border-radius: 99px; }
+.credit { justify-self: start; display: inline-flex; align-items: center; gap: 10px; background: var(--tint); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 99px; padding: 7px 14px 7px 7px; font: 600 0.95rem/1.2 var(--sans); }
+.credit strong { background: var(--forest); color: #fff; border-radius: 99px; padding: 5px 10px; font: 700 0.95rem/1 var(--mono); }
+.wl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.wl-copy { padding: 64px 40px; display: grid; gap: 22px; align-content: start; border-right: 1px solid var(--rule); }
+.wl-copy h1 { font-size: clamp(2.2rem, 1.3rem + 2.8vw, 3.4rem); font-weight: 800; letter-spacing: -0.045em; }
+.wl-copy .lede { color: var(--muted); font-size: 1.1rem; max-width: 33em; }
+.wl-copy ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.wl-copy li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; }
+.wl-copy li::before { content: "✓"; color: var(--accent); font-weight: 700; }
+.wl-form { padding: 64px 40px; background: var(--panel); }
+.wl-form form { display: grid; gap: 18px; }
+.field { display: grid; gap: 7px; }
+.field > label, .field > span { font: 500 0.75rem/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.field small { text-transform: none; letter-spacing: 0; color: var(--faint); font-size: 0.75rem; }
+.wl-form input:not([type=checkbox]):not([type=radio]), .wl-form select { font: 400 1rem/1.3 var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; width: 100%; }
+.wl-form input:focus, .wl-form select:focus { outline: 2px solid var(--mint); outline-offset: 1px; }
+.phone { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 8px; }
+.seg { display: flex; flex-wrap: wrap; gap: 8px; }
+.seg label { font: 500 0.92rem/1 var(--sans); color: var(--ink); border: 1px solid var(--rule); border-radius: 99px; padding: 9px 14px; cursor: pointer; background: var(--paper); }
+.seg input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.seg label:has(input:checked) { border-color: var(--accent); background: var(--tint); color: var(--accent); }
+.seg label:has(input:focus-visible) { outline: 2px solid var(--mint); outline-offset: 2px; }
+.consent { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 0.86rem; color: var(--muted); align-items: start; cursor: pointer; }
+.consent input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--forest); }
+.wl-form .btn { justify-content: center; width: 100%; padding: 15px 20px; font-size: 1rem; }
+.fine { font-size: 0.8rem; color: var(--faint); text-align: center; }
+.fine.bad { color: var(--bad); font-size: 0.9rem; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.done { display: grid; gap: 16px; justify-items: center; text-align: center; padding-block: 24px; }
+.done .tick { width: 56px; height: 56px; border-radius: 50%; background: var(--tint); color: var(--accent); display: grid; place-items: center; font-size: 1.6rem; font-weight: 700; }
+.done h2 { font-size: 2rem; font-weight: 800; }
+.done p { color: var(--muted); max-width: 40ch; }
+.done .credit { justify-self: center; }
+@media (max-width: 860px) {
+  .wl { grid-template-columns: minmax(0, 1fr); }
+  .wl-copy { border-right: 0; border-bottom: 1px solid var(--rule); padding: 44px 20px; }
+  .wl-form { padding: 36px 20px 44px; }
+  .phone { grid-template-columns: 112px minmax(0, 1fr); }
+}
