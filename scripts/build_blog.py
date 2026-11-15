@@ -399,14 +399,14 @@ def llms(posts: list[dict], pages: list[dict]) -> str:
     lines = [
         "# Femp",
         "",
-        "> Femp (also called Femp AI, by Neobrix) is an AI operations assistant for owners of Shopify and Amazon brands. It watches stock, "
-        "ad spend against real sales, search and AI-assistant findability, and the store's Gmail inbox, messages the "
+        "> Femp (also called Femp AI, by Neobrix) is an AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. "
+        "It watches the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks and the store's Gmail inbox, messages the "
         "owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.",
         "",
         "Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.",
         "",
         "## Product",
-        f"- [Home]({SITE}/): what Femp does, an interactive week at a store, daily check-ins and ground rules",
+        f"- [Home]({SITE}/): what Femp does for DTC brands, a looping WhatsApp demo, 16 ready-made automations and ground rules",
         *[f"- [{p['nav']}]({p['url']}): {p['description']}" for p in pages],
         "- [Privacy policy](https://auth.femp.ai/privacy)",
         "- [Support](https://auth.femp.ai/support)",

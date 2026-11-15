@@ -1,11 +1,11 @@
 # Femp
 
-> Femp (also called Femp AI, by Neobrix) is an AI operations assistant for owners of Shopify and Amazon brands. It watches stock, ad spend against real sales, search and AI-assistant findability, and the store's Gmail inbox, messages the owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.
+> Femp (also called Femp AI, by Neobrix) is an AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. It watches the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks and the store's Gmail inbox, messages the owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.
 
 Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
 
 ## Product
-- [Home](https://femp.ai/): what Femp does, an interactive week at a store, daily check-ins and ground rules
+- [Home](https://femp.ai/): what Femp does for DTC brands, a looping WhatsApp demo, 16 ready-made automations and ground rules
 - [Features](https://femp.ai/features/): Femp AI watches stock and days of cover, checks Meta and Google ad spend against real Shopify sales, scores how findable your products are on Google and ChatGPT, flags the store emails that matter, and answers questions about orders.
 - [How it works](https://femp.ai/how-it-works/): Say hi to Femp on WhatsApp, connect your Shopify or Amazon store through its own approval screen, and get your first stock check minutes later. Then four check-ins a day, and nothing changes without your yes.
 - [Integrations](https://femp.ai/integrations/): Femp AI connects to Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail through each platform's own approval screen, and talks to you on WhatsApp or in the Femp app.
