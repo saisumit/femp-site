@@ -80,7 +80,7 @@ def head(title: str, description: str, url: str, kind: str = "website", extra: s
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{t}">
 <meta name="twitter:description" content="{d}"><meta name="twitter:image" content="{OG}">
 <link rel="alternate" type="application/rss+xml" title="Femp blog" href="{SITE}/blog/feed.xml">
-<link rel="icon" type="image/png" href="/favicon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 {FONTS}<link rel="stylesheet" href="/assets/site.css">
 {extra}
 </head>"""
