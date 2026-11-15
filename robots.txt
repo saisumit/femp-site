@@ -1,5 +1,22 @@
-# femp.ai: everything public is crawlable, including AI search and assistant crawlers.
+# femp.ai: everything public is crawlable, including search engines and AI search/assistant crawlers.
 User-agent: *
+Allow: /
+Disallow: /content/
+Disallow: /scripts/
+
+# Named explicitly so AI answer engines know they're welcome (same rules as above).
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: CCBot
 Allow: /
 Disallow: /content/
 Disallow: /scripts/

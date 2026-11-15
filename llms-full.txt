@@ -1,0 +1,862 @@
+# Femp
+
+> Femp (also called Femp AI, by Neobrix) is an AI operations assistant for owners of Shopify and Amazon brands. It watches stock, ad spend against real sales, search and AI-assistant findability, and the store's Gmail inbox, messages the owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.
+
+Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
+
+---
+
+# What Femp does for your store
+
+URL: https://femp.ai/features/
+
+Femp is an AI operations assistant for Shopify and Amazon brands. It watches the parts of the store that slip when you're busy and tells you on WhatsApp when something needs you, with the fix ready.
+
+● In short
+
+ - Stock: live levels from Shopify and Amazon FBA, with days of cover for each product.
+
+ - Ads: Meta and Google spend checked against what your store actually sold. Read-only.
+
+ - Findability: a 0–100 score across Google, marketplaces and AI assistants such as ChatGPT and Perplexity, plus fixes you approve.
+
+ - Inbox: chargebacks, supplier delays, account warnings and reviews flagged from your store's Gmail, with replies drafted.
+
+ - Orders and team: ask anything about sales and buyers, and add teammates who chat from their own WhatsApp.
+
+## Stock: days of cover, not just counts
+
+Femp reads live inventory from Shopify and Amazon FBA and works out how many days each product lasts at its current pace. You set your own alert limits. The 9:00 am stock check lists what's out, what runs out within a week, and whether you're still paying for ads on something that's about to sell out.
+
+Why days of cover matters: "40 left" sounds fine until you sell nine a day. Read more in Days of cover: the stock number that stops your best seller selling out.
+
+## Ads: spend checked against real sales
+
+Meta and Google each take credit for the same sale. Femp compares yesterday's spend in Meta Ads and Google Ads with the orders your Shopify store actually took, so ad sets that lose money show up the next morning, together with the budget change Femp would make. Femp never edits your ads; access is read-only and you make the change yourself.
+
+Background: Are your ads making money? Check ROAS against real store sales.
+
+## Findability: found on Google and in ChatGPT
+
+More shoppers ask ChatGPT, Perplexity and Google's AI answers what to buy. Femp gives each store a 0–100 findability score across Google, marketplaces and AI assistants, then researches three fresh ideas on the web every afternoon. Reply with a number and Femp rewrites the product title, description, image alt text or a blog post. Every edit waits for your yes and can be undone.
+
+The checklist behind it: How to get your products found on Google and in ChatGPT.
+
+## Inbox: the emails that matter, flagged
+
+Once you connect your store's Gmail, Femp checks it every hour for chargebacks, supplier delays, marketplace account warnings and reviews. It tells you which ones need you and drafts the replies for you to send. A chargeback with a deadline doesn't get buried under newsletters.
+
+On disputes: Shopify chargebacks: how to answer every dispute before the deadline.
+
+## Orders: who's buying, and buying again
+
+Ask in plain words: sales by day or week, new versus repeat buyers, best sellers, where orders came from, and what's still waiting to ship. Femp answers from your connected data and suggests a next step. It reads buyers' order history, not their names, emails or addresses.
+
+## Daily check-ins and standing jobs
+
+Femp runs four check-ins a day in your time zone (stock at 9:00 am, ads at 11:00 am, search and SEO at 3:00 pm, a wrap-up at 6:00 pm) and stays quiet when nothing is wrong. You can add your own standing job by saying it in chat, for example "every Monday at 9, review my ads". See how it works.
+
+## Team and memory
+
+Add a teammate and they chat with Femp from their own WhatsApp: the person who packs orders can ask what's still to ship. Femp remembers your preferences, so nobody has to repeat them.
+
+---
+
+# How Femp works
+
+URL: https://femp.ai/how-it-works/
+
+Femp lives where you already are: WhatsApp, or the Femp app. Setup takes a few minutes, and after that it works a shift every day.
+
+## 1. Say hi on WhatsApp
+
+Message Femp on WhatsApp. It replies with a personal link to connect your store. Femp is free during the beta.
+
+## 2. Connect your tools through their own approval screens
+
+Each connection uses the platform's official sign-in and consent screen: Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail. Femp never sees or keeps your passwords or one-time codes. Connect only what you want, and disconnect any of them from the app at any time. Details on the integrations page.
+
+## 3. Get your first stock check in minutes
+
+As soon as your store is connected, Femp runs a stock check and sends what's out, what's running low and how many days each product has left.
+
+## 4. Femp works a shift every day
+
+ When | Check | What you get | 
+
+ 9:00 am | Stock check | What's out, what runs out within a week at today's pace, and whether it's still advertised | 
+
+ 11:00 am | Ads review | Yesterday's Meta and Google spend against real Shopify sales, with the budget change it would make | 
+
+ 3:00 pm | Search and SEO | Your findability score plus three fresh ideas researched on the web. Reply with a number to do one | 
+
+ 6:00 pm | Wrap-up | What's waiting for you, what's still open, and the one thing most worth doing tomorrow | 
+
+ Every hour | Inbox | Chargebacks, supplier delays, account warnings and reviews from your store's Gmail, with replies drafted | 
+
+Every report runs on your store's real data, in your time zone. If a check finds nothing worth your time, Femp doesn't message you.
+
+## 5. You say yes, Femp does it
+
+When Femp suggests a change it can make, such as a better product title or a blog post, it shows you exactly what will change and waits. Reply yes and it's done; every edit can be undone. Femp never touches your prices, stock or checkout, and never edits your ads.
+
+## 6. Ask anything, any time
+
+Between check-ins, ask Femp about the store in plain words: "how many orders today?", "which ads lost money last week?", "what's still to ship?". Say "every Monday at 9, review my ads" and it becomes a standing job. Teammates you add can ask too, from their own WhatsApp.
+
+---
+
+# Integrations: what Femp connects to
+
+URL: https://femp.ai/integrations/
+
+Every connection goes through the platform's own sign-in and consent screen. You choose what to connect, and you can disconnect any of it from the app at any time.
+
+Platform | What Femp reads | What Femp can change | 
+
+ Shopify | Orders, products, inventory and chargebacks | Product SEO (titles, descriptions, image alt text) and blog posts, only after your yes, and undoable. Never prices, stock or checkout | 
+
+ Amazon Seller Central | Orders and FBA inventory | Never your prices or stock | 
+
+ Meta Ads | Spend and results by campaign and ad set | Nothing. Read-only | 
+
+ Google Ads | Spend and results by campaign | Nothing. Read-only | 
+
+ Google Search Console | Search queries, clicks and rankings for your store | Nothing | 
+
+ Gmail | Your store's inbox, checked hourly for chargebacks, suppliers, account warnings and reviews | Drafts replies for you to send | 
+
+ WhatsApp and the Femp app | Your messages to Femp | Where Femp messages you and your teammates | 
+
+## Shopify
+
+Femp reads orders, products and inventory to work out days of cover, sales and repeat buyers, and to compare ad spend with real sales. With your approval it can improve product titles, descriptions and image alt text, and publish blog posts, which helps your products show up on Google and in AI assistants. See how products get found in ChatGPT.
+
+## Amazon Seller Central
+
+Femp reads your Amazon orders and FBA stock alongside Shopify, so days of cover reflects everything you sell, not just one channel.
+
+## Meta Ads and Google Ads
+
+Read-only. Femp checks each morning whether yesterday's spend turned into real store sales and suggests the budget change it would make. You make any change yourself in the ads manager.
+
+## Google Search Console
+
+Search data feeds the afternoon findability check: which searches find you, which pages are slipping, and what to fix first.
+
+## Gmail
+
+Connect the inbox your store uses and Femp checks it every hour for emails that cost money if missed: chargebacks with deadlines, supplier delays, marketplace account warnings and reviews. It drafts replies; you send them.
+
+## Coming next
+
+More channels and marketplaces are planned. If you need one, say so on WhatsApp or email support@femp.ai.
+
+---
+
+# Pricing
+
+URL: https://femp.ai/pricing/
+
+Femp is free while we're in beta. You get everything: every check-in, every connection and every feature.
+
+● Beta plan · $0
+
+ - Four daily check-ins: stock, ads, search and SEO, wrap-up
+
+ - Hourly inbox checks with drafted replies
+
+ - Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail
+
+ - Product SEO and blog fixes, done after your yes and undoable
+
+ - Teammates on their own WhatsApp
+
+ - Your own standing jobs, such as "every Monday at 9, review my ads"
+
+## What happens after the beta?
+
+Paid plans haven't been announced yet. Questions about pricing: support@femp.ai.
+
+## How does Femp compare with hiring someone?
+
+A part-time operations assistant or virtual assistant usually costs hundreds to thousands of dollars a month and works set hours. Femp watches the store every day, including weekends, and messages you only when something needs you. It doesn't replace judgement: you still decide, and nothing changes without your yes. Read what an AI operations assistant can and can't do.
+
+## Get started
+
+Say hi on WhatsApp, connect your store, and your first stock check arrives a few minutes later. See how it works.
+
+---
+
+# Security and ground rules
+
+URL: https://femp.ai/security/
+
+Femp works for you, and you stay in charge. These are the rules it follows with your store and your customers' data.
+
+## What Femp will and won't do
+
+ - Never touches your prices, stock or checkout.
+
+ - Never edits your ads. Meta Ads and Google Ads access is read-only.
+
+ - Changes only what you approve. Product SEO and blog edits happen after your yes, and every edit can be undone.
+
+ - Drafts emails, doesn't send them. You send replies from your own inbox.
+
+## Your customers' data
+
+ - Femp reads buyers' order history, not their names, emails or addresses.
+
+ - Answers are worked out from your store's data for you and your team only.
+
+## Connections and credentials
+
+ - Every connection uses the platform's own sign-in and approval screen (Shopify, Amazon, Meta, Google).
+
+ - Access tokens are encrypted with AES-256.
+
+ - Femp never keeps passwords or one-time codes.
+
+ - Disconnect any connection from the app at any time. See integrations.
+
+## Retention and deletion
+
+ - Chat history is deleted after 90 days.
+
+ - Delete your account from the app in one step.
+
+The full policy is in the privacy policy. Questions: support@femp.ai.
+
+---
+
+# Frequently asked questions
+
+URL: https://femp.ai/faq/
+
+Short answers to the questions store owners ask most. Something missing? Ask Femp on WhatsApp or email support@femp.ai.
+
+## What is Femp?
+
+Femp (also called Femp AI, made by Neobrix) is an AI operations assistant for owners of Shopify and Amazon brands. It watches stock, ad spend against real sales, how findable your products are on Google and in AI assistants like ChatGPT, and your store's inbox. When something needs you, it messages you on WhatsApp or in the Femp app with the fix ready, and makes the change once you say yes.
+
+## Who is Femp for?
+
+Owners and small teams running a direct-to-consumer brand on Shopify, Amazon or both, who don't have a full-time operations person and lose money when stock, ads, disputes or search slip during a busy week.
+
+## What does Femp connect to?
+
+Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail, each through the platform's own approval screen. You talk to Femp on WhatsApp or in the Femp app. See integrations.
+
+## How much does Femp cost?
+
+Femp is free during the beta, with every feature included. See pricing.
+
+## Can Femp change my store without asking?
+
+No. Femp never touches prices, stock or checkout, and its ads access is read-only. It edits product SEO (titles, descriptions, image alt text) and blog posts only after you reply yes, and every edit can be undone.
+
+## How do I set up Femp?
+
+Say hi on WhatsApp, open the link Femp sends, and connect your store. Your first stock check arrives a few minutes later. See how it works.
+
+## What reports does Femp send?
+
+Four check-ins a day in your time zone: stock at 9:00 am, ads at 11:00 am, search and SEO at 3:00 pm, and a wrap-up at 6:00 pm, plus an hourly inbox check. If nothing needs you, Femp stays quiet. You can add your own standing jobs by asking in chat.
+
+## Does Femp help my products show up in ChatGPT and Google?
+
+Yes. Femp scores each store's findability from 0 to 100 across Google, marketplaces and AI assistants such as ChatGPT and Perplexity, researches fixes on the web, and, after your yes, rewrites product titles, descriptions, alt text and blog posts. See how to get products found on Google and in ChatGPT.
+
+## How is Femp different from a Shopify analytics dashboard?
+
+A dashboard waits for you to open it and work out what matters. Femp checks the numbers for you every day, tells you only when something needs action, explains it in plain words and has the fix ready. It also reads sources a dashboard doesn't combine, such as ad spend, Amazon FBA stock and your store's inbox.
+
+## How is Femp different from hiring a virtual assistant?
+
+Femp watches the store every day, including weekends, answers immediately and costs nothing during the beta. It doesn't replace judgement: you decide, and it only acts on what you approve. Many owners use Femp so a human teammate can spend time on customers and suppliers instead of checking numbers.
+
+## Is my data safe?
+
+Access tokens are encrypted with AES-256, Femp never keeps passwords or one-time codes, it reads buyers' order history but not their names, emails or addresses, chat history is deleted after 90 days, and you can delete your account in one step. See security.
+
+## Can my team use Femp?
+
+Yes. Add a teammate and they chat with Femp from their own WhatsApp. Femp remembers the store's preferences, so nobody repeats themselves.
+
+## Who makes Femp?
+
+Femp is made by Neobrix. Contact support@femp.ai.
+
+---
+
+# What an AI operations assistant can do for a DTC brand
+
+URL: https://femp.ai/blog/ai-operations-assistant-for-dtc-brands/
+
+Most of what an e-commerce operations hire does is watching, reconciling, chasing and filing. That is exactly the work an always-on assistant is good at. Here is the full list, sorted by where the money is.
+
+If you run a Shopify brand, and probably an Amazon store next to it, your day is split across eight to twelve tools: Shopify admin, Seller Central, Meta Ads Manager, Google Ads, Klaviyo, your 3PL portal, your inbox, your bank and a spreadsheet that holds it all together. Each one has a dashboard. None of them tells you what you should do this morning.
+
+That gap is why brands hire their first operations person. We read about forty job postings for e-commerce coordinators, DTC operations managers, Amazon account managers and offshore virtual assistants to see what that person actually does. Roughly two-thirds of the listed duties are monitoring, reconciling, chasing and filing. The rest is creative work, strategy and negotiation.
+
+The first group is what an AI operations assistant can take over. This guide lists those jobs in five groups, ordered by where the money is.
+
+ ● In short
+
+ - An ops assistant earns its keep on money in (ads, carts, chargebacks), money leaking (fees, overcharges, deductions) and deadlines (stock-outs, disputes, filings).
+
+ - It should reach you where you already are (WhatsApp or text), with the fix ready, and act only after you say yes.
+
+ - Creative, brand and campaign strategy stay with people. The assistant hands those off cleanly.
+
+## What a day looks like
+
+A morning message with yesterday's numbers and the three or four decisions that need you. Interruptions during the day only when money or a deadline is at stake. A weekly review on Friday. Each time you reply with a number or a "yes", and the assistant does the work, logs it and remembers your preference.
+
+ FempWhatsApp · 9:00 am
+
+ Morning. Lip Oil runs out Friday at 9 a day, and its ads are still spending $60 a day. Your supplier delivers in 3 days. Reorder 150?
+
+ Also: chargeback on order #1043 ($96), reply due in 5 days. I drafted it with the tracking proof.
+
+ reorder 150, send the reply
+
+ Done. I'll tell you when the bank decides.
+
+ Illustrative example of a Femp check-in.
+
+## 1. Growth: money on the table
+
+These are the jobs an owner pays for because they show up in revenue.
+
+ - Ad budget checks. Flag ad sets below your ROAS floor for several days, compared with what actually sold in the store rather than what the ad platform claims. How to check ROAS against real sales.
+
+ - Chargebacks. Catch every dispute, gather tracking, delivery proof and customer messages, and draft the response before the deadline. Answering every dispute.
+
+ - Abandoned-cart recovery. Most carts are abandoned (Baymard's long-running average is about 70%). The flows exist; the job is noticing when one breaks and picking high-value carts, such as repeat buyers, for a personal offer.
+
+ - Win-back and churn. Spot lapsed repeat buyers and subscribers who skipped cycles, and draft the win-back.
+
+ - Restock waitlists. When a sold-out item is back, tell the people who asked.
+
+ - Carrier refunds, 3PL overcharges and retailer deductions. Money you already earned and quietly lose. Where it hides.
+
+## 2. Operations: the day keeps running
+
+ - Inventory and reorders. Days of cover per item against supplier lead time, a reorder suggestion, and a nudge when the ETA slips. Days of cover, explained.
+
+ - Amazon account health. Suppressed listings, policy warnings, IP complaints and Buy Box loss, with a fix drafted inside Amazon's 72-hour Account Health Assurance window.
+
+ - Shipping and 3PL exceptions. Orders stuck for two days, mis-picks and backorders, with the escalation drafted and customers told before they ask.
+
+ - Refund approvals. Refunds over your limit and VIP complaints come to you with context; everything else stays in the helpdesk.
+
+ - Supplier follow-ups. Chase ETAs, samples and quotes, and recalculate landed cost when duties change. With the US $800 de minimis exemption gone since 2025, landed cost moves more than it used to.
+
+ - Listing and site audits. Broken links, stale promos, policy words that get listings suppressed.
+
+## 3. Analytics: numbers you see without asking
+
+ - Morning brief. Sales by channel, ad spend and return on it, cash and upcoming payouts, plus the decisions due today.
+
+ - Margin by product and channel. Contribution margin after ads, shipping, fulfillment, fees and returns, so you know which products lose money.
+
+ - Customer metrics. New versus repeat buyers, time to second order, cohort retention, with the change explained in a sentence.
+
+ - Weekly review. Revenue, margin, average order value, repeat rate, returns by product, and what to do next week.
+
+## 4. Housekeeping
+
+ - App audit. Paid apps you haven't opened in 60 days.
+
+ - Inbox triage. Separate chargebacks, supplier delays, account warnings and reviews from the noise, and draft the replies.
+
+ - Renewals. Domain, trademark, insurance, carrier and 3PL contracts, with time to renegotiate.
+
+ - SOPs. Write down how a task was done so a person can take it over.
+
+## 5. Accounting and regulatory
+
+Every item here has a date, a penalty or a lawsuit behind it, and almost none of it lives in the tools you open daily: sales tax nexus, quarterly estimates, 1099s, state annual reports, SMS consent, packaging EPR, accessibility. The assistant is not your accountant or lawyer. Its job is to know your calendar, chase the documents they need, and say plainly when a rule changed. The DTC compliance calendar.
+
+## What should stay human
+
+Creative, brand voice, campaign strategy, supplier negotiation and lifecycle experiments. An assistant can monitor a campaign and draft a brief, but deciding what your brand says is your job, or your agency's. A good assistant knows the difference and hands off cleanly.
+
+## What Femp does today
+
+Femp is our take on this. Today it covers the jobs owners ask about most:
+
+ Job | What Femp does | 
+
+ Stock | Reads Shopify and Amazon FBA stock, warns before items run out, estimates days of cover. | 
+
+ Orders | Sales by day or week, what sold, new versus repeat buyers, what's still to ship. | 
+
+ Ads | Compares Meta and Google spend with real Shopify sales and flags losing ad sets. Read-only. | 
+
+ Search & SEO | Scores findability on Google, marketplaces and AI assistants, and rewrites titles, descriptions, alt text and blog posts after you say yes. | 
+
+ Inbox | Reads the store's Gmail hourly for chargebacks, supplier delays, account warnings and reviews, and drafts replies. | 
+
+ Automations | "Every Monday at 9, review my ads" becomes a standing job. | 
+
+The money-recovery and compliance jobs above are on our roadmap, in roughly the order the money shows up. If one of them would change your week, tell us; that is how we decide what comes next.
+
+---
+
+# Days of cover: the stock number that stops your best seller selling out
+
+URL: https://femp.ai/blog/days-of-cover-inventory/
+
+"40 left" sounds fine until you notice you sell nine a day and your supplier needs three days. The number that matters is how many days your stock lasts.
+
+Stock-outs rarely happen because nobody looked at inventory. They happen because somebody looked at a count, saw a reasonable-sounding number, and moved on. Forty units of your best seller feels like plenty. At nine a day it's four days, and if your supplier needs three days plus a weekend, you've already missed the window.
+
+A stock-out costs more than the lost sales. Your ads keep spending on a product nobody can buy, and on Amazon a stock-out can cost you ranking that takes weeks to win back.
+
+ ● In short
+
+ - Days of cover = units available ÷ average daily sales.
+
+ - Reorder when days of cover falls below supplier lead time + shipping + a safety buffer.
+
+ - Count Shopify and Amazon FBA together if they draw on the same supply, and pause ads on items about to run out.
+
+## How to calculate days of cover
+
+Take the units you can sell now (on hand, minus anything reserved for open orders) and divide by how many you sell per day.
+
+days of cover = available units ÷ units sold per day
+
+For "units sold per day", use a recent window, usually the last 14 or 28 days, so a spike from one viral post doesn't distort it. If you're running a promotion, use the promotion's pace, not last month's.
+
+ Product | Available | Sold per day | Days of cover | 
+
+ Lip Oil | 40 | 9 | 4.4 | 
+
+ Rose Serum | 120 | 5 | 24 | 
+
+ Clay Mask | 210 | 6 | 35 | 
+
+Sorted by units, Clay Mask looks like the risk and Lip Oil looks fine. Sorted by days, it's the other way round.
+
+## Set a reorder point from lead time
+
+Days of cover becomes useful when you compare it with how long a restock takes:
+
+reorder when days of cover < supplier lead time + transit + safety days
+
+ - Lead time is from PO to goods leaving the supplier. Use what actually happened last time, not the quote.
+
+ - Transit includes receiving at your warehouse or 3PL. For Amazon, add FBA check-in time, which can stretch in Q4.
+
+ - Safety days cover a slow supplier or a sales spike. A week is common for a steady seller; more for anything imported.
+
+With a 21-day lead time and 11 days of cover, you're already ten days late. That is the alert worth getting: a date and an action, not a count.
+
+## Shopify and Amazon together
+
+If you sell on both, look at each channel's stock and its own pace. FBA stock can't fill a Shopify order unless you use Multi-Channel Fulfillment, and your 3PL stock can't fill an Amazon Prime order. A product can be fine on Shopify and two days from running out on Amazon. Count inbound shipments separately: units on a truck aren't available until they're checked in.
+
+## Stop advertising what you can't sell
+
+The quietest stock-out cost is ad spend. When an item hits zero, or gets close enough that you'll sell out before the restock lands, its ads keep running. Check ad spend for any product under a week of cover and decide whether to pause, cut the budget or move it to an item with plenty of stock.
+
+## Checklist
+
+ - Calculate days of cover per item, per channel, every morning.
+
+ - Keep each supplier's real lead time next to it.
+
+ - Alert when cover drops below lead time + transit + safety days.
+
+ - Draft the PO at that point, and chase the ETA.
+
+ - Check ad spend on anything under a week of cover.
+
+## How Femp handles it
+
+Femp reads live stock from Shopify and Amazon FBA and works out days of cover at the current pace. Its 9 am stock check tells you what's out, what runs out within a week, and whether you're still advertising it. You can set your own limits ("warn me under 10 days for the serum") and ask any time: "what's running low?"
+
+ FempWhatsApp · 9:00 am
+
+ Stock check: Lip Oil has 4 days left at 9 a day, and its ads spend $60 a day. Rose Serum and Clay Mask are fine (24 and 35 days). Want me to draft a reorder for 150 Lip Oil?
+
+ yes
+
+ Illustrative example. Femp never changes your stock levels.
+
+---
+
+# Are your ads making money? Check ROAS against real store sales
+
+URL: https://femp.ai/blog/ads-roas-against-real-sales/
+
+Meta says 3.4×. Google says 2.9×. Add up the sales they both claim and you sold more than your store took in. Here's a simple daily check that keeps ad spend honest.
+
+For most DTC brands, ads are the largest variable cost after the products themselves. They're also the cost most likely to be overstated by the tool reporting it. Meta and Google each attribute sales to their own ads with their own windows and models, so the same order can show up in both reports. Neither knows what your store actually took in.
+
+You don't need a full attribution platform to catch the expensive mistakes. You need a daily check of spend against real sales, and a rule for what to do when it looks wrong.
+
+ ● In short
+
+ - Track blended ROAS (store revenue ÷ total ad spend) or MER every day. It can't double count.
+
+ - For each ad set or campaign, compare spend with the sales of the products it promotes.
+
+ - Set a floor (for example ROAS under 1.0 for three days) and a rule: cut, pause or move budget.
+
+## Platform ROAS versus blended ROAS
+
+Platform ROAS is what Ads Manager shows: revenue the platform attributes to its ads, divided by spend. Useful for comparing ads on the same platform, unreliable as a total.
+
+Blended ROAS, sometimes called MER (marketing efficiency ratio), is all store revenue for the day divided by all ad spend. It's crude, but it's real money on both sides of the line.
+
+blended ROAS = store revenue ÷ (Meta + Google + other ad spend)
+
+Watch the trend. If spend rises 30% and blended ROAS falls from 3.1 to 2.2, the extra spend isn't buying much, whatever each platform says.
+
+## Find the ad sets losing money
+
+Blended numbers hide the culprit. To find it, line up each campaign or ad set with the products it promotes and their sales in Shopify:
+
+ Ad set | Spend yesterday | Product sales | Ratio | 
+
+ Lip Oil prospecting | $60 | $192 | 3.2× | 
+
+ Clay Mask prospecting | $45 | $27 | 0.6× | 
+
+ Retargeting | $30 | $57 | 1.9× | 
+
+This isn't perfect attribution, and it doesn't need to be. Clay Mask spent $45 to sell $27 of product. Even with generous assumptions, that ad set is losing money.
+
+## Know your break-even ROAS
+
+A ratio of 1.0 means you got your ad spend back in revenue, not profit. To break even on a sale you also need to cover the product, shipping, payment fees and returns:
+
+break-even ROAS = 1 ÷ contribution margin before ads
+
+If a product keeps 50% of its price after goods, shipping and fees, you need 2.0× just to break even on the first order. Repeat purchases can justify going lower for new customers, but decide that on purpose.
+
+## A daily rule that stops slow leaks
+
+ - Every morning, check yesterday's spend by campaign against product sales.
+
+ - Flag anything under break-even for three days in a row. One bad day is noise.
+
+ - Check stock before you scale a winner. Doubling the budget on an item with four days of cover just buys a stock-out (see days of cover).
+
+ - Look for broken basics: a disapproved ad, a pixel that stopped firing, a landing page that's out of stock.
+
+ - Decide: cut, pause, or move the budget to what's working.
+
+## How Femp handles it
+
+Femp's 11 am ads review compares yesterday's Meta and Google spend with what actually sold in your Shopify store, and tells you which ad sets are losing money with the change it would make. Femp's ads access is read-only: it never edits your campaigns. You make the change in Ads Manager, and it checks again the next day.
+
+ FempWhatsApp · 11:00 am
+
+ Ads review: Clay Mask ads spent $45 yesterday and sold $27 (0.6×), the third day under 1×. Lip Oil is at 3.2× but has 4 days of stock. Cutting Clay Mask to $15 would save about $30 a day.
+
+ ok, cutting it now
+
+ Thanks. I'll check it again tomorrow.
+
+ Illustrative example.
+
+---
+
+# Shopify chargebacks: how to answer every dispute before the deadline
+
+URL: https://femp.ai/blog/shopify-chargebacks-answer-every-dispute/
+
+A chargeback you don't answer is a chargeback you lose: the order, the product and a fee. Most small brands lose them not because the case was weak, but because the email got buried.
+
+When a customer disputes a charge with their bank, the money is taken back from your payout right away, and you're charged a dispute fee (on Shopify Payments in the US it's $15). You then have a fixed window to respond with evidence. Miss it and the dispute is decided against you automatically.
+
+Industry estimates put the average merchant win rate around 30%, and lower for manual, rushed responses. Plenty of disputes are winnable: the package was delivered, the customer used the product, or they forgot they bought it. What loses them is time.
+
+ ● In short
+
+ - Answer every dispute. Unanswered ones are automatic losses.
+
+ - Match your evidence to the reason code: delivery proof for "not received", product page and policy for "not as described".
+
+ - Watch your dispute ratio. Visa and Mastercard monitoring programs start at roughly 1% of transactions, and fines follow.
+
+## Where disputes show up
+
+In Shopify admin under Orders → Chargebacks, and by email to the store owner. The email is the problem: it lands next to supplier invoices, app notifications and customer messages, and the deadline is in the body, not the subject line. Put every new dispute on a list with its due date the day it arrives.
+
+## Evidence that wins, by reason
+
+ Reason | What to include | 
+
+ Product not received | Tracking showing delivery to the shipping address, delivery date, signature or photo if you have it, matching billing and shipping details. | 
+
+ Not as described | Screenshot of the product page at time of purchase, your return policy, and any messages where you offered a return or replacement. | 
+
+ Fraudulent / unauthorized | AVS and CVV match, IP location, the customer's order history with you, account login, and any emails they sent after ordering. | 
+
+ Subscription canceled | Sign-up terms they agreed to, renewal reminders sent, and proof no cancellation request came in before the charge. | 
+
+ Duplicate / incorrect amount | Both orders showing different items or dates, or the receipt matching the amount charged. | 
+
+Write a short, factual cover note: what was ordered, when it was delivered, what the customer said afterwards. The person reviewing it at the bank has a few minutes per case.
+
+## Prevent the next one
+
+ - Use a recognizable descriptor on card statements, so customers don't dispute a charge they don't recognize.
+
+ - Answer "where is my order?" fast. Many "not received" disputes start as an unanswered support email.
+
+ - Add signature confirmation on high-value orders.
+
+ - Review risky orders before shipping: mismatched billing and shipping, or customers who've disputed before.
+
+ - Offer an easy refund. A refund costs less than a lost dispute plus the fee.
+
+## Keep an eye on the ratio
+
+Card networks track disputes as a share of your transactions. Cross their thresholds and you enter a monitoring program with fines, and your payment provider may hold funds or close the account. A small brand with a bad month can get close quickly. Check your rate monthly.
+
+## How Femp handles it
+
+Femp reads your store's Gmail every hour. When a dispute arrives, it messages you with the order, the amount and the due date, pulls the tracking and order history, and drafts the response for you to review and send.
+
+ FempWhatsApp · 2:14 pm
+
+ Chargeback on order #1043 ($96), reason "not received". The reply is due in 5 days. UPS shows it delivered to the shipping address on the 3rd. I drafted the response with the tracking proof. Want to see it?
+
+ send me the draft
+
+ Illustrative example.
+
+---
+
+# How to get your products found on Google and in ChatGPT
+
+URL: https://femp.ai/blog/products-found-google-chatgpt/
+
+Shoppers used to type "rose serum" into Google. Now many of them ask an AI assistant "what's a good rose serum for dry skin under $50?" If your product isn't in the answer, it isn't on the shelf.
+
+Search is splitting in two. Classic Google results still send most of the traffic, but a growing share of product research starts in AI assistants: ChatGPT shows product cards with prices and links, Perplexity has shopping answers, and Google puts AI Overviews above the blue links. They all pull from the same places: your product pages, your structured data, merchant feeds, and what other sites say about you.
+
+The good news for small brands: these answers reward clear, specific information more than a big ad budget. A well-described product from a small store can be the best answer to a narrow question.
+
+ ● In short
+
+ - Write titles and descriptions that answer who it's for, what it does and how it differs, using the words shoppers use.
+
+ - Give machines clean data: Product structured data, a Google Merchant Center feed, GTINs, price and availability.
+
+ - Get mentioned elsewhere: reviews, comparison articles and "best of" lists are where AI answers find you.
+
+## Test where you stand
+
+Pick five questions a customer would actually ask, specific ones like "best fragrance-free lip oil for sensitive skin" rather than your brand name. Then check:
+
+ - Google: do you appear on the first page, in Shopping results or in the AI Overview?
+
+ - ChatGPT and Perplexity: does the answer mention your brand or link to your product?
+
+ - Amazon and other marketplaces: where do you rank for the same words?
+
+Write the results down. Re-run the same questions monthly. It's the simplest findability score there is.
+
+## Product titles that match questions
+
+"Aurora" tells a shopper and a model nothing. "Aurora Rose Face Serum for Dry Skin, 30 ml, Fragrance-Free" answers four questions at once. Lead with what the product is, then the attribute people filter on (skin type, size, material, use). Keep the brand voice in the description, not the title.
+
+## Descriptions that answer, not just sell
+
+ - Open with one plain sentence: what it is and who it's for.
+
+ - List the facts a comparison needs: ingredients or materials, size, how to use, what it's not suited for.
+
+ - Add a short FAQ with real customer questions from your inbox and reviews.
+
+ - Write image alt text that describes the product, not "IMG_2041".
+
+## Give machines clean data
+
+ - Product structured data. Most Shopify themes output it; check with Google's Rich Results Test that price, availability, brand and reviews are present.
+
+ - Google Merchant Center. Connect it through the Google & YouTube app on Shopify to appear in free Shopping listings. Fix disapprovals promptly.
+
+ - GTINs and consistent names across Shopify, Amazon and your feed, so systems can tell it's the same product.
+
+ - Don't block crawlers you want. If your robots.txt or a security tool blocks OAI-SearchBot, PerplexityBot or Googlebot, those engines can't read your pages.
+
+## Be talked about
+
+AI answers lean heavily on third-party sources: review sites, Reddit threads, gift guides and comparison articles. A few honest mentions on sites that already rank for your category do more than a dozen posts on your own blog. Send product to writers who cover your niche, and reply to reviews so there's a visible record.
+
+## Publish content that answers buying questions
+
+A blog post that answers "how to choose a face serum for dry skin" with a clear recommendation is the kind of page that gets cited. Write for the question, not for a keyword count, and link to the products that answer it.
+
+## How Femp handles it
+
+Femp's 3 pm search check gives your store a findability score from 0 to 100 across Google, marketplaces and AI assistants, plus three fresh ideas researched on the web. Reply with a number and it does the work: rewrites product titles, descriptions and image alt text, or drafts a blog post. Nothing changes until you say yes, and every edit can be undone.
+
+ FempWhatsApp · 3:00 pm
+
+ Findability 32/100. "Rose serum for dry skin" finds two competitors in ChatGPT and on Google, not you. Ideas: 1) rewrite 3 serum titles with skin type and size, 2) add a 5-question FAQ to the serum page, 3) draft a post: "choosing a serum for dry skin".
+
+ 1
+
+ Done. 3 titles updated. Say "undo" any time.
+
+ Illustrative example.
+
+---
+
+# The money hiding in your invoices: payouts, carriers, 3PLs and retailer deductions
+
+URL: https://femp.ai/blog/money-hiding-in-your-invoices/
+
+You already earned this money. It leaks out a few dollars at a time through net payouts, carrier surcharges, 3PL invoices and retailer deductions that nobody has time to check.
+
+Brands spend a lot of effort winning revenue and very little checking that they keep it. The leaks are small per line: a $12 surcharge, a misapplied fee, one pallet billed that isn't there. Added up over a year, they're often a few percent of revenue, and nobody at a small brand has the job of finding them.
+
+ ● In short
+
+ - Payouts: match each Shopify payout and Amazon settlement to orders, fees and refunds.
+
+ - Carriers: claim late-delivery refunds and dispute wrong surcharges. Audit firms report recoverable errors of 1–5% of parcel spend.
+
+ - 3PLs: check storage, picks and fees against your rate card. Storage is the line most often inflated.
+
+ - Retailers: if you sell to Walmart, Target or Amazon Vendor Central, dispute invalid deductions inside the window.
+
+## 1. Payouts that don't add up
+
+Shopify and Amazon pay you net: sales minus fees, refunds, chargebacks, reserves and adjustments. The deposit looks plausible, so nobody checks it. Once a week, take each payout and confirm the orders, fees and refunds in it add up to the amount received. On Amazon, look for fees you can't tie to an order, such as FBA removal or disposal fees, storage charges and inventory adjustments, and for lost or damaged FBA units that haven't been reimbursed.
+
+## 2. Carrier invoices
+
+UPS and FedEx invoices are long and full of accessorial charges. The common recoverable items:
+
+ - Late deliveries on guaranteed services, where the carrier's money-back guarantee applies (check your contract; some suspend it).
+
+ - Address-correction fees on addresses that weren't wrong.
+
+ - Dimensional weight billed on dimensions larger than your box.
+
+ - Duplicate charges and surcharges your contract waives.
+
+Also watch your shipping cost per order week to week. In 2026 carrier list rates rose about 5.9%, but surcharges rose faster, so the real increase for many DTC shippers was higher. If the residential surcharge share is climbing, it may be time to renegotiate or change services.
+
+## 3. 3PL invoices
+
+A 3PL bill mixes storage, receiving, picks, packaging and special projects. Compare it with your rate card and the 3PL's own warehouse data:
+
+ - Storage: pallets or bins billed versus actually occupied.
+
+ - Picks: pick fees versus orders shipped.
+
+ - Returns and receiving: charges for work that didn't happen, or fees not in your contract.
+
+Audit firms report that first audits commonly find errors, with storage the most inflated line. Even if your 3PL is honest, a manual billing process makes mistakes.
+
+## 4. Retailer deductions
+
+If you sell wholesale to big-box retailers, they deduct for shortages, late shipments, labeling and compliance issues, often automatically. Industry estimates say deductions take 2–5% of gross revenue for suppliers, and a large share are invalid. Match each deduction to the bill of lading and ship notice, and dispute inside the window; the proof that wins a shortage claim is usually a signed BOL.
+
+## A weekly money check
+
+ - Match last week's payouts and settlements.
+
+ - Scan carrier invoices for late deliveries and surcharges; file claims.
+
+ - Compare the 3PL invoice with your rate card and order count.
+
+ - List new retailer deductions and their dispute deadlines.
+
+ - Chase wholesale invoices past due.
+
+ ● Where Femp is today
+ Femp already reads your store's Gmail every hour and flags chargebacks, supplier delays and account warnings. Payout matching, carrier and 3PL invoice checks, and retailer deductions are on our roadmap. If recovering this money matters to you, tell us which one first.
+
+---
+
+# The DTC compliance calendar: sales tax, 1099s, SMS consent and the dates that cost money
+
+URL: https://femp.ai/blog/dtc-compliance-calendar/
+
+Almost none of these deadlines live in the tools you open every day. Each one has a date, a penalty or a lawsuit behind it. Here they are on one page.
+
+● Not legal or tax advice
+ This is a checklist of what to ask your accountant and lawyer about, written for US brands. Thresholds and dates change; confirm the ones that apply to your business with them.
+
+A $2M brand has more filing obligations than most owners realize: federal and state taxes, state entity reports, contractor forms, and product, marketing and privacy rules that depend on what you sell and where. Your accountant knows the tax dates. Usually nobody owns the rest.
+
+## Sales tax: nexus and filing
+
+ - Economic nexus. Since the 2018 Wayfair decision, states can require you to collect once your sales into them cross a threshold. Most states use $100,000 a year (some add a transaction count); California and Texas use $500,000, and New York uses $500,000 plus 100 transactions. In some states, marketplace sales count toward the threshold even though Amazon collects the tax.
+
+ - Register before you collect. Collecting sales tax without a permit is a problem of its own.
+
+ - Who remits. Amazon collects and remits as a marketplace facilitator. Shopify calculates tax but does not file or remit it for you.
+
+ - Zero returns. Once registered, file on the schedule the state assigns, even when you owe nothing.
+
+## Federal tax dates
+
+ - Estimated taxes: April 15, June 15, September 15 and January 15. Set cash aside each month.
+
+ - S-corp and partnership returns (1120-S, 1065): mid-March for calendar-year businesses. Late filing penalties are charged per owner, per month.
+
+ - Payroll deposits and Form 941 quarterly. Missed payroll taxes can be assessed against owners personally.
+
+## 1099s and W-9s
+
+Collect a W-9 from every contractor and agency before you pay them. The 1099-NEC reporting threshold rises from $600 to $2,000 for payments made in 2026, and the federal 1099-K threshold is back to $20,000 and 200 transactions. A platform 1099-K reports gross volume, including shipping, tax and refunded orders, so it will be higher than your revenue; reconcile it before your accountant asks.
+
+## State entity compliance
+
+Every state where your company is registered (home state and any foreign qualifications) has an annual or biennial report and often a franchise tax. Delaware LLCs pay their annual tax by June 1. Miss these and you can lose good standing, which can block bank accounts, contracts and lawsuits.
+
+## Marketing rules
+
+ - SMS (TCPA). Damages run $500 to $1,500 per message. Since April 2025 the FCC requires honoring opt-outs made by "any reasonable means" within 10 business days, not just a reply of STOP. Check that your SMS tool actually honored last month's opt-outs.
+
+ - Reviews. The FTC's rule on fake reviews and testimonials (in force since October 2024) bans buying reviews, suppressing negative ones and undisclosed insider reviews, with civil penalties per violation.
+
+ - "Made in USA" and influencer disclosures are FTC territory too. Check claims before a campaign goes live.
+
+ - Subscriptions. The FTC's click-to-cancel rule was struck down in 2025, but ROSCA enforcement and state auto-renewal laws (California's is among the strictest) still apply.
+
+## Website and privacy
+
+ - Accessibility. E-commerce sites, including many Shopify stores, receive a large share of ADA website lawsuits. Overlay widgets don't prevent them. Test theme and popup changes with a keyboard and a screen reader.
+
+ - State privacy laws. About 20 states now have one, with different thresholds; several require honoring browser opt-out signals (Global Privacy Control). Keep your privacy policy and consent banner current.
+
+ - Payments. Shopify's hosted checkout keeps most stores in the simplest PCI category; custom scripts on payment pages can change that.
+
+## Product compliance
+
+ - California Prop 65: if a warning applies, it must be shown online before purchase.
+
+ - Cosmetics (MoCRA): facility registration and product listing with the FDA, plus adverse-event records.
+
+ - Food and supplements: FDA food facility registrations renew between October 1 and December 31 of every even-numbered year, including 2026.
+
+ - Children's products: a Children's Product Certificate from a CPSC-accepted lab. Amazon suspends listings without one.
+
+ - Packaging EPR: Oregon, Colorado, California, Maine, Minnesota, Maryland and Washington have packaging laws that can make you a "producer" with registration, reporting and fees.
+
+## Marketplace identity and trademarks
+
+Under the INFORM Consumers Act, marketplaces must suspend high-volume sellers who don't verify their information within 10 days of a request. And keep your trademark alive: a USPTO Section 8 declaration is due between years five and six after registration, or Amazon Brand Registry can lapse with it.
+
+## Rules that no longer apply
+
+Stale advice is a cost too. Beneficial ownership (BOI) reporting no longer applies to US-formed companies after FinCEN's 2025 change, yet many pages still warn about it. Ask your accountant to confirm which rules apply to you before you pay someone to file something you don't need.
+
+ ● Where Femp is today
+ Femp can already run any reminder you give it on a schedule ("on the 18th, remind me about the Texas return") and flags account and policy warnings that land in your store's inbox. A full compliance calendar built from your entity, states, products and channels is on our roadmap. It will keep the calendar and chase documents, while filing stays with your accountant and lawyer.

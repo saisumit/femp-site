@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://femp.ai/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://femp.ai/features/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://femp.ai/how-it-works/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://femp.ai/integrations/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://femp.ai/pricing/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://femp.ai/security/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://femp.ai/faq/</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://femp.ai/blog/</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://femp.ai/blog/ai-operations-assistant-for-dtc-brands/</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://femp.ai/blog/days-of-cover-inventory/</loc><lastmod>2026-11-15</lastmod></url>

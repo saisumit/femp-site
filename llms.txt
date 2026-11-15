@@ -1,11 +1,17 @@
 # Femp
 
-> Femp (by Neobrix) is an AI operations assistant for owners of Shopify and Amazon brands. It watches stock, ad spend against real sales, search and AI-assistant findability, and the store's Gmail inbox, messages the owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.
+> Femp (also called Femp AI, by Neobrix) is an AI operations assistant for owners of Shopify and Amazon brands. It watches stock, ad spend against real sales, search and AI-assistant findability, and the store's Gmail inbox, messages the owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.
 
 Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
 
 ## Product
 - [Home](https://femp.ai/): what Femp does, an interactive week at a store, daily check-ins and ground rules
+- [Features](https://femp.ai/features/): Femp AI watches stock and days of cover, checks Meta and Google ad spend against real Shopify sales, scores how findable your products are on Google and ChatGPT, flags the store emails that matter, and answers questions about orders.
+- [How it works](https://femp.ai/how-it-works/): Say hi to Femp on WhatsApp, connect your Shopify or Amazon store through its own approval screen, and get your first stock check minutes later. Then four check-ins a day, and nothing changes without your yes.
+- [Integrations](https://femp.ai/integrations/): Femp AI connects to Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail through each platform's own approval screen, and talks to you on WhatsApp or in the Femp app.
+- [Pricing](https://femp.ai/pricing/): Femp AI is free during the beta: every feature, every connection and the four daily check-ins for Shopify and Amazon stores.
+- [Security](https://femp.ai/security/): Femp AI never touches prices, stock or checkout, has read-only ads access, edits product SEO only after your yes, encrypts access tokens with AES-256, never keeps passwords and deletes chat history after 90 days.
+- [FAQ](https://femp.ai/faq/): Answers about Femp AI: what it is, who it's for, what it connects to, what it costs, whether it can change your store, how it handles data, and how it differs from dashboards and virtual assistants.
 - [Privacy policy](https://auth.femp.ai/privacy)
 - [Support](https://auth.femp.ai/support)
 
@@ -17,3 +23,6 @@ Femp never changes prices, stock or checkout. Ads access is read-only. Product S
 - [How to get your products found on Google and in ChatGPT](https://femp.ai/blog/products-found-google-chatgpt/): Shoppers now ask ChatGPT, Perplexity and Google's AI answers what to buy. What makes a product show up in those answers, and a practical checklist for Shopify titles, descriptions, structured data and content.
 - [The money hiding in your invoices: payouts, carriers, 3PLs and retailer deductions](https://femp.ai/blog/money-hiding-in-your-invoices/): Payout shortfalls, late-delivery refunds, 3PL storage overcharges and invalid retailer deductions quietly take a few percent of revenue. Where each one hides and how to check it every week.
 - [The DTC compliance calendar: sales tax, 1099s, SMS consent and the dates that cost money](https://femp.ai/blog/dtc-compliance-calendar/): Sales tax nexus, quarterly estimates, 1099s, state annual reports, SMS consent, review rules, accessibility and product compliance: the deadlines a US e-commerce brand owner should have on one calendar.
+
+## Optional
+- [Full text of every page and post](https://femp.ai/llms-full.txt)
