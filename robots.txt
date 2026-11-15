@@ -1,4 +1,7 @@
+# femp.ai: everything public is crawlable, including AI search and assistant crawlers.
 User-agent: *
 Allow: /
+Disallow: /content/
+Disallow: /scripts/
 
 Sitemap: https://femp.ai/sitemap.xml

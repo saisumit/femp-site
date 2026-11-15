@@ -1,0 +1,64 @@
+<!--{"slug": "days-of-cover-inventory", "order": 2, "category": "Stock", "date": "2026-11-15",
+"title": "Days of cover: the stock number that stops your best seller selling out",
+"seo_title": "Days of Cover: How to Stop Stock-Outs on Shopify and Amazon FBA | Femp",
+"description": "A stock count tells you what you have. Days of cover tells you when it runs out. How to calculate it, set a reorder point from supplier lead time, and stop paying for ads on items that are sold out.",
+"lede": "\"40 left\" sounds fine until you notice you sell nine a day and your supplier needs three days. The number that matters is how many days your stock lasts."}-->
+<p>Stock-outs rarely happen because nobody looked at inventory. They happen because somebody looked at a count, saw a reasonable-sounding number, and moved on. Forty units of your best seller feels like plenty. At nine a day it's four days, and if your supplier needs three days plus a weekend, you've already missed the window.</p>
+<p>A stock-out costs more than the lost sales. Your ads keep spending on a product nobody can buy, and on Amazon a stock-out can cost you ranking that takes weeks to win back.</p>
+
+<div class="callout tint">
+  <span class="label"><b>●</b> In short</span>
+  <ul>
+    <li><strong>Days of cover = units available ÷ average daily sales.</strong></li>
+    <li>Reorder when days of cover falls below <strong>supplier lead time + shipping + a safety buffer</strong>.</li>
+    <li>Count Shopify and Amazon FBA together if they draw on the same supply, and pause ads on items about to run out.</li>
+  </ul>
+</div>
+
+<h2>How to calculate days of cover</h2>
+<p>Take the units you can sell now (on hand, minus anything reserved for open orders) and divide by how many you sell per day.</p>
+<p><code>days of cover = available units ÷ units sold per day</code></p>
+<p>For "units sold per day", use a recent window, usually the last 14 or 28 days, so a spike from one viral post doesn't distort it. If you're running a promotion, use the promotion's pace, not last month's.</p>
+<div class="tbl"><table>
+  <thead><tr><th>Product</th><th>Available</th><th>Sold per day</th><th>Days of cover</th></tr></thead>
+  <tbody>
+    <tr><td>Lip Oil</td><td class="num">40</td><td class="num">9</td><td class="num">4.4</td></tr>
+    <tr><td>Rose Serum</td><td class="num">120</td><td class="num">5</td><td class="num">24</td></tr>
+    <tr><td>Clay Mask</td><td class="num">210</td><td class="num">6</td><td class="num">35</td></tr>
+  </tbody>
+</table></div>
+<p>Sorted by units, Clay Mask looks like the risk and Lip Oil looks fine. Sorted by days, it's the other way round.</p>
+
+<h2>Set a reorder point from lead time</h2>
+<p>Days of cover becomes useful when you compare it with how long a restock takes:</p>
+<p><code>reorder when days of cover &lt; supplier lead time + transit + safety days</code></p>
+<ul>
+  <li><strong>Lead time</strong> is from PO to goods leaving the supplier. Use what actually happened last time, not the quote.</li>
+  <li><strong>Transit</strong> includes receiving at your warehouse or 3PL. For Amazon, add FBA check-in time, which can stretch in Q4.</li>
+  <li><strong>Safety days</strong> cover a slow supplier or a sales spike. A week is common for a steady seller; more for anything imported.</li>
+</ul>
+<p>With a 21-day lead time and 11 days of cover, you're already ten days late. That is the alert worth getting: a date and an action, not a count.</p>
+
+<h2>Shopify and Amazon together</h2>
+<p>If you sell on both, look at each channel's stock and its own pace. FBA stock can't fill a Shopify order unless you use Multi-Channel Fulfillment, and your 3PL stock can't fill an Amazon Prime order. A product can be fine on Shopify and two days from running out on Amazon. Count inbound shipments separately: units on a truck aren't available until they're checked in.</p>
+
+<h2>Stop advertising what you can't sell</h2>
+<p>The quietest stock-out cost is ad spend. When an item hits zero, or gets close enough that you'll sell out before the restock lands, its ads keep running. Check ad spend for any product under a week of cover and decide whether to pause, cut the budget or move it to an item with plenty of stock.</p>
+
+<h2>Checklist</h2>
+<ol>
+  <li>Calculate days of cover per item, per channel, every morning.</li>
+  <li>Keep each supplier's real lead time next to it.</li>
+  <li>Alert when cover drops below lead time + transit + safety days.</li>
+  <li>Draft the PO at that point, and chase the ETA.</li>
+  <li>Check ad spend on anything under a week of cover.</li>
+</ol>
+
+<h2>How Femp handles it</h2>
+<p>Femp reads live stock from Shopify and Amazon FBA and works out days of cover at the current pace. Its 9 am stock check tells you what's out, what runs out within a week, and whether you're still advertising it. You can set your own limits ("warn me under 10 days for the serum") and ask any time: "what's running low?"</p>
+<figure class="chat">
+  <div class="chat-head"><img src="/img/icon-512.png" alt="" width="28" height="28">Femp<small>WhatsApp · 9:00 am</small></div>
+  <div class="msg">Stock check: Lip Oil has 4 days left at 9 a day, and its ads spend $60 a day. Rose Serum and Clay Mask are fine (24 and 35 days). Want me to draft a reorder for 150 Lip Oil?</div>
+  <div class="msg me">yes</div>
+  <figcaption>Illustrative example. Femp never changes your stock levels.</figcaption>
+</figure>

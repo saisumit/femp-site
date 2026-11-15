@@ -1,0 +1,19 @@
+# Femp
+
+> Femp (by Neobrix) is an AI operations assistant for owners of Shopify and Amazon brands. It watches stock, ad spend against real sales, search and AI-assistant findability, and the store's Gmail inbox, messages the owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.
+
+Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
+
+## Product
+- [Home](https://femp.ai/): what Femp does, an interactive week at a store, daily check-ins and ground rules
+- [Privacy policy](https://auth.femp.ai/privacy)
+- [Support](https://auth.femp.ai/support)
+
+## Blog
+- [What an AI operations assistant can do for a DTC brand](https://femp.ai/blog/ai-operations-assistant-for-dtc-brands/): Most of what an ops hire does at a $1–20M brand is watching, reconciling, chasing and filing. Here are the jobs an AI operations assistant can take off the owner's plate, and the ones that should stay human.
+- [Days of cover: the stock number that stops your best seller selling out](https://femp.ai/blog/days-of-cover-inventory/): A stock count tells you what you have. Days of cover tells you when it runs out. How to calculate it, set a reorder point from supplier lead time, and stop paying for ads on items that are sold out.
+- [Are your ads making money? Check ROAS against real store sales](https://femp.ai/blog/ads-roas-against-real-sales/): Meta and Google each claim credit for the same sale. Here's how to check ad spend against what your Shopify store actually sold, find the ad sets losing money, and decide what to cut each morning.
+- [Shopify chargebacks: how to answer every dispute before the deadline](https://femp.ai/blog/shopify-chargebacks-answer-every-dispute/): Each unanswered chargeback costs you the order and a fee. What evidence wins disputes, how to keep ahead of response deadlines, and how to keep your dispute rate under card-network thresholds.
+- [How to get your products found on Google and in ChatGPT](https://femp.ai/blog/products-found-google-chatgpt/): Shoppers now ask ChatGPT, Perplexity and Google's AI answers what to buy. What makes a product show up in those answers, and a practical checklist for Shopify titles, descriptions, structured data and content.
+- [The money hiding in your invoices: payouts, carriers, 3PLs and retailer deductions](https://femp.ai/blog/money-hiding-in-your-invoices/): Payout shortfalls, late-delivery refunds, 3PL storage overcharges and invalid retailer deductions quietly take a few percent of revenue. Where each one hides and how to check it every week.
+- [The DTC compliance calendar: sales tax, 1099s, SMS consent and the dates that cost money](https://femp.ai/blog/dtc-compliance-calendar/): Sales tax nexus, quarterly estimates, 1099s, state annual reports, SMS consent, review rules, accessibility and product compliance: the deadlines a US e-commerce brand owner should have on one calendar.
