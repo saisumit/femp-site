@@ -229,7 +229,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* automations */
 .autos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.auto { background: var(--panel); border: 1px solid var(--rule); border-radius: 14px; padding: 18px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 8px; min-width: 0; }
+.auto { background: var(--panel); border: 1px solid var(--rule); border-radius: 14px; padding: 18px; display: grid; align-content: start; gap: 8px; min-width: 0; }
 .auto h3 { font-size: 1.08rem; letter-spacing: -0.02em; }
 .auto p:not(.atag) { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
 .atag { font: 500 0.7rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
@@ -370,24 +370,24 @@ footer a { color: var(--muted); }
         </div>
       </section>
       <section class="chapter ruled" id="automations">
-        <h2 class="sec">It runs the rest of the store too.</h2>
+        <h2 class="sec">You tell the time, we do the automations.</h2>
         <div class="autos">
-          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Daily sales digest</h3><p>Revenue, orders, average order value and best sellers across Shopify and Amazon.</p><span class="when">every day · 8 am</span></article>
-          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Weekly profit report</h3><p>Sales minus ad spend, fees and refunds, so you know what you actually made.</p><span class="when">Mondays</span></article>
-          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Traffic &amp; conversion</h3><p>Sessions, conversion rate and where buyers drop off, against last week.</p><span class="when">every day</span></article>
-          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Abandoned carts</h3><p>Who left what in their cart, with a recovery message ready to send.</p><span class="when">every hour</span></article>
-          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Ads vs. real sales</h3><p>Meta and Google return on ad spend against real orders, with the budget change to make.</p><span class="when">every day · 11 am</span></article>
-          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Pixel health</h3><p>Checks that Meta and Google receive every purchase, and fixes tracking the day it breaks.</p><span class="when">every day</span></article>
-          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>SEO &amp; rankings</h3><p>Where you rank on Google and ChatGPT, with titles and descriptions rewritten to climb.</p><span class="when">every day · 3 pm</span></article>
-          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Price watch</h3><p>Competitor prices and who holds the Amazon Buy Box on your best sellers.</p><span class="when">every day</span></article>
-          <article class="auto"><p class="atag t-customers">Customers</p><h3>Review requests</h3><p>Asks happy buyers for a review a few days after their order arrives.</p><span class="when">after delivery</span></article>
-          <article class="auto"><p class="atag t-customers">Customers</p><h3>Review replies</h3><p>Drafts replies to new reviews and flags the bad ones before they pile up.</p><span class="when">every hour</span></article>
-          <article class="auto"><p class="atag t-customers">Customers</p><h3>Inbox triage</h3><p>Reads the store&#x27;s Gmail for customer issues, supplier delays and account warnings, and drafts replies.</p><span class="when">every hour</span></article>
-          <article class="auto"><p class="atag t-operations">Operations</p><h3>Low stock &amp; reorders</h3><p>What runs out within a week at today&#x27;s pace, with the quantity to reorder.</p><span class="when">every day · 9 am</span></article>
-          <article class="auto"><p class="atag t-operations">Operations</p><h3>Late orders</h3><p>Orders stuck unshipped or delayed in transit, before the customer writes in.</p><span class="when">twice a day</span></article>
-          <article class="auto"><p class="atag t-operations">Operations</p><h3>Returns spikes</h3><p>Flags a product when returns jump, with the reasons customers gave.</p><span class="when">every day</span></article>
-          <article class="auto"><p class="atag t-money">Money</p><h3>Chargebacks</h3><p>Spots every dispute and sends the proof before the deadline.</p><span class="when">every hour</span></article>
-          <article class="auto"><p class="atag t-money">Money</p><h3>Fees &amp; invoices</h3><p>Catches overcharged Amazon fees, duplicate invoices and refunds you&#x27;re owed.</p><span class="when">weekly</span></article>
+          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Daily sales digest</h3><p>Revenue, orders, average order value and best sellers across Shopify and Amazon.</p></article>
+          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Weekly profit report</h3><p>Sales minus ad spend, fees and refunds, so you know what you actually made.</p></article>
+          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Traffic &amp; conversion</h3><p>Sessions, conversion rate and where buyers drop off, against last week.</p></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Abandoned carts</h3><p>Who left what in their cart, with a recovery message ready to send.</p></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Ads vs. real sales</h3><p>Meta and Google return on ad spend against real orders, with the budget change to make.</p></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Pixel health</h3><p>Checks that Meta and Google receive every purchase, and fixes tracking the day it breaks.</p></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>SEO &amp; rankings</h3><p>Where you rank on Google and ChatGPT, with titles and descriptions rewritten to climb.</p></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Price watch</h3><p>Competitor prices and who holds the Amazon Buy Box on your best sellers.</p></article>
+          <article class="auto"><p class="atag t-customers">Customers</p><h3>Review requests</h3><p>Asks happy buyers for a review a few days after their order arrives.</p></article>
+          <article class="auto"><p class="atag t-customers">Customers</p><h3>Review replies</h3><p>Drafts replies to new reviews and flags the bad ones before they pile up.</p></article>
+          <article class="auto"><p class="atag t-customers">Customers</p><h3>Inbox triage</h3><p>Reads the store&#x27;s Gmail for customer issues, supplier delays and account warnings, and drafts replies.</p></article>
+          <article class="auto"><p class="atag t-operations">Operations</p><h3>Low stock &amp; reorders</h3><p>What runs out within a week at today&#x27;s pace, with the quantity to reorder.</p></article>
+          <article class="auto"><p class="atag t-operations">Operations</p><h3>Late orders</h3><p>Orders stuck unshipped or delayed in transit, before the customer writes in.</p></article>
+          <article class="auto"><p class="atag t-operations">Operations</p><h3>Returns spikes</h3><p>Flags a product when returns jump, with the reasons customers gave.</p></article>
+          <article class="auto"><p class="atag t-money">Money</p><h3>Chargebacks</h3><p>Spots every dispute and sends the proof before the deadline.</p></article>
+          <article class="auto"><p class="atag t-money">Money</p><h3>Fees &amp; invoices</h3><p>Catches overcharged Amazon fees, duplicate invoices and refunds you&#x27;re owed.</p></article>
         </div>
         <p class="cron"><code>your own</code><span class="muted">Or ask for your own: “Every Monday at 9, send me last week's profit.”</span></p>
       </section>
