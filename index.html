@@ -49,6 +49,7 @@
   --night-muted: #9fb7aa;
   --chat: #ecf0ed;
   --mine: #d6f2e2;
+  --blue: #3d6fb6;
   --sans: "Geist", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --hand: "Gochi Hand", "Comic Sans MS", "Chalkboard SE", cursive;
@@ -57,13 +58,13 @@
   :root:not([data-theme="light"]) {
     --paper: #09120d; --panel: #0f1b15; --ink: #e7f0ea; --muted: #9db0a5; --faint: #6d8075; --rule: #1d2d24;
     --accent: #6fd3a5; --tint: #12291e; --warn: #e3ad55; --warn-bg: #2b2212; --bad: #ef7a72; --bad-bg: #2c1513;
-    --chat: #17241d; --mine: #173a29; color-scheme: dark;
+    --chat: #17241d; --mine: #173a29; --blue: #8db4ea; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #09120d; --panel: #0f1b15; --ink: #e7f0ea; --muted: #9db0a5; --faint: #6d8075; --rule: #1d2d24;
   --accent: #6fd3a5; --tint: #12291e; --warn: #e3ad55; --warn-bg: #2b2212; --bad: #ef7a72; --bad-bg: #2c1513;
-  --chat: #17241d; --mine: #173a29; color-scheme: dark;
+  --chat: #17241d; --mine: #173a29; --blue: #8db4ea; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -205,18 +206,18 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 @keyframes wdot { 50% { opacity: .25; transform: translateY(-2px); } }
 @media (max-width: 900px) { .watch { grid-template-columns: minmax(0, 1fr); } .wphone { height: 600px; } }
 
-/* schedule */
-.sched { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; background: var(--panel); }
-.slot { padding: 22px; border-right: 1px solid var(--rule); display: grid; gap: 10px; align-content: start; min-width: 0; }
-.slot:last-child { border-right: 0; }
-.slot time { font: 500 1.6rem/1 var(--mono); letter-spacing: -0.04em; color: var(--accent); font-variant-numeric: tabular-nums; }
-.slot time small { font-size: 0.85rem; letter-spacing: 0; margin-left: 3px; }
-.slot h3 { font-size: 1.2rem; letter-spacing: -0.02em; }
-.slot p { color: var(--muted); font-size: 0.95rem; }
+/* automations */
+.autos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.auto { background: var(--panel); border: 1px solid var(--rule); border-radius: 14px; padding: 18px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 8px; min-width: 0; }
+.auto h3 { font-size: 1.08rem; letter-spacing: -0.02em; }
+.auto p:not(.atag) { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.atag { font: 500 0.7rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.atag.t-marketing { color: var(--warn); } .atag.t-customers { color: var(--blue); } .atag.t-operations { color: var(--muted); } .atag.t-money { color: var(--bad); }
+.auto .when { justify-self: start; margin-top: 4px; font: 500 0.75rem/1 var(--mono); color: var(--accent); background: var(--tint); padding: 5px 8px; border-radius: 6px; }
 .cron { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; padding: 14px 18px; border: 1px dashed var(--rule); border-radius: 12px; font-size: 0.95rem; }
 .cron code { font: 500 0.8rem/1 var(--mono); color: var(--accent); background: var(--tint); padding: 5px 8px; border-radius: 6px; }
-@media (max-width: 860px) { .sched { grid-template-columns: repeat(2, minmax(0, 1fr)); } .slot:nth-child(2) { border-right: 0; } .slot:nth-child(-n+2) { border-bottom: 1px solid var(--rule); } }
-@media (max-width: 480px) { .sched { grid-template-columns: minmax(0, 1fr); } .slot { border-right: 0; border-bottom: 1px solid var(--rule); } .slot:last-child { border-bottom: 0; } }
+@media (max-width: 1000px) { .autos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .autos { grid-template-columns: minmax(0, 1fr); } }
 
 /* capabilities grid */
 .caps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
@@ -353,7 +354,7 @@ footer a { color: var(--muted); }
         </div>
       </section>
       <div class="facts ruled">
-        <div><b>4</b><span class="label">check-ins a day</span></div>
+        <div><b>16</b><span class="label">ready-made automations</span></div>
         <div><b>6</b><span class="label">platforms it reads</span></div>
         <div><b>0</b><span class="label">changes without your yes</span></div>
         <div><b>$0</b><span class="label">during the beta</span></div>
@@ -380,22 +381,33 @@ footer a { color: var(--muted); }
         </div>
       </section>
 
-      <section class="chapter ruled" id="shift">
+      <section class="chapter ruled" id="automations">
         <div class="chapter-head">
-          <p class="label"><b>02</b> / the shift</p>
+          <p class="label"><b>02</b> / automations</p>
           <div>
-            <h2>Four check-ins a day. Quiet when nothing's wrong.</h2>
-            <p>Every report runs on your store's real data, in your time zone. If a check finds nothing worth your time, Femp doesn't message you.</p>
+            <h2>Set up any automation in one message.</h2>
+            <p>Pick from these or describe your own. Each one runs on your store's real data, in your time zone, and Femp only messages you when something needs you.</p>
           </div>
         </div>
-        <div class="sched">
-          <div class="slot"><time>9:00<small>am</small></time><h3>Stock check</h3><p>What's out, what runs out within a week at today's pace, and whether you're still advertising it.</p></div>
-          <div class="slot"><time>11:00<small>am</small></time><h3>Ads review</h3><p>Yesterday's Meta and Google spend against real Shopify sales, with the budget change it would make.</p></div>
-          <div class="slot"><time>3:00<small>pm</small></time><h3>Search &amp; SEO</h3><p>Your findability score plus 3 fresh ideas, researched on the web. Reply with a number to do one.</p></div>
-          <div class="slot"><time>6:00<small>pm</small></time><h3>Wrap-up</h3><p>What's waiting for you, what's still open, and the one thing most worth doing tomorrow.</p></div>
+        <div class="autos">
+          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Daily sales digest</h3><p>Revenue, orders, average order value and best sellers across Shopify and Amazon.</p><span class="when">every day · 8 am</span></article>
+          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Weekly profit report</h3><p>Sales minus ad spend, fees and refunds, so you know what you actually made.</p><span class="when">Mondays</span></article>
+          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Traffic &amp; conversion</h3><p>Sessions, conversion rate and where buyers drop off, against last week.</p><span class="when">every day</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Abandoned carts</h3><p>Who left what in their cart, with a recovery message ready to send.</p><span class="when">every hour</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Ads vs. real sales</h3><p>Meta and Google return on ad spend against real orders, with the budget change to make.</p><span class="when">every day · 11 am</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Pixel health</h3><p>Checks that Meta and Google receive every purchase, and fixes tracking the day it breaks.</p><span class="when">every day</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>SEO &amp; rankings</h3><p>Where you rank on Google and ChatGPT, with titles and descriptions rewritten to climb.</p><span class="when">every day · 3 pm</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Price watch</h3><p>Competitor prices and who holds the Amazon Buy Box on your best sellers.</p><span class="when">every day</span></article>
+          <article class="auto"><p class="atag t-customers">Customers</p><h3>Review requests</h3><p>Asks happy buyers for a review a few days after their order arrives.</p><span class="when">after delivery</span></article>
+          <article class="auto"><p class="atag t-customers">Customers</p><h3>Review replies</h3><p>Drafts replies to new reviews and flags the bad ones before they pile up.</p><span class="when">every hour</span></article>
+          <article class="auto"><p class="atag t-customers">Customers</p><h3>Inbox triage</h3><p>Reads the store&#x27;s Gmail for customer issues, supplier delays and account warnings, and drafts replies.</p><span class="when">every hour</span></article>
+          <article class="auto"><p class="atag t-operations">Operations</p><h3>Low stock &amp; reorders</h3><p>What runs out within a week at today&#x27;s pace, with the quantity to reorder.</p><span class="when">every day · 9 am</span></article>
+          <article class="auto"><p class="atag t-operations">Operations</p><h3>Late orders</h3><p>Orders stuck unshipped or delayed in transit, before the customer writes in.</p><span class="when">twice a day</span></article>
+          <article class="auto"><p class="atag t-operations">Operations</p><h3>Returns spikes</h3><p>Flags a product when returns jump, with the reasons customers gave.</p><span class="when">every day</span></article>
+          <article class="auto"><p class="atag t-money">Money</p><h3>Chargebacks</h3><p>Spots every dispute and sends the proof before the deadline.</p><span class="when">every hour</span></article>
+          <article class="auto"><p class="atag t-money">Money</p><h3>Fees &amp; invoices</h3><p>Catches overcharged Amazon fees, duplicate invoices and refunds you&#x27;re owed.</p><span class="when">weekly</span></article>
         </div>
-        <p class="cron"><code>every hour</code><span class="muted">Reads your store's Gmail for chargebacks, supplier delays, account warnings and reviews, and drafts the replies.</span></p>
-        <p class="cron"><code>your own</code><span class="muted">“Every Monday at 9, review my ads.” Say it in chat and it becomes a standing job.</span></p>
+        <p class="cron"><code>your own</code><span class="muted">“Every Monday at 9, send me last week's profit by product.” Say it in chat and it becomes a standing job.</span></p>
       </section>
 
       <section class="chapter ruled" id="skills">
