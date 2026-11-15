@@ -1,0 +1,61 @@
+<!--{"slug": "meta-pixel-missing-purchases-shopify", "order": 2, "category": "Ads", "date": "2026-11-16", "updated": "2026-11-16",
+"title": "Your Meta pixel is missing sales. Here's how to tell, and how to fix it.",
+"seo_title": "Meta Pixel Missing Purchases on Shopify? How to Fix It",
+"description": "When the pixel misses purchases, Meta optimizes on bad data and your ads look worse than they are. How to spot the gap and fix tracking on Shopify.",
+"lede": "Shopify says 64 orders. Meta says 46. The missing 18 aren't a reporting quirk: Meta's algorithm learns from the purchases it sees, so a leaky pixel quietly makes every campaign worse."}-->
+<p>Most owners notice a broken pixel the expensive way. ROAS drops, a campaign that worked last month looks like it stopped working, and the budget gets cut on ads that were selling fine. The ads didn't change. The tracking did.</p>
+
+<div class="callout tint">
+  <span class="label"><b>●</b> In short</span>
+  <ul>
+    <li>Compare <strong>Shopify orders</strong> with <strong>Meta purchase events</strong> for the same day. A small steady gap is normal. A sudden drop is a break.</li>
+    <li>The usual causes: a theme change, old code in checkout, a consent banner, or browser-only tracking.</li>
+    <li>The fix that lasts: one connection through Meta's own Shopify app, with <strong>server-side tracking</strong> (Conversions API) turned on.</li>
+  </ul>
+</div>
+
+<h2>Why a missing purchase costs you twice</h2>
+<p>First, reporting: Meta shows fewer sales than you made, so good ads look unprofitable and you cut them. Second, delivery: Meta decides who sees your ads based on the purchases it can see. Feed it two thirds of your buyers and it learns from two thirds of the signal. Campaigns take longer to exit the learning phase, and lookalike audiences are built from an incomplete list.</p>
+<p>It also breaks the check that matters most: <a href="/blog/ads-roas-against-real-sales/">ad spend against real store sales</a>. If the platform numbers are wrong, you need a second source of truth, and that's your Shopify orders.</p>
+
+<h2>Check it in five minutes</h2>
+<ol>
+  <li>In Shopify, note yesterday's online store orders. Use the same time zone as your Meta ad account.</li>
+  <li>In Meta Events Manager, open your pixel and look at <strong>Purchase</strong> events for the same day.</li>
+  <li>Compare. Some gap is normal, because some buyers block tracking or decline cookies. What you're looking for is a change: a gap that was 5% last month and is 30% this week.</li>
+  <li>Open the <strong>Diagnostics</strong> tab in Events Manager. Meta lists duplicate events, missing parameters and drops in event volume there.</li>
+  <li>Place a test order with the Meta Pixel Helper browser extension running, or use <strong>Test events</strong> in Events Manager, and confirm a Purchase arrives.</li>
+</ol>
+<p>Check the other direction too. If Meta shows <em>more</em> purchases than Shopify, the pixel is probably installed twice, for example once by an app and once in the theme, and every sale is counted double.</p>
+
+<h2>What usually breaks it</h2>
+<div class="tbl"><table>
+  <thead><tr><th>Cause</th><th>What happens</th></tr></thead>
+  <tbody>
+    <tr><td>A new or edited theme</td><td>Pixel code pasted into the old theme doesn't come along. Page views and add-to-carts vanish first.</td></tr>
+    <tr><td>Old checkout code</td><td>Shopify has been retiring <code>checkout.liquid</code> and the "additional scripts" box on the Thank you and Order status pages. Tracking pasted there stops firing once the store is upgraded.</td></tr>
+    <tr><td>Consent banners</td><td>A cookie banner that blocks tracking until consent is given, misconfigured, can block it for everyone.</td></tr>
+    <tr><td>Browser-only tracking</td><td>Ad blockers, Safari's tracking limits and iOS settings stop browser pixels from reporting. Server-side events still get through.</td></tr>
+    <tr><td>Duplicate installs</td><td>An app and the theme both send Purchase, without a shared event ID, so Meta counts every order twice.</td></tr>
+  </tbody>
+</table></div>
+
+<h2>The fix that lasts</h2>
+<ol>
+  <li><strong>Use one connection.</strong> Install Meta's Facebook &amp; Instagram app in Shopify and connect your pixel there. Remove pixel code pasted into the theme and any older tracking apps.</li>
+  <li><strong>Turn on server-side tracking.</strong> In the app's data-sharing settings, choose the highest level. That sends purchases from Shopify's servers through the Conversions API as well as from the browser, and Meta removes the duplicates.</li>
+  <li><strong>Move custom tracking to Customer events.</strong> Anything else you track at checkout belongs in Shopify's Settings → Customer events as a custom pixel, not in the theme.</li>
+  <li><strong>Check Event Match Quality.</strong> Events Manager scores how well your events match Meta accounts. Sending email and phone (hashed, which the app does for you) raises it.</li>
+  <li><strong>Do the same for Google.</strong> Connect through the Google &amp; YouTube app and turn on enhanced conversions.</li>
+</ol>
+<p>Then repeat the five-minute check after every theme change, checkout change or new app. That's when tracking breaks.</p>
+
+<h2>How Femp handles it</h2>
+<p>Every morning Femp compares the purchases Meta and Google report with the orders your Shopify store actually took. When the gap jumps, it messages you on WhatsApp with the numbers and the likely cause, the day it happens instead of after a week of bad ad decisions.</p>
+<figure class="chat">
+  <div class="chat-head"><img src="/img/icon-512.png" alt="" width="28" height="28">Femp<small>WhatsApp · 8:02 am</small></div>
+  <div class="msg">Morning! Shopify had 64 orders yesterday but Meta only counted 46. The gap was 4 last week, and it started Tuesday, the day the new theme went live. Probably the pixel code didn't move over.</div>
+  <div class="msg me">ugh. what do I do?</div>
+  <div class="msg">Connect the pixel through Meta's Shopify app and turn on server-side tracking. I'll walk you through it, it takes 5 minutes.</div>
+  <figcaption>Illustrative example.</figcaption>
+</figure>

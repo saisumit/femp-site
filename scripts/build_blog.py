@@ -62,9 +62,9 @@ FOOTER = """<footer><div class="wrap"><div class="frame ruled" style="border-bot
 </div></div></div></footer>"""
 
 CLOSER = f"""<section class="closer ruled"><div>
-  <h2>Put Femp on shift.</h2>
-  <p>Say hi on WhatsApp, connect your Shopify or Amazon store, and your first stock check arrives a few minutes later. Free while we're in beta.</p>
-  <div class="ctas"><a class="btn green" href="{WA}">Say hi on WhatsApp</a><a class="btn line" href="/#watch">See it work</a></div>
+  <h2>Get Femp first.</h2>
+  <p>Femp is the operations teammate for DTC brands on Shopify and Amazon. Join the waitlist and get $100 in free credits when we launch.</p>
+  <div class="ctas"><a class="btn green" href="/waitlist/?from=closer">Join the waitlist</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
 </div><img src="/img/icon-512.png" alt="" width="110" height="110" loading="lazy"></section>"""
 
 ORG = {"@type": "Organization", "name": "Neobrix", "url": SITE, "logo": {"@type": "ImageObject", "url": LOGO}}
@@ -406,7 +406,7 @@ def llms(posts: list[dict], pages: list[dict]) -> str:
         "Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.",
         "",
         "## Product",
-        f"- [Home]({SITE}/): what Femp does for DTC brands, a looping WhatsApp demo, 16 ready-made automations and ground rules",
+        f"- [Home]({SITE}/): what Femp does for DTC brands, a WhatsApp demo and 16 ready-made automations",
         *[f"- [{p['nav']}]({p['url']}): {p['description']}" for p in pages],
         "- [Privacy policy](https://auth.femp.ai/privacy)",
         "- [Support](https://auth.femp.ai/support)",

@@ -26,7 +26,7 @@ Femp is an AI operations assistant for Shopify and Amazon brands. It watches the
 
 ## Stock: days of cover, not just counts
 
-Femp reads live inventory from Shopify and Amazon FBA and works out how many days each product lasts at its current pace. You set your own alert limits. The 9:00 am stock check lists what's out, what runs out within a week, and whether you're still paying for ads on something that's about to sell out.
+Femp reads live inventory from Shopify and Amazon FBA and works out how many days each product lasts at its current pace. You set your own alert limits. A daily stock automation lists what's out, what runs out within a week, and whether you're still paying for ads on something that's about to sell out.
 
 Why days of cover matters: "40 left" sounds fine until you sell nine a day. Read more in Days of cover: the stock number that stops your best seller selling out.
 
@@ -52,9 +52,9 @@ On disputes: Shopify chargebacks: how to answer every dispute before the deadlin
 
 Ask in plain words: sales by day or week, new versus repeat buyers, best sellers, where orders came from, and what's still waiting to ship. Femp answers from your connected data and suggests a next step. It reads buyers' order history, not their names, emails or addresses.
 
-## Daily check-ins and standing jobs
+## Automations you set up in one message
 
-Femp runs four check-ins a day in your time zone (stock at 9:00 am, ads at 11:00 am, search and SEO at 3:00 pm, a wrap-up at 6:00 pm) and stays quiet when nothing is wrong. You can add your own standing job by saying it in chat, for example "every Monday at 9, review my ads". See how it works.
+Tell Femp what to watch and when, and it becomes an automation that runs in your time zone: "every morning at 9, check stock", "tell me if my pixel misses sales", "every Monday, send me last week's profit". Start from ready-made automations or describe your own. Femp stays quiet when nothing is wrong. See how it works.
 
 ## Team and memory
 
@@ -66,7 +66,7 @@ Add a teammate and they chat with Femp from their own WhatsApp: the person who p
 
 URL: https://femp.ai/how-it-works/
 
-Femp lives where you already are: WhatsApp, or the Femp app. Setup takes a few minutes, and after that it works a shift every day.
+Femp lives where you already are: WhatsApp, or the Femp app. Setup takes a few minutes. Then you tell it what to automate.
 
 ## 1. Say hi on WhatsApp
 
@@ -80,29 +80,33 @@ Each connection uses the platform's official sign-in and consent screen: Shopify
 
 As soon as your store is connected, Femp runs a stock check and sends what's out, what's running low and how many days each product has left.
 
-## 4. Femp works a shift every day
+## 4. Set up your automations
 
- When | Check | What you get | 
+Tell Femp what to watch and when, in your own words. Pick from ready-made automations or describe your own:
 
- 9:00 am | Stock check | What's out, what runs out within a week at today's pace, and whether it's still advertised | 
+ You say | What you get | 
 
- 11:00 am | Ads review | Yesterday's Meta and Google spend against real Shopify sales, with the budget change it would make | 
+ "Every morning at 9, check stock" | What's out, what runs out within a week at today's pace, and whether it's still advertised | 
 
- 3:00 pm | Search and SEO | Your findability score plus three fresh ideas researched on the web. Reply with a number to do one | 
+ "Review my ads every day before lunch" | Yesterday's Meta and Google spend against real Shopify sales, with the budget change to make | 
 
- 6:00 pm | Wrap-up | What's waiting for you, what's still open, and the one thing most worth doing tomorrow | 
+ "Tell me if my pixel misses sales" | A message the day Meta or Google stop counting purchases your store took | 
 
- Every hour | Inbox | Chargebacks, supplier delays, account warnings and reviews from your store's Gmail, with replies drafted | 
+ "Watch my Google and ChatGPT rankings" | Where you rank, what slipped, and the pages to rewrite | 
 
-Every report runs on your store's real data, in your time zone. If a check finds nothing worth your time, Femp doesn't message you.
+ "Check the inbox every hour" | Chargebacks, supplier delays, account warnings and reviews from your store's Gmail, with replies drafted | 
 
-## 5. You say yes, Femp does it
+ "Every Monday, send me last week's profit" | Sales minus ad spend, fees and refunds, by product | 
 
-When Femp suggests a change it can make, such as a better product title or a blog post, it shows you exactly what will change and waits. Reply yes and it's done; every edit can be undone. Femp never touches your prices, stock or checkout, and never edits your ads.
+Every automation runs on your store's real data, in your time zone. Change or stop one any time by saying so. If it finds nothing worth your time, Femp doesn't message you.
+
+## 5. Talk it through, then Femp does it
+
+When Femp finds something, it explains it in plain words and suggests what to do, like a teammate would. Ask questions, push back or change the plan; once you give the go-ahead, it handles it and tells you when it's done. Edits can be undone, and Femp never touches your prices, stock or checkout.
 
 ## 6. Ask anything, any time
 
-Between check-ins, ask Femp about the store in plain words: "how many orders today?", "which ads lost money last week?", "what's still to ship?". Say "every Monday at 9, review my ads" and it becomes a standing job. Teammates you add can ask too, from their own WhatsApp.
+Ask Femp about the store in plain words whenever you want: "how many orders today?", "which ads lost money last week?", "what's still to ship?". Teammates you add can ask too, from their own WhatsApp.
 
 ---
 
@@ -158,13 +162,13 @@ More channels and marketplaces are planned. If you need one, say so on WhatsApp 
 
 URL: https://femp.ai/pricing/
 
-Femp is free while we're in beta. You get everything: every check-in, every connection and every feature.
+Femp is free while we're in beta. You get everything: every automation, every connection and every feature.
 
 ● Beta plan · $0
 
- - Four daily check-ins: stock, ads, search and SEO, wrap-up
+ - Automations for sales, ads, pixel health, SEO, stock and chargebacks, on your schedule
 
- - Hourly inbox checks with drafted replies
+ - Inbox checks with drafted replies
 
  - Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail
 
@@ -172,7 +176,7 @@ Femp is free while we're in beta. You get everything: every check-in, every conn
 
  - Teammates on their own WhatsApp
 
- - Your own standing jobs, such as "every Monday at 9, review my ads"
+ - Your own automations, such as "every Monday, send me last week's profit"
 
 ## What happens after the beta?
 
@@ -262,7 +266,7 @@ Say hi on WhatsApp, open the link Femp sends, and connect your store. Your first
 
 ## What reports does Femp send?
 
-Four check-ins a day in your time zone: stock at 9:00 am, ads at 11:00 am, search and SEO at 3:00 pm, and a wrap-up at 6:00 pm, plus an hourly inbox check. If nothing needs you, Femp stays quiet. You can add your own standing jobs by asking in chat.
+The ones you set up. Tell Femp what to watch and when, such as "check stock every morning at 9" or "every Monday, send me last week's profit", and it runs that automation in your time zone. Start from ready-made automations for sales, ads, pixel health, SEO, stock, chargebacks and the inbox, or describe your own. If nothing needs you, Femp stays quiet.
 
 ## Does Femp help my products show up in ChatGPT and Google?
 
@@ -290,7 +294,7 @@ Femp is made by Neobrix. Contact support@femp.ai.
 
 ---
 
-# What an AI operations assistant can do for a DTC brand
+# 47 ops jobs you can hand to an AI assistant, and the ones you shouldn't
 
 URL: https://femp.ai/blog/ai-operations-assistant-for-dtc-brands/
 
@@ -324,7 +328,7 @@ A morning message with yesterday's numbers and the three or four decisions that 
 
  Done. I'll tell you when the bank decides.
 
- Illustrative example of a Femp check-in.
+ Illustrative example of a Femp stock automation.
 
 ## 1. Growth: money on the table
 
@@ -400,13 +404,391 @@ Femp is our take on this. Today it covers the jobs owners ask about most:
 
  Inbox | Reads the store's Gmail hourly for chargebacks, supplier delays, account warnings and reviews, and drafts replies. | 
 
- Automations | "Every Monday at 9, review my ads" becomes a standing job. | 
+ Automations | Set up any automation in one message: "every Monday, send me last week's profit". | 
 
 The money-recovery and compliance jobs above are on our roadmap, in roughly the order the money shows up. If one of them would change your week, tell us; that is how we decide what comes next.
 
 ---
 
-# Days of cover: the stock number that stops your best seller selling out
+# Your Meta pixel is missing sales. Here's how to tell, and how to fix it.
+
+URL: https://femp.ai/blog/meta-pixel-missing-purchases-shopify/
+
+Shopify says 64 orders. Meta says 46. The missing 18 aren't a reporting quirk: Meta's algorithm learns from the purchases it sees, so a leaky pixel quietly makes every campaign worse.
+
+Most owners notice a broken pixel the expensive way. ROAS drops, a campaign that worked last month looks like it stopped working, and the budget gets cut on ads that were selling fine. The ads didn't change. The tracking did.
+
+ ● In short
+
+ - Compare Shopify orders with Meta purchase events for the same day. A small steady gap is normal. A sudden drop is a break.
+
+ - The usual causes: a theme change, old code in checkout, a consent banner, or browser-only tracking.
+
+ - The fix that lasts: one connection through Meta's own Shopify app, with server-side tracking (Conversions API) turned on.
+
+## Why a missing purchase costs you twice
+
+First, reporting: Meta shows fewer sales than you made, so good ads look unprofitable and you cut them. Second, delivery: Meta decides who sees your ads based on the purchases it can see. Feed it two thirds of your buyers and it learns from two thirds of the signal. Campaigns take longer to exit the learning phase, and lookalike audiences are built from an incomplete list.
+
+It also breaks the check that matters most: ad spend against real store sales. If the platform numbers are wrong, you need a second source of truth, and that's your Shopify orders.
+
+## Check it in five minutes
+
+ - In Shopify, note yesterday's online store orders. Use the same time zone as your Meta ad account.
+
+ - In Meta Events Manager, open your pixel and look at Purchase events for the same day.
+
+ - Compare. Some gap is normal, because some buyers block tracking or decline cookies. What you're looking for is a change: a gap that was 5% last month and is 30% this week.
+
+ - Open the Diagnostics tab in Events Manager. Meta lists duplicate events, missing parameters and drops in event volume there.
+
+ - Place a test order with the Meta Pixel Helper browser extension running, or use Test events in Events Manager, and confirm a Purchase arrives.
+
+Check the other direction too. If Meta shows more purchases than Shopify, the pixel is probably installed twice, for example once by an app and once in the theme, and every sale is counted double.
+
+## What usually breaks it
+
+ Cause | What happens | 
+
+ A new or edited theme | Pixel code pasted into the old theme doesn't come along. Page views and add-to-carts vanish first. | 
+
+ Old checkout code | Shopify has been retiring checkout.liquid and the "additional scripts" box on the Thank you and Order status pages. Tracking pasted there stops firing once the store is upgraded. | 
+
+ Consent banners | A cookie banner that blocks tracking until consent is given, misconfigured, can block it for everyone. | 
+
+ Browser-only tracking | Ad blockers, Safari's tracking limits and iOS settings stop browser pixels from reporting. Server-side events still get through. | 
+
+ Duplicate installs | An app and the theme both send Purchase, without a shared event ID, so Meta counts every order twice. | 
+
+## The fix that lasts
+
+ - Use one connection. Install Meta's Facebook & Instagram app in Shopify and connect your pixel there. Remove pixel code pasted into the theme and any older tracking apps.
+
+ - Turn on server-side tracking. In the app's data-sharing settings, choose the highest level. That sends purchases from Shopify's servers through the Conversions API as well as from the browser, and Meta removes the duplicates.
+
+ - Move custom tracking to Customer events. Anything else you track at checkout belongs in Shopify's Settings → Customer events as a custom pixel, not in the theme.
+
+ - Check Event Match Quality. Events Manager scores how well your events match Meta accounts. Sending email and phone (hashed, which the app does for you) raises it.
+
+ - Do the same for Google. Connect through the Google & YouTube app and turn on enhanced conversions.
+
+Then repeat the five-minute check after every theme change, checkout change or new app. That's when tracking breaks.
+
+## How Femp handles it
+
+Every morning Femp compares the purchases Meta and Google report with the orders your Shopify store actually took. When the gap jumps, it messages you on WhatsApp with the numbers and the likely cause, the day it happens instead of after a week of bad ad decisions.
+
+ FempWhatsApp · 8:02 am
+
+ Morning! Shopify had 64 orders yesterday but Meta only counted 46. The gap was 4 last week, and it started Tuesday, the day the new theme went live. Probably the pixel code didn't move over.
+
+ ugh. what do I do?
+
+ Connect the pixel through Meta's Shopify app and turn on server-side tracking. I'll walk you through it, it takes 5 minutes.
+
+ Illustrative example.
+
+---
+
+# Your ads say they're profitable. Your store disagrees.
+
+URL: https://femp.ai/blog/ads-roas-against-real-sales/
+
+Meta says 3.4×. Google says 2.9×. Add up the sales they both claim and you sold more than your store took in. Here's a simple daily check that keeps ad spend honest.
+
+For most DTC brands, ads are the largest variable cost after the products themselves. They're also the cost most likely to be overstated by the tool reporting it. Meta and Google each attribute sales to their own ads with their own windows and models, so the same order can show up in both reports. Neither knows what your store actually took in.
+
+You don't need a full attribution platform to catch the expensive mistakes. You need a daily check of spend against real sales, and a rule for what to do when it looks wrong.
+
+ ● In short
+
+ - Track blended ROAS (store revenue ÷ total ad spend) or MER every day. It can't double count.
+
+ - For each ad set or campaign, compare spend with the sales of the products it promotes.
+
+ - Set a floor (for example ROAS under 1.0 for three days) and a rule: cut, pause or move budget.
+
+## Platform ROAS versus blended ROAS
+
+Platform ROAS is what Ads Manager shows: revenue the platform attributes to its ads, divided by spend. Useful for comparing ads on the same platform, unreliable as a total.
+
+Blended ROAS, sometimes called MER (marketing efficiency ratio), is all store revenue for the day divided by all ad spend. It's crude, but it's real money on both sides of the line.
+
+blended ROAS = store revenue ÷ (Meta + Google + other ad spend)
+
+Watch the trend. If spend rises 30% and blended ROAS falls from 3.1 to 2.2, the extra spend isn't buying much, whatever each platform says.
+
+## Find the ad sets losing money
+
+Blended numbers hide the culprit. To find it, line up each campaign or ad set with the products it promotes and their sales in Shopify:
+
+ Ad set | Spend yesterday | Product sales | Ratio | 
+
+ Lip Oil prospecting | $60 | $192 | 3.2× | 
+
+ Clay Mask prospecting | $45 | $27 | 0.6× | 
+
+ Retargeting | $30 | $57 | 1.9× | 
+
+This isn't perfect attribution, and it doesn't need to be. Clay Mask spent $45 to sell $27 of product. Even with generous assumptions, that ad set is losing money.
+
+## Know your break-even ROAS
+
+A ratio of 1.0 means you got your ad spend back in revenue, not profit. To break even on a sale you also need to cover the product, shipping, payment fees and returns:
+
+break-even ROAS = 1 ÷ contribution margin before ads
+
+If a product keeps 50% of its price after goods, shipping and fees, you need 2.0× just to break even on the first order. Repeat purchases can justify going lower for new customers, but decide that on purpose.
+
+## A daily rule that stops slow leaks
+
+ - Every morning, check yesterday's spend by campaign against product sales.
+
+ - Flag anything under break-even for three days in a row. One bad day is noise.
+
+ - Check stock before you scale a winner. Doubling the budget on an item with four days of cover just buys a stock-out (see days of cover).
+
+ - Look for broken basics: a disapproved ad, a pixel that stopped firing, a landing page that's out of stock.
+
+ - Decide: cut, pause, or move the budget to what's working.
+
+## How Femp handles it
+
+Set up an ads automation ("review my ads every morning") and Femp compares yesterday's Meta and Google spend with what actually sold in your Shopify store, and tells you which ad sets are losing money with the change it would make. Femp's ads access is read-only: it never edits your campaigns. You make the change in Ads Manager, and it checks again the next day.
+
+ FempWhatsApp · 11:00 am
+
+ Ads review: Clay Mask ads spent $45 yesterday and sold $27 (0.6×), the third day under 1×. Lip Oil is at 3.2× but has 4 days of stock. Cutting Clay Mask to $15 would save about $30 a day.
+
+ ok, cutting it now
+
+ Thanks. I'll check it again tomorrow.
+
+ Illustrative example.
+
+---
+
+# 7 out of 10 carts never check out. Here's how to win some back.
+
+URL: https://femp.ai/blog/shopify-abandoned-carts-recover-sales/
+
+Most people who add to cart never pay. Some were only browsing. Plenty left over something you can fix: a surprise shipping cost, a forced account, a checkout that asked too much.
+
+Baymard Institute's running average of published studies puts online cart abandonment at about 70%. You won't get that to zero, and you shouldn't try: many carts are window shopping. But the buyers who reached checkout and stopped are the warmest people your store will ever see, and you already paid to bring them there.
+
+ ● In short
+
+ - Fix the reasons first. Surprise costs at checkout are the top reason buyers leave.
+
+ - Then recover: a reminder within an hour, a second the next day, and a discount only at the end, if at all.
+
+ - Watch which products get abandoned most. A pattern there is a price or shipping problem.
+
+## Abandoned cart or abandoned checkout?
+
+They're different in Shopify. A cart is anyone who added a product. A checkout is someone who started paying and typed an email or phone number. Shopify can only follow up on the second kind, and lists them under Orders → Abandoned checkouts. Reaching people who left from the cart page needs a logged-in customer or a marketing app that captures their email earlier.
+
+## Why buyers leave
+
+Baymard's surveys of shoppers who abandoned a checkout keep finding the same reasons near the top:
+
+ - Extra costs. Shipping, taxes or fees that appear only at checkout. This is the top reason by a wide margin.
+
+ - Being asked to create an account.
+
+ - Delivery too slow, or no delivery date shown.
+
+ - Not trusting the site with card details.
+
+ - A long or confusing checkout.
+
+ - An unclear returns policy.
+
+## Fix the checkout first
+
+ - Show shipping early. Put the cost, or the free-shipping threshold, on the product page and in the cart.
+
+ - Allow guest checkout. In Shopify's customer account settings, keep accounts optional.
+
+ - Turn on express payments. Shop Pay, Apple Pay, Google Pay and PayPal skip most of the form.
+
+ - Show a delivery estimate on the product page, not only at the end.
+
+ - Put the returns policy and reviews near the Add to cart button.
+
+## A recovery sequence that doesn't nag
+
+ When | What to send | 
+
+ Within 1 hour | A plain reminder with the product photo and a link back to their checkout. No discount. | 
+
+ About 24 hours | Answer the likely objection: delivery time, returns, reviews from other buyers. | 
+
+ 48–72 hours | Optional: a small incentive, ideally only for first-time buyers, so regulars don't learn to wait for a code. | 
+
+Shopify's Marketing → Automations has an abandoned checkout flow you can edit. Only send SMS to people who agreed to texts at checkout; see the SMS consent rules in our compliance calendar.
+
+## Measure it weekly
+
+ - Recovery rate: recovered orders divided by abandoned checkouts that left an email or phone.
+
+ - Abandoned by product: one product abandoned far more than others usually means its shipping cost or price looks wrong at checkout.
+
+ - Abandoned by step: buyers leaving at shipping point to cost. Leaving at payment points to trust or payment options.
+
+## How Femp handles it
+
+Abandoned-cart reports are coming to Femp: a daily look at which products and checkout steps lose buyers, with the recovery message ready for you to send. Join the waitlist to get it first, with $100 in free credits.
+
+---
+
+# Most chargebacks are lost to a buried email. Here's how to win them.
+
+URL: https://femp.ai/blog/shopify-chargebacks-answer-every-dispute/
+
+A chargeback you don't answer is a chargeback you lose: the order, the product and a fee. Most small brands lose them not because the case was weak, but because the email got buried.
+
+When a customer disputes a charge with their bank, the money is taken back from your payout right away, and you're charged a dispute fee (on Shopify Payments in the US it's $15). You then have a fixed window to respond with evidence. Miss it and the dispute is decided against you automatically.
+
+Industry estimates put the average merchant win rate around 30%, and lower for manual, rushed responses. Plenty of disputes are winnable: the package was delivered, the customer used the product, or they forgot they bought it. What loses them is time.
+
+ ● In short
+
+ - Answer every dispute. Unanswered ones are automatic losses.
+
+ - Match your evidence to the reason code: delivery proof for "not received", product page and policy for "not as described".
+
+ - Watch your dispute ratio. Visa and Mastercard monitoring programs start at roughly 1% of transactions, and fines follow.
+
+## Where disputes show up
+
+In Shopify admin under Orders → Chargebacks, and by email to the store owner. The email is the problem: it lands next to supplier invoices, app notifications and customer messages, and the deadline is in the body, not the subject line. Put every new dispute on a list with its due date the day it arrives.
+
+## Evidence that wins, by reason
+
+ Reason | What to include | 
+
+ Product not received | Tracking showing delivery to the shipping address, delivery date, signature or photo if you have it, matching billing and shipping details. | 
+
+ Not as described | Screenshot of the product page at time of purchase, your return policy, and any messages where you offered a return or replacement. | 
+
+ Fraudulent / unauthorized | AVS and CVV match, IP location, the customer's order history with you, account login, and any emails they sent after ordering. | 
+
+ Subscription canceled | Sign-up terms they agreed to, renewal reminders sent, and proof no cancellation request came in before the charge. | 
+
+ Duplicate / incorrect amount | Both orders showing different items or dates, or the receipt matching the amount charged. | 
+
+Write a short, factual cover note: what was ordered, when it was delivered, what the customer said afterwards. The person reviewing it at the bank has a few minutes per case.
+
+## Prevent the next one
+
+ - Use a recognizable descriptor on card statements, so customers don't dispute a charge they don't recognize.
+
+ - Answer "where is my order?" fast. Many "not received" disputes start as an unanswered support email.
+
+ - Add signature confirmation on high-value orders.
+
+ - Review risky orders before shipping: mismatched billing and shipping, or customers who've disputed before.
+
+ - Offer an easy refund. A refund costs less than a lost dispute plus the fee.
+
+## Keep an eye on the ratio
+
+Card networks track disputes as a share of your transactions. Cross their thresholds and you enter a monitoring program with fines, and your payment provider may hold funds or close the account. A small brand with a bad month can get close quickly. Check your rate monthly.
+
+## How Femp handles it
+
+Femp reads your store's Gmail every hour. When a dispute arrives, it messages you with the order, the amount and the due date, pulls the tracking and order history, and drafts the response for you to review and send.
+
+ FempWhatsApp · 2:14 pm
+
+ Chargeback on order #1043 ($96), reason "not received". The reply is due in 5 days. UPS shows it delivered to the shipping address on the 3rd. I drafted the response with the tracking proof. Want to see it?
+
+ send me the draft
+
+ Illustrative example.
+
+---
+
+# Why ChatGPT doesn't recommend your products, and how to fix it
+
+URL: https://femp.ai/blog/products-found-google-chatgpt/
+
+Shoppers used to type "rose serum" into Google. Now many of them ask an AI assistant "what's a good rose serum for dry skin under $50?" If your product isn't in the answer, it isn't on the shelf.
+
+Search is splitting in two. Classic Google results still send most of the traffic, but a growing share of product research starts in AI assistants: ChatGPT shows product cards with prices and links, Perplexity has shopping answers, and Google puts AI Overviews above the blue links. They all pull from the same places: your product pages, your structured data, merchant feeds, and what other sites say about you.
+
+The good news for small brands: these answers reward clear, specific information more than a big ad budget. A well-described product from a small store can be the best answer to a narrow question.
+
+ ● In short
+
+ - Write titles and descriptions that answer who it's for, what it does and how it differs, using the words shoppers use.
+
+ - Give machines clean data: Product structured data, a Google Merchant Center feed, GTINs, price and availability.
+
+ - Get mentioned elsewhere: reviews, comparison articles and "best of" lists are where AI answers find you.
+
+## Test where you stand
+
+Pick five questions a customer would actually ask, specific ones like "best fragrance-free lip oil for sensitive skin" rather than your brand name. Then check:
+
+ - Google: do you appear on the first page, in Shopping results or in the AI Overview?
+
+ - ChatGPT and Perplexity: does the answer mention your brand or link to your product?
+
+ - Amazon and other marketplaces: where do you rank for the same words?
+
+Write the results down. Re-run the same questions monthly. It's the simplest findability score there is.
+
+## Product titles that match questions
+
+"Aurora" tells a shopper and a model nothing. "Aurora Rose Face Serum for Dry Skin, 30 ml, Fragrance-Free" answers four questions at once. Lead with what the product is, then the attribute people filter on (skin type, size, material, use). Keep the brand voice in the description, not the title.
+
+## Descriptions that answer, not just sell
+
+ - Open with one plain sentence: what it is and who it's for.
+
+ - List the facts a comparison needs: ingredients or materials, size, how to use, what it's not suited for.
+
+ - Add a short FAQ with real customer questions from your inbox and reviews.
+
+ - Write image alt text that describes the product, not "IMG_2041".
+
+## Give machines clean data
+
+ - Product structured data. Most Shopify themes output it; check with Google's Rich Results Test that price, availability, brand and reviews are present.
+
+ - Google Merchant Center. Connect it through the Google & YouTube app on Shopify to appear in free Shopping listings. Fix disapprovals promptly.
+
+ - GTINs and consistent names across Shopify, Amazon and your feed, so systems can tell it's the same product.
+
+ - Don't block crawlers you want. If your robots.txt or a security tool blocks OAI-SearchBot, PerplexityBot or Googlebot, those engines can't read your pages.
+
+## Be talked about
+
+AI answers lean heavily on third-party sources: review sites, Reddit threads, gift guides and comparison articles. A few honest mentions on sites that already rank for your category do more than a dozen posts on your own blog. Send product to writers who cover your niche, and reply to reviews so there's a visible record.
+
+## Publish content that answers buying questions
+
+A blog post that answers "how to choose a face serum for dry skin" with a clear recommendation is the kind of page that gets cited. Write for the question, not for a keyword count, and link to the products that answer it.
+
+## How Femp handles it
+
+With a search automation, Femp gives your store a findability score from 0 to 100 across Google, marketplaces and AI assistants, plus three fresh ideas researched on the web. Reply with a number and it does the work: rewrites product titles, descriptions and image alt text, or drafts a blog post. Nothing changes until you say yes, and every edit can be undone.
+
+ FempWhatsApp · 3:00 pm
+
+ Findability 32/100. "Rose serum for dry skin" finds two competitors in ChatGPT and on Google, not you. Ideas: 1) rewrite 3 serum titles with skin type and size, 2) add a 5-question FAQ to the serum page, 3) draft a post: "choosing a serum for dry skin".
+
+ 1
+
+ Done. 3 titles updated. Say "undo" any time.
+
+ Illustrative example.
+
+---
+
+# Your best seller is about to sell out. This number warns you first.
 
 URL: https://femp.ai/blog/days-of-cover-inventory/
 
@@ -478,7 +860,7 @@ The quietest stock-out cost is ad spend. When an item hits zero, or gets close e
 
 ## How Femp handles it
 
-Femp reads live stock from Shopify and Amazon FBA and works out days of cover at the current pace. Its 9 am stock check tells you what's out, what runs out within a week, and whether you're still advertising it. You can set your own limits ("warn me under 10 days for the serum") and ask any time: "what's running low?"
+Femp reads live stock from Shopify and Amazon FBA and works out days of cover at the current pace. With a daily stock automation, it tells you what's out, what runs out within a week, and whether you're still advertising it. You can set your own limits ("warn me under 10 days for the serum") and ask any time: "what's running low?"
 
  FempWhatsApp · 9:00 am
 
@@ -490,231 +872,7 @@ Femp reads live stock from Shopify and Amazon FBA and works out days of cover at
 
 ---
 
-# Are your ads making money? Check ROAS against real store sales
-
-URL: https://femp.ai/blog/ads-roas-against-real-sales/
-
-Meta says 3.4×. Google says 2.9×. Add up the sales they both claim and you sold more than your store took in. Here's a simple daily check that keeps ad spend honest.
-
-For most DTC brands, ads are the largest variable cost after the products themselves. They're also the cost most likely to be overstated by the tool reporting it. Meta and Google each attribute sales to their own ads with their own windows and models, so the same order can show up in both reports. Neither knows what your store actually took in.
-
-You don't need a full attribution platform to catch the expensive mistakes. You need a daily check of spend against real sales, and a rule for what to do when it looks wrong.
-
- ● In short
-
- - Track blended ROAS (store revenue ÷ total ad spend) or MER every day. It can't double count.
-
- - For each ad set or campaign, compare spend with the sales of the products it promotes.
-
- - Set a floor (for example ROAS under 1.0 for three days) and a rule: cut, pause or move budget.
-
-## Platform ROAS versus blended ROAS
-
-Platform ROAS is what Ads Manager shows: revenue the platform attributes to its ads, divided by spend. Useful for comparing ads on the same platform, unreliable as a total.
-
-Blended ROAS, sometimes called MER (marketing efficiency ratio), is all store revenue for the day divided by all ad spend. It's crude, but it's real money on both sides of the line.
-
-blended ROAS = store revenue ÷ (Meta + Google + other ad spend)
-
-Watch the trend. If spend rises 30% and blended ROAS falls from 3.1 to 2.2, the extra spend isn't buying much, whatever each platform says.
-
-## Find the ad sets losing money
-
-Blended numbers hide the culprit. To find it, line up each campaign or ad set with the products it promotes and their sales in Shopify:
-
- Ad set | Spend yesterday | Product sales | Ratio | 
-
- Lip Oil prospecting | $60 | $192 | 3.2× | 
-
- Clay Mask prospecting | $45 | $27 | 0.6× | 
-
- Retargeting | $30 | $57 | 1.9× | 
-
-This isn't perfect attribution, and it doesn't need to be. Clay Mask spent $45 to sell $27 of product. Even with generous assumptions, that ad set is losing money.
-
-## Know your break-even ROAS
-
-A ratio of 1.0 means you got your ad spend back in revenue, not profit. To break even on a sale you also need to cover the product, shipping, payment fees and returns:
-
-break-even ROAS = 1 ÷ contribution margin before ads
-
-If a product keeps 50% of its price after goods, shipping and fees, you need 2.0× just to break even on the first order. Repeat purchases can justify going lower for new customers, but decide that on purpose.
-
-## A daily rule that stops slow leaks
-
- - Every morning, check yesterday's spend by campaign against product sales.
-
- - Flag anything under break-even for three days in a row. One bad day is noise.
-
- - Check stock before you scale a winner. Doubling the budget on an item with four days of cover just buys a stock-out (see days of cover).
-
- - Look for broken basics: a disapproved ad, a pixel that stopped firing, a landing page that's out of stock.
-
- - Decide: cut, pause, or move the budget to what's working.
-
-## How Femp handles it
-
-Femp's 11 am ads review compares yesterday's Meta and Google spend with what actually sold in your Shopify store, and tells you which ad sets are losing money with the change it would make. Femp's ads access is read-only: it never edits your campaigns. You make the change in Ads Manager, and it checks again the next day.
-
- FempWhatsApp · 11:00 am
-
- Ads review: Clay Mask ads spent $45 yesterday and sold $27 (0.6×), the third day under 1×. Lip Oil is at 3.2× but has 4 days of stock. Cutting Clay Mask to $15 would save about $30 a day.
-
- ok, cutting it now
-
- Thanks. I'll check it again tomorrow.
-
- Illustrative example.
-
----
-
-# Shopify chargebacks: how to answer every dispute before the deadline
-
-URL: https://femp.ai/blog/shopify-chargebacks-answer-every-dispute/
-
-A chargeback you don't answer is a chargeback you lose: the order, the product and a fee. Most small brands lose them not because the case was weak, but because the email got buried.
-
-When a customer disputes a charge with their bank, the money is taken back from your payout right away, and you're charged a dispute fee (on Shopify Payments in the US it's $15). You then have a fixed window to respond with evidence. Miss it and the dispute is decided against you automatically.
-
-Industry estimates put the average merchant win rate around 30%, and lower for manual, rushed responses. Plenty of disputes are winnable: the package was delivered, the customer used the product, or they forgot they bought it. What loses them is time.
-
- ● In short
-
- - Answer every dispute. Unanswered ones are automatic losses.
-
- - Match your evidence to the reason code: delivery proof for "not received", product page and policy for "not as described".
-
- - Watch your dispute ratio. Visa and Mastercard monitoring programs start at roughly 1% of transactions, and fines follow.
-
-## Where disputes show up
-
-In Shopify admin under Orders → Chargebacks, and by email to the store owner. The email is the problem: it lands next to supplier invoices, app notifications and customer messages, and the deadline is in the body, not the subject line. Put every new dispute on a list with its due date the day it arrives.
-
-## Evidence that wins, by reason
-
- Reason | What to include | 
-
- Product not received | Tracking showing delivery to the shipping address, delivery date, signature or photo if you have it, matching billing and shipping details. | 
-
- Not as described | Screenshot of the product page at time of purchase, your return policy, and any messages where you offered a return or replacement. | 
-
- Fraudulent / unauthorized | AVS and CVV match, IP location, the customer's order history with you, account login, and any emails they sent after ordering. | 
-
- Subscription canceled | Sign-up terms they agreed to, renewal reminders sent, and proof no cancellation request came in before the charge. | 
-
- Duplicate / incorrect amount | Both orders showing different items or dates, or the receipt matching the amount charged. | 
-
-Write a short, factual cover note: what was ordered, when it was delivered, what the customer said afterwards. The person reviewing it at the bank has a few minutes per case.
-
-## Prevent the next one
-
- - Use a recognizable descriptor on card statements, so customers don't dispute a charge they don't recognize.
-
- - Answer "where is my order?" fast. Many "not received" disputes start as an unanswered support email.
-
- - Add signature confirmation on high-value orders.
-
- - Review risky orders before shipping: mismatched billing and shipping, or customers who've disputed before.
-
- - Offer an easy refund. A refund costs less than a lost dispute plus the fee.
-
-## Keep an eye on the ratio
-
-Card networks track disputes as a share of your transactions. Cross their thresholds and you enter a monitoring program with fines, and your payment provider may hold funds or close the account. A small brand with a bad month can get close quickly. Check your rate monthly.
-
-## How Femp handles it
-
-Femp reads your store's Gmail every hour. When a dispute arrives, it messages you with the order, the amount and the due date, pulls the tracking and order history, and drafts the response for you to review and send.
-
- FempWhatsApp · 2:14 pm
-
- Chargeback on order #1043 ($96), reason "not received". The reply is due in 5 days. UPS shows it delivered to the shipping address on the 3rd. I drafted the response with the tracking proof. Want to see it?
-
- send me the draft
-
- Illustrative example.
-
----
-
-# How to get your products found on Google and in ChatGPT
-
-URL: https://femp.ai/blog/products-found-google-chatgpt/
-
-Shoppers used to type "rose serum" into Google. Now many of them ask an AI assistant "what's a good rose serum for dry skin under $50?" If your product isn't in the answer, it isn't on the shelf.
-
-Search is splitting in two. Classic Google results still send most of the traffic, but a growing share of product research starts in AI assistants: ChatGPT shows product cards with prices and links, Perplexity has shopping answers, and Google puts AI Overviews above the blue links. They all pull from the same places: your product pages, your structured data, merchant feeds, and what other sites say about you.
-
-The good news for small brands: these answers reward clear, specific information more than a big ad budget. A well-described product from a small store can be the best answer to a narrow question.
-
- ● In short
-
- - Write titles and descriptions that answer who it's for, what it does and how it differs, using the words shoppers use.
-
- - Give machines clean data: Product structured data, a Google Merchant Center feed, GTINs, price and availability.
-
- - Get mentioned elsewhere: reviews, comparison articles and "best of" lists are where AI answers find you.
-
-## Test where you stand
-
-Pick five questions a customer would actually ask, specific ones like "best fragrance-free lip oil for sensitive skin" rather than your brand name. Then check:
-
- - Google: do you appear on the first page, in Shopping results or in the AI Overview?
-
- - ChatGPT and Perplexity: does the answer mention your brand or link to your product?
-
- - Amazon and other marketplaces: where do you rank for the same words?
-
-Write the results down. Re-run the same questions monthly. It's the simplest findability score there is.
-
-## Product titles that match questions
-
-"Aurora" tells a shopper and a model nothing. "Aurora Rose Face Serum for Dry Skin, 30 ml, Fragrance-Free" answers four questions at once. Lead with what the product is, then the attribute people filter on (skin type, size, material, use). Keep the brand voice in the description, not the title.
-
-## Descriptions that answer, not just sell
-
- - Open with one plain sentence: what it is and who it's for.
-
- - List the facts a comparison needs: ingredients or materials, size, how to use, what it's not suited for.
-
- - Add a short FAQ with real customer questions from your inbox and reviews.
-
- - Write image alt text that describes the product, not "IMG_2041".
-
-## Give machines clean data
-
- - Product structured data. Most Shopify themes output it; check with Google's Rich Results Test that price, availability, brand and reviews are present.
-
- - Google Merchant Center. Connect it through the Google & YouTube app on Shopify to appear in free Shopping listings. Fix disapprovals promptly.
-
- - GTINs and consistent names across Shopify, Amazon and your feed, so systems can tell it's the same product.
-
- - Don't block crawlers you want. If your robots.txt or a security tool blocks OAI-SearchBot, PerplexityBot or Googlebot, those engines can't read your pages.
-
-## Be talked about
-
-AI answers lean heavily on third-party sources: review sites, Reddit threads, gift guides and comparison articles. A few honest mentions on sites that already rank for your category do more than a dozen posts on your own blog. Send product to writers who cover your niche, and reply to reviews so there's a visible record.
-
-## Publish content that answers buying questions
-
-A blog post that answers "how to choose a face serum for dry skin" with a clear recommendation is the kind of page that gets cited. Write for the question, not for a keyword count, and link to the products that answer it.
-
-## How Femp handles it
-
-Femp's 3 pm search check gives your store a findability score from 0 to 100 across Google, marketplaces and AI assistants, plus three fresh ideas researched on the web. Reply with a number and it does the work: rewrites product titles, descriptions and image alt text, or drafts a blog post. Nothing changes until you say yes, and every edit can be undone.
-
- FempWhatsApp · 3:00 pm
-
- Findability 32/100. "Rose serum for dry skin" finds two competitors in ChatGPT and on Google, not you. Ideas: 1) rewrite 3 serum titles with skin type and size, 2) add a 5-question FAQ to the serum page, 3) draft a post: "choosing a serum for dry skin".
-
- 1
-
- Done. 3 titles updated. Say "undo" any time.
-
- Illustrative example.
-
----
-
-# The money hiding in your invoices: payouts, carriers, 3PLs and retailer deductions
+# You're owed money in your invoices. Here's where it's hiding.
 
 URL: https://femp.ai/blog/money-hiding-in-your-invoices/
 
@@ -783,7 +941,7 @@ If you sell wholesale to big-box retailers, they deduct for shortages, late ship
 
 ---
 
-# The DTC compliance calendar: sales tax, 1099s, SMS consent and the dates that cost money
+# The DTC compliance calendar: every deadline that can cost you money
 
 URL: https://femp.ai/blog/dtc-compliance-calendar/
 
