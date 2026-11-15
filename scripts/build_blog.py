@@ -64,7 +64,7 @@ FOOTER = """<footer><div class="wrap"><div class="frame ruled" style="border-bot
 CLOSER = f"""<section class="closer ruled"><div>
   <h2>Put Femp on shift.</h2>
   <p>Say hi on WhatsApp, connect your Shopify or Amazon store, and your first stock check arrives a few minutes later. Free while we're in beta.</p>
-  <div class="ctas"><a class="btn green" href="{WA}">Say hi on WhatsApp</a><a class="btn line" href="/#game">Play a week at a store</a></div>
+  <div class="ctas"><a class="btn green" href="{WA}">Say hi on WhatsApp</a><a class="btn line" href="/#watch">See it work</a></div>
 </div><img src="/img/icon-512.png" alt="" width="110" height="110" loading="lazy"></section>"""
 
 ORG = {"@type": "Organization", "name": "Neobrix", "url": SITE, "logo": {"@type": "ImageObject", "url": LOGO}}

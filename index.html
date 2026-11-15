@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://femp.ai/">
 <meta name="msvalidate.01" content="9630C390530A95D6B86886436D1FC7B5">
 <meta property="og:title" content="Femp, your store's first employee">
-<meta property="og:description" content="Play a week at a real store with and without Femp. Stock, ads, search and inbox, handled on WhatsApp.">
+<meta property="og:description" content="Femp fixes your pixel, moves ad budget to what sells, keeps your SEO up to date and answers chargebacks with proof, all from WhatsApp.">
 <meta property="og:image" content="https://femp.ai/img/og.jpg">
 <meta property="og:url" content="https://femp.ai/">
 <meta name="twitter:card" content="summary_large_image">
@@ -160,87 +160,50 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .chapter-head p { color: var(--muted); max-width: 40em; margin-top: 14px; font-size: 1.1rem; }
 @media (max-width: 760px) { .chapter { padding: 48px 20px; } .chapter-head { grid-template-columns: minmax(0, 1fr); gap: 10px; } }
 
-/* the game */
-.game { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); border: 1px solid var(--rule); border-radius: 18px; background: var(--panel); overflow: hidden; }
-.store { padding: 24px; display: grid; gap: 18px; align-content: start; border-right: 1px solid var(--rule); min-width: 0; }
-.store-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
-.store-top h3 { font-size: 1.35rem; letter-spacing: -0.03em; }
-.mode { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; background: var(--paper); }
-.mode button { border: 0; background: none; padding: 7px 14px; border-radius: 999px; font: 500 0.8rem/1 var(--mono); cursor: pointer; color: var(--muted); }
-.mode button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.mode button[disabled] { cursor: default; }
-.week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
-.week span { text-align: center; padding: 7px 0; border-radius: 7px; background: var(--paper); font: 500 0.75rem/1 var(--mono); color: var(--faint); border: 1px solid transparent; }
-.week span.done { background: var(--tint); color: var(--accent); }
-.week span.now { border-color: var(--ink); color: var(--ink); background: var(--panel); }
-.items { display: grid; gap: 4px; }
-.item { display: grid; grid-template-columns: minmax(0, 8rem) minmax(0, 1fr) 9.5rem; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--rule); }
-.item:last-child { border-bottom: 0; }
-.item b { display: block; font-weight: 600; font-size: 0.98rem; }
-.item small { font: 400 0.74rem/1.3 var(--mono); color: var(--faint); }
 .bar { height: 10px; border-radius: 99px; background: var(--paper); border: 1px solid var(--rule); overflow: hidden; }
 .bar i { display: block; height: 100%; width: 50%; background: var(--mint); border-radius: inherit; transition: width .7s cubic-bezier(.3, .7, .2, 1), background .3s; }
 .bar i.low { background: var(--warn); } .bar i.out { background: var(--bad); }
-.item .qty { text-align: right; font: 500 0.85rem/1.2 var(--mono); font-variant-numeric: tabular-nums; }
-.item .ad { font: 400 0.72rem/1.3 var(--mono); color: var(--muted); white-space: nowrap; }
-.item .ad.losing { color: var(--bad); }
-.tally { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; }
-.tally div { padding: 12px 14px; border-right: 1px solid var(--rule); display: grid; gap: 2px; min-width: 0; }
-.tally div:last-child { border-right: 0; }
-.tally b { font: 600 1.15rem/1.2 var(--mono); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
-.tally .neg b { color: var(--bad); }
-.log { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; min-height: 1.5em; }
-.log li { font-size: 0.9rem; padding: 8px 12px; border-radius: 9px; background: var(--bad-bg); color: var(--ink); display: flex; gap: 10px; animation: pop .35s ease both; }
-.log li.good { background: var(--tint); }
-.log li span { font: 500 0.75rem/1.6 var(--mono); color: var(--muted); flex: none; }
-.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.controls p { font-size: 0.92rem; color: var(--muted); flex: 1 1 14rem; }
-@keyframes pop { from { transform: translateY(6px); opacity: .4; } to { transform: none; opacity: 1; } }
 
-.phone { padding: 18px; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 12px; background: var(--paper); min-width: 0; max-height: 640px; }
-.phone-head { display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
-.phone-head img { width: 34px; height: 34px; border-radius: 50%; }
-.phone-head b { display: block; font-size: 0.95rem; line-height: 1.2; }
-.phone-head small { font: 400 0.72rem/1 var(--mono); color: var(--faint); }
-.thread { overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 4px 2px; min-height: 260px; }
-.msg { max-width: 92%; padding: 10px 12px 8px; border-radius: 14px 14px 14px 4px; background: var(--panel); border: 1px solid var(--rule); font-size: 0.93rem; line-height: 1.45; animation: pop .35s ease both; }
-.msg time { display: block; font: 400 0.68rem/1 var(--mono); color: var(--faint); margin-top: 6px; }
-.msg.me { align-self: flex-end; background: var(--mine); border-color: transparent; border-radius: 14px 14px 4px 14px; }
-.msg.sys { align-self: center; background: none; border: 1px dashed var(--rule); color: var(--muted); font: 400 1.1rem/1.25 var(--hand); text-align: center; border-radius: 12px; }
-.msg .tag { display: inline-block; font: 500 0.66rem/1 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--accent); margin-bottom: 5px; }
-.choices { display: flex; flex-wrap: wrap; gap: 8px; min-height: 42px; }
-.choices button { flex: 1 1 8rem; border: 1px solid var(--forest); background: var(--panel); color: var(--accent); border-radius: 10px; padding: 10px 12px; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
-.choices button.yes { background: var(--forest); color: #fff; }
-.choices button:hover { transform: translateY(-1px); }
+/* pains in the hero */
+.pains { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--rule); }
+.pains li { display: grid; grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr); gap: 4px 20px; padding: 12px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.pains .q { font-weight: 700; font-size: 1.06rem; letter-spacing: -0.02em; }
+.pains .a { color: var(--muted); font-size: 0.98rem; }
+.pains .a b { color: var(--ink); font-weight: 600; }
+@media (max-width: 1100px) { .pains li { grid-template-columns: minmax(0, 1fr); } }
 
-.score { margin-top: 28px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px; align-items: start; }
-.score[hidden] { display: none; }
-.score-copy { display: grid; gap: 14px; }
-.score-copy h3 { font-size: 1.8rem; }
-.score-copy .say { font: 400 1.4rem/1.25 var(--hand); color: var(--accent); }
-.tbl { overflow-x: auto; border: 1px solid var(--rule); border-radius: 14px; background: var(--panel); }
-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-th, td { padding: 12px 16px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap; }
-th:first-child, td:first-child { text-align: left; white-space: normal; }
-thead th { font: 500 0.72rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
-td { font-family: var(--mono); font-size: 0.92rem; }
-td:first-child { font-family: var(--sans); font-size: 0.95rem; }
-tbody tr:last-child td { border-bottom: 0; font-weight: 600; }
-td.bad { color: var(--bad); } td.good { color: var(--accent); }
-@media (max-width: 960px) {
-  .game { grid-template-columns: minmax(0, 1fr); }
-  .store { border-right: 0; border-bottom: 1px solid var(--rule); }
-  .phone { max-height: 520px; }
-  .score { grid-template-columns: minmax(0, 1fr); }
-}
-@media (max-width: 520px) {
-  .store, .phone { padding: 16px; }
-  .item { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
-  .item .bar { grid-column: 1 / -1; grid-row: 2; }
-  .tally { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tally div:nth-child(2) { border-right: 0; }
-  .tally div:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
-}
+/* see it work: a looping conversation */
+.watch { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 48px; align-items: center; }
+.watch-copy { display: grid; gap: 18px; }
+.watch-copy h2 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.3rem); }
+.watch-copy > p.muted { font-size: 1.1rem; max-width: 30em; }
+.scenes { display: grid; gap: 8px; }
+.scene { text-align: left; display: grid; grid-template-columns: 26px 1fr; gap: 2px 12px; padding: 13px 14px; border-radius: 12px; border: 1px solid var(--rule); background: var(--panel); cursor: pointer; position: relative; overflow: hidden; }
+.scene .n { grid-row: span 2; font: 500 0.78rem/1.6 var(--mono); color: var(--faint); }
+.scene strong { font-size: 1rem; letter-spacing: -0.01em; }
+.scene span:last-of-type { color: var(--muted); font-size: 0.9rem; }
+.scene[aria-pressed="true"] { border-color: var(--accent); background: var(--tint); }
+.scene[aria-pressed="true"] .n { color: var(--accent); }
+.scene .prog { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); }
+.wphone { justify-self: center; width: 100%; max-width: 340px; height: 640px; border: 10px solid var(--ink); border-radius: 44px; background: var(--chat); display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(12,21,16,.5); }
+.wp-head { display: flex; align-items: center; gap: 10px; padding: 24px 16px 12px; background: var(--forest); color: #fff; }
+.wp-head img { width: 34px; height: 34px; border-radius: 50%; background: #fff; }
+.wp-head div { display: grid; line-height: 1.2; }
+.wp-head strong { font-size: 0.98rem; } .wp-head small { font-size: 0.75rem; opacity: .8; }
+.wthread { padding: 14px 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; overflow: hidden; }
+.wb { max-width: 86%; padding: 9px 12px 7px; border-radius: 4px 14px 14px 14px; background: var(--panel); font-size: 0.9rem; line-height: 1.42; box-shadow: 0 1px 0 rgba(12,21,16,.06); animation: wpop .32s ease-out both; }
+.wb.me { align-self: flex-end; background: var(--mine); border-radius: 14px 4px 14px 14px; }
+.wb.done { border-left: 3px solid var(--accent); }
+.wb b { font-weight: 600; }
+.wb time { display: block; text-align: right; font: 400 0.68rem/1 var(--mono); color: var(--faint); margin-top: 4px; }
+.wtyping { align-self: flex-start; background: var(--panel); border-radius: 4px 14px 14px 14px; padding: 12px 14px; display: flex; gap: 4px; animation: wpop .2s ease-out both; }
+.wtyping.me { align-self: flex-end; background: var(--mine); border-radius: 14px 4px 14px 14px; }
+.wtyping i { width: 6px; height: 6px; border-radius: 50%; background: var(--faint); animation: wdot 1s infinite; }
+.wtyping i:nth-child(2) { animation-delay: .15s; } .wtyping i:nth-child(3) { animation-delay: .3s; }
+.wp-input { margin: 0 10px 14px; padding: 10px 14px; border-radius: 99px; background: var(--panel); color: var(--faint); font-size: 0.85rem; }
+@keyframes wpop { from { opacity: 0; transform: translateY(8px) scale(.98); } }
+@keyframes wdot { 50% { opacity: .25; transform: translateY(-2px); } }
+@media (max-width: 900px) { .watch { grid-template-columns: minmax(0, 1fr); } .wphone { height: 600px; } }
 
 /* schedule */
 .sched { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; background: var(--panel); }
@@ -345,7 +308,7 @@ footer a { color: var(--muted); }
   <div class="wrap">
     <a class="brand" href="#top"><img src="img/icon-512.png" alt="Femp">Femp</a>
     <nav aria-label="Main">
-      <a href="#game">Play a week</a>
+      <a href="#watch">See it work</a>
       <a href="/features/">Features</a>
       <a href="/how-it-works/">How it works</a>
       <a href="/pricing/">Pricing</a>
@@ -364,11 +327,17 @@ footer a { color: var(--muted); }
           <p class="label"><b>●</b> Femp · operations for Shopify &amp; Amazon sellers</p>
           <a class="credit" href="/waitlist/?from=badge"><strong>$100</strong> in free credits when you join the waitlist</a>
           <h1>Hire your store's <span>first employee.</span></h1>
-          <p class="lede">Femp watches your stock, ads, search ranking and store inbox. When something needs you, it messages you on WhatsApp with the fix ready. You reply yes, and it's done.</p>
+          <p class="lede">Femp finds what's costing you sales, messages you on WhatsApp with the fix ready, and does it when you reply yes.</p>
+          <ul class="pains">
+            <li><span class="q">Pixel a pain to manage?</span><span class="a">Femp checks your Meta and Google tracking every day and <b>fixes it the day it breaks.</b></span></li>
+            <li><span class="q">Ads not converting?</span><span class="a">Femp finds the ads that actually sell and <b>moves your budget to them.</b></span></li>
+            <li><span class="q">Rankings slipping?</span><span class="a">Femp tracks you on Google and ChatGPT and <b>keeps your SEO up to date.</b></span></li>
+            <li><span class="q">Chargebacks piling up?</span><span class="a">Femp spots every dispute and <b>sends the proof before the deadline.</b></span></li>
+          </ul>
           <div class="ctas">
             <a class="btn solid" href="/waitlist/?from=hero">Join the waitlist
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="btn line" href="#game">Play a week at a store</a>
+            <a class="btn line" href="#watch">See it work ↓</a>
           </div>
           <div class="soon">
             <span class="chip">Shopify App Store · <em>coming soon</em></span>
@@ -390,60 +359,23 @@ footer a { color: var(--muted); }
         <div><b>$0</b><span class="label">during the beta</span></div>
       </div>
 
-      <section class="chapter ruled" id="game">
-        <div class="chapter-head">
-          <p class="label"><b>01</b> / the game</p>
-          <div>
-            <h2>Play one week at Sereva.</h2>
-            <p>Sereva is a small beauty store with three products and two ad campaigns. First, run the week on your own and see what slips. Then hire Femp, run it again, and answer its messages yourself.</p>
-          </div>
-        </div>
-
-        <div class="game">
-          <div class="store">
-            <div class="store-top">
-              <h3>Sereva · this week</h3>
-              <div class="mode" role="group" aria-label="Who's watching the store">
-                <button type="button" id="modeOff" aria-pressed="true">On your own</button>
-                <button type="button" id="modeOn" aria-pressed="false">With Femp</button>
-              </div>
-            </div>
-            <div class="week" id="week" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
-            <div class="items" id="items"></div>
-            <div class="tally">
-              <div><span class="label">Sales</span><b id="tSales">$0</b></div>
-              <div class="neg"><span class="label">Missed sales</span><b id="tMissed">$0</b></div>
-              <div class="neg"><span class="label">Ads wasted</span><b id="tAds">$0</b></div>
-              <div class="neg"><span class="label">Chargebacks</span><b id="tCb">$0</b></div>
-            </div>
-            <ul class="log" id="log" aria-live="polite"></ul>
-            <div class="controls">
-              <button class="btn solid" type="button" id="play">Play the week on your own</button>
-              <p id="hintText">You're busy packing orders all week. Nobody is watching the numbers.</p>
+      <section class="chapter ruled" id="watch">
+        <div class="watch">
+          <div class="watch-copy">
+            <p class="label"><b>01</b> / see it work</p>
+            <h2>One message. One yes. Done.</h2>
+            <p class="muted">No dashboards to check. Femp messages you when something needs you, with the fix ready.</p>
+            <div class="scenes">
+              <button class="scene" type="button" id="sc0" aria-pressed="true"><span class="n">01</span><strong>The pixel stopped counting sales</strong><span>Femp switches on server-side tracking.</span><i class="prog"></i></button>
+              <button class="scene" type="button" id="sc1" aria-pressed="false"><span class="n">02</span><strong>An ad set burns money</strong><span>Femp moves the budget to the ads that sell.</span><i class="prog"></i></button>
+              <button class="scene" type="button" id="sc2" aria-pressed="false"><span class="n">03</span><strong>You drop down Google</strong><span>Femp rewrites the pages that slipped.</span><i class="prog"></i></button>
+              <button class="scene" type="button" id="sc3" aria-pressed="false"><span class="n">04</span><strong>A chargeback arrives</strong><span>Femp sends the delivery proof.</span><i class="prog"></i></button>
             </div>
           </div>
-          <div class="phone">
-            <div class="phone-head"><img src="img/icon-512.png" alt=""><div><b>Femp</b><small id="status">not hired yet</small></div></div>
-            <div class="thread" id="thread" aria-live="polite">
-              <div class="msg sys">No messages.<br>Femp isn't on the team yet.</div>
-            </div>
-            <div class="choices" id="choices"></div>
-          </div>
-        </div>
-
-        <div class="score" id="score" hidden>
-          <div class="score-copy">
-            <p class="label"><b>Result</b></p>
-            <h3 id="scoreTitle">How the week went</h3>
-            <p class="muted" id="scoreText"></p>
-            <p class="say" id="scoreSay"></p>
-            <div class="ctas"><button class="btn green" type="button" id="next">Hire Femp and replay</button><button class="btn line" type="button" id="reset">Start over</button></div>
-          </div>
-          <div class="tbl">
-            <table>
-              <thead><tr><th>This week</th><th>On your own</th><th>With Femp</th></tr></thead>
-              <tbody id="scoreBody"></tbody>
-            </table>
+          <div class="wphone" aria-live="polite">
+            <div class="wp-head"><img src="img/icon-512.png" alt=""><div><strong>Femp</strong><small>your store's assistant</small></div></div>
+            <div class="wthread" id="wthread"></div>
+            <div class="wp-input">Message</div>
           </div>
         </div>
       </section>
@@ -593,179 +525,61 @@ footer a { color: var(--muted); }
     "Your Clay Mask ads spent $45 and sold $27. Maybe cut them?",
     "I checked the inbox. One chargeback, reply drafted.",
     "I never touch prices, stock or checkout. Promise.",
-    "Scroll down and play a week with me!",
+    "Scroll down and watch me work!",
   ];
   let li = 0;
   const poke = () => { li = (li + 1) % lines.length; $("bubble").textContent = lines[li]; };
   $("buddy").addEventListener("click", poke);
   $("buddy").addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); poke(); } });
 
-  /* the game */
-  const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  const PRODUCTS = [
-    { id: "lip", name: "Lip Oil", price: 24, stock: 40, pace: 9, ad: 60, roas: 3.2 },
-    { id: "mask", name: "Clay Mask", price: 32, stock: 210, pace: 6, ad: 45, roas: 0.6 },
-    { id: "serum", name: "Rose Serum", price: 48, stock: 120, pace: 5, ad: 0, roas: 0 },
+  /* see it work: four looping conversations */
+  const SCENES = [
+    [["f", "Your Meta pixel missed <b>18 of yesterday's 64 purchases</b>. The checkout event stopped firing after Tuesday's theme update.", "8:02"],
+     ["f", "I can turn on server-side tracking so every sale reaches Meta. Fix it?", "8:02"], ["m", "yes", "8:05"],
+     ["d", "Done. Meta is receiving every purchase again: <b>64 of 64</b> today. ✓", "8:05"]],
+    [["f", "Last 7 days: <b>Broad US</b> spent $410 for 3 orders. <b>Retarget 7d</b> made $1,180 on $140.", "9:15"],
+     ["f", "Move $40 a day from Broad US to Retarget 7d?", "9:15"], ["m", "yes", "9:16"],
+     ["d", "Done. Budgets updated. I'll send you the result on Monday. ✓", "9:16"]],
+    [["f", "You dropped from <b>#3 to #9</b> on Google for “vegan vitamin c serum”, and ChatGPT doesn't mention you.", "11:30"],
+     ["f", "I rewrote the titles and descriptions of 6 product pages. Apply them?", "11:30"], ["m", "yes", "11:42"],
+     ["d", "Done. 6 pages updated. Say “undo” to roll back. ✓", "11:42"]],
+    [["f", "New chargeback: order <b>#1043, $96</b>, reason “not received”. UPS shows it delivered on Nov 3.", "2:14"],
+     ["f", "Proof is ready: tracking, the delivery scan and the customer's 4 past orders. Send it?", "2:14"], ["m", "yes", "2:20"],
+     ["d", "Sent to Shopify Payments, <b>5 days before the deadline</b>. ✓", "2:20"]],
   ];
-  const CAP = { lip: 200, mask: 220, serum: 130 };
-  const CHARGEBACK = 111;
-  const EVENTS = [
-    { day: 0, time: "9:00 am", tag: "Stock check", text: "Lip Oil runs out on <b>Friday</b> at 9 a day, and you're spending $60 a day advertising it. Reorder 150? Your supplier delivers in 3 days.", yes: "Reorder 150", no: "Not now", reply: "Yes, reorder 150", key: "reorder" },
-    { day: 1, time: "11:00 am", tag: "Ads review", text: "Clay Mask ads spent <b>$45</b> yesterday and sold $27 (0.6×). Cut the budget to $15 in Ads Manager? I'll keep an eye on it.", yes: "I'll cut it", no: "Leave it", reply: "Done, cut to $15", key: "ads" },
-    { day: 2, time: "2:14 pm", tag: "Inbox", text: "Chargeback on order #1043 ($96). The reply is due in 5 days. I drafted it with the tracking proof. Send it?", yes: "Send the reply", no: "Later", reply: "Send it", key: "cb" },
-    { day: 4, time: "3:00 pm", tag: "Search & SEO", text: "Findability <b>32/100</b>. “Rose serum” searches don't find you. Rewrite 3 product titles? You can undo it.", yes: "Rewrite them", no: "Skip", reply: "1, go ahead", key: "seo" },
-  ];
-  const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
-  const results = { off: null, on: null };
-  let mode = "off", running = false, state;
-
-  function fresh() {
-    return { day: -1, stock: Object.fromEntries(PRODUCTS.map((p) => [p.id, p.stock])), sales: 0, missed: 0, ads: 0, cb: 0, choices: {}, replies: 0, arrivals: {} };
-  }
-
-  function renderItems() {
-    $("items").innerHTML = PRODUCTS.map((p) => {
-      const s = state.stock[p.id], pct = Math.max(0, Math.min(100, (s / CAP[p.id]) * 100));
-      const cls = s === 0 ? "out" : s / pace(p) < 4 ? "low" : "";
-      const budget = adBudget(p);
-      const ad = p.ad ? `<span class="ad ${p.roas < 1 ? "losing" : ""}">ads $${budget}/day · ${p.roas}×</span>` : `<span class="ad">no ads</span>`;
-      return `<div class="item"><div><b>${p.name}</b><small>$${p.price} · sells ${pace(p)}/day</small></div><span class="bar"><i class="${cls}" style="width:${pct}%"></i></span><div class="qty">${s} left<br>${ad}</div></div>`;
-    }).join("");
-  }
-  const pace = (p) => p.id === "serum" && state.choices.seo && state.day >= 5 ? p.pace + 3 : p.pace;
-  const adBudget = (p) => p.id === "mask" && state.choices.ads ? 15 : p.ad;
-
-  function renderTally() {
-    $("tSales").textContent = money(state.sales);
-    $("tMissed").textContent = money(state.missed);
-    $("tAds").textContent = money(state.ads);
-    $("tCb").textContent = money(state.cb);
-    [...$("week").children].forEach((el, i) => { el.className = i < state.day ? "done" : i === state.day ? "now" : ""; });
-  }
-  const log = (when, text, good) => { const li = document.createElement("li"); if (good) li.className = "good"; li.innerHTML = `<span>${when}</span>${text}`; $("log").append(li); };
-  const say = (html, cls = "", time = "") => {
+  const thread = $("wthread"), scenes = SCENES.map((_, i) => $("sc" + i));
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const pause = (ms) => new Promise((r) => setTimeout(r, ms));
+  let run = 0, visible = true;
+  const bubble = ([who, html, t]) => {
     const el = document.createElement("div");
-    el.className = "msg " + cls;
-    el.innerHTML = html + (time ? `<time>${time}</time>` : "");
-    $("thread").append(el);
-    $("thread").scrollTop = $("thread").scrollHeight;
+    el.className = "wb" + (who === "m" ? " me" : "") + (who === "d" ? " done" : "");
+    el.innerHTML = `${html}<time>${t}</time>`;
+    return el;
   };
-  const wait = (ms) => new Promise((r) => setTimeout(r, matchMedia("(prefers-reduced-motion: reduce)").matches ? 60 : ms));
-  const ask = (ev) => new Promise((resolve) => {
-    const c = $("choices");
-    c.innerHTML = `<button type="button" class="yes">${ev.yes}</button><button type="button">${ev.no}</button>`;
-    const [y, n] = c.querySelectorAll("button");
-    y.focus({ preventScroll: true });
-    const done = (val) => { c.innerHTML = ""; resolve(val); };
-    y.onclick = () => done(true); n.onclick = () => done(false);
-  });
-
-  function simulateDay(d) {
-    for (const p of PRODUCTS) {
-      const start = state.stock[p.id], want = pace(p), sold = Math.min(want, start);
-      state.stock[p.id] -= sold;
-      state.sales += sold * p.price;
-      state.missed += (want - sold) * p.price;
-      const budget = adBudget(p);
-      if (budget) {
-        if (start === 0) state.ads += budget;
-        else if (sold < want) state.ads += budget * (want - sold) / want;
-        if (p.roas < 1) state.ads += budget * (1 - p.roas);
-      }
-      if (start > 0 && state.stock[p.id] === 0) log(DAYS[d], `${p.name} sold out. ${budget ? `Its ads keep spending $${budget} a day.` : ""}`);
+  async function show(i, token) {
+    scenes.forEach((b, j) => { b.setAttribute("aria-pressed", String(j === i)); b.querySelector(".prog").style.width = "0"; });
+    thread.replaceChildren();
+    if (still) { SCENES[i].forEach((m) => thread.append(bubble(m))); return; }
+    const prog = scenes[i].querySelector(".prog"), steps = SCENES[i].length;
+    for (const [k, m] of SCENES[i].entries()) {
+      while (!visible) { await pause(400); if (token !== run) return; }
+      const dots = document.createElement("div");
+      dots.className = "wtyping" + (m[0] === "m" ? " me" : "");
+      dots.innerHTML = "<i></i><i></i><i></i>";
+      thread.append(dots);
+      await pause(m[0] === "m" ? 700 : 1100);
+      if (token !== run) return;
+      dots.replaceWith(bubble(m));
+      prog.style.transition = "width 1.6s linear"; prog.style.width = `${((k + 1) / steps) * 100}%`;
+      await pause(k === steps - 1 ? 2600 : 1500);
+      if (token !== run) return;
     }
+    show((i + 1) % SCENES.length, token);
   }
-
-  async function play() {
-    running = true; state = fresh();
-    $("play").disabled = true; $("modeOff").disabled = $("modeOn").disabled = true;
-    $("log").innerHTML = ""; $("thread").innerHTML = ""; $("score").hidden = true;
-    $("status").textContent = mode === "on" ? "online · on shift" : "not hired yet";
-    if (mode === "on") say("Morning! I'm on shift. I'll message you only when something needs you.", "", "Mon 8:58 am");
-    else say("No messages.<br>Femp isn't on the team yet.", "sys");
-    for (let d = 0; d < 7; d++) {
-      state.day = d;
-      if (state.arrivals[d]) { state.stock.lip += state.arrivals[d]; log(DAYS[d], `150 Lip Oil arrived from the supplier.`, true); }
-      renderItems(); renderTally();
-      await wait(450);
-      const ev = mode === "on" && EVENTS.find((e) => e.day === d);
-      if (ev) {
-        $("hintText").textContent = "Femp needs an answer. Reply on the phone.";
-        say(`<span class="tag">${ev.tag}</span><br>${ev.text}`, "", `${DAYS[d]} ${ev.time}`);
-        const yes = await ask(ev);
-        state.choices[ev.key] = yes; state.replies++;
-        say(yes ? ev.reply : ev.no, "me", `${DAYS[d]} ${ev.time}`);
-        await wait(350);
-        if (yes && ev.key === "reorder") { state.arrivals[3] = 150; say("Ordered. It arrives Thursday morning.", "", `${DAYS[d]} ${ev.time}`); }
-        if (yes && ev.key === "ads") say("Thanks. That saves about $12 a day. I'll check again tomorrow.", "", `${DAYS[d]} ${ev.time}`);
-        if (yes && ev.key === "cb") say("Sent. I'll tell you when the bank decides.", "", `${DAYS[d]} ${ev.time}`);
-        if (yes && ev.key === "seo") say("Done. 3 titles updated. Say “undo” any time.", "", `${DAYS[d]} ${ev.time}`);
-        $("hintText").textContent = "The week is running…";
-      } else if (d === 0 && mode === "off") $("hintText").textContent = "The week is running…";
-      simulateDay(d);
-      if (d === 6 && !state.choices.cb) { state.cb = CHARGEBACK; log("Sun", "Chargeback #1043 went unanswered: lost $96 plus a $15 fee."); }
-      renderItems(); renderTally();
-      await wait(650);
-    }
-    if (mode === "on") say(`Wrap-up: ${money(state.sales)} in sales this week. ${state.missed ? `${money(state.missed)} missed while items were out.` : "Nothing went out of stock."} Tomorrow's top job: check the new serum titles are ranking.`, "", "Sun 6:00 pm");
-    state.day = 7; renderTally();
-    results[mode] = { ...state };
-    running = false; showScore();
-  }
-
-  function showScore() {
-    const a = results.off, b = results.on;
-    const lost = (r) => r.missed + r.ads + r.cb;
-    const cell = (r, k, neg) => r ? `<td class="${neg && r[k] > 0 ? "bad" : ""}">${money(r[k])}</td>` : `<td class="muted">play it</td>`;
-    const time = (r) => r ? `<td>${r.replies ? `${r.replies} replies, ~${Math.max(1, Math.round(r.replies * 0.25))} min` : "0 min (you weren't told)"}</td>` : `<td class="muted">play it</td>`;
-    $("scoreBody").innerHTML = `
-      <tr><td>Sales</td>${cell(a, "sales")}${cell(b, "sales")}</tr>
-      <tr><td>Missed while sold out</td>${cell(a, "missed", 1)}${cell(b, "missed", 1)}</tr>
-      <tr><td>Ad spend wasted</td>${cell(a, "ads", 1)}${cell(b, "ads", 1)}</tr>
-      <tr><td>Chargebacks lost</td>${cell(a, "cb", 1)}${cell(b, "cb", 1)}</tr>
-      <tr><td>Your time on it</td>${time(a)}${time(b)}</tr>
-      <tr><td>Money left on the table</td>${a ? `<td class="bad">${money(lost(a))}</td>` : `<td class="muted">play it</td>`}${b ? `<td class="${lost(b) ? "bad" : "good"}">${money(lost(b))}</td>` : `<td class="muted">play it</td>`}</tr>`;
-    const r = results[mode];
-    if (mode === "off") {
-      $("scoreTitle").textContent = `You left ${money(lost(r))} on the table.`;
-      $("scoreText").textContent = "Lip Oil sold out on Friday while its ads kept running, the Clay Mask ads lost money every day, and a chargeback expired unanswered. None of it was hard to fix. Nobody was watching.";
-      $("scoreSay").textContent = "Let me try. I'll message you when something needs you.";
-      $("next").textContent = "Hire Femp and replay"; $("next").hidden = false;
-    } else {
-      const saved = a ? lost(a) - lost(r) : 0;
-      const yesCount = Object.values(r.choices).filter(Boolean).length;
-      $("scoreTitle").textContent = a && saved > 0 ? `Femp saved you ${money(saved)} this week.` : `${money(lost(r))} left on the table.`;
-      $("scoreText").textContent = yesCount === EVENTS.length
-        ? `You answered ${r.replies} messages and said yes to all of them. ${r.sales > (a ? a.sales : 0) && a ? `Sales also went up ${money(r.sales - a.sales)}, from staying in stock and the new serum titles.` : ""}`
-        : `You said yes to ${yesCount} of ${EVENTS.length}. Femp only acts when you agree, so the ones you skipped still cost money. Try again and say yes to all four.`;
-      $("scoreSay").textContent = yesCount === EVENTS.length ? "Same time next week?" : "No pressure. I'll ask again tomorrow.";
-      $("next").textContent = "Play again with Femp";
-    }
-    $("score").hidden = false;
-    $("play").disabled = false; $("modeOff").disabled = $("modeOn").disabled = false;
-    $("play").textContent = mode === "on" ? "Play again with Femp" : "Play the week on your own";
-    $("hintText").textContent = "Week over. See the result below.";
-  }
-
-  function setMode(m) {
-    if (running) return;
-    mode = m;
-    $("modeOff").setAttribute("aria-pressed", m === "off"); $("modeOn").setAttribute("aria-pressed", m === "on");
-    $("play").textContent = m === "on" ? "Play the week with Femp" : "Play the week on your own";
-    $("hintText").textContent = m === "on" ? "Femp watches the store and messages you. You decide." : "You're busy packing orders all week. Nobody is watching the numbers.";
-    $("status").textContent = m === "on" ? "online · ready" : "not hired yet";
-    state = fresh(); $("log").innerHTML = ""; renderItems(); renderTally();
-    $("thread").innerHTML = "";
-    say(m === "on" ? "Hi! Press play and I'll start my shift." : "No messages.<br>Femp isn't on the team yet.", m === "on" ? "" : "sys");
-  }
-
-  $("modeOff").onclick = () => setMode("off");
-  $("modeOn").onclick = () => setMode("on");
-  $("play").onclick = play;
-  $("next").onclick = () => { setMode("on"); $("game").scrollIntoView({ block: "start" }); play(); };
-  $("reset").onclick = () => { results.off = results.on = null; $("score").hidden = true; setMode("off"); $("game").scrollIntoView({ block: "start" }); };
-
-  state = fresh(); renderItems(); renderTally();
+  scenes.forEach((b, i) => b.addEventListener("click", () => show(i, ++run)));
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(thread);
+  show(0, ++run);
 })();
 </script>
 </body>
