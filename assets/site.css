@@ -20,6 +20,7 @@
   --chat: #17241d; --mine: #173a29; color-scheme: dark;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { color: var(--accent); text-underline-offset: 3px; }
@@ -134,7 +135,7 @@ footer a { color: var(--muted); }
 /* launch waitlist: top bar on every page, $100 credit badge, /waitlist/ form (bar and badge are mirrored in index.html) */
 .topbar { background: var(--forest); color: #fff; font: 500 0.88rem/1.35 var(--sans); padding: 9px max(16px, env(safe-area-inset-left, 0px)); display: flex; justify-content: center; align-items: center; gap: 6px 12px; flex-wrap: wrap; text-align: center; }
 .topbar a { color: #fff; font-weight: 700; text-underline-offset: 3px; white-space: nowrap; }
-.topbar .pill { font: 500 0.7rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; background: rgba(255,255,255,.16); padding: 5px 8px; border-radius: 99px; }
+.topbar .early { font: 500 0.7rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; background: rgba(255,255,255,.16); color: #fff; padding: 5px 8px; border-radius: 99px; }
 .credit { justify-self: start; display: inline-flex; align-items: center; gap: 10px; background: var(--tint); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 99px; padding: 7px 14px 7px 7px; font: 600 0.95rem/1.2 var(--sans); }
 .credit strong { background: var(--forest); color: #fff; border-radius: 99px; padding: 5px 10px; font: 700 0.95rem/1 var(--mono); }
 .wl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }

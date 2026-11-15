@@ -41,7 +41,7 @@ FONTS = (
 MAIN_NAV = [("/features/", "Features"), ("/how-it-works/", "How it works"), ("/pricing/", "Pricing"), ("/faq/", "FAQ")]
 
 
-BAR = """<div class="topbar"><span class="pill">Early access</span><span>Femp is coming to the Shopify App Store and the App Store. Join the waitlist and get <b>$100 in free credits</b>.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>"""
+BAR = """<div class="topbar"><span class="early">Early access</span><span>Femp is coming to the Shopify App Store and the App Store. Join the waitlist and get <b>$100 in free credits</b>.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>"""
 
 
 def nav(current: str = "") -> str:
