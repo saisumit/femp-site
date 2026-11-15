@@ -206,6 +206,17 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 @keyframes wdot { 50% { opacity: .25; transform: translateY(-2px); } }
 @media (max-width: 900px) { .watch { grid-template-columns: minmax(0, 1fr); } .wphone { height: 600px; } }
 
+/* hero: pain rows switch the phone demo */
+.pains li { display: block; padding: 0; }
+.pain { all: unset; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr); gap: 4px 20px; padding: 12px 10px; margin: 0 -10px; border-radius: 8px; cursor: pointer; position: relative; overflow: hidden; align-items: baseline; }
+.pain:hover { background: color-mix(in srgb, var(--tint) 60%, transparent); }
+.pain:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+.pain[aria-pressed="true"] { background: var(--tint); }
+.pain[aria-pressed="true"] .q { color: var(--accent); }
+.pain .prog { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--accent); }
+@media (max-width: 1100px) { .pain { grid-template-columns: minmax(0, 1fr); } }
+.stage .wphone { position: relative; z-index: 1; height: 600px; }
+
 /* trimmed sections */
 .sec { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 3rem); margin-bottom: 28px; }
 .autolist { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
@@ -319,7 +330,7 @@ footer a { color: var(--muted); }
   <div class="wrap">
     <a class="brand" href="#top"><img src="img/icon-512.png" alt="Femp">Femp</a>
     <nav aria-label="Main">
-      <a href="#watch">See it work</a>
+      <a href="#automations">Automations</a>
       <a href="/features/">Features</a>
       <a href="/how-it-works/">How it works</a>
       <a href="/pricing/">Pricing</a>
@@ -338,37 +349,19 @@ footer a { color: var(--muted); }
           <a class="credit" href="/waitlist/?from=badge"><strong>$100</strong> in free credits when you join the waitlist</a>
           <h1>Hire your store's <span>first employee.</span></h1>
           <p class="lede">Femp is the operations teammate for DTC brands. It texts you on WhatsApp when something needs fixing, then fixes it.</p>
-          <ul class="pains">
-            <li><span class="q">Pixel missing sales?</span><span class="a">Fixed the day it breaks.</span></li>
-            <li><span class="q">Ads not converting?</span><span class="a">Budget moved to what sells.</span></li>
-            <li><span class="q">Rankings slipping?</span><span class="a">Pages rewritten to climb back.</span></li>
-            <li><span class="q">Chargebacks?</span><span class="a">Proof sent before the deadline.</span></li>
+          <ul class="pains" aria-label="Tap one to see Femp handle it">
+            <li><button class="pain" type="button" id="sc0" aria-pressed="true"><span class="q">Pixel missing sales?</span><span class="a">Fixed the day it breaks.</span><i class="prog"></i></button></li>
+            <li><button class="pain" type="button" id="sc1" aria-pressed="false"><span class="q">Ads not converting?</span><span class="a">Budget moved to what sells.</span><i class="prog"></i></button></li>
+            <li><button class="pain" type="button" id="sc2" aria-pressed="false"><span class="q">Rankings slipping?</span><span class="a">Pages rewritten to climb back.</span><i class="prog"></i></button></li>
+            <li><button class="pain" type="button" id="sc3" aria-pressed="false"><span class="q">Chargebacks?</span><span class="a">Proof sent before the deadline.</span><i class="prog"></i></button></li>
           </ul>
           <div class="ctas">
             <a class="btn solid" href="/waitlist/?from=hero">Join the waitlist
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="btn line" href="#watch">See it work ↓</a>
+            <a class="btn line" href="https://youtu.be/W9z4sHcGYgk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>Watch the demo</a>
           </div>
         </div>
         <div class="stage">
-          <div class="buddy">
-            <p class="bubble" id="bubble" aria-live="polite">Hi! I'm Femp. I'll watch the boring stuff so you can run the store.</p>
-            <svg class="femp-char" id="buddy" role="button" tabindex="0" aria-label="Femp, tap to hear more"><use href="#femp"/></svg>
-            <p class="hint">(poke me)</p>
-          </div>
-        </div>
-      </section>
-      <section class="chapter ruled" id="watch">
-        <div class="watch">
-          <div class="watch-copy">
-            <h2>Like texting your best employee.</h2>
-            <div class="scenes">
-              <button class="scene" type="button" id="sc0" aria-pressed="true"><span class="n">01</span><strong>Your pixel stops counting sales</strong><i class="prog"></i></button>
-              <button class="scene" type="button" id="sc1" aria-pressed="false"><span class="n">02</span><strong>Your ad money goes to the wrong ad</strong><i class="prog"></i></button>
-              <button class="scene" type="button" id="sc2" aria-pressed="false"><span class="n">03</span><strong>You slip down Google</strong><i class="prog"></i></button>
-              <button class="scene" type="button" id="sc3" aria-pressed="false"><span class="n">04</span><strong>A customer files a chargeback</strong><i class="prog"></i></button>
-            </div>
-          </div>
           <div class="wphone" aria-live="polite">
             <div class="wp-head"><img src="img/icon-512.png" alt=""><div><strong>Femp</strong><small>online</small></div></div>
             <div class="wthread" id="wthread"></div>
@@ -376,11 +369,27 @@ footer a { color: var(--muted); }
           </div>
         </div>
       </section>
-
       <section class="chapter ruled" id="automations">
         <h2 class="sec">It runs the rest of the store too.</h2>
-        <ul class="autolist"><li>Daily sales digest</li><li>Weekly profit report</li><li>Traffic &amp; conversion</li><li>Abandoned carts</li><li>Ads vs. real sales</li><li>Pixel health</li><li>SEO &amp; rankings</li><li>Price watch</li><li>Review requests</li><li>Review replies</li><li>Inbox triage</li><li>Low stock &amp; reorders</li><li>Late orders</li><li>Returns spikes</li><li>Chargebacks</li><li>Fees &amp; invoices</li></ul>
-        <p class="muted own">Or ask for your own: “Every Monday at 9, send me last week's profit.”</p>
+        <div class="autos">
+          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Daily sales digest</h3><p>Revenue, orders, average order value and best sellers across Shopify and Amazon.</p><span class="when">every day · 8 am</span></article>
+          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Weekly profit report</h3><p>Sales minus ad spend, fees and refunds, so you know what you actually made.</p><span class="when">Mondays</span></article>
+          <article class="auto"><p class="atag t-analytics">Analytics</p><h3>Traffic &amp; conversion</h3><p>Sessions, conversion rate and where buyers drop off, against last week.</p><span class="when">every day</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Abandoned carts</h3><p>Who left what in their cart, with a recovery message ready to send.</p><span class="when">every hour</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Ads vs. real sales</h3><p>Meta and Google return on ad spend against real orders, with the budget change to make.</p><span class="when">every day · 11 am</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Pixel health</h3><p>Checks that Meta and Google receive every purchase, and fixes tracking the day it breaks.</p><span class="when">every day</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>SEO &amp; rankings</h3><p>Where you rank on Google and ChatGPT, with titles and descriptions rewritten to climb.</p><span class="when">every day · 3 pm</span></article>
+          <article class="auto"><p class="atag t-marketing">Marketing</p><h3>Price watch</h3><p>Competitor prices and who holds the Amazon Buy Box on your best sellers.</p><span class="when">every day</span></article>
+          <article class="auto"><p class="atag t-customers">Customers</p><h3>Review requests</h3><p>Asks happy buyers for a review a few days after their order arrives.</p><span class="when">after delivery</span></article>
+          <article class="auto"><p class="atag t-customers">Customers</p><h3>Review replies</h3><p>Drafts replies to new reviews and flags the bad ones before they pile up.</p><span class="when">every hour</span></article>
+          <article class="auto"><p class="atag t-customers">Customers</p><h3>Inbox triage</h3><p>Reads the store&#x27;s Gmail for customer issues, supplier delays and account warnings, and drafts replies.</p><span class="when">every hour</span></article>
+          <article class="auto"><p class="atag t-operations">Operations</p><h3>Low stock &amp; reorders</h3><p>What runs out within a week at today&#x27;s pace, with the quantity to reorder.</p><span class="when">every day · 9 am</span></article>
+          <article class="auto"><p class="atag t-operations">Operations</p><h3>Late orders</h3><p>Orders stuck unshipped or delayed in transit, before the customer writes in.</p><span class="when">twice a day</span></article>
+          <article class="auto"><p class="atag t-operations">Operations</p><h3>Returns spikes</h3><p>Flags a product when returns jump, with the reasons customers gave.</p><span class="when">every day</span></article>
+          <article class="auto"><p class="atag t-money">Money</p><h3>Chargebacks</h3><p>Spots every dispute and sends the proof before the deadline.</p><span class="when">every hour</span></article>
+          <article class="auto"><p class="atag t-money">Money</p><h3>Fees &amp; invoices</h3><p>Catches overcharged Amazon fees, duplicate invoices and refunds you&#x27;re owed.</p><span class="when">weekly</span></article>
+        </div>
+        <p class="cron"><code>your own</code><span class="muted">Or ask for your own: “Every Monday at 9, send me last week's profit.”</span></p>
       </section>
 
     </div>
@@ -413,20 +422,6 @@ footer a { color: var(--muted); }
 <script>
 (() => {
   const $ = (id) => document.getElementById(id);
-
-  /* hero character */
-  const lines = [
-    "Hi! I'm Femp. I'll watch the boring stuff so you can run the store.",
-    "Lip Oil runs out Friday. Want me to draft the reorder?",
-    "Your Clay Mask ads spent $45 and sold $27. Maybe cut them?",
-    "I checked the inbox. One chargeback, reply drafted.",
-    "I never touch prices, stock or checkout. Promise.",
-    "Scroll down and watch me work!",
-  ];
-  let li = 0;
-  const poke = () => { li = (li + 1) % lines.length; $("bubble").textContent = lines[li]; };
-  $("buddy").addEventListener("click", poke);
-  $("buddy").addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); poke(); } });
 
   /* see it work: four looping conversations */
   const SCENES = [
