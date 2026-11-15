@@ -148,6 +148,8 @@ footer a { color: var(--muted); }
 .wl-form { padding: 64px 40px; background: var(--panel); }
 .wl-form form { display: grid; gap: 18px; }
 .field { display: grid; gap: 7px; }
+fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
+.field > legend { padding: 0; margin-bottom: 7px; font: 500 0.75rem/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .field > label, .field > span { font: 500 0.75rem/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .field small { text-transform: none; letter-spacing: 0; color: var(--faint); font-size: 0.75rem; }
 .wl-form input:not([type=checkbox]):not([type=radio]), .wl-form select { font: 400 1rem/1.3 var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; width: 100%; }

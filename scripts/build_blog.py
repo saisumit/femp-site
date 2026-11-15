@@ -233,6 +233,14 @@ CODES = [
 ]
 
 
+# sales channels a US store may use; keys match the server's waitlist Platform list
+CHANNELS = [
+    ("shopify", "Shopify"), ("amazon", "Amazon"), ("walmart", "Walmart"), ("ebay", "eBay"), ("etsy", "Etsy"),
+    ("tiktok_shop", "TikTok Shop"), ("target_plus", "Target Plus"), ("woocommerce", "WooCommerce"),
+    ("bigcommerce", "BigCommerce"), ("wix", "Wix"), ("squarespace", "Squarespace"), ("other", "Other"),
+]
+
+
 def flag(cc: str) -> str:
     return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in cc)
 
@@ -247,6 +255,7 @@ def waitlist() -> str:
         "url": url, "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "Femp", "url": f"{SITE}/"},
         "publisher": ORG, "about": SOFTWARE,
     }
+    channels = "".join(f'<label><input type="checkbox" name="platforms" id="p-{key}" value="{key}">{name}</label>' for key, name in CHANNELS)
     options = "".join(f'<option value="{code}" data-cc="{cc}">{flag(cc)} {code}</option>' for cc, code in CODES)
     return f"""{head(title, description, url, extra=ld(schema))}
 <body>
@@ -272,12 +281,9 @@ def waitlist() -> str:
         <div class="phone"><select id="cc" aria-label="Country code">{options}</select>
         <input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="Phone number" required></div></div>
       <div class="field"><label for="store">Store link <small>(optional)</small></label>
-        <input id="store" name="store" type="text" inputmode="url" autocomplete="url" placeholder="yourstore.com or your Amazon storefront"></div>
-      <div class="field"><span id="plat-label">You sell on <small>(optional)</small></span>
-        <div class="seg" role="radiogroup" aria-labelledby="plat-label">
-          <label><input type="radio" name="platform" id="p-shopify" value="shopify">Shopify</label>
-          <label><input type="radio" name="platform" id="p-amazon" value="amazon">Amazon</label>
-          <label><input type="radio" name="platform" id="p-both" value="both">Both</label></div></div>
+        <input id="store" name="store" type="text" inputmode="url" autocomplete="url" placeholder="yourstore.com or a marketplace storefront link"></div>
+      <fieldset class="field"><legend>Where do you sell? <small>(pick all that apply)</small></legend>
+        <div class="seg">{channels}</div></fieldset>
       <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
       <label class="consent" for="consent"><input id="consent" type="checkbox" checked><span>Femp can contact me on WhatsApp and email about early access. No spam, and you can leave any time.</span></label>
       <p class="fine bad" id="err" role="alert" hidden></p>
@@ -311,7 +317,7 @@ def waitlist() -> str:
     const phone = $("phone").value.trim().startsWith("+") ? "+" + digits : $("cc").value + digits.replace(/^0+/, "");
     const body = {{
       email, phone, store: $("store").value.trim(), consent: true, company: $("company").value,
-      platform: (form.querySelector("input[name=platform]:checked") || {{}}).value || "",
+      platforms: [...form.querySelectorAll("input[name=platforms]:checked")].map(i => i.value),
       source: new URLSearchParams(location.search).get("from") || (document.referrer ? new URL(document.referrer).pathname : "direct"),
     }};
     show(""); go.disabled = true; go.textContent = "Joining…";
