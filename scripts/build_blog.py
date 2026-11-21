@@ -23,6 +23,8 @@ from html import escape, unescape
 from pathlib import Path
 
 SITE = "https://femp.ai"
+# changes whenever assets/site.css changes, so browsers never keep an old copy
+CSS_VERSION = __import__("hashlib").md5((Path(__file__).resolve().parent.parent / "assets" / "site.css").read_bytes()).hexdigest()[:8]
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "content" / "blog"
 PAGES = ROOT / "content" / "pages"
@@ -38,32 +40,38 @@ FONTS = (
     '&family=Geist+Mono:wght@400;500&display=swap">'
 )
 
-MAIN_NAV = [("/features/", "Features"), ("/how-it-works/", "How it works"), ("/pricing/", "Pricing"), ("/faq/", "FAQ")]
+# one nav for the whole site; each plugin is a single page (/dtc/, /jobs/, /finance/), the rest is shared
+NAV = [("/pricing/", "Pricing"), ("/faq/", "FAQ")]
+# the Plugins dropdown that opens the nav (same markup in build_home.py and dtc/index.html)
+PLUGINS_MENU = '''<details class="pmenu"><summary>Plugins</summary><div class="pdrop"><a class="pm" href="/dtc/"><span class="pi" style="--pc:#146043">D</span><span class="pt"><b>Femp for DTC brands</b><small>Your store's operations</small></span><em>Beta</em></a><a class="pm" href="/jobs/"><span class="pi" style="--pc:#3d6fb6">J</span><span class="pt"><b>Femp for Jobs</b><small>Your job search</small></span><em>Soon</em></a><a class="pm" href="/finance/"><span class="pi" style="--pc:#9a5b13">F</span><span class="pt"><b>Femp for Finance</b><small>Stocks and bills</small></span><em>Soon</em></a><a class="pall" href="/#plugins">All plugins →</a></div></details>'''
+MENU_JS = '''<script>(()=>{const m=[...document.querySelectorAll("details.pmenu")];document.addEventListener("click",e=>m.forEach(d=>{if(d.open&&!d.contains(e.target))d.open=false;}));document.addEventListener("keydown",e=>{if(e.key==="Escape")m.forEach(d=>{if(d.open){d.open=false;d.querySelector("summary").focus();}});});})();</script>'''
+# DTC pages that became part of /dtc/; their old addresses forward there
+MERGED_INTO_DTC = ["features", "how-it-works", "integrations"]
 
 
-BAR = """<div class="topbar"><span class="early">Early access</span><span>Femp is coming to the Shopify App Store and the App Store. Join the waitlist and get <b>$100 in free credits</b>.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>"""
+BAR = """<div class="topbar"><span class="early">Early access</span><span>Femp is your <b>F</b>irst <b>EMP</b>loyee. Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>"""
 
 
 def nav(current: str = "") -> str:
     links = "".join(
-        f'<a class="hide-sm" href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for h, t in MAIN_NAV
+        f'<a class="hide-sm" href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for h, t in NAV
     )
     blog = ' aria-current="page"' if current == "/blog/" else ""
     bar = "" if current == "/waitlist/" else BAR
     return f"""{bar}<header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="Femp" width="30" height="30">Femp</a>
-  <nav aria-label="Main">{links}<a href="/blog/"{blog}>Blog</a>
+  <nav aria-label="Main">{PLUGINS_MENU}{links}<a href="/blog/"{blog}>Blog</a>
   <a class="btn green" href="{WA}">Say hi on WhatsApp</a></nav>
 </div></header>"""
 
 FOOTER = """<footer><div class="wrap"><div class="frame ruled" style="border-bottom:0"><div>
   <span>Femp is made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
-  <nav aria-label="Footer"><a href="/features/">Features</a><a href="/how-it-works/">How it works</a><a href="/integrations/">Integrations</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/blog/feed.xml">RSS</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a><a href="https://youtu.be/W9z4sHcGYgk">Demo</a></nav>
+  <nav aria-label="Footer"><a href="/dtc/">DTC brands</a><a href="/jobs/">Jobs</a><a href="/finance/">Finance</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/security/">Security</a><a href="/blog/">Blog</a><a href="/blog/feed.xml">RSS</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a><a href="https://youtu.be/W9z4sHcGYgk">Demo</a></nav>
 </div></div></div></footer>"""
 
 CLOSER = f"""<section class="closer ruled"><div>
   <h2>Get Femp first.</h2>
-  <p>Femp is the operations teammate for DTC brands on Shopify and Amazon. Join the waitlist and get $100 in free credits when we launch.</p>
+  <p>Femp is your First EMPloyee: an AI assistant on WhatsApp that you can give a job. Join the waitlist and get $100 in free credits.</p>
   <div class="ctas"><a class="btn green" href="/waitlist/?from=closer">Join the waitlist</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
 </div><img src="/img/icon-512.png" alt="" width="110" height="110" loading="lazy"></section>"""
 
@@ -99,9 +107,16 @@ def head(title: str, description: str, url: str, kind: str = "website", extra: s
 <meta name="twitter:description" content="{d}"><meta name="twitter:image" content="{OG}">
 <link rel="alternate" type="application/rss+xml" title="Femp blog" href="{SITE}/blog/feed.xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-{FONTS}<link rel="stylesheet" href="/assets/site.css">
+{FONTS}<link rel="stylesheet" href="/assets/site.css?v={CSS_VERSION}">
 {extra}
 </head>"""
+
+
+def moved(url: str) -> str:
+    return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title>'
+            f'<link rel="canonical" href="{url}"><meta name="robots" content="noindex">'
+            f'<meta http-equiv="refresh" content="0; url={url}"></head>'
+            f'<body><p>This page moved to <a href="{url}">{url}</a>.</p></body></html>\n')
 
 
 def load(src: Path = SRC, prefix: str = "/blog/") -> list[dict]:
@@ -172,6 +187,7 @@ def article(p: dict, posts: list[dict]) -> str:
 {CLOSER}
 </div></div></main>
 {FOOTER}
+{MENU_JS}
 </body></html>
 """
 
@@ -219,6 +235,7 @@ def page(p: dict, pages: list[dict]) -> str:
 {CLOSER}
 </div></div></main>
 {FOOTER}
+{MENU_JS}
 </body></html>
 """
 
@@ -243,6 +260,10 @@ CHANNELS = [
 ]
 
 
+# plugins someone can ask for on the waitlist; keys are the plugin ids
+WANTS = [("femp-dtc", "Run my online store"), ("femp-jobs", "Find a job"), ("femp-finance", "Stocks and money"), ("other", "Something else")]
+
+
 def flag(cc: str) -> str:
     return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in cc)
 
@@ -250,7 +271,7 @@ def flag(cc: str) -> str:
 def waitlist() -> str:
     url = f"{SITE}/waitlist/"
     title = "Join the Femp AI Waitlist: $100 in Free Credits"
-    description = ("Join the Femp AI waitlist for the Shopify App Store and iPhone app launch. Get an early invite and "
+    description = ("Join the Femp AI waitlist for your store, your job search or your money. Get an early invite and "
                    "$100 in free credits.")
     schema = {
         "@context": "https://schema.org", "@type": "WebPage", "name": "Femp waitlist", "description": description,
@@ -258,6 +279,7 @@ def waitlist() -> str:
         "publisher": ORG, "about": SOFTWARE,
     }
     channels = "".join(f'<label><input type="checkbox" name="platforms" id="p-{key}" value="{key}">{name}</label>' for key, name in CHANNELS)
+    wants = "".join(f'<label><input type="checkbox" name="wants" id="w-{key}" value="{key}">{name}</label>' for key, name in WANTS)
     options = "".join(f'<option value="{code}" data-cc="{cc}">{flag(cc)} {code}</option>' for cc, code in CODES)
     return f"""{head(title, description, url, extra=ld(schema))}
 <body>
@@ -268,7 +290,7 @@ def waitlist() -> str:
     <p class="label"><b>●</b> Early access</p>
     <p class="credit"><strong>$100</strong> in free credits for everyone on the list</p>
     <h1>Get Femp first, with $100 in free credits.</h1>
-    <p class="lede">We're finishing the Shopify App Store listing and the iPhone app. Join the list and we'll message you on WhatsApp as soon as you can install it.</p>
+    <p class="lede">Tell us what you want Femp for. We'll message you on WhatsApp as soon as that plugin is ready to install.</p>
     <ul>
       <li>An invite before the public launch</li>
       <li>$100 in free credits on your account when you install</li>
@@ -282,15 +304,21 @@ def waitlist() -> str:
       <div class="field"><label for="phone">WhatsApp number</label>
         <div class="phone"><select id="cc" aria-label="Country code">{options}</select>
         <input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="Phone number" required></div></div>
+      <fieldset class="field"><legend>What do you want Femp for? <small>(pick all that apply)</small></legend>
+        <div class="seg">{wants}</div></fieldset>
+      <div id="store-fields">
       <div class="field"><label for="store">Store link <small>(optional)</small></label>
         <input id="store" name="store" type="text" inputmode="url" autocomplete="url" placeholder="yourstore.com or a marketplace storefront link"></div>
       <fieldset class="field"><legend>Where do you sell? <small>(pick all that apply)</small></legend>
         <div class="seg">{channels}</div></fieldset>
+      </div>
+      <div class="field" id="other-field" hidden><label for="other">What job would you hand to Femp?</label>
+        <input id="other" name="other" type="text" placeholder="Book my clinic's appointments"></div>
       <div class="hp" aria-hidden="true"><label for="leave-empty">Leave this field empty</label><input id="leave-empty" name="leave_empty" type="text" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true"></div>
       <label class="consent" for="consent"><input id="consent" type="checkbox" checked><span>Femp can contact me on WhatsApp and email about early access. No spam, and you can leave any time.</span></label>
       <p class="fine bad" id="err" role="alert" hidden></p>
       <button class="btn green" type="submit" id="go">Join and claim $100 in credits</button>
-      <p class="fine">Credits apply to Femp after launch, one per store. We use your details only for Femp early access. <a href="https://auth.femp.ai/privacy">Privacy</a></p>
+      <p class="fine">Credits apply to Femp after launch, one per person. We use your details only for Femp early access. <a href="https://auth.femp.ai/privacy">Privacy</a></p>
     </form>
     <div class="done" id="done" hidden>
       <div class="tick" aria-hidden="true">✓</div>
@@ -309,6 +337,11 @@ def waitlist() -> str:
   const region = (navigator.languages || [navigator.language]).map(l => (l.split("-")[1] || "").toUpperCase()).find(Boolean);
   const pick = [...$("cc").options].find(o => o.dataset.cc === region);
   if (pick) pick.selected = true;
+  const asked = new URLSearchParams(location.search).get("for");
+  const box = $("w-" + asked);
+  if (box) box.checked = true;
+  const sync = () => {{ $("store-fields").hidden = !$("w-femp-dtc").checked; $("other-field").hidden = !$("w-other").checked; }};
+  form.addEventListener("change", sync); sync();
   const show = text => {{ err.textContent = text; err.hidden = !text; }};
   form.addEventListener("submit", async e => {{
     e.preventDefault();
@@ -320,6 +353,7 @@ def waitlist() -> str:
     const body = {{
       email, phone, store: $("store").value.trim(), consent: true, company: $("leave-empty").value,
       platforms: [...form.querySelectorAll("input[name=platforms]:checked")].map(i => i.value),
+      wants: [...form.querySelectorAll("input[name=wants]:checked")].map(i => i.value === "other" && $("other").value.trim() ? "other: " + $("other").value.trim() : i.value),
       source: new URLSearchParams(location.search).get("from") || (document.referrer ? new URL(document.referrer).pathname : "direct"),
     }};
     show(""); go.disabled = true; go.textContent = "Joining…";
@@ -347,6 +381,7 @@ def waitlist() -> str:
   }});
 }})();
 </script>
+{MENU_JS}
 </body></html>
 """
 
@@ -376,6 +411,7 @@ def index(posts: list[dict]) -> str:
 {CLOSER}
 </div></div></main>
 {FOOTER}
+{MENU_JS}
 </body></html>
 """
 
@@ -403,7 +439,7 @@ def feed(posts: list[dict]) -> str:
 
 def sitemap(posts: list[dict], pages: list[dict]) -> str:
     latest = max(p["updated"] for p in posts)
-    urls = [(f"{SITE}/", HOME_UPDATED), (f"{SITE}/waitlist/", HOME_UPDATED)] + [(p["url"], p["updated"]) for p in pages]
+    urls = [(f"{SITE}/", HOME_UPDATED), (f"{SITE}/dtc/", HOME_UPDATED), (f"{SITE}/jobs/", HOME_UPDATED), (f"{SITE}/finance/", HOME_UPDATED), (f"{SITE}/waitlist/", HOME_UPDATED)] + [(p["url"], p["updated"]) for p in pages]
     urls += [(f"{SITE}/blog/", latest)] + [(p["url"], p["updated"]) for p in posts]
     body = "".join(f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>\n" for u, d in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}</urlset>\n'
@@ -413,14 +449,17 @@ def llms(posts: list[dict], pages: list[dict]) -> str:
     lines = [
         "# Femp",
         "",
-        "> Femp (also called Femp AI, by Femp AI, Inc.) is an AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. "
-        "It watches the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks and the store's Gmail inbox, messages the "
-        "owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.",
+        "> Femp (also called Femp AI, by Femp AI, Inc.) is an assistant you text on WhatsApp or use in the Femp app, extended with plugins. "
+        "Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores: the pixel, ad spend against real sales, search and AI-assistant rankings, "
+        "stock, chargebacks, the store's Gmail inbox and social posts. Femp for Jobs and Femp for Finance are coming soon. Femp acts only after the person says yes. Free during the beta.",
         "",
         "Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.",
         "",
         "## Product",
-        f"- [Home]({SITE}/): what Femp does for DTC brands, a WhatsApp demo and 20 ready-made automations",
+        f"- [Home]({SITE}/): Femp as your first employee, and its plugins",
+        f"- [Femp for DTC brands]({SITE}/dtc/): what Femp does for Shopify and Amazon stores, a WhatsApp demo and 20 ready-made automations",
+        f"- [Femp for Jobs]({SITE}/jobs/): matching roles every morning, tailored applications, follow-ups (coming soon)",
+        f"- [Femp for Finance]({SITE}/finance/): stock watchlist research, bills and subscriptions (coming soon)",
         *[f"- [{p['nav']}]({p['url']}): {p['description']}" for p in pages],
         "- [Privacy policy](https://auth.femp.ai/privacy)",
         "- [Support](https://auth.femp.ai/support)",
@@ -458,6 +497,11 @@ def main() -> None:
         out = ROOT / p["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(page(p, pages), encoding="utf-8")
+    # old DTC pages keep working: a small page that forwards to /dtc/ (GitHub Pages has no real redirects)
+    for slug in MERGED_INTO_DTC:
+        old = ROOT / slug / "index.html"
+        old.parent.mkdir(parents=True, exist_ok=True)
+        old.write_text(moved(f"{SITE}/dtc/"), encoding="utf-8")
     for p in posts:
         out = ROOT / "blog" / p["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)

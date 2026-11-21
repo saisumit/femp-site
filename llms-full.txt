@@ -1,168 +1,8 @@
 # Femp
 
-> Femp (also called Femp AI, by Femp AI, Inc.) is an AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. It watches the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks and the store's Gmail inbox, messages the owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.
+> Femp (also called Femp AI, by Femp AI, Inc.) is an assistant you text on WhatsApp or use in the Femp app, extended with plugins. Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores: the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks, the store's Gmail inbox and social posts. Femp for Jobs and Femp for Finance are coming soon. Femp acts only after the person says yes. Free during the beta.
 
 Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
-
----
-
-# What Femp does for your store
-
-URL: https://femp.ai/features/
-
-Femp is an AI operations assistant for Shopify and Amazon brands. It watches the parts of the store that slip when you're busy and tells you on WhatsApp when something needs you, with the fix ready.
-
-● In short
-
- - Stock: live levels from Shopify and Amazon FBA, with days of cover for each product.
-
- - Ads: Meta and Google spend checked against what your store actually sold. Read-only.
-
- - Findability: a 0–100 score across Google, marketplaces and AI assistants such as ChatGPT and Perplexity, plus fixes you approve.
-
- - Inbox: chargebacks, supplier delays, account warnings and reviews flagged from your store's Gmail, with replies drafted.
-
- - Social (coming soon): daily stories and short videos made from your store, posted to every channel in one tap.
-
- - Orders and team: ask anything about sales and buyers, and add teammates who chat from their own WhatsApp.
-
-## Stock: days of cover, not just counts
-
-Femp reads live inventory from Shopify and Amazon FBA and works out how many days each product lasts at its current pace. You set your own alert limits. A daily stock automation lists what's out, what runs out within a week, and whether you're still paying for ads on something that's about to sell out.
-
-Why days of cover matters: "40 left" sounds fine until you sell nine a day. Read more in Days of cover: the stock number that stops your best seller selling out.
-
-## Ads: spend checked against real sales
-
-Meta and Google each take credit for the same sale. Femp compares yesterday's spend in Meta Ads and Google Ads with the orders your Shopify store actually took, so ad sets that lose money show up the next morning, together with the budget change Femp would make. Femp never edits your ads; access is read-only and you make the change yourself.
-
-Background: Are your ads making money? Check ROAS against real store sales.
-
-## Findability: found on Google and in ChatGPT
-
-More shoppers ask ChatGPT, Perplexity and Google's AI answers what to buy. Femp gives each store a 0–100 findability score across Google, marketplaces and AI assistants, then researches three fresh ideas on the web every afternoon. Reply with a number and Femp rewrites the product title, description, image alt text or a blog post. Every edit waits for your yes and can be undone.
-
-The checklist behind it: How to get your products found on Google and in ChatGPT.
-
-## Inbox: the emails that matter, flagged
-
-Once you connect your store's Gmail, Femp checks it every hour for chargebacks, supplier delays, marketplace account warnings and reviews. It tells you which ones need you and drafts the replies for you to send. A chargeback with a deadline doesn't get buried under newsletters.
-
-On disputes: Shopify chargebacks: how to answer every dispute before the deadline.
-
-## Social: stories from your store, on every channel (coming soon)
-
-Most owners run their own social and go quiet when the store gets busy. Femp will hand you two or three finished stories each morning, made from what happened in your store: a restock, a new review, a launch, a best seller, plus angles from what competitors and Amazon alternatives are posting. One tap posts a story to Instagram and Facebook, then TikTok, YouTube Shorts and Pinterest, cropped to each channel's shape. Femp tracks which stories sold and offers to boost the winners as ads. Nothing posts without your yes.
-
-The playbook behind it: Your store makes a story every day. Here's how to post it everywhere.
-
-## Orders: who's buying, and buying again
-
-Ask in plain words: sales by day or week, new versus repeat buyers, best sellers, where orders came from, and what's still waiting to ship. Femp answers from your connected data and suggests a next step. It reads buyers' order history, not their names, emails or addresses.
-
-## Automations you set up in one message
-
-Tell Femp what to watch and when, and it becomes an automation that runs in your time zone: "every morning at 9, check stock", "tell me if my pixel misses sales", "every Monday, send me last week's profit". Start from ready-made automations or describe your own. Femp stays quiet when nothing is wrong. See how it works.
-
-## Team and memory
-
-Add a teammate and they chat with Femp from their own WhatsApp: the person who packs orders can ask what's still to ship. Femp remembers your preferences, so nobody has to repeat them.
-
----
-
-# How Femp works
-
-URL: https://femp.ai/how-it-works/
-
-Femp lives where you already are: WhatsApp, or the Femp app. Setup takes a few minutes. Then you tell it what to automate.
-
-## 1. Say hi on WhatsApp
-
-Message Femp on WhatsApp. It replies with a personal link to connect your store. Femp is free during the beta.
-
-## 2. Connect your tools through their own approval screens
-
-Each connection uses the platform's official sign-in and consent screen: Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail. Femp never sees or keeps your passwords or one-time codes. Connect only what you want, and disconnect any of them from the app at any time. Details on the integrations page.
-
-## 3. Get your first stock check in minutes
-
-As soon as your store is connected, Femp runs a stock check and sends what's out, what's running low and how many days each product has left.
-
-## 4. Set up your automations
-
-Tell Femp what to watch and when, in your own words. Pick from ready-made automations or describe your own:
-
- You say | What you get | 
-
- "Every morning at 9, check stock" | What's out, what runs out within a week at today's pace, and whether it's still advertised | 
-
- "Review my ads every day before lunch" | Yesterday's Meta and Google spend against real Shopify sales, with the budget change to make | 
-
- "Tell me if my pixel misses sales" | A message the day Meta or Google stop counting purchases your store took | 
-
- "Watch my Google and ChatGPT rankings" | Where you rank, what slipped, and the pages to rewrite | 
-
- "Check the inbox every hour" | Chargebacks, supplier delays, account warnings and reviews from your store's Gmail, with replies drafted | 
-
- "Every Monday, send me last week's profit" | Sales minus ad spend, fees and refunds, by product | 
-
-Every automation runs on your store's real data, in your time zone. Change or stop one any time by saying so. If it finds nothing worth your time, Femp doesn't message you.
-
-## 5. Talk it through, then Femp does it
-
-When Femp finds something, it explains it in plain words and suggests what to do, like a teammate would. Ask questions, push back or change the plan; once you give the go-ahead, it handles it and tells you when it's done. Edits can be undone, and Femp never touches your prices, stock or checkout.
-
-## 6. Ask anything, any time
-
-Ask Femp about the store in plain words whenever you want: "how many orders today?", "which ads lost money last week?", "what's still to ship?". Teammates you add can ask too, from their own WhatsApp.
-
----
-
-# Integrations: what Femp connects to
-
-URL: https://femp.ai/integrations/
-
-Every connection goes through the platform's own sign-in and consent screen. You choose what to connect, and you can disconnect any of it from the app at any time.
-
-Platform | What Femp reads | What Femp can change | 
-
- Shopify | Orders, products, inventory and chargebacks | Product SEO (titles, descriptions, image alt text) and blog posts, only after your yes, and undoable. Never prices, stock or checkout | 
-
- Amazon Seller Central | Orders and FBA inventory | Never your prices or stock | 
-
- Meta Ads | Spend and results by campaign and ad set | Nothing. Read-only | 
-
- Google Ads | Spend and results by campaign | Nothing. Read-only | 
-
- Google Search Console | Search queries, clicks and rankings for your store | Nothing | 
-
- Gmail | Your store's inbox, checked hourly for chargebacks, suppliers, account warnings and reviews | Drafts replies for you to send | 
-
- WhatsApp and the Femp app | Your messages to Femp | Where Femp messages you and your teammates | 
-
-## Shopify
-
-Femp reads orders, products and inventory to work out days of cover, sales and repeat buyers, and to compare ad spend with real sales. With your approval it can improve product titles, descriptions and image alt text, and publish blog posts, which helps your products show up on Google and in AI assistants. See how products get found in ChatGPT.
-
-## Amazon Seller Central
-
-Femp reads your Amazon orders and FBA stock alongside Shopify, so days of cover reflects everything you sell, not just one channel.
-
-## Meta Ads and Google Ads
-
-Read-only. Femp checks each morning whether yesterday's spend turned into real store sales and suggests the budget change it would make. You make any change yourself in the ads manager.
-
-## Google Search Console
-
-Search data feeds the afternoon findability check: which searches find you, which pages are slipping, and what to fix first.
-
-## Gmail
-
-Connect the inbox your store uses and Femp checks it every hour for emails that cost money if missed: chargebacks with deadlines, supplier delays, marketplace account warnings and reviews. It drafts replies; you send them.
-
-## Coming next
-
-For social: Instagram and Facebook first, then TikTok, YouTube and Pinterest, so Femp can post the stories you approve. More channels and marketplaces are planned. If you need one, say so on WhatsApp or email support@femp.ai.
 
 ---
 
@@ -170,33 +10,91 @@ For social: Instagram and Facebook first, then TikTok, YouTube and Pinterest, so
 
 URL: https://femp.ai/pricing/
 
-Femp is free while we're in beta. You get everything: every automation, every connection and every feature.
+Femp is free while we're in beta: the assistant, every plugin and every automation.
 
 ● Beta plan · $0
 
- - Automations for sales, ads, pixel health, SEO, stock and chargebacks, on your schedule
+ - The Femp assistant on WhatsApp and in the app
 
- - Inbox checks with drafted replies
+ - Every plugin as it launches: DTC brands today, Jobs and Finance soon
 
- - Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail
-
- - Product SEO and blog fixes, done after your yes and undoable
+ - Automations on your schedule, and your own, such as “every Monday, send me last week's profit”
 
  - Teammates on their own WhatsApp
 
- - Your own automations, such as "every Monday, send me last week's profit"
+ - $100 in free credits for everyone on the waitlist
 
 ## What happens after the beta?
 
-Paid plans haven't been announced yet. Questions about pricing: support@femp.ai.
+Paid plans haven't been announced yet. We'll tell everyone on the waitlist before anything changes, and your $100 in credits carries over. Questions about pricing: support@femp.ai.
+
+## Do I pay per plugin?
+
+Not during the beta. Every plugin is included.
 
 ## How does Femp compare with hiring someone?
 
-A part-time operations assistant or virtual assistant usually costs hundreds to thousands of dollars a month and works set hours. Femp watches the store every day, including weekends, and messages you only when something needs you. It doesn't replace judgement: you still decide, and nothing changes without your yes. Read what an AI operations assistant can and can't do.
+A part-time assistant usually costs hundreds to thousands of dollars a month and works set hours. Femp checks in every day, including weekends, and messages you only when something needs you. It doesn't replace your judgement: you decide, and it acts only on what you approve.
 
-## Get started
+---
 
-Say hi on WhatsApp, connect your store, and your first stock check arrives a few minutes later. See how it works.
+# Frequently asked questions
+
+URL: https://femp.ai/faq/
+
+Short answers about Femp, its plugins, pricing and how it keeps you in charge.
+
+## What is Femp?
+
+Femp stands for First EMPloyee. It's a general AI assistant you text on WhatsApp or use in the Femp app: ask questions, draft replies, sum up documents, set reminders. Install a plugin and it becomes your employee for that job, with the right connections and a daily routine. It's made by Femp AI, Inc.
+
+## What is a plugin?
+
+A job you give Femp. Each plugin adds what that job needs: the accounts to connect, what to watch, and the automations that run in your time zone. Install one by texting Femp, for example “install femp for jobs”, or from the Plugins tab in the app.
+
+## Which plugins are there?
+
+Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores. Femp for Jobs and Femp for Finance are coming soon. You can suggest the next one on the waitlist.
+
+## Can I use Femp without a plugin?
+
+Yes. On its own, Femp is a helpful assistant on WhatsApp. Plugins add a job on top: connections, a routine and check-ins.
+
+## How much does Femp cost?
+
+Femp is free during the beta, with every plugin included. Everyone on the waitlist gets $100 in free credits. See pricing.
+
+## Does Femp act without asking?
+
+No. Anything that sends a message, posts, pays or changes something waits for your yes. Femp shows what it will do first, and every change it makes is logged and can be undone where the platform allows it.
+
+## Is my data safe?
+
+Every connection uses the platform's own sign-in, access tokens are encrypted with AES-256, Femp never keeps passwords or one-time codes, chat history is deleted after 90 days, and you can delete your account in one step. See security.
+
+## How do I start?
+
+Say hi to Femp on WhatsApp, or join the waitlist and tell us which plugin you want. You can talk to Femp right away; plugins open as they launch.
+
+## Can my team use Femp?
+
+Yes. Add a teammate and they chat with Femp from their own WhatsApp. Femp remembers shared preferences, so nobody repeats themselves.
+
+## What does Femp for DTC brands connect to?
+
+Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail, each through the platform's own approval screen. It never touches prices, stock or checkout, and its ads access is read-only. See Femp for DTC brands.
+
+## Will Femp for Jobs apply to jobs for me?
+
+No. It finds roles, tailors your resume and cover letter, and drafts emails in your Gmail. You review and send every application yourself.
+
+## Is Femp for Finance financial advice?
+
+No. It sums up public information about the stocks you follow and reminds you about bills and subscriptions. It never places trades or tells you what to buy or sell.
+
+## Who makes Femp?
+
+Femp is made by Femp AI, Inc. Contact support@femp.ai.
 
 ---
 
@@ -204,9 +102,17 @@ Say hi on WhatsApp, connect your store, and your first stock check arrives a few
 
 URL: https://femp.ai/security/
 
-Femp works for you, and you stay in charge. These are the rules it follows with your store and your customers' data.
+Femp works for you, and you stay in charge. These are the rules it follows with every plugin and your data.
 
-## What Femp will and won't do
+## For every plugin
+
+ - Acts only after your yes. Sending, posting, paying or changing anything waits for your approval.
+
+ - Drafts emails, doesn't send them unless you say so. You send from your own inbox.
+
+ - Never places trades and never tells you what to buy or sell.
+
+## Femp for DTC brands
 
  - Never touches your prices, stock or checkout.
 
@@ -214,23 +120,21 @@ Femp works for you, and you stay in charge. These are the rules it follows with 
 
  - Changes only what you approve. Product SEO and blog edits happen after your yes, and every edit can be undone.
 
- - Drafts emails, doesn't send them. You send replies from your own inbox.
+## Your data
 
-## Your customers' data
-
- - Femp reads buyers' order history, not their names, emails or addresses.
+ - For stores, Femp reads buyers' order history, not their names, emails or addresses.
 
  - Answers are worked out from your store's data for you and your team only.
 
 ## Connections and credentials
 
- - Every connection uses the platform's own sign-in and approval screen (Shopify, Amazon, Meta, Google).
+ - Every connection uses the platform's own sign-in and approval screen (Shopify, Amazon, Meta, Google and others).
 
  - Access tokens are encrypted with AES-256.
 
  - Femp never keeps passwords or one-time codes.
 
- - Disconnect any connection from the app at any time. See integrations.
+ - Disconnect any connection from the app at any time. 
 
 ## Retention and deletion
 
@@ -239,70 +143,6 @@ Femp works for you, and you stay in charge. These are the rules it follows with 
  - Delete your account from the app in one step.
 
 The full policy is in the privacy policy. Questions: support@femp.ai.
-
----
-
-# Frequently asked questions
-
-URL: https://femp.ai/faq/
-
-Short answers to the questions store owners ask most. Something missing? Ask Femp on WhatsApp or email support@femp.ai.
-
-## What is Femp?
-
-Femp (also called Femp AI, made by Femp AI, Inc.) is an AI operations assistant for owners of Shopify and Amazon brands. It watches stock, ad spend against real sales, how findable your products are on Google and in AI assistants like ChatGPT, and your store's inbox. When something needs you, it messages you on WhatsApp or in the Femp app with the fix ready, and makes the change once you say yes.
-
-## Who is Femp for?
-
-Owners and small teams running a direct-to-consumer brand on Shopify, Amazon or both, who don't have a full-time operations person and lose money when stock, ads, disputes or search slip during a busy week.
-
-## What does Femp connect to?
-
-Shopify, Amazon Seller Central, Meta Ads, Google Ads, Google Search Console and Gmail, each through the platform's own approval screen. You talk to Femp on WhatsApp or in the Femp app. See integrations.
-
-## How much does Femp cost?
-
-Femp is free during the beta, with every feature included. See pricing.
-
-## Can Femp change my store without asking?
-
-No. Femp never touches prices, stock or checkout, and its ads access is read-only. It edits product SEO (titles, descriptions, image alt text) and blog posts only after you reply yes, and every edit can be undone.
-
-## How do I set up Femp?
-
-Say hi on WhatsApp, open the link Femp sends, and connect your store. Your first stock check arrives a few minutes later. See how it works.
-
-## What reports does Femp send?
-
-The ones you set up. Tell Femp what to watch and when, such as "check stock every morning at 9" or "every Monday, send me last week's profit", and it runs that automation in your time zone. Start from ready-made automations for sales, ads, pixel health, SEO, stock, chargebacks and the inbox, or describe your own. If nothing needs you, Femp stays quiet.
-
-## Does Femp help my products show up in ChatGPT and Google?
-
-Yes. Femp scores each store's findability from 0 to 100 across Google, marketplaces and AI assistants such as ChatGPT and Perplexity, researches fixes on the web, and, after your yes, rewrites product titles, descriptions, alt text and blog posts. See how to get products found on Google and in ChatGPT.
-
-## Can Femp run my social media?
-
-That's coming. Femp will make daily stories and short videos from your store's products, reviews and news, post them to Instagram and Facebook (then TikTok, YouTube and Pinterest) in the right format after your tap, and offer to boost the ones that sell. See how it works.
-
-## How is Femp different from a Shopify analytics dashboard?
-
-A dashboard waits for you to open it and work out what matters. Femp checks the numbers for you every day, tells you only when something needs action, explains it in plain words and has the fix ready. It also reads sources a dashboard doesn't combine, such as ad spend, Amazon FBA stock and your store's inbox.
-
-## How is Femp different from hiring a virtual assistant?
-
-Femp watches the store every day, including weekends, answers immediately and costs nothing during the beta. It doesn't replace judgement: you decide, and it only acts on what you approve. Many owners use Femp so a human teammate can spend time on customers and suppliers instead of checking numbers.
-
-## Is my data safe?
-
-Access tokens are encrypted with AES-256, Femp never keeps passwords or one-time codes, it reads buyers' order history but not their names, emails or addresses, chat history is deleted after 90 days, and you can delete your account in one step. See security.
-
-## Can my team use Femp?
-
-Yes. Add a teammate and they chat with Femp from their own WhatsApp. Femp remembers the store's preferences, so nobody repeats themselves.
-
-## Who makes Femp?
-
-Femp is made by Femp AI, Inc.. Contact support@femp.ai.
 
 ---
 

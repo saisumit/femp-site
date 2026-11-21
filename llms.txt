@@ -1,17 +1,17 @@
 # Femp
 
-> Femp (also called Femp AI, by Femp AI, Inc.) is an AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. It watches the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks and the store's Gmail inbox, messages the owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.
+> Femp (also called Femp AI, by Femp AI, Inc.) is an assistant you text on WhatsApp or use in the Femp app, extended with plugins. Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores: the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks, the store's Gmail inbox and social posts. Femp for Jobs and Femp for Finance are coming soon. Femp acts only after the person says yes. Free during the beta.
 
 Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
 
 ## Product
-- [Home](https://femp.ai/): what Femp does for DTC brands, a WhatsApp demo and 20 ready-made automations
-- [Features](https://femp.ai/features/): Stock and days of cover, Meta and Google ads against real Shopify sales, SEO for Google and ChatGPT, and inbox triage, all over WhatsApp.
-- [How it works](https://femp.ai/how-it-works/): Say hi on WhatsApp, connect Shopify or Amazon through their own sign-in, and get your first stock check minutes later. Nothing changes without your OK.
-- [Integrations](https://femp.ai/integrations/): Femp AI connects to Shopify, Amazon Seller Central, Meta Ads, Google Ads, Search Console and Gmail through each platform's own sign-in.
-- [Pricing](https://femp.ai/pricing/): Femp AI is free during the beta: every feature, every connection and every automation for Shopify and Amazon stores.
-- [Security](https://femp.ai/security/): Femp AI never touches prices, stock or checkout, edits SEO only after your OK, encrypts access tokens with AES-256 and never keeps passwords.
-- [FAQ](https://femp.ai/faq/): What Femp AI is, who it's for, what it connects to, what it costs and whether it can change your store. Straight answers for Shopify and Amazon brands.
+- [Home](https://femp.ai/): Femp as your first employee, and its plugins
+- [Femp for DTC brands](https://femp.ai/dtc/): what Femp does for Shopify and Amazon stores, a WhatsApp demo and 20 ready-made automations
+- [Femp for Jobs](https://femp.ai/jobs/): matching roles every morning, tailored applications, follow-ups (coming soon)
+- [Femp for Finance](https://femp.ai/finance/): stock watchlist research, bills and subscriptions (coming soon)
+- [Pricing](https://femp.ai/pricing/): Femp AI is free during the beta: the assistant and every plugin, with $100 in free credits for everyone on the waitlist.
+- [FAQ](https://femp.ai/faq/): What Femp AI is, how plugins work, what each plugin does, what it costs and whether it acts without asking. Straight answers.
+- [Security](https://femp.ai/security/): Femp AI acts only after your yes, encrypts access tokens with AES-256, never keeps passwords and deletes chat history after 90 days.
 - [Privacy policy](https://auth.femp.ai/privacy)
 - [Support](https://auth.femp.ai/support)
 
