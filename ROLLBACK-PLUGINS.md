@@ -27,7 +27,7 @@ Run these four blocks. Each takes seconds. Nothing live needs to change, because
 cd ~/femp-site && git switch main && git branch -D main-plugin
 
 # 2. iPhone app: back to the old code and reinstall the old app on the phone
-cd ~/ops-secretary-ios && git switch main && scripts/run-on-phone.sh && git branch -D main-plugin
+cd ~/ops-secretary-ios && git switch main && scripts/run-on-phone.sh 00008150-000279EA3E42401C && git branch -D main-plugin
 
 # 3. Server: back to main-python (no code changed on the branch)
 cd ~/ecom-secretary && git switch main-python && git branch -D main-plugin
@@ -42,11 +42,11 @@ experiment then just sits on its branch.
 
 ```sh
 cd ~/femp-site && git switch main
-cd ~/ops-secretary-ios && git switch main && scripts/run-on-phone.sh   # old app back on the phone
+cd ~/ops-secretary-ios && git switch main && scripts/run-on-phone.sh 00008150-000279EA3E42401C   # old app back on the phone
 cd ~/ecom-secretary && git switch main-python
 ```
 
-Come back with `git switch main-plugin` in each repo (and `scripts/run-on-phone.sh` for the app).
+Come back with `git switch main-plugin` in each repo (and `scripts/run-on-phone.sh 00008150-000279EA3E42401C` for the app).
 
 ## Go live (you like it)
 
@@ -72,7 +72,7 @@ cd ~/femp-site && git switch main && git restore --source=1759cd8 --staged --wor
 # (rows already collected keep their Wants value; the column is simply ignored)
 
 # App: revert the merge on main the same way, then reinstall or ship a new TestFlight build
-cd ~/ops-secretary-ios && git switch main && git revert -m 1 --no-edit $(git log --merges -1 --format=%H) && scripts/run-on-phone.sh
+cd ~/ops-secretary-ios && git switch main && git revert -m 1 --no-edit $(git log --merges -1 --format=%H) && scripts/run-on-phone.sh 00008150-000279EA3E42401C
 ```
 
 `git revert` adds an “undo” commit instead of rewriting history, so nothing is lost and it can itself be undone.
