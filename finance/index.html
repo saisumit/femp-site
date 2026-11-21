@@ -257,6 +257,16 @@ footer a { color: var(--muted); }
 .scr .atab { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); background: var(--panel); padding: 10px 4px 18px; text-align: center; font: 500 .64rem/1 var(--sans); color: var(--faint); }
 .scr .atab .on { color: var(--accent); font-weight: 700; }
 .scr.lockscr { background: radial-gradient(120% 70% at 20% 0%, #2f8a64 0%, transparent 60%), radial-gradient(90% 60% at 100% 100%, #c9a26a 0%, transparent 55%), linear-gradient(170deg, #17694b, #0b2a1f 70%); grid-template-rows: auto 1fr auto; padding: 22px 12px 14px; }
+
+.scr .plugbox { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; max-width: 60%; }
+.scr .plugbox .plugged { margin-left: 0; font-size: .58rem; padding: 5px 6px; }
+.scr .arow.focus { border-color: var(--c); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 15%, transparent); }
+#jobsrow { border-color: var(--rule); }
+.steps4 { grid-template-columns: repeat(3, max-content) !important; }
+.steps4 button.k-dtc i, .steps4 button.k-jobs i, .steps4 button.k-fin i { color: var(--c); }
+.steps4 button[aria-pressed="true"].k-dtc, .steps4 button[aria-pressed="true"].k-jobs, .steps4 button[aria-pressed="true"].k-fin { background: var(--c); border-color: var(--c); color: #fff; }
+.steps4 button[aria-pressed="true"].k-dtc i, .steps4 button[aria-pressed="true"].k-jobs i, .steps4 button[aria-pressed="true"].k-fin i { background: #fff; color: var(--c); }
+.lnote.k-fin strong { color: #8a4f0e; }
 @media (max-width: 1000px) { .uhero, .plugin-in { grid-template-columns: minmax(0, 1fr); } .pcards { grid-template-columns: minmax(0, 1fr); max-width: 460px; } .tgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .uhero { padding: 40px 18px; } .tgrid { grid-template-columns: minmax(0, 1fr); } .suggest { grid-template-columns: auto minmax(0, 1fr); } .suggest > span:last-child { display: none; } }
 @media (prefers-reduced-motion: reduce) { .lnote, .cb { animation: none; } .pcard > img, .pnote, .parrow { transition: none; } }

@@ -292,6 +292,16 @@ footer a { color: var(--muted); }
 .scr .atab { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); background: var(--panel); padding: 10px 4px 18px; text-align: center; font: 500 .64rem/1 var(--sans); color: var(--faint); }
 .scr .atab .on { color: var(--accent); font-weight: 700; }
 .scr.lockscr { background: radial-gradient(120% 70% at 20% 0%, #2f8a64 0%, transparent 60%), radial-gradient(90% 60% at 100% 100%, #c9a26a 0%, transparent 55%), linear-gradient(170deg, #17694b, #0b2a1f 70%); grid-template-rows: auto 1fr auto; padding: 22px 12px 14px; }
+
+.scr .plugbox { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; max-width: 60%; }
+.scr .plugbox .plugged { margin-left: 0; font-size: .58rem; padding: 5px 6px; }
+.scr .arow.focus { border-color: var(--c); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 15%, transparent); }
+#jobsrow { border-color: var(--rule); }
+.steps4 { grid-template-columns: repeat(3, max-content) !important; }
+.steps4 button.k-dtc i, .steps4 button.k-jobs i, .steps4 button.k-fin i { color: var(--c); }
+.steps4 button[aria-pressed="true"].k-dtc, .steps4 button[aria-pressed="true"].k-jobs, .steps4 button[aria-pressed="true"].k-fin { background: var(--c); border-color: var(--c); color: #fff; }
+.steps4 button[aria-pressed="true"].k-dtc i, .steps4 button[aria-pressed="true"].k-jobs i, .steps4 button[aria-pressed="true"].k-fin i { background: #fff; color: var(--c); }
+.lnote.k-fin strong { color: #8a4f0e; }
 @media (max-width: 1000px) { .uhero, .plugin-in { grid-template-columns: minmax(0, 1fr); } .pcards { grid-template-columns: minmax(0, 1fr); max-width: 460px; } .tgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .uhero { padding: 40px 18px; } .tgrid { grid-template-columns: minmax(0, 1fr); } .suggest { grid-template-columns: auto minmax(0, 1fr); } .suggest > span:last-child { display: none; } }
 @media (prefers-reduced-motion: reduce) { .lnote, .cb { animation: none; } .pcard > img, .pnote, .parrow { transition: none; } }
@@ -439,33 +449,34 @@ def home() -> str:
     <div class="ctas"><a class="btn solid" href="/waitlist/?from=home-hero">Join the waitlist →</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
     <ol class="steps4" aria-label="What's happening on the phone">
       <li><button type="button" data-step="0" aria-pressed="true"><i>1</i>Ask anything</button></li>
-      <li><button type="button" data-step="1" aria-pressed="false"><i>2</i>Install a plugin</button></li>
-      <li><button type="button" data-step="2" aria-pressed="false"><i>3</i>Give it a job</button></li>
-      <li><button type="button" data-step="3" aria-pressed="false"><i>4</i>Daily check-ins</button></li>
+      <li><button type="button" data-step="1" aria-pressed="false" class="k-dtc"><i>2</i>+ DTC brands</button></li>
+      <li><button type="button" data-step="2" aria-pressed="false" class="k-jobs"><i>3</i>+ Jobs</button></li>
+      <li><button type="button" data-step="3" aria-pressed="false" class="k-fin"><i>4</i>+ Finance</button></li>
+      <li><button type="button" data-step="4" aria-pressed="false"><i>5</i>Daily check-ins</button></li>
     </ol>
   </div>
-  <div class="lock" aria-label="Femp on a phone: a chat, installing a plugin, then using it">
-    <div class="scr chat on" data-s="0">
+  <div class="lock" aria-label="Femp on a phone: a chat, then installing plugins one by one and using each">
+    <div class="scr chat on" data-s="chat0">
       <div class="sh"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div></div>
       <div class="st" id="t0"></div>
     </div>
-    <div class="scr app" data-s="1">
+    <div class="scr app" data-s="app">
       <div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
       <div class="ab">
         <h3>Plugins</h3><p class="asub">Give Femp a job</p>
-        <div class="arow k-dtc"><span class="ic">D</span><div><b>Femp for DTC brands</b><small>Run your store</small></div><span class="abtn">Install</span></div>
-        <div class="arow k-jobs" id="jobsrow"><span class="ic">J</span><div><b>Femp for Jobs</b><small>Find your next role</small></div><span class="abtn" id="jobsbtn">Install</span></div>
-        <div class="arow k-fin"><span class="ic">F</span><div><b>Femp for Finance</b><small>Stocks and bills</small></div><span class="abtn">Install</span></div>
+        <div class="arow k-dtc" id="row-dtc"><span class="ic">D</span><div><b>Femp for DTC brands</b><small>Run your store</small></div><span class="abtn" id="btn-dtc">Install</span></div>
+        <div class="arow k-jobs" id="row-jobs"><span class="ic">J</span><div><b>Femp for Jobs</b><small>Find your next role</small></div><span class="abtn" id="btn-jobs">Install</span></div>
+        <div class="arow k-fin" id="row-fin"><span class="ic">F</span><div><b>Femp for Finance</b><small>Stocks and bills</small></div><span class="abtn" id="btn-fin">Install</span></div>
       </div>
-      <div class="toast" id="toast">✓ Femp for Jobs is plugged in</div>
+      <div class="toast" id="toast"></div>
       <div class="atab"><span>Chat</span><span>Inbox</span><span class="on">Plugins</span><span>You</span></div>
     </div>
-    <div class="scr chat" data-s="2">
-      <div class="sh"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div><span class="plugged k-jobs">+ Jobs</span></div>
-      <div class="st" id="t2"></div>
+    <div class="scr chat" data-s="chatp">
+      <div class="sh"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div><span class="plugbox" id="plugged"></span></div>
+      <div class="st" id="tp"></div>
     </div>
-    <div class="scr lockscr" data-s="3">
-      <div class="ltime"><small>Sunday 23 November</small><span>8:30</span></div>
+    <div class="scr lockscr" data-s="lock">
+      <div class="ltime"><small>Monday 23 November</small><span>8:30</span></div>
       <div class="lstack" id="stack"></div>
       <div class="lbar"></div>
     </div>
@@ -527,59 +538,86 @@ def home() -> str:
 (() => {{
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  const $ = (id) => document.getElementById(id);
   const screens = [...document.querySelectorAll(".lock .scr")], stepBtns = [...document.querySelectorAll(".steps4 button")];
-  const bubble = (w, h, tag) => {{ const el = document.createElement("div"); el.className = "cb" + (w === "me" ? " me" : ""); el.innerHTML = (tag ? `<span class="tagp k-${{tag}}">${{tag === "jobs" ? "Jobs" : tag}}</span>` : "") + h; return el; }};
+  const NAMES = {{ dtc: "DTC brands", jobs: "Jobs", fin: "Finance" }}, FULL = {{ dtc: "Femp for DTC brands", jobs: "Femp for Jobs", fin: "Femp for Finance" }};
+  const bubble = (w, h, tag) => {{ const el = document.createElement("div"); el.className = "cb" + (w === "me" ? " me" : ""); el.innerHTML = (tag ? `<span class="tagp k-${{tag}}">${{NAMES[tag]}}</span>` : "") + h; return el; }};
   const CHAT0 = [["me", "<span class='file'>📄 Lease_2026.pdf</span>what should I know before signing?"],
                  ["f", "Three things: rent goes up <b>4% in March</b>, notice is <b>60 days</b>, and pets need written approval."],
                  ["me", "remind me to call the landlord at 6"], ["f", "Done ✓ I'll remind you at 6 pm."]];
-  const CHAT2 = [["me", "find me senior product design roles, remote"],
-                 ["f", "<b>4 roles</b> match you. Best fit: Lumen Health, posted 6 hours ago. I've tailored your resume. Draft the email to the hiring manager?", "jobs"],
-                 ["me", "yes please"], ["f", "Draft is in your Gmail with your resume attached ✓", "jobs"]];
-  const NOTES = [["Jobs", "jobs", "2 new roles today", "Both remote. Resumes tailored and ready."],
-                 ["Jobs", "jobs", "Follow up with Lumen Health?", "It's been 3 days. A short note is drafted."],
+  const CHATS = {{
+    dtc: [["me", "how did the store do yesterday?"],
+          ["f", "<b>$4,820</b> from 92 orders, up 14%. One problem: Meta only counted 46 of them. The pixel broke after Tuesday's theme update. Fix it?", "dtc"],
+          ["me", "yes"], ["f", "Fixed ✓ Orders now go to Meta straight from Shopify.", "dtc"]],
+    jobs: [["me", "find me senior product design roles, remote"],
+           ["f", "<b>4 roles</b> match you. Best fit: Lumen Health, posted 6 hours ago. Your resume is tailored. Draft the email to the hiring manager?", "jobs"],
+           ["me", "yes please"], ["f", "Draft is in your Gmail with your resume attached ✓", "jobs"]],
+    fin: [["me", "add Anthropic to my watchlist"],
+          ["f", "Added <b>ANT</b>, Anthropic on Nasdaq. It listed on Thursday 19 November: priced at $83, opened at $111.50. I'll sum it up each morning and flag its first earnings date. Research only, not advice.", "fin"],
+          ["me", "anything due this week?"], ["f", "Your card bill, <b>$1,240</b>, is due Friday. You also pay for 2 apps you haven't opened in 60 days.", "fin"]],
+  }};
+  const NOTES = [["DTC brands", "dtc", "3 stories ready", "Made from today's restock. Tap to preview and post everywhere."],
+                 ["Jobs", "jobs", "2 new roles today", "Both remote. Resumes tailored and ready."],
+                 ["Finance", "fin", "Your ANT summary", "What moved Anthropic since Friday, in 3 lines. Research only."],
                  ["Assistant", "gen", "Call the landlord at 6", "Your two questions are in the chat."]];
-  let run = 0, onScreen = true, step = 0;
-  const show = (i) => {{ step = i; screens.forEach((el) => el.classList.toggle("on", Number(el.dataset.s) === i)); stepBtns.forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.step) === i))); }};
+  const ORDER = ["dtc", "jobs", "fin"];
+  let run = 0, onScreen = true;
+  const note = ([plug, k, t, d]) => {{ const el = document.createElement("div"); el.className = "lnote k-" + k; el.innerHTML = `<img src="/img/icon-512.png" alt=""><div><small><b>Femp</b> · ${{plug}}<em>now</em></small><strong>${{t}}</strong><span>${{d}}</span></div>`; return el; }};
+  const screen = (name) => screens.forEach((el) => el.classList.toggle("on", el.dataset.s === name));
+  const mark = (i) => stepBtns.forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.step) === i)));
+  // app + chat state for "the first n plugins are installed"
+  const hideToast = () => {{ const t = $("toast"); t.classList.remove("on"); t.textContent = ""; }};
+  function setInstalled(n) {{
+    ORDER.forEach((k, j) => {{ const b = $("btn-" + k); b.classList.remove("tap"); b.classList.toggle("done", j < n); b.textContent = j < n ? "Installed ✓" : "Install"; $("row-" + k).classList.toggle("focus", j === n); }});
+    $("plugged").innerHTML = ORDER.slice(0, n).map((k) => `<span class="plugged k-${{k}}">+ ${{NAMES[k]}}</span>`).join("");
+  }}
   async function type(box, list, token) {{
     box.replaceChildren();
     for (const [w, h, tag] of list) {{
       while (!onScreen) {{ await wait(300); if (token !== run) return false; }}
       if (token !== run) return false;
       box.append(bubble(w, h, tag));
-      if (!still) await wait(w === "me" ? 1100 : 1700);
+      if (!still) await wait(w === "me" ? 1100 : 1900);
     }}
     return true;
   }}
-  function fill(i) {{
-    // a finished view of a step, for jumps and reduced motion
-    if (i === 0) {{ const b = document.getElementById("t0"); b.replaceChildren(...CHAT0.map(([w, h, t]) => bubble(w, h, t))); }}
-    if (i === 1) {{ const btn = document.getElementById("jobsbtn"); btn.textContent = "Installed ✓"; btn.classList.add("done"); document.getElementById("toast").classList.add("on"); }}
-    if (i === 2) {{ const b = document.getElementById("t2"); b.replaceChildren(...CHAT2.map(([w, h, t]) => bubble(w, h, t))); }}
-    if (i === 3) {{ const st = document.getElementById("stack"); st.replaceChildren(...NOTES.map(note)); }}
+  async function install(k, j, token) {{
+    setInstalled(j); hideToast(); screen("app"); await wait(1100); if (token !== run) return false;
+    $("btn-" + k).classList.add("tap"); await wait(450); if (token !== run) return false;
+    setInstalled(j + 1); $("row-" + k).classList.add("focus");
+    $("toast").textContent = `✓ ${{FULL[k]}} is plugged in`; $("toast").classList.add("on"); await wait(1700);
+    return token === run;
   }}
-  function resetApp() {{ const btn = document.getElementById("jobsbtn"); btn.textContent = "Install"; btn.classList.remove("done", "tap"); document.getElementById("toast").classList.remove("on"); }}
-  const note = ([plug, k, t, d]) => {{ const el = document.createElement("div"); el.className = "lnote k-" + k; el.innerHTML = `<img src="/img/icon-512.png" alt=""><div><small><b>Femp</b> · ${{plug}}<em>now</em></small><strong>${{t}}</strong><span>${{d}}</span></div>`; return el; }};
   async function playStory(token, from) {{
-    for (let i = from; ; i = (i + 1) % 4) {{
-      show(i);
-      if (i === 0) {{ resetApp(); document.getElementById("t2").replaceChildren(); document.getElementById("stack").replaceChildren(); if (!(await type(document.getElementById("t0"), CHAT0, token))) return; await wait(1600); }}
-      if (i === 1) {{
-        resetApp(); await wait(1200); if (token !== run) return;
-        const btn = document.getElementById("jobsbtn"); btn.classList.add("tap"); await wait(500); if (token !== run) return;
-        btn.textContent = "Installed ✓"; btn.classList.add("done"); document.getElementById("toast").classList.add("on"); await wait(2200);
-      }}
-      if (i === 2) {{ if (!(await type(document.getElementById("t2"), CHAT2, token))) return; await wait(1800); }}
-      if (i === 3) {{
-        const st = document.getElementById("stack"); st.replaceChildren();
+    for (let i = from; ; i = (i + 1) % 5) {{
+      mark(i);
+      if (i === 0) {{ setInstalled(0); hideToast(); screen("chat0"); if (!(await type($("t0"), CHAT0, token))) return; await wait(1500); }}
+      else if (i <= 3) {{
+        const k = ORDER[i - 1];
+        if (!(await install(k, i - 1, token))) return;
+        screen("chatp"); if (!(await type($("tp"), CHATS[k], token))) return; await wait(1500);
+      }} else {{
+        screen("lock"); const st = $("stack"); st.replaceChildren();
         for (const n of NOTES) {{ if (token !== run) return; st.append(note(n)); await wait(900); }}
-        await wait(2600);
+        await wait(2800);
       }}
       if (token !== run) return;
     }}
   }}
-  stepBtns.forEach((b) => b.addEventListener("click", () => {{ run++; const i = Number(b.dataset.step); for (let k = 0; k <= i; k++) fill(k); show(i); }}));
+  // tapping a step shows its finished state, then the story carries on from there
+  function finished(i) {{
+    hideToast();
+    if (i === 0) {{ setInstalled(0); $("t0").replaceChildren(...CHAT0.map(([w, h, t]) => bubble(w, h, t))); screen("chat0"); }}
+    else if (i <= 3) {{ setInstalled(i); $("tp").replaceChildren(...CHATS[ORDER[i - 1]].map(([w, h, t]) => bubble(w, h, t))); screen("chatp"); }}
+    else {{ setInstalled(3); $("stack").replaceChildren(...NOTES.map(note)); screen("lock"); }}
+    mark(i);
+  }}
+  stepBtns.forEach((b) => b.addEventListener("click", async () => {{
+    const token = ++run, i = Number(b.dataset.step); finished(i);
+    if (still) return; await wait(5000); if (token === run) playStory(token, (i + 1) % 5);
+  }}));
   new IntersectionObserver(([e]) => {{ onScreen = e.isIntersecting; }}).observe(document.querySelector(".lock"));
-  if (still) {{ [0, 1, 2, 3].forEach(fill); show(0); }} else playStory(++run, 0);
+  if (still) finished(4); else playStory(++run, 0);
 
   // install chat plays once when it scrolls into view
   const box = document.getElementById("install");
