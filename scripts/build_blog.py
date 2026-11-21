@@ -26,7 +26,7 @@ SITE = "https://femp.ai"
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "content" / "blog"
 PAGES = ROOT / "content" / "pages"
-WA = "https://wa.me/919351808066?text=Hi%20Femp"
+WA = "https://wa.me/918073735097?text=Hi%20Femp"
 OG = f"{SITE}/img/og.jpg"
 LOGO = f"{SITE}/img/icon-512.png"
 HOME_UPDATED = "2026-11-15"
