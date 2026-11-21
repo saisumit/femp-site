@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Femp Finance: Your stocks, bills and subscriptions, summed up daily</title>
+<title>Femp for Finance: Your stocks, bills and subscriptions, summed up daily</title>
 <meta name="description" content="Watches the stocks you follow (earnings dates, big moves, filings, news) and your money admin (bills due, subscriptions you no longer use), summed up each morning. Research and reminders only: Femp never trades or tells you what to buy.">
 <link rel="canonical" href="https://femp.ai/finance/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#17694b">
 <meta property="og:site_name" content="Femp"><meta property="og:type" content="website">
-<meta property="og:title" content="Femp Finance: Your stocks, bills and subscriptions, summed up daily"><meta property="og:description" content="Watches the stocks you follow (earnings dates, big moves, filings, news) and your money admin (bills due, subscriptions you no longer use), summed up each morning. Research and reminders only: Femp never trades or tells you what to buy.">
+<meta property="og:title" content="Femp for Finance: Your stocks, bills and subscriptions, summed up daily"><meta property="og:description" content="Watches the stocks you follow (earnings dates, big moves, filings, news) and your money admin (bills due, subscriptions you no longer use), summed up each morning. Research and reminders only: Femp never trades or tells you what to buy.">
 <meta property="og:url" content="https://femp.ai/finance/"><meta property="og:image" content="https://femp.ai/img/og.jpg">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Femp Finance: Your stocks, bills and subscriptions, summed up daily"><meta name="twitter:description" content="Watches the stocks you follow (earnings dates, big moves, filings, news) and your money admin (bills due, subscriptions you no longer use), summed up each morning. Research and reminders only: Femp never trades or tells you what to buy."><meta name="twitter:image" content="https://femp.ai/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Femp for Finance: Your stocks, bills and subscriptions, summed up daily"><meta name="twitter:description" content="Watches the stocks you follow (earnings dates, big moves, filings, news) and your money admin (bills due, subscriptions you no longer use), summed up each morning. Research and reminders only: Femp never trades or tells you what to buy."><meta name="twitter:image" content="https://femp.ai/img/og.jpg">
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Femp Finance", "description": "Watches the stocks you follow (earnings dates, big moves, filings, news) and your money admin (bills due, subscriptions you no longer use), summed up each morning. Research and reminders only: Femp never trades or tells you what to buy.", "url": "https://femp.ai/finance/", "isPartOf": {"@type": "WebSite", "name": "Femp", "url": "https://femp.ai/"}, "inLanguage": "en-US"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Femp for Finance", "description": "Watches the stocks you follow (earnings dates, big moves, filings, news) and your money admin (bills due, subscriptions you no longer use), summed up each morning. Research and reminders only: Femp never trades or tells you what to buy.", "url": "https://femp.ai/finance/", "isPartOf": {"@type": "WebSite", "name": "Femp", "url": "https://femp.ai/"}, "inLanguage": "en-US"}</script>
 <style>
 :root {
   --paper: #f6f8f5; --panel: #ffffff; --ink: #0c1510; --muted: #56655d; --faint: #8a988f; --rule: #dfe6e0;
@@ -82,7 +82,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 @keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .p-input { margin: 0 10px 10px; background: var(--panel); border-radius: 99px; padding: 10px 14px; font-size: .82rem; color: var(--faint); }
 .plugins { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.plugin { background: var(--panel); border: 1px solid var(--rule); border-radius: 16px; padding: 20px; display: grid; gap: 10px; align-content: start; min-width: 0; color: inherit; text-decoration: none; transition: transform .15s; }
+.plugin { background: var(--panel); border: 1px solid var(--rule); border-radius: 16px; padding: 20px; display: grid; gap: 8px; grid-template-rows: auto auto 1fr auto; min-width: 0; color: inherit; text-decoration: none; transition: transform .15s; }
 a.plugin:hover { transform: translateY(-2px); }
 .plugin .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .plugin .ic { width: 40px; height: 40px; border-radius: 11px; background: var(--cb); color: var(--c); display: grid; place-items: center; font-weight: 800; }
@@ -90,7 +90,7 @@ a.plugin:hover { transform: translateY(-2px); }
 .plugin h3 { font-size: 1.15rem; letter-spacing: -0.02em; }
 .plugin p { color: var(--muted); font-size: .92rem; }
 .plugin .conn { font: 400 .75rem/1.5 var(--mono); color: var(--faint); }
-.plugin .go { font: 600 .9rem/1 var(--sans); color: var(--c); }
+.plugin .go { font: 600 1.1rem/1 var(--sans); color: var(--c); margin-top: 6px; }
 .plugin.more { border-style: dashed; background: transparent; } .plugin.more .ic { background: var(--chat); color: var(--muted); }
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; counter-reset: s; list-style: none; padding: 0; }
 .steps li { display: grid; gap: 6px; border-top: 2px solid var(--forest); padding-top: 12px; counter-increment: s; }
@@ -117,14 +117,14 @@ footer a { color: var(--muted); }
 <div class="topbar"><span class="early">Early access</span><span>Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="">Femp</a>
-  <nav aria-label="Main"><a class="hide-sm" href="/dtc/">DTC brands</a><a class="hide-sm" href="/jobs/">Job Hunter</a><a class="hide-sm" href="/finance/" aria-current="page">Finance</a><a class="hide-sm" href="/blog/">Blog</a><a class="btn green" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></nav>
+  <nav aria-label="Main"><a class="hide-sm" href="/dtc/">DTC brands</a><a class="hide-sm" href="/jobs/">Jobs</a><a class="hide-sm" href="/finance/" aria-current="page">Finance</a><a class="hide-sm" href="/blog/">Blog</a><a class="btn green" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></nav>
 </div></header>
 <main><div class="wrap"><div class="frame">
 <section class="hero">
   <div>
-    <p class="label"><a href="/">Femp</a> / Femp Finance · coming soon</p>
+    <p class="label"><a href="/">Femp</a> / Femp for Finance · coming soon</p>
     <h1 style="margin-top:14px">Your money, <em>summed up daily.</em></h1>
-    <p class="lede">Femp Finance watches the stocks you follow and the bills you'd rather not miss, and sends one short summary each morning: earnings coming up, big moves, new filings, bills due and subscriptions you've stopped using.</p>
+    <p class="lede">Femp for Finance watches the stocks you follow and the bills you'd rather not miss, and sends one short summary each morning: earnings coming up, big moves, new filings, bills due and subscriptions you've stopped using.</p>
     <div class="ctas"><a class="btn solid" href="/waitlist/?for=femp-finance&amp;from=fin-hero">Join the waitlist →</a><a class="btn line" href="/">All plugins</a></div>
   </div>
   <div class="phone" aria-live="polite">
@@ -135,19 +135,19 @@ footer a { color: var(--muted); }
 </section>
 <section class="sec">
   <p class="label">What it does</p>
-  <h2>What Finance handles for you</h2>
+  <h2>What Femp for Finance does for you</h2>
   <ul class="feat"><li><b>Watchlist summary</b><p>Earnings dates, big price moves and the news behind them, for the stocks you choose.</p></li><li><b>Filings in plain words</b><p>Quarterly and annual reports summed up: revenue, margins and what changed in the outlook.</p></li><li><b>Bills due</b><p>Card and utility bills found in your Gmail, with a reminder before the due date.</p></li><li><b>Subscriptions you don&#x27;t use</b><p>Recurring charges you haven&#x27;t touched in a while, so you can cancel them.</p></li><li><b>Ask anything</b><p>“What did Orbit say about margins?” or “How much did I spend on apps this year?”</p></li><li><b>Research only</b><p>No trades, no buy or sell calls. You make every decision.</p></li></ul>
-  <p class="note">Femp Finance is research and reminders, not financial advice. It never places trades or tells you what to buy or sell.</p>
+  <p class="note">Femp for Finance is research and reminders, not financial advice. It never places trades or tells you what to buy or sell.</p>
   <p class="muted">Connects: Your watchlist · Gmail (bills and receipts). Each connection uses the platform's own sign-in, and nothing is sent without your yes.</p>
 </section>
 <section class="sec closer">
-  <div><h2>Get Femp Finance first.</h2><p class="muted">Join the waitlist and get $100 in free credits when it launches.</p></div>
+  <div><h2>Get Femp for Finance first.</h2><p class="muted">Join the waitlist and get $100 in free credits when it launches.</p></div>
   <div class="ctas" style="margin:0"><a class="btn green" href="/waitlist/?for=femp-finance&amp;from=fin-closer">Join the waitlist</a></div>
 </section>
 </div></div></main>
 <footer><div class="wrap"><div class="frame">
   <span>Femp is made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
-  <a href="/dtc/">DTC brands</a><a href="/jobs/">Job Hunter</a><a href="/finance/">Finance</a><a href="/blog/">Blog</a><a href="/dtc/security/">Security</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a>
+  <a href="/dtc/">DTC brands</a><a href="/jobs/">Jobs</a><a href="/finance/">Finance</a><a href="/blog/">Blog</a><a href="/dtc/security/">Security</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a>
 </div></div></footer>
 <script>
 (() => {

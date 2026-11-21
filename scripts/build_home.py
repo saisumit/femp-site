@@ -18,15 +18,15 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">')
 
 PLUGINS = [
-    {"id": "femp-dtc", "key": "dtc", "letter": "D", "name": "Femp for DTC brands", "status": "In beta", "href": "/dtc/",
+    {"id": "femp-dtc", "key": "dtc", "letter": "D", "name": "Femp for DTC brands", "short": "DTC brands", "line": "Your store's operations, handled.", "status": "In beta", "href": "/dtc/",
      "q": "Running a store?", "a": "Stock, ads, pixel, chargebacks and social, fixed for you.",
      "about": "For Shopify and Amazon store owners: stock and reorders, ads against real sales, pixel health, SEO and AI search, chargebacks, inbox, and daily social stories and posts.",
      "connects": "Shopify · Amazon · Meta · Google Ads · Search Console · Gmail · Instagram"},
-    {"id": "femp-jobs", "key": "jobs", "letter": "J", "name": "Femp Job Hunter", "status": "Coming soon", "href": "/jobs/",
+    {"id": "femp-jobs", "key": "jobs", "letter": "J", "name": "Femp for Jobs", "short": "Jobs", "line": "Your job search, on autopilot.", "status": "Coming soon", "href": "/jobs/",
      "q": "Looking for a job?", "a": "New roles every morning, each application tailored.",
      "about": "New roles that match you every morning, a tailored resume and cover letter for each, an application tracker, follow-up emails and interview prep.",
      "connects": "Your resume · Gmail · Google Calendar"},
-    {"id": "femp-finance", "key": "fin", "letter": "F", "name": "Femp Finance", "status": "Coming soon", "href": "/finance/",
+    {"id": "femp-finance", "key": "fin", "letter": "F", "name": "Femp for Finance", "short": "Finance", "line": "Your stocks and bills, summed up.", "status": "Coming soon", "href": "/finance/",
      "q": "Managing money?", "a": "Your stocks, bills and subscriptions, summed up daily.",
      "about": "Watches the stocks you follow (earnings dates, big moves, filings, news) and your money admin (bills due, subscriptions you no longer use), summed up each morning. Research and reminders only: Femp never trades or tells you what to buy.",
      "connects": "Your watchlist · Gmail (bills and receipts)"},
@@ -37,7 +37,7 @@ SCENES = {
         ["f", "Morning Maya! Shopify had <b>64 orders</b> yesterday, but Meta only saw <b>46</b>. The pixel broke with Tuesday's theme update.", "8:02"],
         ["m", "ugh. can you fix it?", "8:05"],
         ["d", "Fixed ✓ Orders now go to Meta straight from Shopify. 12 counted so far today.", "8:07"]]],
-    "jobs": ["Job Hunter", [
+    "jobs": ["Jobs", [
         ["f", "Morning! <b>4 new roles</b> match you. Best fit: Senior Product Designer at Lumen Health, remote, posted 6 hours ago. Your design-systems work is exactly what they list.", "8:30"],
         ["f", "Tailored resume and cover letter are ready. Want me to draft the email to the hiring manager?", "8:30"],
         ["m", "yes, send me the draft", "8:41"],
@@ -117,7 +117,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 @keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .p-input { margin: 0 10px 10px; background: var(--panel); border-radius: 99px; padding: 10px 14px; font-size: .82rem; color: var(--faint); }
 .plugins { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.plugin { background: var(--panel); border: 1px solid var(--rule); border-radius: 16px; padding: 20px; display: grid; gap: 10px; align-content: start; min-width: 0; color: inherit; text-decoration: none; transition: transform .15s; }
+.plugin { background: var(--panel); border: 1px solid var(--rule); border-radius: 16px; padding: 20px; display: grid; gap: 8px; grid-template-rows: auto auto 1fr auto; min-width: 0; color: inherit; text-decoration: none; transition: transform .15s; }
 a.plugin:hover { transform: translateY(-2px); }
 .plugin .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .plugin .ic { width: 40px; height: 40px; border-radius: 11px; background: var(--cb); color: var(--c); display: grid; place-items: center; font-weight: 800; }
@@ -125,7 +125,7 @@ a.plugin:hover { transform: translateY(-2px); }
 .plugin h3 { font-size: 1.15rem; letter-spacing: -0.02em; }
 .plugin p { color: var(--muted); font-size: .92rem; }
 .plugin .conn { font: 400 .75rem/1.5 var(--mono); color: var(--faint); }
-.plugin .go { font: 600 .9rem/1 var(--sans); color: var(--c); }
+.plugin .go { font: 600 1.1rem/1 var(--sans); color: var(--c); margin-top: 6px; }
 .plugin.more { border-style: dashed; background: transparent; } .plugin.more .ic { background: var(--chat); color: var(--muted); }
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; counter-reset: s; list-style: none; padding: 0; }
 .steps li { display: grid; gap: 6px; border-top: 2px solid var(--forest); padding-top: 12px; counter-increment: s; }
@@ -172,7 +172,7 @@ def head(title: str, desc: str, path: str, schema: dict) -> str:
 
 
 def nav(current: str) -> str:
-    links = "".join(f'<a class="hide-sm" href="{p["href"]}"{" aria-current=\"page\"" if p["href"] == current else ""}>{"DTC brands" if p["key"] == "dtc" else p["name"].replace("Femp ", "")}</a>' for p in PLUGINS)
+    links = "".join(f'<a class="hide-sm" href="{p["href"]}"{" aria-current=\"page\"" if p["href"] == current else ""}>{p["short"]}</a>' for p in PLUGINS)
     return f"""<div class="topbar"><span class="early">Early access</span><span>Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="">Femp</a>
@@ -182,7 +182,7 @@ def nav(current: str) -> str:
 
 FOOTER = f"""<footer><div class="wrap"><div class="frame">
   <span>Femp is made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
-  <a href="/dtc/">DTC brands</a><a href="/jobs/">Job Hunter</a><a href="/finance/">Finance</a><a href="/blog/">Blog</a><a href="/dtc/security/">Security</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a>
+  <a href="/dtc/">DTC brands</a><a href="/jobs/">Jobs</a><a href="/finance/">Finance</a><a href="/blog/">Blog</a><a href="/dtc/security/">Security</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a>
 </div></div></footer>"""
 
 
@@ -232,7 +232,7 @@ def script(keys: list[str], rotate: bool) -> str:
 
 def card(p: dict) -> str:
     return f"""<a class="plugin k-{p['key']}" href="{p['href']}"><div class="top"><span class="ic">{p['letter']}</span><span class="pill">{p['status']}</span></div>
-  <h3>{p['name']}</h3><p>{escape(p['about'])}</p><p class="conn">Connects: {escape(p['connects'])}</p><span class="go">{p['href'].strip('/') and 'femp.ai' + p['href']} →</span></a>"""
+  <h3>{p['name']}</h3><p>{p['line']}</p><span class="go" aria-hidden="true">→</span></a>"""
 
 
 def home() -> str:
@@ -243,7 +243,7 @@ def home() -> str:
          "description": "An assistant you text on WhatsApp or use in the Femp app, extended with plugins for running a store, job hunting and personal finance.",
          "url": f"{SITE}/", "publisher": {"@id": f"{SITE}/#org"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free during the beta"}}]}
     tabs = "".join(f'<li><button class="ptab k-{p["key"]}" type="button" data-p="{p["key"]}" aria-pressed="{"true" if i == 0 else "false"}"><b>{p["q"]}</b><span>{p["a"]}</span><small>{p["name"]} · {p["status"].lower()}</small></button></li>' for i, p in enumerate(PLUGINS))
-    cards = "".join(card(p) for p in PLUGINS) + '<a class="plugin more" href="/waitlist/?for=other&amp;from=home-suggest"><div class="top"><span class="ic">+</span></div><h3>Your next plugin</h3><p>Planning a wedding, running a clinic, managing rentals? Tell us the job you\'d hand to Femp.</p><span class="go">Suggest one →</span></a>'
+    cards = "".join(card(p) for p in PLUGINS) + '<a class="plugin more" href="/waitlist/?for=other&amp;from=home-suggest"><div class="top"><span class="ic">+</span></div><h3>Suggest a plugin</h3><p>Tell us the job you\'d hand to Femp.</p><span class="go" aria-hidden="true">→</span></a>'
     return f"""{head("Femp AI: Your First Employee, With Plugins", "Femp is an assistant you text on WhatsApp. Install a plugin and it learns a job: running your store, finding your next role, keeping on top of your money.", "/", schema)}
 <body>
 {nav("/")}
@@ -267,7 +267,7 @@ def home() -> str:
   <h2>Say hi, install a plugin, let it work.</h2>
   <ol class="steps">
     <li><b>Say hi on WhatsApp</b><p>Or download the Femp app. No forms.</p></li>
-    <li><b>Install a plugin</b><p>Text <code>install job hunter</code>, or pick one in the app.</p></li>
+    <li><b>Install a plugin</b><p>Text <code>install femp for jobs</code>, or pick one in the app.</p></li>
     <li><b>Connect what it needs</b><p>Each connection uses the platform's own sign-in. Femp never sees your passwords.</p></li>
     <li><b>It checks in, you approve</b><p>Daily automations run in your time zone. Anything that changes or sends waits for your yes.</p></li>
   </ol>
@@ -304,7 +304,7 @@ def plugin_page(p: dict, h1: str, lede: str, feats: list[tuple[str, str]], note:
 </section>
 <section class="sec">
   <p class="label">What it does</p>
-  <h2>What {p['name'].replace('Femp ', '')} handles for you</h2>
+  <h2>What {p['name']} does for you</h2>
   <ul class="feat">{items}</ul>
   {f'<p class="note">{note}</p>' if note else ''}
   <p class="muted">Connects: {escape(p['connects'])}. Each connection uses the platform's own sign-in, and nothing is sent without your yes.</p>
@@ -324,7 +324,7 @@ def main() -> None:
     by = {p["key"]: p for p in PLUGINS}
     (ROOT / "index.html").write_text(home(), encoding="utf-8")
     jobs = plugin_page(by["jobs"], "Your job search, <em>on autopilot.</em>",
-        "Femp Job Hunter finds roles that fit you every morning, tailors your resume and cover letter for each one, and keeps your search moving with follow-ups and interview prep. You decide what gets sent.",
+        "Femp for Jobs finds roles that fit you every morning, tailors your resume and cover letter for each one, and keeps your search moving with follow-ups and interview prep. You decide what gets sent.",
         [("New roles every morning", "Fresh openings that match your role, level and locations, ranked by how well you fit."),
          ("A tailored application each time", "Your resume and cover letter rewritten for the role, using only what's true about you."),
          ("Follow-ups that don't slip", "An application tracker, and follow-up emails drafted in your Gmail when it's time."),
@@ -332,14 +332,14 @@ def main() -> None:
          ("Calendar handled", "Interview times added to Google Calendar, with a reminder and notes the day before."),
          ("You stay in charge", "Femp never applies or emails on its own. Every send waits for your yes.")])
     fin = plugin_page(by["fin"], "Your money, <em>summed up daily.</em>",
-        "Femp Finance watches the stocks you follow and the bills you'd rather not miss, and sends one short summary each morning: earnings coming up, big moves, new filings, bills due and subscriptions you've stopped using.",
+        "Femp for Finance watches the stocks you follow and the bills you'd rather not miss, and sends one short summary each morning: earnings coming up, big moves, new filings, bills due and subscriptions you've stopped using.",
         [("Watchlist summary", "Earnings dates, big price moves and the news behind them, for the stocks you choose."),
          ("Filings in plain words", "Quarterly and annual reports summed up: revenue, margins and what changed in the outlook."),
          ("Bills due", "Card and utility bills found in your Gmail, with a reminder before the due date."),
          ("Subscriptions you don't use", "Recurring charges you haven't touched in a while, so you can cancel them."),
          ("Ask anything", "“What did Orbit say about margins?” or “How much did I spend on apps this year?”"),
          ("Research only", "No trades, no buy or sell calls. You make every decision.")],
-        "Femp Finance is research and reminders, not financial advice. It never places trades or tells you what to buy or sell.")
+        "Femp for Finance is research and reminders, not financial advice. It never places trades or tells you what to buy or sell.")
     for name, html in (("jobs", jobs), ("finance", fin)):
         (ROOT / name).mkdir(exist_ok=True)
         (ROOT / name / "index.html").write_text(html.replace("<h1 style=\"margin-top:14px\">", "<h1 style=\"margin-top:14px\">"), encoding="utf-8")

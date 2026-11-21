@@ -1,14 +1,14 @@
 # Femp
 
-> Femp (also called Femp AI, by Femp AI, Inc.) is an assistant you text on WhatsApp or use in the Femp app, extended with plugins. Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores: the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks, the store's Gmail inbox and social posts. Femp Job Hunter and Femp Finance are coming soon. Femp acts only after the person says yes. Free during the beta.
+> Femp (also called Femp AI, by Femp AI, Inc.) is an assistant you text on WhatsApp or use in the Femp app, extended with plugins. Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores: the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks, the store's Gmail inbox and social posts. Femp for Jobs and Femp for Finance are coming soon. Femp acts only after the person says yes. Free during the beta.
 
 Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
 
 ## Product
 - [Home](https://femp.ai/): Femp as your first employee, and its plugins
 - [Femp for DTC brands](https://femp.ai/dtc/): what Femp does for Shopify and Amazon stores, a WhatsApp demo and 20 ready-made automations
-- [Femp Job Hunter](https://femp.ai/jobs/): matching roles every morning, tailored applications, follow-ups (coming soon)
-- [Femp Finance](https://femp.ai/finance/): stock watchlist research, bills and subscriptions (coming soon)
+- [Femp for Jobs](https://femp.ai/jobs/): matching roles every morning, tailored applications, follow-ups (coming soon)
+- [Femp for Finance](https://femp.ai/finance/): stock watchlist research, bills and subscriptions (coming soon)
 - [Features](https://femp.ai/dtc/features/): Stock and days of cover, Meta and Google ads against real Shopify sales, SEO for Google and ChatGPT, and inbox triage, all over WhatsApp.
 - [How it works](https://femp.ai/dtc/how-it-works/): Say hi on WhatsApp, connect Shopify or Amazon through their own sign-in, and get your first stock check minutes later. Nothing changes without your OK.
 - [Integrations](https://femp.ai/dtc/integrations/): Femp AI connects to Shopify, Amazon Seller Central, Meta Ads, Google Ads, Search Console and Gmail through each platform's own sign-in.

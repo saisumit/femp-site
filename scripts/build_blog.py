@@ -40,7 +40,7 @@ FONTS = (
 
 MAIN_NAV = [("/dtc/features/", "Features"), ("/dtc/how-it-works/", "How it works"), ("/dtc/pricing/", "Pricing"), ("/dtc/faq/", "FAQ")]
 # outside /dtc/ (blog, waitlist): the plugins
-GENERAL_NAV = [("/dtc/", "DTC brands"), ("/jobs/", "Job Hunter"), ("/finance/", "Finance")]
+GENERAL_NAV = [("/dtc/", "DTC brands"), ("/jobs/", "Jobs"), ("/finance/", "Finance")]
 
 
 BAR = """<div class="topbar"><span class="early">Early access</span><span><a href="/" style="color:inherit">← All plugins</a> · Femp for DTC brands is coming to the Shopify App Store and the App Store. Join the waitlist and get <b>$100 in free credits</b>.</span><a href="/waitlist/?for=femp-dtc&amp;from=bar">Join the waitlist →</a></div>"""
@@ -62,7 +62,7 @@ def nav(current: str = "") -> str:
 
 FOOTER = """<footer><div class="wrap"><div class="frame ruled" style="border-bottom:0"><div>
   <span>Femp is made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
-  <nav aria-label="Footer"><a href="/">All plugins</a><a href="/dtc/">DTC brands</a><a href="/jobs/">Job Hunter</a><a href="/finance/">Finance</a><a href="/dtc/features/">Features</a><a href="/dtc/pricing/">Pricing</a><a href="/dtc/security/">Security</a><a href="/dtc/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/blog/feed.xml">RSS</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a><a href="https://youtu.be/W9z4sHcGYgk">Demo</a></nav>
+  <nav aria-label="Footer"><a href="/">All plugins</a><a href="/dtc/">DTC brands</a><a href="/jobs/">Jobs</a><a href="/finance/">Finance</a><a href="/dtc/features/">Features</a><a href="/dtc/pricing/">Pricing</a><a href="/dtc/security/">Security</a><a href="/dtc/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/blog/feed.xml">RSS</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a><a href="https://youtu.be/W9z4sHcGYgk">Demo</a></nav>
 </div></div></div></footer>"""
 
 CLOSER = f"""<section class="closer ruled"><div>
@@ -444,15 +444,15 @@ def llms(posts: list[dict], pages: list[dict]) -> str:
         "",
         "> Femp (also called Femp AI, by Femp AI, Inc.) is an assistant you text on WhatsApp or use in the Femp app, extended with plugins. "
         "Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores: the pixel, ad spend against real sales, search and AI-assistant rankings, "
-        "stock, chargebacks, the store's Gmail inbox and social posts. Femp Job Hunter and Femp Finance are coming soon. Femp acts only after the person says yes. Free during the beta.",
+        "stock, chargebacks, the store's Gmail inbox and social posts. Femp for Jobs and Femp for Finance are coming soon. Femp acts only after the person says yes. Free during the beta.",
         "",
         "Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.",
         "",
         "## Product",
         f"- [Home]({SITE}/): Femp as your first employee, and its plugins",
         f"- [Femp for DTC brands]({SITE}/dtc/): what Femp does for Shopify and Amazon stores, a WhatsApp demo and 20 ready-made automations",
-        f"- [Femp Job Hunter]({SITE}/jobs/): matching roles every morning, tailored applications, follow-ups (coming soon)",
-        f"- [Femp Finance]({SITE}/finance/): stock watchlist research, bills and subscriptions (coming soon)",
+        f"- [Femp for Jobs]({SITE}/jobs/): matching roles every morning, tailored applications, follow-ups (coming soon)",
+        f"- [Femp for Finance]({SITE}/finance/): stock watchlist research, bills and subscriptions (coming soon)",
         *[f"- [{p['nav']}]({p['url']}): {p['description']}" for p in pages],
         "- [Privacy policy](https://auth.femp.ai/privacy)",
         "- [Support](https://auth.femp.ai/support)",

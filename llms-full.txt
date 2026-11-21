@@ -1,6 +1,6 @@
 # Femp
 
-> Femp (also called Femp AI, by Femp AI, Inc.) is an assistant you text on WhatsApp or use in the Femp app, extended with plugins. Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores: the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks, the store's Gmail inbox and social posts. Femp Job Hunter and Femp Finance are coming soon. Femp acts only after the person says yes. Free during the beta.
+> Femp (also called Femp AI, by Femp AI, Inc.) is an assistant you text on WhatsApp or use in the Femp app, extended with plugins. Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores: the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks, the store's Gmail inbox and social posts. Femp for Jobs and Femp for Finance are coming soon. Femp acts only after the person says yes. Free during the beta.
 
 Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
 
