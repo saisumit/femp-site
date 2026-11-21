@@ -200,6 +200,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .wb.me { align-self: flex-end; background: var(--mine); border-radius: 14px 4px 14px 14px; }
 .wb.done { border-left: 3px solid var(--accent); }
 .wb b { font-weight: 600; }
+.wb .stories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 8px 0 2px; }
+.wb .st { margin: 0; position: relative; aspect-ratio: 9 / 16; border-radius: 8px; overflow: hidden; background: #efe8f3; }
+.wb .st img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wb .st.pack img { object-fit: contain; padding: 18% 6% 0; }
+.wb .st figcaption { position: absolute; inset: 0 0 auto; padding: 7px 6px 14px; color: #fff; font: 700 0.66rem/1.15 var(--sans); letter-spacing: -0.01em; background: linear-gradient(rgba(0,0,0,.45), transparent); }
+.wb .st.pack figcaption { color: #3b2a48; background: none; }
+.wb .st::after { content: ""; position: absolute; inset: 4px 6px auto; height: 2px; border-radius: 2px; background: rgba(255,255,255,.7); }
+.wb .st.pick { outline: 2px solid var(--accent); outline-offset: 1px; }
 .wb time { display: block; text-align: right; font: 400 0.68rem/1 var(--mono); color: var(--faint); margin-top: 4px; }
 .wtyping { align-self: flex-start; background: var(--panel); border-radius: 4px 14px 14px 14px; padding: 12px 14px; display: flex; gap: 4px; animation: wpop .2s ease-out both; }
 .wtyping.me { align-self: flex-end; background: var(--mine); border-radius: 14px 4px 14px 14px; }
@@ -389,6 +397,7 @@ footer a { color: var(--muted); }
             <li><button class="pain" type="button" id="sc1" aria-pressed="false"><span class="q">Ads not converting?</span><span class="a">Budget moved to what sells.</span><i class="prog"></i></button></li>
             <li><button class="pain" type="button" id="sc2" aria-pressed="false"><span class="q">Rankings slipping?</span><span class="a">Pages rewritten to climb back.</span><i class="prog"></i></button></li>
             <li><button class="pain" type="button" id="sc3" aria-pressed="false"><span class="q">Chargebacks?</span><span class="a">Proof sent before the deadline.</span><i class="prog"></i></button></li>
+            <li><button class="pain" type="button" id="sc4" aria-pressed="false"><span class="q">No time for social?</span><span class="a">Stories made from your store, posted for you. Soon.</span><i class="prog"></i></button></li>
           </ul>
           <div class="ctas">
             <a class="btn solid" href="/waitlist/?from=hero">Join the waitlist
@@ -505,6 +514,9 @@ footer a { color: var(--muted); }
      ["f", "You did. UPS shows it delivered to her door on <b>Nov 3</b>, and she's ordered from you 4 times before. The proof is ready.", "2:17"],
      ["m", "send it 🙏", "2:18"],
      ["d", "Sent to Shopify Payments, <b>5 days before the deadline</b> ✓ I'll let you know what the bank decides.", "2:18"]],
+    [["f", "Morning! 3 stories ready for today, made from your store's photos:<div class=\"stories\"><figure class=\"st pick\"><img src=\"/img/demo/wb-story-laundry.jpg\" alt=\"\"><figcaption>Soft on tiny clothes.</figcaption></figure><figure class=\"st\"><img src=\"/img/demo/wb-story-travel.jpg\" alt=\"\"><figcaption>Packed for the trip.</figcaption></figure><figure class=\"st pack\"><img src=\"/img/demo/wb-wipes.jpg\" alt=\"\"><figcaption>100% natural dry wipes</figcaption></figure></div>", "8:15"],
+     ["m", "the first one is perfect. post it", "8:21"],
+     ["d", "Posted to Instagram and Facebook Stories, a Reel and a YouTube Short, each sized right ✓ I'll tell you tonight what it sold.", "8:22"]],
   ];
   const thread = $("wthread"), scenes = SCENES.map((_, i) => $("sc" + i));
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
