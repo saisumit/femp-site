@@ -286,7 +286,7 @@ def waitlist() -> str:
         <input id="store" name="store" type="text" inputmode="url" autocomplete="url" placeholder="yourstore.com or a marketplace storefront link"></div>
       <fieldset class="field"><legend>Where do you sell? <small>(pick all that apply)</small></legend>
         <div class="seg">{channels}</div></fieldset>
-      <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+      <div class="hp" aria-hidden="true"><label for="leave-empty">Leave this field empty</label><input id="leave-empty" name="leave_empty" type="text" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true"></div>
       <label class="consent" for="consent"><input id="consent" type="checkbox" checked><span>Femp can contact me on WhatsApp and email about early access. No spam, and you can leave any time.</span></label>
       <p class="fine bad" id="err" role="alert" hidden></p>
       <button class="btn green" type="submit" id="go">Join and claim $100 in credits</button>
@@ -318,7 +318,7 @@ def waitlist() -> str:
     if (!$("consent").checked) return show("Tick the box so we can contact you about early access.");
     const phone = $("phone").value.trim().startsWith("+") ? "+" + digits : $("cc").value + digits.replace(/^0+/, "");
     const body = {{
-      email, phone, store: $("store").value.trim(), consent: true, company: $("company").value,
+      email, phone, store: $("store").value.trim(), consent: true, company: $("leave-empty").value,
       platforms: [...form.querySelectorAll("input[name=platforms]:checked")].map(i => i.value),
       source: new URLSearchParams(location.search).get("from") || (document.referrer ? new URL(document.referrer).pathname : "direct"),
     }};

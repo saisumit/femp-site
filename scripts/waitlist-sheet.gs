@@ -28,7 +28,9 @@ function doPost(e) {
   } catch (err) {
     return reply({ ok: false, error: "Something went wrong. Try again in a minute." });
   }
-  if (body.company) return reply({ ok: true }); // hidden field people never see; bots fill it
+  // The hidden "leave empty" field is a bot trap, but browser autofill can fill it for real people,
+  // so a filled one is still saved (flagged in From) and only skips the email.
+  const flagged = Boolean(body.company);
   const email = clip(body.email, 254).toLowerCase();
   const phone = clip(body.phone, 32);
   if (!EMAIL.test(email)) return reply({ ok: false, error: "Enter your email address." });
@@ -36,7 +38,7 @@ function doPost(e) {
   if (body.consent !== true) return reply({ ok: false, error: "Tick the box so we can contact you about early access." });
   const store = clip(body.store, 300);
   const platforms = (Array.isArray(body.platforms) ? body.platforms : []).slice(0, 12).map((p) => clip(p, 30)).join(", ");
-  const source = clip(body.source, 100);
+  const source = (flagged ? "flagged: hidden field filled · " : "") + clip(body.source, 100);
 
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
@@ -56,7 +58,7 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
-  if (added) {
+  if (added && !flagged) {
     try {
       MailApp.sendEmail(NOTIFY, `Femp waitlist: ${email}`,
         `Email: ${email}\nPhone: ${phone}\nStore: ${store || "-"}\nPlatforms: ${platforms || "-"}\nFrom: ${source || "-"}\n\n${SpreadsheetApp.getActiveSpreadsheet().getUrl()}`);
