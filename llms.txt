@@ -9,12 +9,9 @@ Femp never changes prices, stock or checkout. Ads access is read-only. Product S
 - [Femp for DTC brands](https://femp.ai/dtc/): what Femp does for Shopify and Amazon stores, a WhatsApp demo and 20 ready-made automations
 - [Femp for Jobs](https://femp.ai/jobs/): matching roles every morning, tailored applications, follow-ups (coming soon)
 - [Femp for Finance](https://femp.ai/finance/): stock watchlist research, bills and subscriptions (coming soon)
-- [Features](https://femp.ai/dtc/features/): Stock and days of cover, Meta and Google ads against real Shopify sales, SEO for Google and ChatGPT, and inbox triage, all over WhatsApp.
-- [How it works](https://femp.ai/dtc/how-it-works/): Say hi on WhatsApp, connect Shopify or Amazon through their own sign-in, and get your first stock check minutes later. Nothing changes without your OK.
-- [Integrations](https://femp.ai/dtc/integrations/): Femp AI connects to Shopify, Amazon Seller Central, Meta Ads, Google Ads, Search Console and Gmail through each platform's own sign-in.
-- [Pricing](https://femp.ai/dtc/pricing/): Femp AI is free during the beta: every feature, every connection and every automation for Shopify and Amazon stores.
-- [Security](https://femp.ai/dtc/security/): Femp AI never touches prices, stock or checkout, edits SEO only after your OK, encrypts access tokens with AES-256 and never keeps passwords.
-- [FAQ](https://femp.ai/dtc/faq/): What Femp AI is, who it's for, what it connects to, what it costs and whether it can change your store. Straight answers for Shopify and Amazon brands.
+- [Pricing](https://femp.ai/pricing/): Femp AI is free during the beta: the assistant and every plugin, with $100 in free credits for everyone on the waitlist.
+- [FAQ](https://femp.ai/faq/): What Femp AI is, how plugins work, what each plugin does, what it costs and whether it acts without asking. Straight answers.
+- [Security](https://femp.ai/security/): Femp AI acts only after your yes, encrypts access tokens with AES-256, never keeps passwords and deletes chat history after 90 days.
 - [Privacy policy](https://auth.femp.ai/privacy)
 - [Support](https://auth.femp.ai/support)
 

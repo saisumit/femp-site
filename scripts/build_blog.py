@@ -38,9 +38,10 @@ FONTS = (
     '&family=Geist+Mono:wght@400;500&display=swap">'
 )
 
-MAIN_NAV = [("/dtc/features/", "Features"), ("/dtc/how-it-works/", "How it works"), ("/dtc/pricing/", "Pricing"), ("/dtc/faq/", "FAQ")]
-# outside /dtc/ (blog, waitlist): the plugins
-GENERAL_NAV = [("/dtc/", "DTC brands"), ("/jobs/", "Jobs"), ("/finance/", "Finance")]
+# one nav for the whole site; each plugin is a single page (/dtc/, /jobs/, /finance/), the rest is shared
+NAV = [("/#plugins", "Plugins"), ("/pricing/", "Pricing"), ("/faq/", "FAQ")]
+# DTC pages that became part of /dtc/; their old addresses forward there
+MERGED_INTO_DTC = ["features", "how-it-works", "integrations"]
 
 
 BAR = """<div class="topbar"><span class="early">Early access</span><span><a href="/" style="color:inherit">← All plugins</a> · Femp for DTC brands is coming to the Shopify App Store and the App Store. Join the waitlist and get <b>$100 in free credits</b>.</span><a href="/waitlist/?for=femp-dtc&amp;from=bar">Join the waitlist →</a></div>"""
@@ -48,12 +49,11 @@ GENERAL_BAR = """<div class="topbar"><span class="early">Early access</span><spa
 
 
 def nav(current: str = "") -> str:
-    dtc = current.startswith("/dtc/")
     links = "".join(
-        f'<a class="hide-sm" href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for h, t in (MAIN_NAV if dtc else GENERAL_NAV)
+        f'<a class="hide-sm" href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for h, t in NAV
     )
     blog = ' aria-current="page"' if current == "/blog/" else ""
-    bar = "" if current == "/waitlist/" else (BAR if dtc else GENERAL_BAR)
+    bar = "" if current == "/waitlist/" else GENERAL_BAR
     return f"""{bar}<header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="Femp" width="30" height="30">Femp</a>
   <nav aria-label="Main">{links}<a href="/blog/"{blog}>Blog</a>
@@ -62,13 +62,13 @@ def nav(current: str = "") -> str:
 
 FOOTER = """<footer><div class="wrap"><div class="frame ruled" style="border-bottom:0"><div>
   <span>Femp is made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
-  <nav aria-label="Footer"><a href="/">All plugins</a><a href="/dtc/">DTC brands</a><a href="/jobs/">Jobs</a><a href="/finance/">Finance</a><a href="/dtc/features/">Features</a><a href="/dtc/pricing/">Pricing</a><a href="/dtc/security/">Security</a><a href="/dtc/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/blog/feed.xml">RSS</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a><a href="https://youtu.be/W9z4sHcGYgk">Demo</a></nav>
+  <nav aria-label="Footer"><a href="/dtc/">DTC brands</a><a href="/jobs/">Jobs</a><a href="/finance/">Finance</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/security/">Security</a><a href="/blog/">Blog</a><a href="/blog/feed.xml">RSS</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a><a href="https://youtu.be/W9z4sHcGYgk">Demo</a></nav>
 </div></div></div></footer>"""
 
 CLOSER = f"""<section class="closer ruled"><div>
   <h2>Get Femp first.</h2>
-  <p>Femp is the operations teammate for DTC brands on Shopify and Amazon. Join the waitlist and get $100 in free credits when we launch.</p>
-  <div class="ctas"><a class="btn green" href="/waitlist/?for=femp-dtc&amp;from=closer">Join the waitlist</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
+  <p>Femp is your First EMPloyee: an AI assistant on WhatsApp that you can give a job. Join the waitlist and get $100 in free credits.</p>
+  <div class="ctas"><a class="btn green" href="/waitlist/?from=closer">Join the waitlist</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
 </div><img src="/img/icon-512.png" alt="" width="110" height="110" loading="lazy"></section>"""
 
 ORG = {"@type": "Organization", "name": "Femp AI, Inc.", "url": SITE, "logo": {"@type": "ImageObject", "url": LOGO}}
@@ -207,19 +207,18 @@ def page(p: dict, pages: list[dict]) -> str:
         {
             "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Femp", "item": f"{SITE}/"},
-                {"@type": "ListItem", "position": 2, "name": "DTC brands", "item": f"{SITE}/dtc/"},
-                {"@type": "ListItem", "position": 3, "name": p["nav"], "item": p["url"]},
+                {"@type": "ListItem", "position": 2, "name": p["nav"], "item": p["url"]},
             ],
         },
     ]
-    others = "".join(f'<a href="/dtc/{q["slug"]}/">{escape(q["nav"])}</a>' for q in pages if q["slug"] != p["slug"])
+    others = "".join(f'<a href="/{q["slug"]}/">{escape(q["nav"])}</a>' for q in pages if q["slug"] != p["slug"])
     return f"""{head(p['seo_title'], p['description'], p['url'], extra=''.join(ld(s) for s in schema))}
 <body>
-{nav("/dtc/" + p["slug"] + "/")}
+{nav("/" + p["slug"] + "/")}
 <main><div class="wrap"><div class="frame">
 <article>
   <header class="post-head">
-    <p class="crumbs"><a href="/">Femp</a> / <a href="/dtc/">DTC brands</a> / {escape(p['nav'])}</p>
+    <p class="crumbs"><a href="/">Femp</a> / {escape(p['nav'])}</p>
     <h1>{escape(p['title'])}</h1>
     <p class="lede">{escape(p['lede'])}</p>
   </header>
@@ -485,15 +484,16 @@ def llms_full(posts: list[dict], pages: list[dict]) -> str:
 
 def main() -> None:
     posts = load()
-    pages = load(PAGES, "/dtc/")
+    pages = load(PAGES, "/")
     for p in pages:
-        out = ROOT / "dtc" / p["slug"] / "index.html"
+        out = ROOT / p["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(page(p, pages), encoding="utf-8")
-        # the old address keeps working: a small page that forwards to /dtc/<slug>/ (GitHub Pages has no real redirects)
-        old = ROOT / p["slug"] / "index.html"
+    # old DTC pages keep working: a small page that forwards to /dtc/ (GitHub Pages has no real redirects)
+    for slug in MERGED_INTO_DTC:
+        old = ROOT / slug / "index.html"
         old.parent.mkdir(parents=True, exist_ok=True)
-        old.write_text(moved(p["url"]), encoding="utf-8")
+        old.write_text(moved(f"{SITE}/dtc/"), encoding="utf-8")
     for p in posts:
         out = ROOT / "blog" / p["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)

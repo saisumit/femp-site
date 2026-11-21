@@ -8,7 +8,7 @@ live waitlist sheet are untouched. Rolling back means switching branches and del
 
 | Repo | Safe branch (unchanged) | Experiment | What the experiment changes |
 |---|---|---|---|
-| `~/femp-site` | `main` at `1759cd8`, live on femp.ai | `main-plugin` at `bb9f4d4`, **local only, not pushed, not live** | General home `/`, today's home moved to `/dtc/`, DTC pages under `/dtc/…` with forwarding pages at the old addresses, new `/jobs/` and `/finance/`, waitlist asks “What do you want Femp for?”, sheet script gains a `Wants` column (file only, not deployed) |
+| `~/femp-site` | `main` at `1759cd8`, live on femp.ai | `main-plugin` at `bb9f4d4`, **local only, not pushed, not live** | General home `/`, one page per plugin (`/dtc/` = today's home, `/jobs/`, `/finance/`), shared Pricing, FAQ, Security and Blog with one nav, old Features/How it works/Integrations addresses forward to `/dtc/`, waitlist asks “What do you want Femp for?”, sheet script gains a `Wants` column (file only, not deployed) |
 | `~/ops-secretary-ios` | `main` at `4c2909a` | `main-plugin` at `063c876`, local only | Plugins tab replaces Store and WhatsApp tabs; DTC opens the old store screen; Femp for Jobs and Femp for Finance show “Coming soon”; WhatsApp moves into You. **This build is installed on Sumit's iPhone.** |
 | `~/ecom-secretary` | `main-python` at `2a3a77e` | `main-plugin`, same commit, only this file added | No code changes. (Uncommitted waitlist work in the working tree is separate from the experiment and moves with whichever branch is checked out.) |
 | Google Sheet script | Version 2, live | none | The branch's `scripts/waitlist-sheet.gs` adds a `Wants` column but has **not** been deployed |

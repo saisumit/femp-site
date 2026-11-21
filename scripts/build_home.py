@@ -304,7 +304,7 @@ def head(title: str, desc: str, path: str, schema: dict) -> str:
 
 
 def nav(current: str) -> str:
-    links = "".join(f'<a class="hide-sm" href="{p["href"]}"{" aria-current=\"page\"" if p["href"] == current else ""}>{p["short"]}</a>' for p in PLUGINS)
+    links = "".join(f'<a class="hide-sm" href="{h}">{t}</a>' for h, t in (("/#plugins", "Plugins"), ("/pricing/", "Pricing"), ("/faq/", "FAQ")))
     return f"""<div class="topbar"><span class="early">Early access</span><span>Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="">Femp</a>
@@ -314,7 +314,7 @@ def nav(current: str) -> str:
 
 FOOTER = f"""<footer><div class="wrap"><div class="frame">
   <span>Femp is made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
-  <a href="/dtc/">DTC brands</a><a href="/jobs/">Jobs</a><a href="/finance/">Finance</a><a href="/blog/">Blog</a><a href="/dtc/security/">Security</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a>
+  <a href="/dtc/">DTC brands</a><a href="/jobs/">Jobs</a><a href="/finance/">Finance</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/security/">Security</a><a href="/blog/">Blog</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a>
 </div></div></footer>"""
 
 
@@ -458,7 +458,7 @@ def home() -> str:
   </ol>
 </section>
 
-<section class="sec">
+<section class="sec" id="plugins">
   <div class="shead"><p class="label">Plugins</p><h2>Pick the jobs you need.</h2></div>
   <div class="pcards">{cards}</div>
   <a class="suggest" href="/waitlist/?for=other&amp;from=home-suggest"><span class="plus">+</span><span><b>Got another job for Femp?</b> Wedding planning, a clinic's bookings, your rentals. Suggest a plugin.</span><span aria-hidden="true">→</span></a>
