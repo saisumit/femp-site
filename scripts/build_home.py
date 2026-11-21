@@ -499,33 +499,6 @@ def home() -> str:
   <a class="suggest" href="/waitlist/?for=other&amp;from=home-suggest"><span class="plus">+</span><span><b>Got another job for Femp?</b> Wedding planning, a clinic's bookings, your rentals. Suggest a plugin.</span><span aria-hidden="true">→</span></a>
 </section>
 
-<section class="sec plugin-in">
-  <div class="pin-copy">
-    <p class="label">How it works</p>
-    <h2>Here's that one message.</h2>
-    <ol class="flow">
-      <li><b>Say hi on WhatsApp</b><span>Or open the Femp app.</span></li>
-      <li><b>Ask for a plugin</b><span>“install femp for jobs”</span></li>
-      <li><b>Connect what it needs</b><span>Each app's own sign-in. No passwords shared.</span></li>
-      <li><b>Femp starts working</b><span>Checks in on a schedule. Waits for your yes.</span></li>
-    </ol>
-  </div>
-  <div class="chatcard" aria-label="Installing a plugin on WhatsApp">
-    <div class="chead"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div></div>
-    <div class="cthread" id="install"></div>
-  </div>
-</section>
-
-<section class="sec trust">
-  <h2>It asks before it acts.</h2>
-  <ul class="tgrid">
-    <li><b>Your yes, every time</b><span>Nothing is sent, posted, paid or changed without it.</span></li>
-    <li><b>Remembers you</b><span>Preferences, people and past decisions, across every plugin.</span></li>
-    <li><b>Undo and a log</b><span>See everything Femp did, and take it back.</span></li>
-    <li><b>Your team, too</b><span>Add people who chat with Femp from their own WhatsApp.</span></li>
-  </ul>
-</section>
-
 <section class="sec closer2">
   <div class="faces"><img src="/img/home/dtc.jpg" alt=""><img src="/img/home/jobs.jpg" alt=""><img src="/img/home/fin.jpg" alt=""></div>
   <h2>Get Femp first.</h2>
@@ -612,25 +585,14 @@ def home() -> str:
     else {{ setInstalled(3); $("stack").replaceChildren(...NOTES.map(note)); screen("lock"); }}
     mark(i);
   }}
-  stepBtns.forEach((b) => b.addEventListener("click", async () => {{
-    const token = ++run, i = Number(b.dataset.step); finished(i);
-    if (still) return; await wait(5000); if (token === run) playStory(token, (i + 1) % 5);
+  stepBtns.forEach((b) => b.addEventListener("click", () => {{
+    const i = Number(b.dataset.step);
+    if (still) {{ ++run; finished(i); return; }}
+    playStory(++run, i);
   }}));
   new IntersectionObserver(([e]) => {{ onScreen = e.isIntersecting; }}).observe(document.querySelector(".lock"));
   if (still) finished(4); else playStory(++run, 0);
 
-  // install chat plays once when it scrolls into view
-  const box = document.getElementById("install");
-  const CHAT = [["me", "install femp for jobs"], ["f", "Done ✓ <b>Femp for Jobs</b> is plugged in. Send me your resume and tell me what you're looking for."],
-                ["me", "<span class='file'>📄 Resume_2026.pdf</span>senior product designer, remote"], ["f", "Got it. Your first matching roles arrive tomorrow at 8:30, each with a tailored resume."]];
-  const bub = ([w, h]) => {{ const el = document.createElement("div"); el.className = "cb" + (w === "me" ? " me" : ""); el.innerHTML = h; return el; }};
-  let played = false;
-  async function play() {{
-    if (played) return; played = true;
-    for (const m of CHAT) {{ box.append(bub(m)); if (!still) await new Promise((r) => setTimeout(r, 1100)); }}
-  }}
-  if (still) CHAT.forEach((m) => box.append(bub(m)));
-  else new IntersectionObserver(([e]) => {{ if (e.isIntersecting) play(); }}, {{ threshold: 0.4 }}).observe(box);
 }})();
 </script>
 {MENU_JS}
