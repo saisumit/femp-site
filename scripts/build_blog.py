@@ -57,7 +57,7 @@ def nav(current: str = "") -> str:
 </div></header>"""
 
 FOOTER = """<footer><div class="wrap"><div class="frame ruled" style="border-bottom:0"><div>
-  <span>Femp is made by Neobrix · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
+  <span>Femp is made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
   <nav aria-label="Footer"><a href="/features/">Features</a><a href="/how-it-works/">How it works</a><a href="/integrations/">Integrations</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/blog/feed.xml">RSS</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a><a href="https://youtu.be/W9z4sHcGYgk">Demo</a></nav>
 </div></div></div></footer>"""
 
@@ -67,7 +67,7 @@ CLOSER = f"""<section class="closer ruled"><div>
   <div class="ctas"><a class="btn green" href="/waitlist/?from=closer">Join the waitlist</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
 </div><img src="/img/icon-512.png" alt="" width="110" height="110" loading="lazy"></section>"""
 
-ORG = {"@type": "Organization", "name": "Neobrix", "url": SITE, "logo": {"@type": "ImageObject", "url": LOGO}}
+ORG = {"@type": "Organization", "name": "Femp AI, Inc.", "url": SITE, "logo": {"@type": "ImageObject", "url": LOGO}}
 SOFTWARE = {
     "@type": "SoftwareApplication", "name": "Femp", "alternateName": "Femp AI", "applicationCategory": "BusinessApplication",
     "url": f"{SITE}/", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free during the beta"},
@@ -399,7 +399,7 @@ def llms(posts: list[dict], pages: list[dict]) -> str:
     lines = [
         "# Femp",
         "",
-        "> Femp (also called Femp AI, by Neobrix) is an AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. "
+        "> Femp (also called Femp AI, by Femp AI, Inc.) is an AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. "
         "It watches the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks and the store's Gmail inbox, messages the "
         "owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.",
         "",
