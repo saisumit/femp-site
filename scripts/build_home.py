@@ -339,7 +339,7 @@ MENU_JS = '''<script>(()=>{const m=[...document.querySelectorAll("details.pmenu"
 
 def nav(current: str) -> str:
     links = MENU + "".join(f'<a class="hide-sm" href="{h}">{t}</a>' for h, t in (("/pricing/", "Pricing"), ("/faq/", "FAQ")))
-    return f"""<div class="topbar"><span class="early">Early access</span><span>Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
+    return f"""<div class="topbar"><span class="early">Early access</span><span>Femp is your <b>F</b>irst <b>EMP</b>loyee. Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="">Femp</a>
   <nav aria-label="Main">{links}<a class="hide-sm" href="/blog/">Blog</a><a class="btn green" href="{WA}">Say hi on WhatsApp</a></nav>

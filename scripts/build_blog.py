@@ -23,6 +23,8 @@ from html import escape, unescape
 from pathlib import Path
 
 SITE = "https://femp.ai"
+# changes whenever assets/site.css changes, so browsers never keep an old copy
+CSS_VERSION = __import__("hashlib").md5((Path(__file__).resolve().parent.parent / "assets" / "site.css").read_bytes()).hexdigest()[:8]
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "content" / "blog"
 PAGES = ROOT / "content" / "pages"
@@ -47,8 +49,7 @@ MENU_JS = '''<script>(()=>{const m=[...document.querySelectorAll("details.pmenu"
 MERGED_INTO_DTC = ["features", "how-it-works", "integrations"]
 
 
-BAR = """<div class="topbar"><span class="early">Early access</span><span><a href="/" style="color:inherit">← All plugins</a> · Femp for DTC brands is coming to the Shopify App Store and the App Store. Join the waitlist and get <b>$100 in free credits</b>.</span><a href="/waitlist/?for=femp-dtc&amp;from=bar">Join the waitlist →</a></div>"""
-GENERAL_BAR = """<div class="topbar"><span class="early">Early access</span><span>Femp is your first employee, with plugins for your store, your job search and your money. Join the waitlist and get <b>$100 in free credits</b>.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>"""
+BAR = """<div class="topbar"><span class="early">Early access</span><span>Femp is your <b>F</b>irst <b>EMP</b>loyee. Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>"""
 
 
 def nav(current: str = "") -> str:
@@ -56,7 +57,7 @@ def nav(current: str = "") -> str:
         f'<a class="hide-sm" href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for h, t in NAV
     )
     blog = ' aria-current="page"' if current == "/blog/" else ""
-    bar = "" if current == "/waitlist/" else GENERAL_BAR
+    bar = "" if current == "/waitlist/" else BAR
     return f"""{bar}<header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="Femp" width="30" height="30">Femp</a>
   <nav aria-label="Main">{PLUGINS_MENU}{links}<a href="/blog/"{blog}>Blog</a>
@@ -106,7 +107,7 @@ def head(title: str, description: str, url: str, kind: str = "website", extra: s
 <meta name="twitter:description" content="{d}"><meta name="twitter:image" content="{OG}">
 <link rel="alternate" type="application/rss+xml" title="Femp blog" href="{SITE}/blog/feed.xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-{FONTS}<link rel="stylesheet" href="/assets/site.css">
+{FONTS}<link rel="stylesheet" href="/assets/site.css?v={CSS_VERSION}">
 {extra}
 </head>"""
 
