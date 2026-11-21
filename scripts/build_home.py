@@ -18,7 +18,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">')
 
 PLUGINS = [
-    {"id": "femp-dtc", "key": "dtc", "letter": "D", "name": "Femp for DTC brands", "short": "DTC brands", "line": "Your store's operations, handled.", "status": "In beta", "href": "/dtc/",
+    {"id": "femp-dtc", "key": "dtc", "letter": "D", "name": "Femp for DTC brands", "short": "DTC brands", "line": "Grows your store, every day.", "status": "In beta", "href": "/dtc/",
      "q": "Running a store?", "a": "Stock, ads, pixel, chargebacks and social, fixed for you.",
      "about": "For Shopify and Amazon store owners: stock and reorders, ads against real sales, pixel health, SEO and AI search, chargebacks, inbox, and daily social stories and posts.",
      "connects": "Shopify · Amazon · Meta · Google Ads · Search Console · Gmail · Instagram"},
@@ -333,7 +333,7 @@ def head(title: str, desc: str, path: str, schema: dict) -> str:
 </head>"""
 
 
-MENU = '''<details class="pmenu"><summary>Plugins</summary><div class="pdrop"><a class="pm" href="/dtc/"><span class="pi" style="--pc:#146043">D</span><span class="pt"><b>Femp for DTC brands</b><small>Your store's operations</small></span><em>Beta</em></a><a class="pm" href="/jobs/"><span class="pi" style="--pc:#3d6fb6">J</span><span class="pt"><b>Femp for Jobs</b><small>Your job search</small></span><em>Soon</em></a><a class="pm" href="/finance/"><span class="pi" style="--pc:#9a5b13">F</span><span class="pt"><b>Femp for Finance</b><small>Stocks and bills</small></span><em>Soon</em></a><a class="pall" href="/#plugins">All plugins →</a></div></details>'''
+MENU = '''<details class="pmenu"><summary>Plugins</summary><div class="pdrop"><a class="pm" href="/dtc/"><span class="pi" style="--pc:#146043">D</span><span class="pt"><b>Femp for DTC brands</b><small>Grow your store</small></span><em>Beta</em></a><a class="pm" href="/jobs/"><span class="pi" style="--pc:#3d6fb6">J</span><span class="pt"><b>Femp for Jobs</b><small>Your job search</small></span><em>Soon</em></a><a class="pm" href="/finance/"><span class="pi" style="--pc:#9a5b13">F</span><span class="pt"><b>Femp for Finance</b><small>Stocks and bills</small></span><em>Soon</em></a><a class="pall" href="/#plugins">All plugins →</a></div></details>'''
 MENU_JS = '''<script>(()=>{const m=[...document.querySelectorAll("details.pmenu")];document.addEventListener("click",e=>m.forEach(d=>{if(d.open&&!d.contains(e.target))d.open=false;}));document.addEventListener("keydown",e=>{if(e.key==="Escape")m.forEach(d=>{if(d.open){d.open=false;d.querySelector("summary").focus();}});});})();</script>'''
 
 
@@ -487,7 +487,7 @@ def home() -> str:
   <div class="shead"><p class="label">How it becomes your employee</p><h2>Femp + a plugin = someone on your team.</h2>
   <p class="muted" style="max-width:62ch">On its own, Femp is a helpful assistant. Each plugin gives it a job: the accounts to connect, what to watch, and a daily routine. Install one with a single message.</p></div>
   <ol class="eqs">
-    <li class="eq k-dtc"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">DTC plugin</span><span class="op">=</span><span class="eq-role"><b>Your store's ops manager</b><small>Watches stock, ads, pixel and chargebacks. Fixes what breaks.</small></span></li>
+    <li class="eq k-dtc"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">DTC plugin</span><span class="op">=</span><span class="eq-role"><b>Your store's growth manager</b><small>Grows sales, runs ads and social, and fixes what breaks.</small></span></li>
     <li class="eq k-jobs"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">Jobs plugin</span><span class="op">=</span><span class="eq-role"><b>Your job-search agent</b><small>Finds roles every morning, tailors each application, follows up.</small></span></li>
     <li class="eq k-fin"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">Finance plugin</span><span class="op">=</span><span class="eq-role"><b>Your money watcher</b><small>Sums up your stocks, flags bills due and unused subscriptions.</small></span></li>
   </ol>
