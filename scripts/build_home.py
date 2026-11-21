@@ -322,6 +322,7 @@ def head(title: str, desc: str, path: str, schema: dict) -> str:
 <link rel="canonical" href="{url}">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#17694b">
+<meta name="msvalidate.01" content="9630C390530A95D6B86886436D1FC7B5">
 <meta property="og:site_name" content="Femp"><meta property="og:type" content="website">
 <meta property="og:title" content="{t}"><meta property="og:description" content="{d}">
 <meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}/img/og.jpg">
@@ -487,7 +488,7 @@ def home() -> str:
   <div class="shead"><p class="label">How it becomes your employee</p><h2>Femp + a plugin = someone on your team.</h2>
   <p class="muted" style="max-width:62ch">On its own, Femp is a helpful assistant. Each plugin gives it a job: the accounts to connect, what to watch, and a daily routine. Install one with a single message.</p></div>
   <ol class="eqs">
-    <li class="eq k-dtc"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">DTC plugin</span><span class="op">=</span><span class="eq-role"><b>Your store's growth manager</b><small>Grows sales, runs ads and social, and fixes what breaks.</small></span></li>
+    <li class="eq k-dtc"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">DTC plugin</span><span class="op">=</span><span class="eq-role"><b>Your store's growth admin</b><small>Grows sales, runs ads and social, and fixes what breaks.</small></span></li>
     <li class="eq k-jobs"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">Jobs plugin</span><span class="op">=</span><span class="eq-role"><b>Your job-search agent</b><small>Finds roles every morning, tailors each application, follows up.</small></span></li>
     <li class="eq k-fin"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">Finance plugin</span><span class="op">=</span><span class="eq-role"><b>Your money watcher</b><small>Sums up your stocks, flags bills due and unused subscriptions.</small></span></li>
   </ol>
