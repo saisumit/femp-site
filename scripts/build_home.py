@@ -235,6 +235,43 @@ footer a { color: var(--muted); }
 .eq-role small { color: var(--muted); font-size: .9rem; }
 @media (max-width: 760px) { .eq { grid-template-columns: auto auto auto; row-gap: 10px; } .eq .op:nth-of-type(2) { display: none; } .eq-role { grid-column: 1 / -1; padding-left: 0; } }
 @media (prefers-reduced-motion: reduce) { .eq { animation: none; } }
+
+.fname { font: 600 1rem/1 var(--sans); color: var(--muted); letter-spacing: .01em; margin-bottom: 10px; }
+.fname b { color: var(--accent); font-weight: 800; font-size: 1.15em; }
+.fname span { color: var(--faint); font-weight: 500; margin-left: 4px; }
+.steps4 { list-style: none; padding: 0; margin: 30px 0 0; display: grid; grid-template-columns: repeat(2, max-content); gap: 6px; }
+.steps4 button { width: 100%; }
+.steps4 button { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px 6px 6px; white-space: nowrap; border-radius: 99px; border: 1px solid var(--rule); background: var(--panel); font-weight: 600; font-size: .82rem; color: var(--muted); transition: background .2s, color .2s; }
+.steps4 i { font-style: normal; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--chat); font: 600 .74rem/1 var(--mono); }
+.steps4 button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.steps4 button[aria-pressed="true"] i { background: var(--mint); color: #0c1510; }
+.steps4 button:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+.lock .scr { position: absolute; inset: 0; opacity: 0; transform: scale(.98); transition: opacity .45s, transform .45s; pointer-events: none; display: grid; }
+.lock .scr.on { opacity: 1; transform: none; pointer-events: auto; }
+.scr.chat { background: var(--chat); grid-template-rows: auto 1fr; padding-top: 0; }
+.scr .sh { background: var(--forest); color: #fff; display: flex; align-items: center; gap: 10px; padding: 34px 14px 12px; font-weight: 600; font-size: .92rem; }
+.scr .sh img { width: 32px; height: 32px; border-radius: 50%; background: #fff; } .scr .sh small { display: block; font-weight: 400; opacity: .75; font-size: .7rem; }
+.scr .plugged { margin-left: auto; font: 600 .66rem/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; background: rgba(255,255,255,.92); color: var(--c); padding: 6px 8px; border-radius: 99px; }
+.scr .st { padding: 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; overflow: hidden; }
+.scr .cb { font-size: .84rem; }
+.tagp { display: inline-block; margin-right: 6px; font: 600 .58rem/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; padding: 3px 5px; border-radius: 4px; background: var(--cb); color: var(--c); vertical-align: 1px; }
+.scr.app { background: var(--paper); grid-template-rows: auto 1fr auto; position: absolute; }
+.scr .sbar { display: flex; justify-content: space-between; padding: 14px 22px 4px; font: 600 .74rem/1 var(--sans); }
+.scr .ab { padding: 10px 14px; display: grid; gap: 9px; align-content: start; }
+.scr .ab h3 { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.03em; }
+.scr .asub { font: 500 .68rem/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
+.scr .arow { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; background: var(--panel); border: 1px solid var(--rule); border-radius: 14px; padding: 10px; }
+.scr .arow .ic { width: 34px; height: 34px; border-radius: 10px; background: var(--cb); color: var(--c); display: grid; place-items: center; font-weight: 800; }
+.scr .arow b { display: block; font-size: .84rem; } .scr .arow small { display: block; font-size: .72rem; color: var(--muted); }
+.scr .abtn { font: 600 .72rem/1 var(--sans); background: var(--c); color: var(--panel); padding: 7px 10px; border-radius: 99px; transition: transform .2s; }
+.scr .abtn.tap { transform: scale(.88); box-shadow: 0 0 0 8px color-mix(in srgb, var(--c) 25%, transparent); }
+.scr .abtn.done { background: var(--tint); color: var(--accent); transform: none; box-shadow: none; }
+#jobsrow { border-color: var(--c); }
+.scr .toast { position: absolute; left: 14px; right: 14px; bottom: 70px; background: var(--ink); color: var(--paper); border-radius: 14px; padding: 12px 14px; font-weight: 600; font-size: .86rem; opacity: 0; transform: translateY(10px); transition: opacity .3s, transform .3s; }
+.scr .toast.on { opacity: 1; transform: none; }
+.scr .atab { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); background: var(--panel); padding: 10px 4px 18px; text-align: center; font: 500 .64rem/1 var(--sans); color: var(--faint); }
+.scr .atab .on { color: var(--accent); font-weight: 700; }
+.scr.lockscr { background: radial-gradient(120% 70% at 20% 0%, #2f8a64 0%, transparent 60%), radial-gradient(90% 60% at 100% 100%, #c9a26a 0%, transparent 55%), linear-gradient(170deg, #17694b, #0b2a1f 70%); grid-template-rows: auto 1fr auto; padding: 22px 12px 14px; }
 @media (max-width: 1000px) { .uhero, .plugin-in { grid-template-columns: minmax(0, 1fr); } .pcards { grid-template-columns: minmax(0, 1fr); max-width: 460px; } .tgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .uhero { padding: 40px 18px; } .tgrid { grid-template-columns: minmax(0, 1fr); } .suggest { grid-template-columns: auto minmax(0, 1fr); } .suggest > span:last-child { display: none; } }
 @media (prefers-reduced-motion: reduce) { .lnote, .cb { animation: none; } .pcard > img, .pnote, .parrow { transition: none; } }
@@ -371,16 +408,41 @@ def home() -> str:
 <main><div class="wrap"><div class="frame">
 <section class="uhero">
   <div class="ucopy">
+    <p class="fname"><b>F</b>irst <b>EMP</b>loyee <span>= Femp</span></p>
     <p class="label"><b class="dot"></b> A general AI assistant on WhatsApp · early access</p>
     <h1>From assistant to employee.<br><em>In one message.</em></h1>
     <p class="lede">Femp is an AI assistant on WhatsApp. Give it a job, and it works like a pro: daily, and only with your yes.</p>
     <div class="ctas"><a class="btn solid" href="/waitlist/?from=home-hero">Join the waitlist →</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
-    <div class="plugs" role="group" aria-label="Show one kind of message"><span class="label">Show:</span><button class="plug k-gen" type="button" data-k="gen" aria-pressed="false"><i></i>Assistant</button>{plugs}</div>
+    <ol class="steps4" aria-label="What's happening on the phone">
+      <li><button type="button" data-step="0" aria-pressed="true"><i>1</i>Ask anything</button></li>
+      <li><button type="button" data-step="1" aria-pressed="false"><i>2</i>Install a plugin</button></li>
+      <li><button type="button" data-step="2" aria-pressed="false"><i>3</i>Give it a job</button></li>
+      <li><button type="button" data-step="3" aria-pressed="false"><i>4</i>Daily check-ins</button></li>
+    </ol>
   </div>
-  <div class="lock" aria-label="Femp notifications on a phone lock screen">
-    <div class="lscreen">
-      <div class="ltime"><small>Saturday 22 November</small><span>8:15</span></div>
-      <div class="lstack" id="stack" aria-live="polite"></div>
+  <div class="lock" aria-label="Femp on a phone: a chat, installing a plugin, then using it">
+    <div class="scr chat on" data-s="0">
+      <div class="sh"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div></div>
+      <div class="st" id="t0"></div>
+    </div>
+    <div class="scr app" data-s="1">
+      <div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
+      <div class="ab">
+        <h3>Plugins</h3><p class="asub">Give Femp a job</p>
+        <div class="arow k-dtc"><span class="ic">D</span><div><b>Femp for DTC brands</b><small>Run your store</small></div><span class="abtn">Install</span></div>
+        <div class="arow k-jobs" id="jobsrow"><span class="ic">J</span><div><b>Femp for Jobs</b><small>Find your next role</small></div><span class="abtn" id="jobsbtn">Install</span></div>
+        <div class="arow k-fin"><span class="ic">F</span><div><b>Femp for Finance</b><small>Stocks and bills</small></div><span class="abtn">Install</span></div>
+      </div>
+      <div class="toast" id="toast">✓ Femp for Jobs is plugged in</div>
+      <div class="atab"><span>Chat</span><span>Inbox</span><span class="on">Plugins</span><span>You</span></div>
+    </div>
+    <div class="scr chat" data-s="2">
+      <div class="sh"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div><span class="plugged k-jobs">+ Jobs</span></div>
+      <div class="st" id="t2"></div>
+    </div>
+    <div class="scr lockscr" data-s="3">
+      <div class="ltime"><small>Sunday 23 November</small><span>8:30</span></div>
+      <div class="lstack" id="stack"></div>
       <div class="lbar"></div>
     </div>
   </div>
@@ -439,32 +501,61 @@ def home() -> str:
 {FOOTER}
 <script>
 (() => {{
-  const NOTES = {json.dumps(NOTES)};
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const stack = document.getElementById("stack"), plugs = [...document.querySelectorAll(".plug")];
-  let filter = null, i = 0, timer = 0, onScreen = true;
-  const card = (n) => {{
-    const el = document.createElement("div");
-    el.className = "lnote k-" + n.k;
-    el.innerHTML = `<img src="/img/icon-512.png" alt=""><div><small><b>Femp</b> · ${{n.plug}}<em>now</em></small><strong>${{n.title}}</strong><span>${{n.text}}</span></div>`;
-    return el;
-  }};
-  const list = () => NOTES.filter((n) => !filter || n.k === filter);
-  function push() {{
-    const notes = list(); const n = notes[i % notes.length]; i++;
-    stack.prepend(card(n));
-    while (stack.children.length > 4) stack.lastElementChild.remove();
-    [...stack.children].forEach((c, j) => c.style.setProperty("--d", j));
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  const screens = [...document.querySelectorAll(".lock .scr")], stepBtns = [...document.querySelectorAll(".steps4 button")];
+  const bubble = (w, h, tag) => {{ const el = document.createElement("div"); el.className = "cb" + (w === "me" ? " me" : ""); el.innerHTML = (tag ? `<span class="tagp k-${{tag}}">${{tag === "jobs" ? "Jobs" : tag}}</span>` : "") + h; return el; }};
+  const CHAT0 = [["me", "<span class='file'>📄 Lease_2026.pdf</span>what should I know before signing?"],
+                 ["f", "Three things: rent goes up <b>4% in March</b>, notice is <b>60 days</b>, and pets need written approval."],
+                 ["me", "remind me to call the landlord at 6"], ["f", "Done ✓ I'll remind you at 6 pm."]];
+  const CHAT2 = [["me", "find me senior product design roles, remote"],
+                 ["f", "<b>4 roles</b> match you. Best fit: Lumen Health, posted 6 hours ago. I've tailored your resume. Draft the email to the hiring manager?", "jobs"],
+                 ["me", "yes please"], ["f", "Draft is in your Gmail with your resume attached ✓", "jobs"]];
+  const NOTES = [["Jobs", "jobs", "2 new roles today", "Both remote. Resumes tailored and ready."],
+                 ["Jobs", "jobs", "Follow up with Lumen Health?", "It's been 3 days. A short note is drafted."],
+                 ["Assistant", "gen", "Call the landlord at 6", "Your two questions are in the chat."]];
+  let run = 0, onScreen = true, step = 0;
+  const show = (i) => {{ step = i; screens.forEach((el) => el.classList.toggle("on", Number(el.dataset.s) === i)); stepBtns.forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.step) === i))); }};
+  async function type(box, list, token) {{
+    box.replaceChildren();
+    for (const [w, h, tag] of list) {{
+      while (!onScreen) {{ await wait(300); if (token !== run) return false; }}
+      if (token !== run) return false;
+      box.append(bubble(w, h, tag));
+      if (!still) await wait(w === "me" ? 1100 : 1700);
+    }}
+    return true;
   }}
-  function seed() {{ stack.replaceChildren(); i = 0; const n = Math.min(3, list().length); for (let k = 0; k < n; k++) push(); }}
-  function loop() {{ clearInterval(timer); if (still) return; timer = setInterval(() => {{ if (onScreen) push(); }}, 2600); }}
-  plugs.forEach((b) => b.addEventListener("click", () => {{
-    const k = b.dataset.k; filter = filter === k ? null : k;
-    plugs.forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.k === filter)));
-    seed(); loop();
-  }}));
-  new IntersectionObserver(([e]) => {{ onScreen = e.isIntersecting; }}).observe(stack);
-  seed(); loop();
+  function fill(i) {{
+    // a finished view of a step, for jumps and reduced motion
+    if (i === 0) {{ const b = document.getElementById("t0"); b.replaceChildren(...CHAT0.map(([w, h, t]) => bubble(w, h, t))); }}
+    if (i === 1) {{ const btn = document.getElementById("jobsbtn"); btn.textContent = "Installed ✓"; btn.classList.add("done"); document.getElementById("toast").classList.add("on"); }}
+    if (i === 2) {{ const b = document.getElementById("t2"); b.replaceChildren(...CHAT2.map(([w, h, t]) => bubble(w, h, t))); }}
+    if (i === 3) {{ const st = document.getElementById("stack"); st.replaceChildren(...NOTES.map(note)); }}
+  }}
+  function resetApp() {{ const btn = document.getElementById("jobsbtn"); btn.textContent = "Install"; btn.classList.remove("done", "tap"); document.getElementById("toast").classList.remove("on"); }}
+  const note = ([plug, k, t, d]) => {{ const el = document.createElement("div"); el.className = "lnote k-" + k; el.innerHTML = `<img src="/img/icon-512.png" alt=""><div><small><b>Femp</b> · ${{plug}}<em>now</em></small><strong>${{t}}</strong><span>${{d}}</span></div>`; return el; }};
+  async function playStory(token, from) {{
+    for (let i = from; ; i = (i + 1) % 4) {{
+      show(i);
+      if (i === 0) {{ resetApp(); document.getElementById("t2").replaceChildren(); document.getElementById("stack").replaceChildren(); if (!(await type(document.getElementById("t0"), CHAT0, token))) return; await wait(1600); }}
+      if (i === 1) {{
+        resetApp(); await wait(1200); if (token !== run) return;
+        const btn = document.getElementById("jobsbtn"); btn.classList.add("tap"); await wait(500); if (token !== run) return;
+        btn.textContent = "Installed ✓"; btn.classList.add("done"); document.getElementById("toast").classList.add("on"); await wait(2200);
+      }}
+      if (i === 2) {{ if (!(await type(document.getElementById("t2"), CHAT2, token))) return; await wait(1800); }}
+      if (i === 3) {{
+        const st = document.getElementById("stack"); st.replaceChildren();
+        for (const n of NOTES) {{ if (token !== run) return; st.append(note(n)); await wait(900); }}
+        await wait(2600);
+      }}
+      if (token !== run) return;
+    }}
+  }}
+  stepBtns.forEach((b) => b.addEventListener("click", () => {{ run++; const i = Number(b.dataset.step); for (let k = 0; k <= i; k++) fill(k); show(i); }}));
+  new IntersectionObserver(([e]) => {{ onScreen = e.isIntersecting; }}).observe(document.querySelector(".lock"));
+  if (still) {{ [0, 1, 2, 3].forEach(fill); show(0); }} else playStory(++run, 0);
 
   // install chat plays once when it scrolls into view
   const box = document.getElementById("install");
