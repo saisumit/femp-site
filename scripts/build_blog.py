@@ -223,7 +223,9 @@ def page(p: dict, pages: list[dict]) -> str:
 """
 
 
-WAITLIST_API = "https://auth.femp.ai/waitlist"
+WAITLIST_API = "https://auth.femp.ai/waitlist"  # server copy, best-effort
+# Apps Script web app on the "Femp waitlist" sheet (scripts/waitlist-sheet.gs); the record of every signup
+WAITLIST_SHEET = "https://script.google.com/macros/s/AKfycbzkG5sM0WUcJ1hKwuXITLArufe2xjf6cV97AJgBR8CceJi-iGRBKDnGnPlvn_72RJmQ/exec"
 # country calling codes for the WhatsApp field, most common first; the script preselects the visitor's region
 CODES = [
     ("US", "+1"), ("IN", "+91"), ("GB", "+44"), ("CA", "+1"), ("AU", "+61"), ("AE", "+971"), ("DE", "+49"), ("FR", "+33"),
@@ -321,10 +323,22 @@ def waitlist() -> str:
       source: new URLSearchParams(location.search).get("from") || (document.referrer ? new URL(document.referrer).pathname : "direct"),
     }};
     show(""); go.disabled = true; go.textContent = "Joining…";
+    // The Google Sheet is the record (works with our server off); the server copy is best-effort and never awaited
+    // unless the sheet can't be reached. text/plain keeps the sheet request free of a CORS preflight.
+    const payload = JSON.stringify(body);
+    const copied = fetch("{WAITLIST_API}", {{ method: "POST", headers: {{ "content-type": "application/json" }}, body: payload, keepalive: true }})
+      .then(r => r.ok, () => false);
     try {{
-      const res = await fetch("{WAITLIST_API}", {{ method: "POST", headers: {{ "content-type": "application/json" }}, body: JSON.stringify(body) }});
-      const out = await res.json().catch(() => ({{}}));
-      if (!res.ok) throw new Error(out.error || "Something went wrong. Try again in a minute.");
+      let out = {{}};
+      try {{
+        const res = await fetch("{WAITLIST_SHEET}", {{ method: "POST", headers: {{ "content-type": "text/plain;charset=utf-8" }}, body: payload }});
+        out = await res.json().catch(() => ({{}}));
+        if (!res.ok && out.ok === undefined) throw new TypeError("sheet unavailable");
+      }} catch (down) {{
+        if (!(down instanceof TypeError) || !(await copied)) throw down;
+        out = {{ ok: true }};
+      }}
+      if (out.ok === false) throw new Error(out.error || "Something went wrong. Try again in a minute.");
       form.hidden = true; $("done").hidden = false; $("done-title").focus();
     }} catch (problem) {{
       show(problem instanceof TypeError ? "Couldn't reach Femp. Check your connection and try again." : problem.message);
