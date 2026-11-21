@@ -2,14 +2,14 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Femp AI: Your First Employee, With Plugins</title>
-<meta name="description" content="Femp is an assistant you text on WhatsApp. Plug in a job and it gets to work: running your store, finding your next role, keeping on top of your money.">
+<meta name="description" content="Femp is a general AI assistant you text on WhatsApp. Give it a job, like running your store, finding your next role or keeping on top of your money, and it becomes your employee for it.">
 <link rel="canonical" href="https://femp.ai/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#17694b">
 <meta property="og:site_name" content="Femp"><meta property="og:type" content="website">
-<meta property="og:title" content="Femp AI: Your First Employee, With Plugins"><meta property="og:description" content="Femp is an assistant you text on WhatsApp. Plug in a job and it gets to work: running your store, finding your next role, keeping on top of your money.">
+<meta property="og:title" content="Femp AI: Your First Employee, With Plugins"><meta property="og:description" content="Femp is a general AI assistant you text on WhatsApp. Give it a job, like running your store, finding your next role or keeping on top of your money, and it becomes your employee for it.">
 <meta property="og:url" content="https://femp.ai/"><meta property="og:image" content="https://femp.ai/img/og.jpg">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Femp AI: Your First Employee, With Plugins"><meta name="twitter:description" content="Femp is an assistant you text on WhatsApp. Plug in a job and it gets to work: running your store, finding your next role, keeping on top of your money."><meta name="twitter:image" content="https://femp.ai/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Femp AI: Your First Employee, With Plugins"><meta name="twitter:description" content="Femp is a general AI assistant you text on WhatsApp. Give it a job, like running your store, finding your next role or keeping on top of your money, and it becomes your employee for it."><meta name="twitter:image" content="https://femp.ai/img/og.jpg">
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://femp.ai/#org", "name": "Femp AI, Inc.", "legalName": "Femp AI, Inc.", "url": "https://femp.ai/", "logo": "https://femp.ai/img/icon-512.png", "email": "support@femp.ai"}, {"@type": "WebSite", "@id": "https://femp.ai/#site", "name": "Femp", "alternateName": ["Femp AI", "femp.ai"], "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "inLanguage": "en-US"}, {"@type": "SoftwareApplication", "name": "Femp", "alternateName": "Femp AI", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, WhatsApp", "description": "An assistant you text on WhatsApp or use in the Femp app, extended with plugins for running a store, job hunting and personal finance.", "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free during the beta"}}]}</script>
@@ -183,6 +183,23 @@ footer a { color: var(--muted); }
 .closer2 { justify-items: center; text-align: center; gap: 16px; padding-block: 72px; }
 .closer2 h2 { max-width: none; }
 .faces { display: flex; } .faces img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid var(--paper); margin-left: -14px; } .faces img:first-child { margin-left: 0; }
+
+.k-gen { --c: #5b4a8a; --cb: #efeaf8; }
+.lnote.k-gen strong { color: #4a3a7a; }
+.becomes .shead { gap: 10px; }
+.eqs { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.eq { display: grid; grid-template-columns: auto auto auto auto minmax(0, 1fr); gap: 14px; align-items: center; padding: 14px 16px; border: 1px solid var(--rule); border-radius: 18px; background: var(--panel); animation: rise .6s cubic-bezier(.2,.8,.2,1) both; }
+.eq:nth-child(2) { animation-delay: .12s; } .eq:nth-child(3) { animation-delay: .24s; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.eq-femp { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; padding: 8px 14px 8px 8px; border-radius: 99px; background: var(--tint); color: var(--accent); }
+.eq-femp img { width: 26px; height: 26px; border-radius: 50%; }
+.op { font: 600 1.3rem/1 var(--mono); color: var(--faint); }
+.eq-plug { min-width: 9.6rem; text-align: center; font-weight: 700; padding: 8px 14px; border-radius: 99px; background: var(--cb); color: var(--c); border: 1px dashed var(--c); }
+.eq-role { display: grid; gap: 2px; padding-left: 4px; min-width: 0; }
+.eq-role b { font-size: 1.12rem; letter-spacing: -0.02em; }
+.eq-role small { color: var(--muted); font-size: .9rem; }
+@media (max-width: 760px) { .eq { grid-template-columns: auto auto auto; row-gap: 10px; } .eq .op:nth-of-type(2) { display: none; } .eq-role { grid-column: 1 / -1; padding-left: 0; } }
+@media (prefers-reduced-motion: reduce) { .eq { animation: none; } }
 @media (max-width: 1000px) { .uhero, .plugin-in { grid-template-columns: minmax(0, 1fr); } .pcards { grid-template-columns: minmax(0, 1fr); max-width: 460px; } .tgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .uhero { padding: 40px 18px; } .tgrid { grid-template-columns: minmax(0, 1fr); } .suggest { grid-template-columns: auto minmax(0, 1fr); } .suggest > span:last-child { display: none; } }
 @media (prefers-reduced-motion: reduce) { .lnote, .cb { animation: none; } .pcard > img, .pnote, .parrow { transition: none; } }
@@ -200,11 +217,11 @@ footer a { color: var(--muted); }
 <main><div class="wrap"><div class="frame">
 <section class="uhero">
   <div class="ucopy">
-    <p class="label"><b class="dot"></b> Early access · $100 in free credits</p>
-    <h1>Hire your <em>first employee.</em></h1>
-    <p class="lede">One assistant on WhatsApp. Plug in a job, and Femp gets to work. It messages you when something needs you, and acts only after your yes.</p>
+    <p class="label"><b class="dot"></b> A general AI assistant on WhatsApp · early access</p>
+    <h1>Your assistant. <em>Then your employee.</em></h1>
+    <p class="lede">Femp is an AI assistant you text like a friend: ask anything, draft a reply, sum up a PDF, set a reminder. Give it a job, like running your store or finding your next role, and it becomes your employee for it. It connects your accounts, checks in every day, and acts only after your yes.</p>
     <div class="ctas"><a class="btn solid" href="/waitlist/?from=home-hero">Join the waitlist →</a><a class="btn line" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></div>
-    <div class="plugs" role="group" aria-label="Show one plugin"><span class="label">Plugged in:</span><button class="plug k-dtc" type="button" data-k="dtc" aria-pressed="false"><i></i>DTC brands</button><button class="plug k-jobs" type="button" data-k="jobs" aria-pressed="false"><i></i>Jobs</button><button class="plug k-fin" type="button" data-k="fin" aria-pressed="false"><i></i>Finance</button></div>
+    <div class="plugs" role="group" aria-label="Show one kind of message"><span class="label">Show:</span><button class="plug k-gen" type="button" data-k="gen" aria-pressed="false"><i></i>Assistant</button><button class="plug k-dtc" type="button" data-k="dtc" aria-pressed="false"><i></i>DTC brands</button><button class="plug k-jobs" type="button" data-k="jobs" aria-pressed="false"><i></i>Jobs</button><button class="plug k-fin" type="button" data-k="fin" aria-pressed="false"><i></i>Finance</button></div>
   </div>
   <div class="lock" aria-label="Femp notifications on a phone lock screen">
     <div class="lscreen">
@@ -215,8 +232,18 @@ footer a { color: var(--muted); }
   </div>
 </section>
 
+<section class="sec becomes">
+  <div class="shead"><p class="label">How it becomes your employee</p><h2>Femp + a plugin = someone on your team.</h2>
+  <p class="muted" style="max-width:62ch">On its own, Femp is a helpful assistant. Each plugin gives it a job: the accounts to connect, what to watch, and a daily routine. Install one with a single message.</p></div>
+  <ol class="eqs">
+    <li class="eq k-dtc"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">DTC plugin</span><span class="op">=</span><span class="eq-role"><b>Your store's ops manager</b><small>Watches stock, ads, pixel and chargebacks. Fixes what breaks.</small></span></li>
+    <li class="eq k-jobs"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">Jobs plugin</span><span class="op">=</span><span class="eq-role"><b>Your job-search agent</b><small>Finds roles every morning, tailors each application, follows up.</small></span></li>
+    <li class="eq k-fin"><span class="eq-femp"><img src="/img/icon-512.png" alt="">Femp</span><span class="op">+</span><span class="eq-plug">Finance plugin</span><span class="op">=</span><span class="eq-role"><b>Your money watcher</b><small>Sums up your stocks, flags bills due and unused subscriptions.</small></span></li>
+  </ol>
+</section>
+
 <section class="sec">
-  <div class="shead"><p class="label">Plugins</p><h2>One employee. Many jobs.</h2></div>
+  <div class="shead"><p class="label">Plugins</p><h2>Pick the jobs you need.</h2></div>
   <div class="pcards"><a class="pcard k-dtc" href="/dtc/">
   <img src="/img/home/dtc.jpg" alt="A skincare brand owner packing orders and checking her phone" loading="lazy">
   <span class="pstat">In beta</span>
@@ -266,7 +293,7 @@ footer a { color: var(--muted); }
 <section class="sec closer2">
   <div class="faces"><img src="/img/home/dtc.jpg" alt=""><img src="/img/home/jobs.jpg" alt=""><img src="/img/home/fin.jpg" alt=""></div>
   <h2>Get Femp first.</h2>
-  <p class="muted">Join once, pick your plugins, and get $100 in free credits when yours launches.</p>
+  <p class="muted">Start with the assistant, add the jobs you need, and get $100 in free credits when your plugin launches.</p>
   <div class="ctas"><a class="btn green" href="/waitlist/?from=home-closer">Join the waitlist</a><a class="btn line" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></div>
 </section>
 </div></div></main>
@@ -276,7 +303,7 @@ footer a { color: var(--muted); }
 </div></div></footer>
 <script>
 (() => {
-  const NOTES = [{"k": "fin", "plug": "Finance", "title": "Card bill due Friday", "text": "$1,240 on your Visa. You also pay for 2 apps you haven't opened in 60 days."}, {"k": "dtc", "plug": "DTC brands", "title": "Pixel fixed \u2713", "text": "Meta missed 18 orders after Tuesday's theme update. Tracking is back."}, {"k": "jobs", "plug": "Jobs", "title": "4 new roles match you", "text": "Best fit: Senior Product Designer, remote. Your tailored resume is ready."}, {"k": "dtc", "plug": "DTC brands", "title": "3 stories ready", "text": "Made from today's restock. Tap to preview and post everywhere."}, {"k": "fin", "plug": "Finance", "title": "ORBT reports Wednesday", "text": "Earnings after close. Summary of last quarter attached. Research only."}, {"k": "jobs", "plug": "Jobs", "title": "Follow up with Lumen Health?", "text": "It's been 5 days. A short follow-up is drafted in your Gmail."}];
+  const NOTES = [{"k": "gen", "plug": "Assistant", "title": "Reminder: call the landlord", "text": "At 6 pm, like you asked. The two questions you wanted to raise are in the chat."}, {"k": "fin", "plug": "Finance", "title": "Card bill due Friday", "text": "$1,240 on your Visa. You also pay for 2 apps you haven't opened in 60 days."}, {"k": "dtc", "plug": "DTC brands", "title": "Pixel fixed \u2713", "text": "Meta missed 18 orders after Tuesday's theme update. Tracking is back."}, {"k": "jobs", "plug": "Jobs", "title": "4 new roles match you", "text": "Best fit: Senior Product Designer, remote. Your tailored resume is ready."}, {"k": "dtc", "plug": "DTC brands", "title": "3 stories ready", "text": "Made from today's restock. Tap to preview and post everywhere."}, {"k": "gen", "plug": "Assistant", "title": "Your lease, in 5 lines", "text": "The 38-page PDF you sent: rent goes up 4% in March, and notice is 60 days."}, {"k": "fin", "plug": "Finance", "title": "ORBT reports Wednesday", "text": "Earnings after close. Summary of last quarter attached. Research only."}, {"k": "jobs", "plug": "Jobs", "title": "Follow up with Lumen Health?", "text": "It's been 5 days. A short follow-up is drafted in your Gmail."}];
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const stack = document.getElementById("stack"), plugs = [...document.querySelectorAll(".plug")];
   let filter = null, i = 0, timer = 0, onScreen = true;

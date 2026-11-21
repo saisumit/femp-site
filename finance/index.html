@@ -183,6 +183,23 @@ footer a { color: var(--muted); }
 .closer2 { justify-items: center; text-align: center; gap: 16px; padding-block: 72px; }
 .closer2 h2 { max-width: none; }
 .faces { display: flex; } .faces img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid var(--paper); margin-left: -14px; } .faces img:first-child { margin-left: 0; }
+
+.k-gen { --c: #5b4a8a; --cb: #efeaf8; }
+.lnote.k-gen strong { color: #4a3a7a; }
+.becomes .shead { gap: 10px; }
+.eqs { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.eq { display: grid; grid-template-columns: auto auto auto auto minmax(0, 1fr); gap: 14px; align-items: center; padding: 14px 16px; border: 1px solid var(--rule); border-radius: 18px; background: var(--panel); animation: rise .6s cubic-bezier(.2,.8,.2,1) both; }
+.eq:nth-child(2) { animation-delay: .12s; } .eq:nth-child(3) { animation-delay: .24s; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.eq-femp { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; padding: 8px 14px 8px 8px; border-radius: 99px; background: var(--tint); color: var(--accent); }
+.eq-femp img { width: 26px; height: 26px; border-radius: 50%; }
+.op { font: 600 1.3rem/1 var(--mono); color: var(--faint); }
+.eq-plug { min-width: 9.6rem; text-align: center; font-weight: 700; padding: 8px 14px; border-radius: 99px; background: var(--cb); color: var(--c); border: 1px dashed var(--c); }
+.eq-role { display: grid; gap: 2px; padding-left: 4px; min-width: 0; }
+.eq-role b { font-size: 1.12rem; letter-spacing: -0.02em; }
+.eq-role small { color: var(--muted); font-size: .9rem; }
+@media (max-width: 760px) { .eq { grid-template-columns: auto auto auto; row-gap: 10px; } .eq .op:nth-of-type(2) { display: none; } .eq-role { grid-column: 1 / -1; padding-left: 0; } }
+@media (prefers-reduced-motion: reduce) { .eq { animation: none; } }
 @media (max-width: 1000px) { .uhero, .plugin-in { grid-template-columns: minmax(0, 1fr); } .pcards { grid-template-columns: minmax(0, 1fr); max-width: 460px; } .tgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .uhero { padding: 40px 18px; } .tgrid { grid-template-columns: minmax(0, 1fr); } .suggest { grid-template-columns: auto minmax(0, 1fr); } .suggest > span:last-child { display: none; } }
 @media (prefers-reduced-motion: reduce) { .lnote, .cb { animation: none; } .pcard > img, .pnote, .parrow { transition: none; } }
