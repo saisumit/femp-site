@@ -5,7 +5,7 @@
 Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
 
 ## Product
-- [Home](https://femp.ai/): what Femp does for DTC brands, a WhatsApp demo and 16 ready-made automations
+- [Home](https://femp.ai/): what Femp does for DTC brands, a WhatsApp demo and 20 ready-made automations
 - [Features](https://femp.ai/features/): Stock and days of cover, Meta and Google ads against real Shopify sales, SEO for Google and ChatGPT, and inbox triage, all over WhatsApp.
 - [How it works](https://femp.ai/how-it-works/): Say hi on WhatsApp, connect Shopify or Amazon through their own sign-in, and get your first stock check minutes later. Nothing changes without your OK.
 - [Integrations](https://femp.ai/integrations/): Femp AI connects to Shopify, Amazon Seller Central, Meta Ads, Google Ads, Search Console and Gmail through each platform's own sign-in.
@@ -17,6 +17,7 @@ Femp never changes prices, stock or checkout. Ads access is read-only. Product S
 
 ## Blog
 - [47 ops jobs you can hand to an AI assistant, and the ones you shouldn't](https://femp.ai/blog/ai-operations-assistant-for-dtc-brands/): Most ops work at a DTC brand is watching, reconciling and chasing. 47 jobs an AI operations assistant can take over, and what should stay human.
+- [Your store makes a story every day. Here's how to post it everywhere.](https://femp.ai/blog/dtc-social-media-stories-from-your-store/): Most store owners run their own social and burn out. Turn restocks, reviews and launches into daily stories, size them for every channel, and track which ones sell.
 - [Your Meta pixel is missing sales. Here's how to tell, and how to fix it.](https://femp.ai/blog/meta-pixel-missing-purchases-shopify/): When the pixel misses purchases, Meta optimizes on bad data and your ads look worse than they are. How to spot the gap and fix tracking on Shopify.
 - [Your ads say they're profitable. Your store disagrees.](https://femp.ai/blog/ads-roas-against-real-sales/): Meta and Google both claim the same sale. A simple daily check of ad spend against real Shopify orders that finds the ad sets losing money.
 - [7 out of 10 carts never check out. Here's how to win some back.](https://femp.ai/blog/shopify-abandoned-carts-recover-sales/): About 70% of online carts are abandoned. Why buyers leave at checkout, the Shopify fixes that work, and a recovery email sequence that doesn't nag.

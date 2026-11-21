@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="An AI operations assistant for DTC brands on Shopify and Amazon. Pixel, ads, SEO, stock and chargebacks, handled on WhatsApp.">
 <meta name="twitter:image" content="https://femp.ai/img/og.jpg">
 <link rel="alternate" type="application/rss+xml" title="Femp blog" href="https://femp.ai/blog/feed.xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://femp.ai/#org", "name": "Femp AI, Inc.", "legalName": "Femp AI, Inc.", "url": "https://femp.ai/", "logo": "https://femp.ai/img/icon-512.png", "email": "support@femp.ai", "brand": {"@type": "Brand", "name": "Femp", "alternateName": "Femp AI"}, "founder": {"@type": "Person", "name": "Sumit Vohra", "jobTitle": "Founder", "sameAs": ["https://in.linkedin.com/in/saisumit03"]}}, {"@type": "WebSite", "@id": "https://femp.ai/#site", "name": "Femp", "alternateName": ["Femp AI", "femp.ai"], "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "inLanguage": "en-US"}, {"@type": "SoftwareApplication", "name": "Femp", "alternateName": "Femp AI", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, Android, WhatsApp", "description": "AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. Manages the Meta and Google pixel, ad spend against real sales, SEO and AI-search rankings, stock and chargebacks, messages the owner on WhatsApp, and makes the fixes they approve.", "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free during the beta"}, "audience": {"@type": "BusinessAudience", "audienceType": "Direct-to-consumer (DTC) ecommerce brands on Shopify and Amazon"}, "featureList": ["Pixel health", "Ads vs. real sales", "SEO and AI-search rankings", "Abandoned carts", "Chargeback evidence", "Low stock and reorders", "Review replies", "Daily sales digest"]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://femp.ai/#org", "name": "Femp AI, Inc.", "legalName": "Femp AI, Inc.", "url": "https://femp.ai/", "logo": "https://femp.ai/img/icon-512.png", "email": "support@femp.ai", "brand": {"@type": "Brand", "name": "Femp", "alternateName": "Femp AI"}, "founder": {"@type": "Person", "name": "Sumit Vohra", "jobTitle": "Founder", "sameAs": ["https://in.linkedin.com/in/saisumit03"]}}, {"@type": "WebSite", "@id": "https://femp.ai/#site", "name": "Femp", "alternateName": ["Femp AI", "femp.ai"], "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "inLanguage": "en-US"}, {"@type": "SoftwareApplication", "name": "Femp", "alternateName": "Femp AI", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, Android, WhatsApp", "description": "AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. Manages the Meta and Google pixel, ad spend against real sales, SEO and AI-search rankings, stock and chargebacks, messages the owner on WhatsApp, and makes the fixes they approve.", "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free during the beta"}, "audience": {"@type": "BusinessAudience", "audienceType": "Direct-to-consumer (DTC) ecommerce brands on Shopify and Amazon"}, "featureList": ["Pixel health", "Ads vs. real sales", "SEO and AI-search rankings", "Abandoned carts", "Chargeback evidence", "Low stock and reorders", "Review replies", "Daily sales digest", "Social stories posted to every channel"]}]}</script>
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,6 +52,8 @@
   --blue: #3d6fb6;
   --blue-bg: #e7eef8;
   --ops-bg: #eceeed;
+  --social: #8a3f9e;
+  --social-bg: #f4e9f7;
   --sans: "Geist", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --hand: "Gochi Hand", "Comic Sans MS", "Chalkboard SE", cursive;
@@ -60,13 +62,13 @@
   :root:not([data-theme="light"]) {
     --paper: #09120d; --panel: #0f1b15; --ink: #e7f0ea; --muted: #9db0a5; --faint: #6d8075; --rule: #1d2d24;
     --accent: #6fd3a5; --tint: #12291e; --warn: #e3ad55; --warn-bg: #2b2212; --bad: #ef7a72; --bad-bg: #2c1513;
-    --chat: #17241d; --mine: #173a29; --blue: #8db4ea; --blue-bg: #142235; --ops-bg: #1a2620; color-scheme: dark;
+    --chat: #17241d; --mine: #173a29; --blue: #8db4ea; --blue-bg: #142235; --ops-bg: #1a2620; --social: #d39be3; --social-bg: #2a1830; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #09120d; --panel: #0f1b15; --ink: #e7f0ea; --muted: #9db0a5; --faint: #6d8075; --rule: #1d2d24;
   --accent: #6fd3a5; --tint: #12291e; --warn: #e3ad55; --warn-bg: #2b2212; --bad: #ef7a72; --bad-bg: #2c1513;
-  --chat: #17241d; --mine: #173a29; --blue: #8db4ea; --blue-bg: #142235; --ops-bg: #1a2620; color-scheme: dark;
+  --chat: #17241d; --mine: #173a29; --blue: #8db4ea; --blue-bg: #142235; --ops-bg: #1a2620; --social: #d39be3; --social-bg: #2a1830; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -253,7 +255,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .afrom { font: 500 .68rem/1 var(--mono); color: var(--accent); letter-spacing: .04em; text-transform: uppercase; }
 .atime { justify-self: end; font: 400 .68rem/1 var(--mono); color: var(--faint); font-variant-numeric: tabular-nums; }
 .t-marketing { --c: var(--warn); --cb: var(--warn-bg); } .t-customers { --c: var(--blue); --cb: var(--blue-bg); }
-.t-operations { --c: var(--muted); --cb: var(--ops-bg); } .t-money { --c: var(--bad); --cb: var(--bad-bg); }
+.t-operations { --c: var(--muted); --cb: var(--ops-bg); } .t-money { --c: var(--bad); --cb: var(--bad-bg); } .t-social { --c: var(--social); --cb: var(--social-bg); }
 .apanel[hidden] { display: none; }
 .apanel.deal .auto { animation: deal .55s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--i) * 90ms); }
 .apanel.deal .amsg { animation: pop .4s ease-out both; animation-delay: calc(var(--i) * 90ms + 380ms); }
@@ -411,6 +413,7 @@ footer a { color: var(--muted); }
             <li><button class="acat t-customers" type="button" role="tab" id="atab-customers" aria-controls="apanel-customers" aria-selected="false"><span class="aname">Customers</span><span class="acount">3</span><span class="asub">Keep buyers happy</span><span class="abar"><i></i></span></button></li>
             <li><button class="acat t-operations" type="button" role="tab" id="atab-operations" aria-controls="apanel-operations" aria-selected="false"><span class="aname">Operations</span><span class="acount">3</span><span class="asub">Never run out</span><span class="abar"><i></i></span></button></li>
             <li><button class="acat t-money" type="button" role="tab" id="atab-money" aria-controls="apanel-money" aria-selected="false"><span class="aname">Money</span><span class="acount">2</span><span class="asub">Get back what you&#x27;re owed</span><span class="abar"><i></i></span></button></li>
+            <li><button class="acat t-social" type="button" role="tab" id="atab-social" aria-controls="apanel-social" aria-selected="false"><span class="aname">Social</span><span class="acount">4</span><span class="asub">Create, post, promote · coming soon</span><span class="abar"><i></i></span></button></li>
           </ul>
           <div class="astage">
           <div class="apanel" id="apanel-analytics" role="tabpanel" aria-labelledby="atab-analytics">
@@ -438,6 +441,12 @@ footer a { color: var(--muted); }
           <div class="apanel" id="apanel-money" role="tabpanel" aria-labelledby="atab-money">
             <article class="auto t-money" style="--i:0"><p class="atag">Money</p><h3>Chargebacks</h3><p>Spots every dispute and sends the proof before the deadline.</p><div class="amsg"><span class="afrom">Femp</span><span>New dispute on order #4821 ($84). Proof of delivery attached, <b>due in 6 days</b>. Submit?</span><span class="atime">10:30 &#10003;&#10003;</span></div></article>
             <article class="auto t-money" style="--i:1"><p class="atag">Money</p><h3>Fees &amp; invoices</h3><p>Catches overcharged Amazon fees, duplicate invoices and refunds you&#x27;re owed.</p><div class="amsg"><span class="afrom">Femp</span><span>Amazon charged the wrong size tier on 2 ASINs. <b>$236</b> to claim back.</span><span class="atime">1st, 9:00 &#10003;&#10003;</span></div></article>
+          </div>
+          <div class="apanel" id="apanel-social" role="tabpanel" aria-labelledby="atab-social">
+            <article class="auto t-social" style="--i:0"><p class="atag">Social</p><h3>Stories ready every morning</h3><p>Two or three finished stories from today's store news: a restock, a new review, a launch.</p><div class="amsg"><span class="afrom">Femp</span><span><b>3 stories ready</b>: Lavender is back (212 asked), Jen K.'s 5&#9733; review, and why yours beats 2 Amazon alternatives. Post which?</span><span class="atime">8:15 &#10003;&#10003;</span></div></article>
+            <article class="auto t-social" style="--i:1"><p class="atag">Social</p><h3>Videos from your catalog</h3><p>Short videos and story frames made from your Shopify and Amazon photos, prices and reviews, in your brand's style.</p><div class="amsg"><span class="afrom">Femp</span><span>12-second restock video ready, built from your product photos with &ldquo;212 of you asked&rdquo; on screen. <b>Preview attached.</b></span><span class="atime">8:15 &#10003;&#10003;</span></div></article>
+            <article class="auto t-social" style="--i:2"><p class="atag">Social</p><h3>One tap, every channel</h3><p>Posts to Instagram and Facebook Stories, then TikTok, YouTube Shorts and Pinterest, cropped to each channel's shape.</p><div class="amsg"><span class="afrom">Femp</span><span>Posted to Instagram and Facebook Stories, a Short and a TikTok (<b>9:16</b>), plus a Pinterest pin (2:3).</span><span class="atime">8:17 &#10003;&#10003;</span></div></article>
+            <article class="auto t-social" style="--i:3"><p class="atag">Social</p><h3>Boost what works</h3><p>Spots the story that sells and offers to promote it as an ad, with a budget you approve.</p><div class="amsg"><span class="afrom">Femp</span><span>Story 1: <b>2.1x</b> your usual views and 9 orders ($412). Boost it for $40 over 2 days?</span><span class="atime">16:00 &#10003;&#10003;</span></div></article>
           </div>
           </div>
         </div>

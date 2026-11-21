@@ -22,6 +22,8 @@ Femp is an AI operations assistant for Shopify and Amazon brands. It watches the
 
  - Inbox: chargebacks, supplier delays, account warnings and reviews flagged from your store's Gmail, with replies drafted.
 
+ - Social (coming soon): daily stories and short videos made from your store, posted to every channel in one tap.
+
  - Orders and team: ask anything about sales and buyers, and add teammates who chat from their own WhatsApp.
 
 ## Stock: days of cover, not just counts
@@ -47,6 +49,12 @@ The checklist behind it: How to get your products found on Google and in ChatGPT
 Once you connect your store's Gmail, Femp checks it every hour for chargebacks, supplier delays, marketplace account warnings and reviews. It tells you which ones need you and drafts the replies for you to send. A chargeback with a deadline doesn't get buried under newsletters.
 
 On disputes: Shopify chargebacks: how to answer every dispute before the deadline.
+
+## Social: stories from your store, on every channel (coming soon)
+
+Most owners run their own social and go quiet when the store gets busy. Femp will hand you two or three finished stories each morning, made from what happened in your store: a restock, a new review, a launch, a best seller, plus angles from what competitors and Amazon alternatives are posting. One tap posts a story to Instagram and Facebook, then TikTok, YouTube Shorts and Pinterest, cropped to each channel's shape. Femp tracks which stories sold and offers to boost the winners as ads. Nothing posts without your yes.
+
+The playbook behind it: Your store makes a story every day. Here's how to post it everywhere.
 
 ## Orders: who's buying, and buying again
 
@@ -154,7 +162,7 @@ Connect the inbox your store uses and Femp checks it every hour for emails that 
 
 ## Coming next
 
-More channels and marketplaces are planned. If you need one, say so on WhatsApp or email support@femp.ai.
+For social: Instagram and Facebook first, then TikTok, YouTube and Pinterest, so Femp can post the stories you approve. More channels and marketplaces are planned. If you need one, say so on WhatsApp or email support@femp.ai.
 
 ---
 
@@ -271,6 +279,10 @@ The ones you set up. Tell Femp what to watch and when, such as "check stock ever
 ## Does Femp help my products show up in ChatGPT and Google?
 
 Yes. Femp scores each store's findability from 0 to 100 across Google, marketplaces and AI assistants such as ChatGPT and Perplexity, researches fixes on the web, and, after your yes, rewrites product titles, descriptions, alt text and blog posts. See how to get products found on Google and in ChatGPT.
+
+## Can Femp run my social media?
+
+That's coming. Femp will make daily stories and short videos from your store's products, reviews and news, post them to Instagram and Facebook (then TikTok, YouTube and Pinterest) in the right format after your tap, and offer to boost the ones that sell. See how it works.
 
 ## How is Femp different from a Shopify analytics dashboard?
 
@@ -407,6 +419,96 @@ Femp is our take on this. Today it covers the jobs owners ask about most:
  Automations | Set up any automation in one message: "every Monday, send me last week's profit". | 
 
 The money-recovery and compliance jobs above are on our roadmap, in roughly the order the money shows up. If one of them would change your week, tell us; that is how we decide what comes next.
+
+---
+
+# Your store makes a story every day. Here's how to post it everywhere.
+
+URL: https://femp.ai/blog/dtc-social-media-stories-from-your-store/
+
+Most owners make their own social content, run out of time and go quiet. The fix isn't more inspiration. Your store already produces something worth posting every day: a restock, a review, a launch, a best seller. The work is turning it into a story fast and getting it onto every channel.
+
+In Adobe Express's survey of more than 400 business owners, 7 in 10 said they felt burnt out by content creation and 68% had taken a break from posting because of it. Only 18% posted every day; 44% posted once a week. Constant Contact found that 47% of small business owners run their company's social media themselves. If you sell on Shopify or Amazon, that's probably you, fitting it in between orders and stock.
+
+ ● In short
+
+ - Stop starting from a blank page. Every restock, review, launch and best seller is a story.
+
+ - Make one vertical video or frame, then cut it to each channel's shape: 9:16, 4:5 and 2:3 cover almost everything.
+
+ - Put a tracked link on every story so you can see which ones sold, and spend ad money only on those.
+
+## Your store is the content calendar
+
+The posts that work for small brands are rarely clever. They're news from the store, told plainly. These happen every week whether you plan them or not:
+
+ What happened | The story | 
+
+ A sold-out product is back | “It's back.” Show the product, how many people asked, and how many you have. | 
+
+ A 5-star review came in | The review on screen over the product photo, with the customer's first name if they agreed. | 
+
+ A new product or variant | A 10-second reveal: packaging, the product in use, the price. | 
+
+ A best seller is running low | “Last 40 of this batch.” Only when it's true, and only if you won't sell out mid-campaign. | 
+
+ Buyers compare you with alternatives | Side by side: what you do differently, in claims you can back up. | 
+
+ A batch was made or packed | Behind the scenes from the bench, the kitchen or the warehouse. | 
+
+ A customer posted your product | Repost it with their permission and credit them. | 
+
+Check stock before you post. Promoting a product you're about to run out of wastes the attention you just earned; see days of cover.
+
+## Make it once, cut it for every channel
+
+Shoot or build everything vertical, then crop. One 9:16 story becomes a Reel, a TikTok and a YouTube Short; a 4:5 crop goes in the feed; a 2:3 version goes to Pinterest.
+
+ Where | Shape | Watch out for | 
+
+ Instagram and Facebook Stories | 9:16, 1080 × 1920 | Keep text away from the top and bottom, where the app puts the profile name and reply bar. Facebook video stories stop at 60 seconds. | 
+
+ Reels, TikTok, YouTube Shorts | 9:16, 1080 × 1920 | The first 2 seconds decide whether people keep watching. Put the product or the hook on screen at once. | 
+
+ Instagram and Facebook feed | 4:5, 1080 × 1350 | Takes more of the screen than square. | 
+
+ Pinterest | 2:3, 1000 × 1500 | Pins live for months: write a title someone would search for. | 
+
+## Posting to every channel automatically
+
+You don't have to open five apps. The platforms let approved tools post for you, with a few limits worth knowing:
+
+ - Instagram lets tools publish Stories, Reels and feed posts, but Stories only for Business accounts, not Creator accounts. Check which one you have in the app's account settings.
+
+ - Facebook Pages can publish photo and video stories and Reels the same way.
+
+ - TikTok keeps posts from a tool private until TikTok has audited that tool, so ask any scheduler whether it's audited.
+
+ - YouTube treats a short vertical upload as a Short; there's no separate upload.
+
+ - Pinterest accepts video pins from tools, though uploads are less reliable than images.
+
+Meta also lets you label AI-generated images and video when you post. If a scene in your story was generated rather than filmed, label it.
+
+## Track which stories sold
+
+Likes don't pay for stock. Give every story its own link (a UTM tag or a short code) and check Shopify a day later: sessions, orders and revenue from that story. After a few weeks you'll know which kinds of story sell for your brand, and the calendar writes itself.
+
+When an organic story clearly beats your usual results, that's the one to put money behind. Meta lets you boost an existing post or story as an ad, so you're spending on something already proven rather than guessing. Then check the ad against real orders, not Meta's own numbers; see ROAS against real sales.
+
+## Rules that apply to stories too
+
+ - Customer posts: ask before reposting and credit the person. Don't edit what they said.
+
+ - Reviews: don't show only the good ones if you're presenting them as typical, and say so if a review was incentivised. The FTC's review rule carries real penalties; see our compliance calendar.
+
+ - Comparisons: “lasts twice as long” needs a test behind it.
+
+ - Creators: paid or gifted posts need a clear disclosure, such as the platform's paid-partnership label.
+
+## How Femp handles it
+
+Social is coming to Femp. Each morning Femp will hand you two or three finished stories made from your store's own news and products, plus angles from what competitors and Amazon alternatives are posting. One tap posts a story to Instagram and Facebook first, then TikTok, YouTube and Pinterest, cropped to each channel. Femp tells you which stories sold and offers to boost the winners. Nothing posts without your yes. Join the waitlist to get it first, with $100 in free credits.
 
 ---
 

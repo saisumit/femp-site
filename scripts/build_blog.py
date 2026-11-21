@@ -420,7 +420,7 @@ def llms(posts: list[dict], pages: list[dict]) -> str:
         "Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.",
         "",
         "## Product",
-        f"- [Home]({SITE}/): what Femp does for DTC brands, a WhatsApp demo and 16 ready-made automations",
+        f"- [Home]({SITE}/): what Femp does for DTC brands, a WhatsApp demo and 20 ready-made automations",
         *[f"- [{p['nav']}]({p['url']}): {p['description']}" for p in pages],
         "- [Privacy policy](https://auth.femp.ai/privacy)",
         "- [Support](https://auth.femp.ai/support)",
