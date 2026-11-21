@@ -148,7 +148,7 @@ footer a { color: var(--muted); }
 .label .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--mint); margin-right: 4px; vertical-align: 1px; box-shadow: 0 0 0 4px color-mix(in srgb, var(--mint) 25%, transparent); }
 .uhero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 40px; padding: 64px 40px 56px; align-items: center; position: relative; overflow: hidden; }
 .uhero::before { content: ""; position: absolute; right: -120px; top: -80px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--mint) 22%, transparent), transparent 65%); pointer-events: none; }
-.uhero h1 { font-size: clamp(3rem, 7.4vw, 6rem); font-weight: 800; letter-spacing: -0.058em; line-height: .92; text-wrap: balance; margin-top: 14px; }
+.uhero h1 { font-size: clamp(2.6rem, 5.6vw, 4.7rem); font-weight: 800; letter-spacing: -0.058em; line-height: .92; text-wrap: balance; margin-top: 14px; }
 .uhero h1 em { font-style: normal; color: var(--accent); }
 .plugs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 30px; }
 .plug { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 99px; border: 1px solid var(--rule); background: var(--panel); font-weight: 600; font-size: .9rem; }
@@ -372,8 +372,8 @@ def home() -> str:
 <section class="uhero">
   <div class="ucopy">
     <p class="label"><b class="dot"></b> A general AI assistant on WhatsApp · early access</p>
-    <h1>Your assistant. <em>Then your employee.</em></h1>
-    <p class="lede">Femp is an AI assistant you text like a friend: ask anything, draft a reply, sum up a PDF, set a reminder. Give it a job, like running your store or finding your next role, and it becomes your employee for it. It connects your accounts, checks in every day, and acts only after your yes.</p>
+    <h1>From assistant to employee.<br><em>In one message.</em></h1>
+    <p class="lede">Femp is an AI assistant on WhatsApp. Give it a job, and it works like a pro: daily, and only with your yes.</p>
     <div class="ctas"><a class="btn solid" href="/waitlist/?from=home-hero">Join the waitlist →</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
     <div class="plugs" role="group" aria-label="Show one kind of message"><span class="label">Show:</span><button class="plug k-gen" type="button" data-k="gen" aria-pressed="false"><i></i>Assistant</button>{plugs}</div>
   </div>
@@ -405,7 +405,7 @@ def home() -> str:
 <section class="sec plugin-in">
   <div class="pin-copy">
     <p class="label">How it works</p>
-    <h2>Plugging in takes one message.</h2>
+    <h2>Here's that one message.</h2>
     <ol class="flow">
       <li><b>Say hi on WhatsApp</b><span>Or open the Femp app.</span></li>
       <li><b>Ask for a plugin</b><span>“install femp for jobs”</span></li>
