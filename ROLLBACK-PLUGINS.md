@@ -3,7 +3,7 @@
 > **Status, 22 Nov 2026, 03:10:** the website part is **LIVE on femp.ai** (femp-site `main`, merge commit
 > `6088f73`), and the waitlist sheet script is on **version 3** (adds the `Wants` column). The iPhone app and the
 > server are still only on their `main-plugin` branches. To undo the live website, use
-> “Roll back after going live” below: one revert and a push, back in about a minute.
+> “Roll back after going live” below: one restore and a push, back in about a minute.
 
 Femp as a general assistant with plugins (femp-dtc, femp-jobs, femp-finance; shown as Femp for DTC brands, Femp for Jobs, Femp for Finance) lives only on a branch called
 `main-plugin` in each repo. Nothing on `main` / `main-python` changed, and the live femp.ai, the live server and the
@@ -62,8 +62,10 @@ Only when you say so:
 ## Roll back after going live
 
 ```sh
-# Website: undo the go-live merge (6088f73) on main and publish (old site back in about a minute)
-cd ~/femp-site && git switch main && git revert -m 1 --no-edit 6088f73 && git push
+# Website: put every file back exactly as it was before plugins (1759cd8) and publish
+# (works however many changes came after the go-live; old site back in about a minute)
+cd ~/femp-site && git switch main && git restore --source=1759cd8 --staged --worktree :/ \
+  && git commit -m "Roll back to the pre-plugins site" && git push
 
 # Waitlist sheet: Apps Script → Deploy → Manage deployments → edit → Version 2 → Deploy
 # (optional: version 3 only adds a Wants column, and the old site works with it)
