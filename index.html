@@ -1,725 +1,195 @@
 <!doctype html>
-<html lang="en">
-<head>
-<title>Femp AI: AI Ops Assistant for DTC Brands on Shopify &amp; Amazon</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Femp AI is the operations assistant for DTC brands on Shopify and Amazon. It handles your pixel, ads, SEO, stock and chargebacks over WhatsApp.">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Femp AI: Your First Employee, With Plugins</title>
+<meta name="description" content="Femp is an assistant you text on WhatsApp. Install a plugin and it learns a job: running your store, finding your next role, keeping on top of your money.">
 <link rel="canonical" href="https://femp.ai/">
-<meta name="msvalidate.01" content="9630C390530A95D6B86886436D1FC7B5">
-<meta property="og:title" content="Femp, your store's first employee">
-<meta property="og:description" content="Femp fixes your pixel, moves ad budget to what sells, keeps your SEO up to date and answers chargebacks with proof, all from WhatsApp.">
-<meta property="og:image" content="https://femp.ai/img/og.jpg">
-<meta property="og:url" content="https://femp.ai/">
-<meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#17694b">
-<meta property="og:site_name" content="Femp">
-<meta property="og:type" content="website">
-<meta name="twitter:title" content="Femp, your store's first employee">
-<meta name="twitter:description" content="An AI operations assistant for DTC brands on Shopify and Amazon. Pixel, ads, SEO, stock and chargebacks, handled on WhatsApp.">
-<meta name="twitter:image" content="https://femp.ai/img/og.jpg">
-<link rel="alternate" type="application/rss+xml" title="Femp blog" href="https://femp.ai/blog/feed.xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://femp.ai/#org", "name": "Femp AI, Inc.", "legalName": "Femp AI, Inc.", "url": "https://femp.ai/", "logo": "https://femp.ai/img/icon-512.png", "email": "support@femp.ai", "brand": {"@type": "Brand", "name": "Femp", "alternateName": "Femp AI"}, "founder": {"@type": "Person", "name": "Sumit Vohra", "jobTitle": "Founder", "sameAs": ["https://in.linkedin.com/in/saisumit03"]}}, {"@type": "WebSite", "@id": "https://femp.ai/#site", "name": "Femp", "alternateName": ["Femp AI", "femp.ai"], "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "inLanguage": "en-US"}, {"@type": "SoftwareApplication", "name": "Femp", "alternateName": "Femp AI", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, Android, WhatsApp", "description": "AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. Manages the Meta and Google pixel, ad spend against real sales, SEO and AI-search rankings, stock and chargebacks, messages the owner on WhatsApp, and makes the fixes they approve.", "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free during the beta"}, "audience": {"@type": "BusinessAudience", "audienceType": "Direct-to-consumer (DTC) ecommerce brands on Shopify and Amazon"}, "featureList": ["Pixel health", "Ads vs. real sales", "SEO and AI-search rankings", "Abandoned carts", "Chargeback evidence", "Low stock and reorders", "Review replies", "Daily sales digest", "Social stories posted to every channel"]}]}</script>
-<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Gochi+Hand&display=swap">
+<meta property="og:site_name" content="Femp"><meta property="og:type" content="website">
+<meta property="og:title" content="Femp AI: Your First Employee, With Plugins"><meta property="og:description" content="Femp is an assistant you text on WhatsApp. Install a plugin and it learns a job: running your store, finding your next role, keeping on top of your money.">
+<meta property="og:url" content="https://femp.ai/"><meta property="og:image" content="https://femp.ai/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Femp AI: Your First Employee, With Plugins"><meta name="twitter:description" content="Femp is an assistant you text on WhatsApp. Install a plugin and it learns a job: running your store, finding your next role, keeping on top of your money."><meta name="twitter:image" content="https://femp.ai/img/og.jpg">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://femp.ai/#org", "name": "Femp AI, Inc.", "legalName": "Femp AI, Inc.", "url": "https://femp.ai/", "logo": "https://femp.ai/img/icon-512.png", "email": "support@femp.ai"}, {"@type": "WebSite", "@id": "https://femp.ai/#site", "name": "Femp", "alternateName": ["Femp AI", "femp.ai"], "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "inLanguage": "en-US"}, {"@type": "SoftwareApplication", "name": "Femp", "alternateName": "Femp AI", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, WhatsApp", "description": "An assistant you text on WhatsApp or use in the Femp app, extended with plugins for running a store, job hunting and personal finance.", "url": "https://femp.ai/", "publisher": {"@id": "https://femp.ai/#org"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free during the beta"}}]}</script>
 <style>
-/* Layout: a ruled engineering grid (thin lines, corner ticks, mono labels) holding a playable story in chapters. */
 :root {
-  --paper: #f6f8f5;
-  --panel: #ffffff;
-  --ink: #0c1510;
-  --muted: #56655d;
-  --faint: #8a988f;
-  --rule: #dfe6e0;
-  --mint: #5cc596;
-  --forest: #17694b;
-  --accent: #146043;
-  --tint: #e6f4ec;
-  --warn: #b7791f;
-  --warn-bg: #fbf1de;
-  --bad: #c2413a;
-  --bad-bg: #fbe7e5;
-  --night: #0b1a13;
-  --night-ink: #e9f3ed;
-  --night-muted: #9fb7aa;
-  --chat: #ecf0ed;
-  --mine: #d6f2e2;
-  --blue: #3d6fb6;
-  --blue-bg: #e7eef8;
-  --ops-bg: #eceeed;
-  --social: #8a3f9e;
-  --social-bg: #f4e9f7;
-  --sans: "Geist", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --hand: "Gochi Hand", "Comic Sans MS", "Chalkboard SE", cursive;
+  --paper: #f6f8f5; --panel: #ffffff; --ink: #0c1510; --muted: #56655d; --faint: #8a988f; --rule: #dfe6e0;
+  --forest: #17694b; --accent: #146043; --tint: #e6f4ec; --mine: #d6f2e2; --chat: #ecf0ed; --mint: #5cc596;
+  --dtc: #146043; --dtc-bg: #e6f4ec; --jobs: #3d6fb6; --jobs-bg: #e7eef8; --fin: #9a5b13; --fin-bg: #fbf1de;
+  --sans: "Geist", "Avenir Next", "Segoe UI", system-ui, sans-serif; --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #09120d; --panel: #0f1b15; --ink: #e7f0ea; --muted: #9db0a5; --faint: #6d8075; --rule: #1d2d24;
-    --accent: #6fd3a5; --tint: #12291e; --warn: #e3ad55; --warn-bg: #2b2212; --bad: #ef7a72; --bad-bg: #2c1513;
-    --chat: #17241d; --mine: #173a29; --blue: #8db4ea; --blue-bg: #142235; --ops-bg: #1a2620; --social: #d39be3; --social-bg: #2a1830; color-scheme: dark;
-  }
-}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #09120d; --panel: #0f1b15; --ink: #e7f0ea; --muted: #9db0a5; --faint: #6d8075; --rule: #1d2d24;
+  --accent: #6fd3a5; --tint: #12291e; --mine: #173a29; --chat: #17241d;
+  --dtc: #6fd3a5; --dtc-bg: #12291e; --jobs: #8db2ea; --jobs-bg: #142235; --fin: #e3ad55; --fin-bg: #2b2212; color-scheme: dark; } }
 :root[data-theme="dark"] {
   --paper: #09120d; --panel: #0f1b15; --ink: #e7f0ea; --muted: #9db0a5; --faint: #6d8075; --rule: #1d2d24;
-  --accent: #6fd3a5; --tint: #12291e; --warn: #e3ad55; --warn-bg: #2b2212; --bad: #ef7a72; --bad-bg: #2c1513;
-  --chat: #17241d; --mine: #173a29; --blue: #8db4ea; --blue-bg: #142235; --ops-bg: #1a2620; --social: #d39be3; --social-bg: #2a1830; color-scheme: dark;
-}
+  --accent: #6fd3a5; --tint: #12291e; --mine: #173a29; --chat: #17241d;
+  --dtc: #6fd3a5; --dtc-bg: #12291e; --jobs: #8db2ea; --jobs-bg: #142235; --fin: #e3ad55; --fin-bg: #2b2212; color-scheme: dark; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
-img { max-width: 100%; display: block; }
+h1, h2, h3, p, ul { margin: 0; }
 a { color: var(--accent); text-underline-offset: 3px; }
-button { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
-h1, h2, h3 { margin: 0; line-height: 1.02; letter-spacing: -0.035em; text-wrap: balance; font-weight: 700; }
-p { margin: 0; }
-.wrap { max-width: 1200px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.mono { font-family: var(--mono); }
-.label { font: 500 0.75rem/1.3 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-.label b { color: var(--accent); font-weight: 500; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.frame { border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+.label { font: 500 .74rem/1.3 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
 .muted { color: var(--muted); }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
-
-/* ruled frame: each section is a box on the grid, with + ticks at its corners */
-.frame { border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); position: relative; }
-.ruled { border-top: 1px solid var(--rule); position: relative; }
-.ruled::before, .ruled::after { content: "+"; position: absolute; top: -0.78em; font: 400 15px/1 var(--mono); color: var(--faint); background: var(--paper); padding: 0 2px; }
-.ruled::before { left: -6px; } .ruled::after { right: -6px; }
-
-.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 10px; font: 600 0.98rem/1 var(--sans); text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease; }
-.btn:hover { transform: translateY(-1px); }
-.btn.solid { background: var(--ink); color: var(--paper); }
-.btn.green { background: var(--forest); color: #fff; }
-.btn.green:hover { background: #12573e; }
-.btn.line { border-color: var(--rule); background: var(--panel); color: var(--ink); }
-.btn.line:hover { border-color: var(--faint); }
-.btn svg { width: 17px; height: 17px; flex: none; }
-.btn[disabled] { opacity: .45; cursor: default; transform: none; }
-
-/* launch waitlist (same as assets/site.css) */
-.topbar { background: var(--forest); color: #fff; font: 500 0.88rem/1.35 var(--sans); padding: 9px max(16px, env(safe-area-inset-left, 0px)); display: flex; justify-content: center; align-items: center; gap: 6px 12px; flex-wrap: wrap; text-align: center; }
-.topbar a { color: #fff; font-weight: 700; text-underline-offset: 3px; white-space: nowrap; }
-.topbar .early { font: 500 0.7rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; background: rgba(255,255,255,.16); color: #fff; padding: 5px 8px; border-radius: 99px; }
-.credit { justify-self: start; display: inline-flex; align-items: center; gap: 10px; background: var(--tint); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 99px; padding: 7px 14px 7px 7px; font: 600 0.95rem/1.2 var(--sans); text-decoration: none; }
-.credit strong { background: var(--forest); color: #fff; border-radius: 99px; padding: 5px 10px; font: 700 0.95rem/1 var(--mono); }
-.soon { display: flex; flex-wrap: wrap; gap: 10px; }
-.chip { display: inline-flex; align-items: center; gap: 8px; border: 1px dashed var(--faint); border-radius: 10px; padding: 8px 12px; font: 500 0.82rem/1.2 var(--mono); color: var(--muted); }
-.chip em { font-style: normal; color: var(--accent); }
-
-/* nav */
+.topbar { background: var(--forest); color: #fff; text-align: center; font-size: .85rem; padding: 8px 12px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; align-items: center; }
+.topbar b { font-weight: 700; } .topbar a { color: #fff; font-weight: 600; }
+.topbar .early { font: 500 .66rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; background: rgba(255,255,255,.18); padding: 4px 8px; border-radius: 99px; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
 .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 6; background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
-.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 11px; }
-.brand { display: flex; align-items: center; gap: 10px; font: 700 1.3rem/1 var(--sans); letter-spacing: -0.03em; color: var(--ink); text-decoration: none; }
+.nav .wrap { display: flex; align-items: center; gap: 22px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; margin-right: auto; }
 .brand img { width: 30px; height: 30px; border-radius: 8px; }
-.nav nav { display: flex; align-items: center; gap: 26px; }
-.nav nav a:not(.btn) { font: 500 0.8rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); text-decoration: none; }
-.nav nav a:not(.btn):hover { color: var(--ink); }
-.nav .btn { padding: 10px 16px; font-size: 0.9rem; }
-@media (max-width: 760px) { .nav nav a:not(.btn) { display: none; } }
-
-/* hero */
-.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
-.hero-copy { padding: 72px 48px 56px 40px; display: grid; gap: 26px; align-content: center; border-right: 1px solid var(--rule); }
-.hero h1 { font-size: clamp(2.8rem, 1.4rem + 5.2vw, 5.6rem); font-weight: 800; letter-spacing: -0.05em; }
-.hero h1 span { color: var(--accent); }
-.hero .lede { font-size: 1.2rem; color: var(--muted); max-width: 33em; }
-.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-.stage { position: relative; display: grid; place-items: center; padding: 56px 24px 40px; min-height: 460px;
-  background-image: linear-gradient(var(--rule) 1px, transparent 1px), linear-gradient(90deg, var(--rule) 1px, transparent 1px);
-  background-size: 32px 32px; background-position: -1px -1px; }
-.stage::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 55%, transparent 30%, var(--paper) 78%); pointer-events: none; }
-.buddy { position: relative; z-index: 1; display: grid; justify-items: center; gap: 0; }
-.bubble { position: relative; max-width: 290px; background: var(--panel); border: 2px solid var(--ink); border-radius: 18px; padding: 12px 16px; font: 400 1.35rem/1.2 var(--hand); margin-bottom: 18px; min-height: 3.2em; }
-.bubble::after { content: ""; position: absolute; bottom: -11px; left: 50%; width: 18px; height: 18px; margin-left: -9px; background: var(--panel); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: rotate(45deg); }
-.femp-char { width: 210px; height: 210px; cursor: pointer; filter: drop-shadow(0 18px 22px rgba(23, 105, 75, .28)); animation: bob 3.4s ease-in-out infinite; }
-.femp-char .arm { transform-box: fill-box; transform-origin: 0% 50%; animation: wave 3.4s ease-in-out infinite; }
-.femp-char .eyes { transform-box: fill-box; transform-origin: center; animation: blink 5s infinite; }
-.buddy .hint { margin-top: 10px; font: 400 1rem/1 var(--hand); color: var(--faint); }
-@keyframes bob { 50% { transform: translateY(-8px); } }
-@keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 70% { transform: rotate(-9deg); } 80% { transform: rotate(4deg); } 90% { transform: rotate(-6deg); } }
-@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(0.1); } }
-.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.facts div { padding: 22px 24px; border-right: 1px solid var(--rule); display: grid; gap: 4px; }
-.facts div:last-child { border-right: 0; }
-.facts b { font: 700 1.9rem/1 var(--sans); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
-@media (max-width: 900px) {
-  .hero { grid-template-columns: minmax(0, 1fr); }
-  .hero-copy { border-right: 0; padding: 48px 20px 32px; }
-  .stage { min-height: 380px; border-top: 1px solid var(--rule); }
-  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .facts div:nth-child(2) { border-right: 0; }
-  .facts div:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
-}
-
-/* chapters */
-.chapter { padding: 64px 40px; }
-.chapter-head { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 24px; margin-bottom: 40px; }
-.chapter-head h2 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.3rem); }
-.chapter-head p { color: var(--muted); max-width: 40em; margin-top: 14px; font-size: 1.1rem; }
-@media (max-width: 760px) { .chapter { padding: 48px 20px; } .chapter-head { grid-template-columns: minmax(0, 1fr); gap: 10px; } }
-
-.bar { height: 10px; border-radius: 99px; background: var(--paper); border: 1px solid var(--rule); overflow: hidden; }
-.bar i { display: block; height: 100%; width: 50%; background: var(--mint); border-radius: inherit; transition: width .7s cubic-bezier(.3, .7, .2, 1), background .3s; }
-.bar i.low { background: var(--warn); } .bar i.out { background: var(--bad); }
-
-/* pains in the hero */
-.pains { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--rule); }
-.pains li { display: grid; grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr); gap: 4px 20px; padding: 12px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
-.pains .q { font-weight: 700; font-size: 1.06rem; letter-spacing: -0.02em; }
-.pains .a { color: var(--muted); font-size: 0.98rem; }
-.pains .a b { color: var(--ink); font-weight: 600; }
-@media (max-width: 1100px) { .pains li { grid-template-columns: minmax(0, 1fr); } }
-
-/* see it work: a looping conversation */
-.watch { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 48px; align-items: center; }
-.watch-copy { display: grid; gap: 18px; }
-.watch-copy h2 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.3rem); }
-.watch-copy > p.muted { font-size: 1.1rem; max-width: 30em; }
-.scenes { display: grid; gap: 8px; }
-.scene { text-align: left; display: grid; grid-template-columns: 26px 1fr; gap: 2px 12px; padding: 13px 14px; border-radius: 12px; border: 1px solid var(--rule); background: var(--panel); cursor: pointer; position: relative; overflow: hidden; }
-.scene .n { grid-row: span 2; font: 500 0.78rem/1.6 var(--mono); color: var(--faint); }
-.scene strong { font-size: 1rem; letter-spacing: -0.01em; }
-.scene span:last-of-type { color: var(--muted); font-size: 0.9rem; }
-.scene[aria-pressed="true"] { border-color: var(--accent); background: var(--tint); }
-.scene[aria-pressed="true"] .n { color: var(--accent); }
-.scene .prog { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); }
-.wphone { justify-self: center; width: 100%; max-width: 340px; height: 640px; border: 10px solid var(--ink); border-radius: 44px; background: var(--chat); display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(12,21,16,.5); }
-.wp-head { display: flex; align-items: center; gap: 10px; padding: 24px 16px 12px; background: var(--forest); color: #fff; }
-.wp-head img { width: 34px; height: 34px; border-radius: 50%; background: #fff; }
-.wp-head div { display: grid; line-height: 1.2; }
-.wp-head strong { font-size: 0.98rem; } .wp-head small { font-size: 0.75rem; opacity: .8; }
-.wthread { padding: 14px 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; overflow: hidden; }
-.wb { max-width: 86%; padding: 9px 12px 7px; border-radius: 4px 14px 14px 14px; background: var(--panel); font-size: 0.9rem; line-height: 1.42; box-shadow: 0 1px 0 rgba(12,21,16,.06); animation: wpop .32s ease-out both; }
-.wb.me { align-self: flex-end; background: var(--mine); border-radius: 14px 4px 14px 14px; }
-.wb.done { border-left: 3px solid var(--accent); }
-.wb b { font-weight: 600; }
-.wb .stories { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; margin: 8px 0 2px; }
-.wb .st { margin: 0; position: relative; aspect-ratio: 9 / 16; border-radius: 8px; overflow: hidden; background: #efe8f3; }
-.wb .st img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.wb .st.pack img { object-fit: contain; padding: 18% 6% 0; }
-.wb .st figcaption { position: absolute; inset: 0 0 auto; padding: 7px 6px 14px; color: #fff; font: 700 0.66rem/1.15 var(--sans); letter-spacing: -0.01em; background: linear-gradient(rgba(0,0,0,.45), transparent); }
-.wb .st.pack figcaption { color: #3b2a48; background: none; }
-.wb .st::after { content: ""; position: absolute; inset: 4px 6px auto; height: 2px; border-radius: 2px; background: rgba(255,255,255,.7); }
-.wb .st.pick { outline: 2px solid var(--accent); outline-offset: 1px; }
-.wphone { position: relative; }
-.wb .st { cursor: pointer; transition: transform .2s; }
-.wb .st:hover { transform: translateY(-2px); }
-.wb .st.tapped { animation: wtap .6s ease-out; }
-@keyframes wtap { 0% { box-shadow: 0 0 0 0 rgba(23,105,75,.55); transform: scale(1); } 40% { transform: scale(.94); } 100% { box-shadow: 0 0 0 14px rgba(23,105,75,0); transform: scale(1); } }
-.wb .hint { display: block; font: 500 .66rem/1.2 var(--mono); color: var(--faint); margin-top: 2px; }
-.wb .st .kind { position: absolute; left: 4px; bottom: 4px; font: 600 0.55rem/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: #fff; background: rgba(0,0,0,.5); padding: 3px 4px; border-radius: 4px; }
-.wb .st.post { background: #f3f0f5; display: grid; align-items: center; }
-.wb .st.post img { height: auto; aspect-ratio: 4 / 5; }
-.wb .st.post::after { display: none; }
-.wstory .slide.post { background: #fff; display: grid; align-content: start; gap: 0; color: #111; padding-top: 58px; }
-.wstory .slide.post .ph { display: none !important; }
-.wstory .slide.post .ph { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: .78rem; font-weight: 600; }
-.wstory .slide.post .ph .av { width: 26px; height: 26px; border-radius: 50%; background: #efe8f3; color: #5b4370; display: grid; place-items: center; font: 800 .62rem/1 var(--sans); }
-.wstory .slide.post .ph small { font-weight: 400; color: #777; }
-.wstory .slide.post img { height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
-.wstory .slide.post .acts { display: flex; gap: 14px; padding: 9px 12px 4px; font-size: 1.05rem; line-height: 1; }
-.wstory .slide.post .pcap { margin: 0; padding: 0 12px; font-size: .76rem; line-height: 1.4; }
-.wstory .slide.post .pcap b { font-weight: 600; }
-.wstory.onpost .top { color: #111; text-shadow: none; }
-.wstory.onpost .top .x { color: #111; }
-.wstory.onpost .bars i { background: rgba(0,0,0,.15); }
-.wstory.onpost .bars b { background: #111; }
-.wstory.onpost .foot { background: #fff; padding-top: 10px; }
-.wstory.onpost .foot .ghost { color: #111; border-color: #ccc; }
-.wstory .slide.post .pcap { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.wstory { position: absolute; inset: 0; z-index: 5; background: #000; overflow: hidden; opacity: 0; pointer-events: none; transform: scale(.96); transition: opacity .25s, transform .25s; }
-.wstory.open { opacity: 1; pointer-events: auto; transform: none; }
-.wstory .track { position: absolute; inset: 0; display: flex; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
-.wstory .slide { flex: 0 0 100%; position: relative; background: #111; }
-.wstory .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.wstory .slide.pack { background: #efe8f3; }
-.wstory .slide.pack img { object-fit: contain; padding: 34% 10% 26%; }
-.wstory .scap { position: absolute; left: 18px; right: 18px; top: 78px; color: #fff; font: 800 1.7rem/1.04 var(--sans); letter-spacing: -0.035em; text-shadow: 0 1px 14px rgba(0,0,0,.35); }
-.wstory .slide.pack .scap { color: #3b2a48; text-shadow: none; }
-.wstory .bars { position: absolute; top: 12px; left: 12px; right: 12px; z-index: 2; display: flex; gap: 4px; }
-.wstory .bars i { flex: 1; height: 3px; border-radius: 3px; background: rgba(255,255,255,.35); overflow: hidden; }
-.wstory .bars b { display: block; height: 100%; width: 0; background: #fff; }
-.wstory .top { position: absolute; top: 24px; left: 12px; right: 12px; z-index: 2; display: flex; align-items: center; gap: 8px; color: #fff; font-size: .78rem; font-weight: 600; text-shadow: 0 1px 6px rgba(0,0,0,.4); }
-.wstory .top .av { width: 28px; height: 28px; border-radius: 50%; background: #fff; color: #5b4370; display: grid; place-items: center; font: 800 .7rem/1 var(--sans); text-shadow: none; }
-.wstory .top small { font-weight: 400; opacity: .85; }
-.wstory .top .x { margin-left: auto; all: unset; margin-left: auto; cursor: pointer; font-size: 1.2rem; line-height: 1; padding: 4px; color: #fff; }
-.wstory .tap { all: unset; position: absolute; top: 60px; bottom: 76px; width: 40%; z-index: 1; cursor: pointer; }
-.wstory .tap.prev { left: 0; } .wstory .tap.next { right: 0; }
-.wstory .foot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 30px 14px 16px; display: flex; gap: 8px; background: linear-gradient(transparent, rgba(0,0,0,.6)); }
-.wstory .foot button { all: unset; box-sizing: border-box; cursor: pointer; padding: 11px 14px; border-radius: 99px; font: 600 .85rem/1 var(--sans); text-align: center; }
-.wstory .foot .ghost { color: #fff; border: 1px solid rgba(255,255,255,.6); }
-.wstory .foot .live { flex: 1; background: var(--forest); color: #fff; }
-.wstory .foot .live.press { animation: wtap .6s ease-out; background: var(--accent); }
-.wstory button:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
-.wb time { display: block; text-align: right; font: 400 0.68rem/1 var(--mono); color: var(--faint); margin-top: 4px; }
-.wtyping { align-self: flex-start; background: var(--panel); border-radius: 4px 14px 14px 14px; padding: 12px 14px; display: flex; gap: 4px; animation: wpop .2s ease-out both; }
-.wtyping.me { align-self: flex-end; background: var(--mine); border-radius: 14px 4px 14px 14px; }
-.wtyping i { width: 6px; height: 6px; border-radius: 50%; background: var(--faint); animation: wdot 1s infinite; }
-.wtyping i:nth-child(2) { animation-delay: .15s; } .wtyping i:nth-child(3) { animation-delay: .3s; }
-.wp-input { margin: 0 10px 14px; padding: 10px 14px; border-radius: 99px; background: var(--panel); color: var(--faint); font-size: 0.85rem; }
-@keyframes wpop { from { opacity: 0; transform: translateY(8px) scale(.98); } }
-@keyframes wdot { 50% { opacity: .25; transform: translateY(-2px); } }
-@media (max-width: 900px) { .watch { grid-template-columns: minmax(0, 1fr); } .wphone { height: 600px; } }
-
-/* hero: pain rows switch the phone demo */
-.pains li { display: block; padding: 0; }
-.pain { all: unset; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr); gap: 4px 20px; padding: 12px 10px; margin: 0 -10px; border-radius: 8px; cursor: pointer; position: relative; overflow: hidden; align-items: baseline; }
-.pain:hover { background: color-mix(in srgb, var(--tint) 60%, transparent); }
-.pain:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
-.pain[aria-pressed="true"] { background: var(--tint); }
-.pain[aria-pressed="true"] .q { color: var(--accent); }
-.pain .prog { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--accent); }
-@media (max-width: 1100px) { .pain { grid-template-columns: minmax(0, 1fr); } }
-.stage .wphone { position: relative; z-index: 1; height: 600px; }
-
-/* trimmed sections */
-.sec { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 3rem); margin-bottom: 28px; }
-.autolist { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.autolist li { border: 1px solid var(--rule); background: var(--panel); border-radius: 99px; padding: 9px 16px; font-weight: 500; font-size: 0.98rem; }
-.own { margin-top: 20px; }
-.promises { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-.promises li { border-top: 2px solid var(--forest); padding-top: 14px; font-size: 1.05rem; }
-@media (max-width: 760px) { .promises { grid-template-columns: minmax(0, 1fr); gap: 18px; } }
-.pains .a { color: var(--ink); }
-
-/* automations: category rail (auto-advances while on screen) + that category's cards, each with a sample WhatsApp message */
-.autos { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 28px; align-items: start; }
-.acats { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; position: sticky; top: 88px; }
-.acat { --c: var(--accent); --cb: var(--tint); width: 100%; text-align: left; background: none; border: 0; border-radius: 12px; padding: 14px 16px 16px; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; color: var(--muted); font: inherit; position: relative; transition: background .2s, color .2s; }
-.acat:hover { background: var(--panel); }
-.acat .aname { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.03em; }
-.acat .acount { font: 500 .75rem/1 var(--mono); align-self: center; padding: 5px 7px; border-radius: 6px; color: var(--faint); }
-.acat .asub { grid-column: 1 / -1; font-size: .88rem; color: var(--faint); }
-.acat .abar { position: absolute; left: 16px; right: 16px; bottom: 6px; height: 2px; border-radius: 2px; background: var(--rule); overflow: hidden; opacity: 0; }
-.acat .abar i { display: block; height: 100%; background: var(--c); transform-origin: left; transform: scaleX(0); }
-.acat[aria-selected="true"] { background: var(--panel); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); }
-.acat[aria-selected="true"] .acount { background: var(--cb); color: var(--c); }
-.acat[aria-selected="true"] .abar { opacity: 1; }
-.astage { display: grid; gap: 14px; }
-.apanel { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
-.auto { --c: var(--accent); background: var(--panel); border: 1px solid var(--rule); border-radius: 16px; padding: 20px; display: grid; align-content: start; gap: 10px; min-width: 0; }
-.auto h3 { font-size: 1.15rem; letter-spacing: -0.025em; }
-.auto > p:not(.atag) { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
-.atag { font: 500 0.7rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
-.amsg { margin-top: 4px; background: var(--mine); border-radius: 12px 12px 12px 4px; padding: 10px 12px 8px; font-size: .86rem; line-height: 1.45; display: grid; gap: 4px; }
-.amsg b { font-weight: 600; }
-.afrom { font: 500 .68rem/1 var(--mono); color: var(--accent); letter-spacing: .04em; text-transform: uppercase; }
-.atime { justify-self: end; font: 400 .68rem/1 var(--mono); color: var(--faint); font-variant-numeric: tabular-nums; }
-.t-marketing { --c: var(--warn); --cb: var(--warn-bg); } .t-customers { --c: var(--blue); --cb: var(--blue-bg); }
-.t-operations { --c: var(--muted); --cb: var(--ops-bg); } .t-money { --c: var(--bad); --cb: var(--bad-bg); } .t-social { --c: var(--social); --cb: var(--social-bg); }
-.apanel[hidden] { display: none; }
-.apanel.deal .auto { animation: deal .55s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--i) * 90ms); }
-.apanel.deal .amsg { animation: pop .4s ease-out both; animation-delay: calc(var(--i) * 90ms + 380ms); }
-@keyframes deal { from { opacity: 0; transform: translateY(26px) rotate(-1.5deg) scale(.97); } to { opacity: 1; transform: none; } }
+.nav nav { display: flex; align-items: center; gap: 22px; }
+.nav nav a { font: 500 .76rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.nav nav a[aria-current="page"] { color: var(--ink); }
+.btn { display: inline-flex; align-items: center; gap: 9px; padding: 12px 20px; border-radius: 10px; font: 600 .96rem/1 var(--sans); text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform .15s; }
+.btn:hover { transform: translateY(-1px); }
+.btn.green { background: var(--forest); color: #fff; } .btn.solid { background: var(--ink); color: var(--paper); } .btn.line { background: var(--panel); border-color: var(--rule); color: var(--ink); }
+.nav nav .btn { font: 600 .9rem/1 var(--sans); letter-spacing: 0; text-transform: none; color: #fff; padding: 10px 16px; }
+.sec { padding: 56px 40px; border-top: 1px solid var(--rule); display: grid; gap: 26px; }
+.sec h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.04; text-wrap: balance; max-width: 22ch; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; padding: 56px 40px 52px; align-items: center; }
+.hero h1 { font-size: clamp(2.8rem, 7vw, 5.4rem); font-weight: 800; letter-spacing: -0.055em; line-height: .95; text-wrap: balance; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 54ch; margin-top: 20px; }
+.ptabs { display: grid; gap: 6px; margin-top: 24px; list-style: none; padding: 0; }
+.ptab { all: unset; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: 12.5rem minmax(0, 1fr); gap: 3px 18px; padding: 11px 12px; border-radius: 10px; cursor: pointer; align-items: baseline; border: 1px solid transparent; }
+.ptab:hover { background: var(--panel); }
+.ptab:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+.ptab b { font-weight: 700; color: var(--c); } .ptab span { color: var(--muted); font-size: .95rem; }
+.ptab small { grid-column: 1 / -1; font: 500 .66rem/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--faint); }
+.ptab[aria-pressed="true"] { background: var(--cb); border-color: var(--rule); }
+.k-dtc { --c: var(--dtc); --cb: var(--dtc-bg); } .k-jobs { --c: var(--jobs); --cb: var(--jobs-bg); } .k-fin { --c: var(--fin); --cb: var(--fin-bg); }
+.ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.phone { justify-self: center; width: 100%; max-width: 330px; height: 580px; border: 10px solid var(--ink); border-radius: 44px; background: var(--chat); display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(12,21,16,.5); }
+.p-head { background: var(--forest); color: #fff; padding: 12px 14px; display: flex; gap: 10px; align-items: center; font-size: .9rem; }
+.p-head img { width: 30px; height: 30px; border-radius: 50%; background: #fff; }
+.p-head small { display: block; opacity: .75; font-size: .72rem; }
+.p-head .plug { margin-left: auto; font: 500 .62rem/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; background: rgba(255,255,255,.18); padding: 5px 7px; border-radius: 6px; }
+.p-thread { padding: 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; overflow: hidden; }
+.bub { max-width: 88%; background: var(--panel); border-radius: 4px 14px 14px 14px; padding: 9px 12px 7px; font-size: .88rem; line-height: 1.42; animation: pop .3s ease-out both; }
+.bub.me { align-self: flex-end; background: var(--mine); border-radius: 14px 4px 14px 14px; }
+.bub.done { border-left: 3px solid var(--accent); }
+.bub time { display: block; text-align: right; font: 400 .66rem/1 var(--mono); color: var(--faint); margin-top: 4px; }
+.bub b { font-weight: 600; }
 @keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-.autos:not(.live) .acats { display: none; }
-.autos:not(.live) { grid-template-columns: minmax(0, 1fr); }
-.cron { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; padding: 14px 18px; border: 1px dashed var(--rule); border-radius: 12px; font-size: 0.95rem; }
-.cron code { font: 500 0.8rem/1 var(--mono); color: var(--accent); background: var(--tint); padding: 5px 8px; border-radius: 6px; }
-@media (max-width: 860px) {
-  .autos { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-  .acats { position: static; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -4px; padding: 2px 4px 6px; }
-  .acats li { flex: 0 0 auto; }
-  .acat { padding: 10px 14px 14px; }
-  .acat .aname { font-size: 1rem; }
-  .acat .asub { display: none; }
-  .acat .abar { left: 14px; right: 14px; bottom: 5px; }
-  .apanel { grid-template-columns: minmax(0, 1fr); }
-}
-/* capabilities grid */
-.caps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
-.cap { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 26px; display: grid; gap: 12px; align-content: start; min-width: 0; transition: background .2s; }
-.cap:hover { background: var(--panel); }
-.cap h3 { font-size: 1.3rem; letter-spacing: -0.03em; }
-.cap p { color: var(--muted); font-size: 0.97rem; }
-.viz { height: 118px; border: 1px solid var(--rule); border-radius: 12px; background: var(--panel); padding: 14px; display: grid; align-content: center; gap: 8px; font: 400 0.76rem/1.2 var(--mono); color: var(--muted); overflow: hidden; }
-.vrow { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr) 2.6rem; gap: 10px; align-items: center; }
-.vrow .bar { height: 8px; }
-.vrow em { font-style: normal; text-align: right; color: var(--ink); }
-.vrow em.bad { color: var(--bad); } .vrow em.good { color: var(--accent); }
-.dial { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: center; }
-.dial svg { width: 88px; height: 88px; }
-.mail { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px; align-items: center; }
-.pill { font: 500 0.64rem/1 var(--mono); text-transform: uppercase; letter-spacing: .04em; padding: 4px 7px; border-radius: 99px; background: var(--bad-bg); color: var(--bad); }
-.pill.w { background: var(--warn-bg); color: var(--warn); } .pill.g { background: var(--tint); color: var(--accent); }
-.mail span:last-child { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.cols { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; align-items: end; height: 74px; }
-.cols i { display: grid; align-content: end; height: 100%; }
-.cols i b { display: block; background: var(--mint); border-radius: 3px 3px 0 0; }
-.cols i b + b { background: var(--forest); border-radius: 0; }
-.mini-chat { display: grid; gap: 6px; }
-.mini-chat span { justify-self: end; background: var(--mine); color: var(--ink); padding: 7px 10px; border-radius: 10px 10px 3px 10px; font: 400 0.82rem/1.3 var(--sans); }
-.mini-chat span + span { justify-self: start; background: var(--chat); border-radius: 10px 10px 10px 3px; }
-@media (max-width: 900px) { .caps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 580px) { .caps { grid-template-columns: minmax(0, 1fr); } }
-
-/* screens */
-.night { background: var(--night); color: var(--night-ink); }
-.night .ruled::before, .night .ruled::after { background: var(--night); }
-.night .chapter-head p, .night .label { color: var(--night-muted); }
-.night .label b { color: var(--mint); }
-.shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; }
-.shots figure { margin: 0; display: grid; gap: 14px; }
-.shots .scr { border-radius: 26px; border: 6px solid #020604; overflow: hidden; background: #000; box-shadow: 0 30px 60px -30px rgba(92, 197, 150, .35); }
-.shots figcaption b { display: block; font-size: 1.1rem; letter-spacing: -0.02em; }
-.shots figcaption span { color: var(--night-muted); font-size: 0.93rem; }
-.demo { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 22px; border: 1px solid rgba(159, 183, 170, .25); border-radius: 14px; }
-.demo p { color: var(--night-muted); } .demo b { color: var(--night-ink); }
-.demo .btn { background: var(--mint); color: #06150e; }
-@media (max-width: 860px) { .shots { grid-template-columns: minmax(0, 1fr); max-width: 330px; margin: 0 auto; } }
-
-/* rules */
-.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; background: var(--panel); }
-.split > div { padding: 30px; display: grid; gap: 18px; align-content: start; min-width: 0; }
-.split > div + div { border-left: 1px solid var(--rule); }
-.split h3 { font-size: 1.45rem; letter-spacing: -0.03em; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
-.chips li { padding: 9px 14px; border: 1px solid var(--rule); border-radius: 9px; font-weight: 500; font-size: 0.95rem; background: var(--paper); }
-.chips small { color: var(--faint); font: 400 0.75rem/1 var(--mono); margin-left: 6px; }
-.rules { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-.rules li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; font-size: 0.98rem; }
-.rules svg { width: 20px; height: 20px; color: var(--accent); margin-top: 3px; }
-@media (max-width: 800px) { .split { grid-template-columns: minmax(0, 1fr); } .split > div + div { border-left: 0; border-top: 1px solid var(--rule); } }
-
-/* close */
-.closer { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; padding: 64px 40px; }
-.closer h2 { font-size: clamp(2.2rem, 1.4rem + 3vw, 3.8rem); letter-spacing: -0.045em; }
-.closer p { color: var(--muted); margin-top: 14px; max-width: 34em; font-size: 1.1rem; }
-.closer .mini { width: 120px; height: 120px; }
-@media (max-width: 760px) { .closer { grid-template-columns: minmax(0, 1fr); padding: 48px 20px; } .closer .mini { display: none; } }
-footer .wrap > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 28px; padding: 24px 40px; font: 400 0.82rem/1.4 var(--mono); color: var(--muted); }
-footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+.p-input { margin: 0 10px 10px; background: var(--panel); border-radius: 99px; padding: 10px 14px; font-size: .82rem; color: var(--faint); }
+.plugins { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.plugin { background: var(--panel); border: 1px solid var(--rule); border-radius: 16px; padding: 20px; display: grid; gap: 10px; align-content: start; min-width: 0; color: inherit; text-decoration: none; transition: transform .15s; }
+a.plugin:hover { transform: translateY(-2px); }
+.plugin .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.plugin .ic { width: 40px; height: 40px; border-radius: 11px; background: var(--cb); color: var(--c); display: grid; place-items: center; font-weight: 800; }
+.pill { font: 500 .64rem/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; padding: 5px 7px; border-radius: 99px; background: var(--cb); color: var(--c); }
+.plugin h3 { font-size: 1.15rem; letter-spacing: -0.02em; }
+.plugin p { color: var(--muted); font-size: .92rem; }
+.plugin .conn { font: 400 .75rem/1.5 var(--mono); color: var(--faint); }
+.plugin .go { font: 600 .9rem/1 var(--sans); color: var(--c); }
+.plugin.more { border-style: dashed; background: transparent; } .plugin.more .ic { background: var(--chat); color: var(--muted); }
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; counter-reset: s; list-style: none; padding: 0; }
+.steps li { display: grid; gap: 6px; border-top: 2px solid var(--forest); padding-top: 12px; counter-increment: s; }
+.steps li::before { content: counter(s); font: 500 .76rem/1 var(--mono); color: var(--accent); }
+.steps b { letter-spacing: -0.01em; } .steps p { color: var(--muted); font-size: .94rem; }
+.steps code, .lede code { font: 500 .84em/1 var(--mono); background: var(--tint); color: var(--accent); padding: 3px 6px; border-radius: 5px; }
+.core { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
+.core li { border: 1px solid var(--rule); background: var(--panel); border-radius: 99px; padding: 7px 13px; font-size: .9rem; }
+.feat { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; list-style: none; padding: 0; }
+.feat li { background: var(--panel); border: 1px solid var(--rule); border-radius: 14px; padding: 18px; display: grid; gap: 6px; }
+.feat b { letter-spacing: -0.01em; } .feat p { color: var(--muted); font-size: .93rem; }
+.note { background: var(--fin-bg); border-radius: 12px; padding: 14px 16px; font-size: .95rem; max-width: 70ch; }
+.closer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
+.closer h2 { margin-bottom: 8px; }
+footer { border-top: 1px solid var(--rule); }
+footer .frame { padding: 22px 40px; display: flex; flex-wrap: wrap; gap: 8px 22px; font: 400 .8rem/1.6 var(--mono); color: var(--muted); }
 footer a { color: var(--muted); }
-@media (max-width: 760px) { footer .wrap > div { padding: 22px 20px; } }
+@media (max-width: 1000px) { .hero { grid-template-columns: minmax(0, 1fr); } .plugins, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .feat { grid-template-columns: minmax(0, 1fr); } .ptab { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 620px) { .plugins, .steps { grid-template-columns: minmax(0, 1fr); } .hide-sm { display: none; } .hero, .sec, footer .frame { padding-left: 18px; padding-right: 18px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bub { animation: none; } .btn, a.plugin { transition: none; } }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5cc596"/><stop offset="1" stop-color="#17694b"/></linearGradient>
-  </defs>
-  <symbol id="femp" viewBox="420 230 1220 1640">
-    <circle cx="740" cy="520" r="230" fill="url(#fg)"/>
-    <rect x="570" y="800" width="340" height="1000" rx="170" fill="url(#fg)"/>
-    <rect class="arm" x="570" y="800" width="910" height="260" rx="130" fill="url(#fg)"/>
-    <rect x="570" y="1220" width="690" height="220" rx="110" fill="url(#fg)"/>
-    <g class="eyes" fill="none" stroke="#fff" stroke-width="26" stroke-linecap="round">
-      <path d="M655 505 q25 -32 50 0"/><path d="M775 505 q25 -32 50 0"/>
-    </g>
-    <path d="M675 590 q65 60 130 0" fill="none" stroke="#fff" stroke-width="28" stroke-linecap="round"/>
-    <path d="M692 815 h96 l-48 65z M710 880 h60 l28 270 -58 65 -58 -65z" fill="#fff"/>
-  </symbol>
-</svg>
-
-<div class="topbar"><span class="early">Early access</span><span>Femp is coming to the Shopify App Store and the App Store. Join the waitlist and get <b>$100 in free credits</b>.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top"><img src="img/icon-512.png" alt="Femp">Femp</a>
-    <nav aria-label="Main">
-      <a href="#automations">Automations</a>
-      <a href="/features/">Features</a>
-      <a href="/how-it-works/">How it works</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/faq/">FAQ</a>
-      <a href="/blog/">Blog</a>
-      <a class="btn green" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a>
-    </nav>
+<div class="topbar"><span class="early">Early access</span><span>Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><img src="/img/icon-512.png" alt="">Femp</a>
+  <nav aria-label="Main"><a class="hide-sm" href="/dtc/">DTC brands</a><a class="hide-sm" href="/jobs/">Job Hunter</a><a class="hide-sm" href="/finance/">Finance</a><a class="hide-sm" href="/blog/">Blog</a><a class="btn green" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></nav>
+</div></header>
+<main><div class="wrap"><div class="frame">
+<section class="hero">
+  <div>
+    <h1>Hire your <em>first employee.</em></h1>
+    <p class="lede">Femp is an assistant you text on WhatsApp. Install a plugin and it learns a job: running your store, finding your next role, keeping on top of your money. It messages you when something needs you, and acts only after your yes.</p>
+    <ul class="ptabs" aria-label="Tap one to see Femp at work"><li><button class="ptab k-dtc" type="button" data-p="dtc" aria-pressed="true"><b>Running a store?</b><span>Stock, ads, pixel, chargebacks and social, fixed for you.</span><small>Femp for DTC brands · in beta</small></button></li><li><button class="ptab k-jobs" type="button" data-p="jobs" aria-pressed="false"><b>Looking for a job?</b><span>New roles every morning, each application tailored.</span><small>Femp Job Hunter · coming soon</small></button></li><li><button class="ptab k-fin" type="button" data-p="fin" aria-pressed="false"><b>Managing money?</b><span>Your stocks, bills and subscriptions, summed up daily.</span><small>Femp Finance · coming soon</small></button></li></ul>
+    <div class="ctas"><a class="btn solid" href="/waitlist/?from=home-hero">Join the waitlist →</a><a class="btn line" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></div>
   </div>
-</header>
-
-<main id="top">
-  <div class="wrap">
-    <div class="frame">
-      <section class="hero">
-        <div class="hero-copy">
-          <a class="credit" href="/waitlist/?from=badge"><strong>$100</strong> in free credits when you join the waitlist</a>
-          <h1>Hire your store's <span>first employee.</span></h1>
-          <p class="lede">Femp is the operations teammate for DTC brands. It texts you on WhatsApp when something needs fixing, then fixes it.</p>
-          <ul class="pains" aria-label="Tap one to see Femp handle it">
-            <li><button class="pain" type="button" id="sc0" aria-pressed="true"><span class="q">Pixel missing sales?</span><span class="a">Fixed the day it breaks.</span><i class="prog"></i></button></li>
-            <li><button class="pain" type="button" id="sc1" aria-pressed="false"><span class="q">Ads not converting?</span><span class="a">Budget moved to what sells.</span><i class="prog"></i></button></li>
-            <li><button class="pain" type="button" id="sc2" aria-pressed="false"><span class="q">Rankings slipping?</span><span class="a">Pages rewritten to climb back.</span><i class="prog"></i></button></li>
-            <li><button class="pain" type="button" id="sc3" aria-pressed="false"><span class="q">Chargebacks?</span><span class="a">Proof sent before the deadline.</span><i class="prog"></i></button></li>
-            <li><button class="pain" type="button" id="sc4" aria-pressed="false"><span class="q">No time for social?</span><span class="a">Stories made from your store, posted for you. Soon.</span><i class="prog"></i></button></li>
-          </ul>
-          <div class="ctas">
-            <a class="btn solid" href="/waitlist/?from=hero">Join the waitlist
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="btn line" href="https://youtu.be/W9z4sHcGYgk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>Watch the demo</a>
-          </div>
-        </div>
-        <div class="stage">
-          <div class="wphone" aria-live="polite">
-            <div class="wp-head"><img src="img/icon-512.png" alt=""><div><strong>Femp</strong><small>online</small></div></div>
-            <div class="wthread" id="wthread"></div>
-            <div class="wp-input">Message</div>
-            <div class="wstory" id="wstory" role="dialog" aria-label="Story preview" aria-hidden="true">
-              <div class="track"></div>
-              <div class="bars"></div>
-              <div class="top"><span class="av">wb</span><span>windmillbaby <small class="kindl">· story draft</small></span><button class="x" type="button" aria-label="Close preview">×</button></div>
-              <button class="tap prev" type="button" aria-label="Previous story"></button><button class="tap next" type="button" aria-label="Next story"></button>
-              <div class="foot"><button class="ghost" type="button">Edit</button><button class="live" type="button">Make it live</button></div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="chapter ruled" id="automations">
-        <h2 class="sec">You tell the time, we do the automations.</h2>
-        <div class="autos" id="autos">
-          <ul class="acats" role="tablist" aria-label="Automation categories">
-            <li><button class="acat t-analytics" type="button" role="tab" id="atab-analytics" aria-controls="apanel-analytics" aria-selected="true"><span class="aname">Analytics</span><span class="acount">3</span><span class="asub">Know what you made</span><span class="abar"><i></i></span></button></li>
-            <li><button class="acat t-marketing" type="button" role="tab" id="atab-marketing" aria-controls="apanel-marketing" aria-selected="false"><span class="aname">Marketing</span><span class="acount">5</span><span class="asub">Spend where it sells</span><span class="abar"><i></i></span></button></li>
-            <li><button class="acat t-customers" type="button" role="tab" id="atab-customers" aria-controls="apanel-customers" aria-selected="false"><span class="aname">Customers</span><span class="acount">3</span><span class="asub">Keep buyers happy</span><span class="abar"><i></i></span></button></li>
-            <li><button class="acat t-operations" type="button" role="tab" id="atab-operations" aria-controls="apanel-operations" aria-selected="false"><span class="aname">Operations</span><span class="acount">3</span><span class="asub">Never run out</span><span class="abar"><i></i></span></button></li>
-            <li><button class="acat t-money" type="button" role="tab" id="atab-money" aria-controls="apanel-money" aria-selected="false"><span class="aname">Money</span><span class="acount">2</span><span class="asub">Get back what you&#x27;re owed</span><span class="abar"><i></i></span></button></li>
-            <li><button class="acat t-social" type="button" role="tab" id="atab-social" aria-controls="apanel-social" aria-selected="false"><span class="aname">Social</span><span class="acount">4</span><span class="asub">Create, post, promote · coming soon</span><span class="abar"><i></i></span></button></li>
-          </ul>
-          <div class="astage">
-          <div class="apanel" id="apanel-analytics" role="tabpanel" aria-labelledby="atab-analytics">
-            <article class="auto t-analytics" style="--i:0"><p class="atag">Analytics</p><h3>Daily sales digest</h3><p>Revenue, orders, average order value and best sellers across Shopify and Amazon.</p><div class="amsg"><span class="afrom">Femp</span><span><b>Yesterday: $4,820</b> from 92 orders (+14% vs last Monday). Top seller: Vitamin C serum, 31 sold.</span><span class="atime">8:00 &#10003;&#10003;</span></div></article>
-            <article class="auto t-analytics" style="--i:1"><p class="atag">Analytics</p><h3>Weekly profit report</h3><p>Sales minus ad spend, fees and refunds, so you know what you actually made.</p><div class="amsg"><span class="afrom">Femp</span><span>Last week you sold $31,200 and <b>kept $8,600</b> after $12,800 ads, $6,700 fees and $3,100 refunds.</span><span class="atime">Mon 9:00 &#10003;&#10003;</span></div></article>
-            <article class="auto t-analytics" style="--i:2"><p class="atag">Analytics</p><h3>Traffic &amp; conversion</h3><p>Sessions, conversion rate and where buyers drop off, against last week.</p><div class="amsg"><span class="afrom">Femp</span><span>Conversion fell to <b>1.9%</b> (was 2.6%). Most drop-off is at shipping: 41% leave there.</span><span class="atime">10:00 &#10003;&#10003;</span></div></article>
-          </div>
-          <div class="apanel" id="apanel-marketing" role="tabpanel" aria-labelledby="atab-marketing">
-            <article class="auto t-marketing" style="--i:0"><p class="atag">Marketing</p><h3>Abandoned carts</h3><p>Who left what in their cart, with a recovery message ready to send.</p><div class="amsg"><span class="afrom">Femp</span><span><b>14 carts</b> worth $1,060 left yesterday. Message ready for the 9 with phone numbers. Send?</span><span class="atime">11:00 &#10003;&#10003;</span></div></article>
-            <article class="auto t-marketing" style="--i:1"><p class="atag">Marketing</p><h3>Ads vs. real sales</h3><p>Meta and Google return on ad spend against real orders, with the budget change to make.</p><div class="amsg"><span class="afrom">Femp</span><span>Meta says 4.1x, real orders say <b>2.3x</b>. Move $60/day from the Retarget set to Search.</span><span class="atime">9:30 &#10003;&#10003;</span></div></article>
-            <article class="auto t-marketing" style="--i:2"><p class="atag">Marketing</p><h3>Pixel health</h3><p>Checks that Meta and Google receive every purchase, and fixes tracking the day it breaks.</p><div class="amsg"><span class="afrom">Femp</span><span>Meta saw <b>61 of 92</b> purchases. The pixel dropped after yesterday&#x27;s theme update. Fix it?</span><span class="atime">7:30 &#10003;&#10003;</span></div></article>
-            <article class="auto t-marketing" style="--i:3"><p class="atag">Marketing</p><h3>SEO &amp; rankings</h3><p>Where you rank on Google and ChatGPT, with titles and descriptions rewritten to climb.</p><div class="amsg"><span class="afrom">Femp</span><span>&ldquo;vitamin c serum for oily skin&rdquo;: <b>#14 &rarr; #8</b> on Google. ChatGPT now names you for it.</span><span class="atime">Fri 10:00 &#10003;&#10003;</span></div></article>
-            <article class="auto t-marketing" style="--i:4"><p class="atag">Marketing</p><h3>Price watch</h3><p>Competitor prices and who holds the Amazon Buy Box on your best sellers.</p><div class="amsg"><span class="afrom">Femp</span><span>You lost the <b>Buy Box</b> on Niacinamide 10% to a seller $1.50 cheaper.</span><span class="atime">12:00 &#10003;&#10003;</span></div></article>
-          </div>
-          <div class="apanel" id="apanel-customers" role="tabpanel" aria-labelledby="atab-customers">
-            <article class="auto t-customers" style="--i:0"><p class="atag">Customers</p><h3>Review requests</h3><p>Asks happy buyers for a review a few days after their order arrives.</p><div class="amsg"><span class="afrom">Femp</span><span>Sent <b>23 review requests</b> for orders delivered 4 days ago. 6 reviews in so far, all 5&#9733;.</span><span class="atime">18:00 &#10003;&#10003;</span></div></article>
-            <article class="auto t-customers" style="--i:1"><p class="atag">Customers</p><h3>Review replies</h3><p>Drafts replies to new reviews and flags the bad ones before they pile up.</p><div class="amsg"><span class="afrom">Femp</span><span><b>2 one-star reviews</b> mention leaking bottles, both from the same batch. Replies drafted.</span><span class="atime">16:00 &#10003;&#10003;</span></div></article>
-            <article class="auto t-customers" style="--i:2"><p class="atag">Customers</p><h3>Inbox triage</h3><p>Reads the store&#x27;s Gmail for customer issues, supplier delays and account warnings, and drafts replies.</p><div class="amsg"><span class="afrom">Femp</span><span>3 things need you: a supplier delay, a refund request and an <b>Amazon listing warning</b>.</span><span class="atime">9:15 &#10003;&#10003;</span></div></article>
-          </div>
-          <div class="apanel" id="apanel-operations" role="tabpanel" aria-labelledby="atab-operations">
-            <article class="auto t-operations" style="--i:0"><p class="atag">Operations</p><h3>Low stock &amp; reorders</h3><p>What runs out within a week at today&#x27;s pace, with the quantity to reorder.</p><div class="amsg"><span class="afrom">Femp</span><span><b>Sunscreen SPF 50</b> runs out in 5 days. Reorder 600 units to cover 30 days.</span><span class="atime">8:30 &#10003;&#10003;</span></div></article>
-            <article class="auto t-operations" style="--i:1"><p class="atag">Operations</p><h3>Late orders</h3><p>Orders stuck unshipped or delayed in transit, before the customer writes in.</p><div class="amsg"><span class="afrom">Femp</span><span><b>7 orders</b> unshipped after 48 hours, 3 stuck with the carrier in Ohio.</span><span class="atime">13:00 &#10003;&#10003;</span></div></article>
-            <article class="auto t-operations" style="--i:2"><p class="atag">Operations</p><h3>Returns spikes</h3><p>Flags a product when returns jump, with the reasons customers gave.</p><div class="amsg"><span class="afrom">Femp</span><span>Returns on Body Lotion 400 ml are <b>3x normal</b>. Most say &ldquo;pump broken&rdquo;.</span><span class="atime">Wed 11:00 &#10003;&#10003;</span></div></article>
-          </div>
-          <div class="apanel" id="apanel-money" role="tabpanel" aria-labelledby="atab-money">
-            <article class="auto t-money" style="--i:0"><p class="atag">Money</p><h3>Chargebacks</h3><p>Spots every dispute and sends the proof before the deadline.</p><div class="amsg"><span class="afrom">Femp</span><span>New dispute on order #4821 ($84). Proof of delivery attached, <b>due in 6 days</b>. Submit?</span><span class="atime">10:30 &#10003;&#10003;</span></div></article>
-            <article class="auto t-money" style="--i:1"><p class="atag">Money</p><h3>Fees &amp; invoices</h3><p>Catches overcharged Amazon fees, duplicate invoices and refunds you&#x27;re owed.</p><div class="amsg"><span class="afrom">Femp</span><span>Amazon charged the wrong size tier on 2 ASINs. <b>$236</b> to claim back.</span><span class="atime">1st, 9:00 &#10003;&#10003;</span></div></article>
-          </div>
-          <div class="apanel" id="apanel-social" role="tabpanel" aria-labelledby="atab-social">
-            <article class="auto t-social" style="--i:0"><p class="atag">Social</p><h3>Stories ready every morning</h3><p>Two or three finished stories from today's store news: a restock, a new review, a launch.</p><div class="amsg"><span class="afrom">Femp</span><span><b>3 stories ready</b>: Lavender is back (212 asked), Jen K.'s 5&#9733; review, and why yours beats 2 Amazon alternatives. Post which?</span><span class="atime">8:15 &#10003;&#10003;</span></div></article>
-            <article class="auto t-social" style="--i:1"><p class="atag">Social</p><h3>Videos from your catalog</h3><p>Short videos and story frames made from your Shopify and Amazon photos, prices and reviews, in your brand's style.</p><div class="amsg"><span class="afrom">Femp</span><span>12-second restock video ready, built from your product photos with &ldquo;212 of you asked&rdquo; on screen. <b>Preview attached.</b></span><span class="atime">8:15 &#10003;&#10003;</span></div></article>
-            <article class="auto t-social" style="--i:2"><p class="atag">Social</p><h3>One tap, every channel</h3><p>Posts to Instagram and Facebook Stories, then TikTok, YouTube Shorts and Pinterest, cropped to each channel's shape.</p><div class="amsg"><span class="afrom">Femp</span><span>Posted to Instagram and Facebook Stories, a Short and a TikTok (<b>9:16</b>), plus a Pinterest pin (2:3).</span><span class="atime">8:17 &#10003;&#10003;</span></div></article>
-            <article class="auto t-social" style="--i:3"><p class="atag">Social</p><h3>Boost what works</h3><p>Spots the story that sells and offers to promote it as an ad, with a budget you approve.</p><div class="amsg"><span class="afrom">Femp</span><span>Story 1: <b>2.1x</b> your usual views and 9 orders ($412). Boost it for $40 over 2 days?</span><span class="atime">16:00 &#10003;&#10003;</span></div></article>
-          </div>
-          </div>
-        </div>
-        <p class="cron"><code>your own</code><span class="muted">Or ask for your own: “Every Monday at 9, send me last week's profit.”</span></p>
-      </section>
-
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="frame">
-      <section class="closer ruled">
-        <div>
-          <h2>Get Femp first.</h2>
-          <p>Join the waitlist and get $100 in free credits when we launch.</p>
-          <div class="ctas" style="margin-top:26px">
-            <a class="btn green" href="/waitlist/?from=closer">Join the waitlist</a>
-            <a class="btn line" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a>
-          </div>
-        </div>
-        <svg class="mini femp-char" aria-hidden="true"><use href="#femp"/></svg>
-      </section>
-    </div>
-  </div>
-</main>
-
-<footer>
-  <div class="wrap"><div class="frame ruled" style="border-bottom:0"><div>
-    <span>Femp is made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
-    <nav aria-label="Footer"><a href="/features/">Features</a><a href="/how-it-works/">How it works</a><a href="/integrations/">Integrations</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a><a href="https://youtu.be/W9z4sHcGYgk">Demo</a></nav>
-  </div></div></div>
-</footer>
-
+  <div class="phone" aria-live="polite">
+  <div class="p-head"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div><span class="plug" id="plugname">DTC plugin</span></div>
+  <div class="p-thread" id="thread"></div>
+  <div class="p-input">Message</div>
+</div>
+</section>
+<section class="sec" id="plugins">
+  <p class="label">Plugins</p>
+  <h2>One assistant. Install the jobs you need.</h2>
+  <div class="plugins"><a class="plugin k-dtc" href="/dtc/"><div class="top"><span class="ic">D</span><span class="pill">In beta</span></div>
+  <h3>Femp for DTC brands</h3><p>For Shopify and Amazon store owners: stock and reorders, ads against real sales, pixel health, SEO and AI search, chargebacks, inbox, and daily social stories and posts.</p><p class="conn">Connects: Shopify · Amazon · Meta · Google Ads · Search Console · Gmail · Instagram</p><span class="go">femp.ai/dtc/ →</span></a><a class="plugin k-jobs" href="/jobs/"><div class="top"><span class="ic">J</span><span class="pill">Coming soon</span></div>
+  <h3>Femp Job Hunter</h3><p>New roles that match you every morning, a tailored resume and cover letter for each, an application tracker, follow-up emails and interview prep.</p><p class="conn">Connects: Your resume · Gmail · Google Calendar</p><span class="go">femp.ai/jobs/ →</span></a><a class="plugin k-fin" href="/finance/"><div class="top"><span class="ic">F</span><span class="pill">Coming soon</span></div>
+  <h3>Femp Finance</h3><p>Watches the stocks you follow (earnings dates, big moves, filings, news) and your money admin (bills due, subscriptions you no longer use), summed up each morning. Research and reminders only: Femp never trades or tells you what to buy.</p><p class="conn">Connects: Your watchlist · Gmail (bills and receipts)</p><span class="go">femp.ai/finance/ →</span></a><a class="plugin more" href="/waitlist/?for=other&amp;from=home-suggest"><div class="top"><span class="ic">+</span></div><h3>Your next plugin</h3><p>Planning a wedding, running a clinic, managing rentals? Tell us the job you'd hand to Femp.</p><span class="go">Suggest one →</span></a></div>
+</section>
+<section class="sec" id="how">
+  <p class="label">How it works</p>
+  <h2>Say hi, install a plugin, let it work.</h2>
+  <ol class="steps">
+    <li><b>Say hi on WhatsApp</b><p>Or download the Femp app. No forms.</p></li>
+    <li><b>Install a plugin</b><p>Text <code>install job hunter</code>, or pick one in the app.</p></li>
+    <li><b>Connect what it needs</b><p>Each connection uses the platform's own sign-in. Femp never sees your passwords.</p></li>
+    <li><b>It checks in, you approve</b><p>Daily automations run in your time zone. Anything that changes or sends waits for your yes.</p></li>
+  </ol>
+  <ul class="core" aria-label="Included with every plugin"><li>Approvals before any change</li><li>Remembers your preferences</li><li>Automations you set in one message</li><li>Team members on their own WhatsApp</li><li>Undo and a log of everything</li></ul>
+</section>
+<section class="sec closer">
+  <div><h2>Get Femp first.</h2><p class="muted">Join once, pick the plugins you want, and get $100 in free credits when yours launches.</p></div>
+  <div class="ctas" style="margin:0"><a class="btn green" href="/waitlist/?from=home-closer">Join the waitlist</a><a class="btn line" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></div>
+</section>
+</div></div></main>
+<footer><div class="wrap"><div class="frame">
+  <span>Femp is made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
+  <a href="/dtc/">DTC brands</a><a href="/jobs/">Job Hunter</a><a href="/finance/">Finance</a><a href="/blog/">Blog</a><a href="/dtc/security/">Security</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a>
+</div></div></footer>
 <script>
 (() => {
-  const $ = (id) => document.getElementById(id);
-
-  /* see it work: four looping conversations */
-  const SCENES = [
-    [["f", "Morning Maya! Something's off with your Meta pixel. Shopify had <b>64 orders</b> yesterday, but Meta only saw <b>46</b>.", "8:02"],
-     ["f", "Looks like checkout tracking broke with Tuesday's theme update.", "8:02"],
-     ["m", "ugh, so that's why the ads looked bad. can you fix it?", "8:06"],
-     ["f", "On it. I'm sending orders to Meta straight from Shopify, so a theme change can't break it again.", "8:06"],
-     ["d", "All fixed ✓ Meta has counted all <b>12 orders</b> so far today. I'll keep checking every morning.", "8:09"]],
-    [["f", "Quick one on ads. Your <b>Summer Sale</b> ad spent <b>$410</b> this week and brought in 3 orders.", "9:15"],
-     ["f", "Your <b>Come Back</b> ad, for people who visited before, made <b>$1,180</b> from just $140. Want me to move some money over?", "9:15"],
-     ["m", "makes sense, but keep summer sale running a little", "9:21"],
-     ["d", "Got it. Summer Sale goes down to $20 a day and the rest goes to Come Back ✓ I'll tell you Monday how it went.", "9:21"]],
-    [["f", "Heads up: you slipped from <b>#3 to #9</b> on Google for “vegan vitamin c serum”, and ChatGPT isn't recommending you.", "11:30"],
-     ["m", "that's our best seller 😬 what happened?", "11:34"],
-     ["f", "The page never says “vegan” in its title or description. I rewrote it and 5 similar pages. Want to look first?", "11:34"],
-     ["m", "nah go ahead", "11:35"],
-     ["d", "Done ✓ 6 pages updated. I'll watch the ranking this week. Say “undo” anytime.", "11:35"]],
-    [["f", "Small bit of bad news: a customer filed a chargeback on order <b>#1043 ($96)</b>, saying it never arrived.", "2:14"],
-     ["m", "seriously? I'm sure we shipped that", "2:17"],
-     ["f", "You did. UPS shows it delivered to her door on <b>Nov 3</b>, and she's ordered from you 4 times before. The proof is ready.", "2:17"],
-     ["m", "send it 🙏", "2:18"],
-     ["d", "Sent to Shopify Payments, <b>5 days before the deadline</b> ✓ I'll let you know what the bank decides.", "2:18"]],
-    [["f", "Morning! 3 stories and a post ready for today, made from your store's photos:<div class=\"stories\"><figure class=\"st\" data-i=\"0\"><img src=\"/img/demo/wb-story-laundry.jpg\" alt=\"\"><figcaption>Soft on tiny clothes.</figcaption><span class=\"kind\">Story</span></figure><figure class=\"st\" data-i=\"1\"><img src=\"/img/demo/wb-story-travel.jpg\" alt=\"\"><figcaption>Packed for the trip.</figcaption><span class=\"kind\">Story</span></figure><figure class=\"st\" data-i=\"2\"><img src=\"/img/demo/wb-story-wipes.jpg\" alt=\"\"><figcaption>100% natural dry wipes.</figcaption><span class=\"kind\">Story</span></figure><figure class=\"st post\" data-i=\"3\"><img src=\"/img/demo/wb-post-giftset.jpg\" alt=\"\"><span class=\"kind\">Post</span></figure></div><span class=\"hint\">Tap to preview</span>", "8:15"],
-     ["v"],
-     ["m", "love them. make them live", "8:21"],
-     ["d", "Live ✓ 3 stories on Instagram and Facebook, the post in both feeds, plus a Reel and a YouTube Short, each sized right. I'll tell you tonight what they sold.", "8:22"]],
-  ];
-  const thread = $("wthread"), scenes = SCENES.map((_, i) => $("sc" + i));
+  const SCENES = {"dtc": ["DTC plugin", [["f", "Morning Maya! Shopify had <b>64 orders</b> yesterday, but Meta only saw <b>46</b>. The pixel broke with Tuesday's theme update.", "8:02"], ["m", "ugh. can you fix it?", "8:05"], ["d", "Fixed \u2713 Orders now go to Meta straight from Shopify. 12 counted so far today.", "8:07"]]], "jobs": ["Job Hunter", [["f", "Morning! <b>4 new roles</b> match you. Best fit: Senior Product Designer at Lumen Health, remote, posted 6 hours ago. Your design-systems work is exactly what they list.", "8:30"], ["f", "Tailored resume and cover letter are ready. Want me to draft the email to the hiring manager?", "8:30"], ["m", "yes, send me the draft", "8:41"], ["d", "Draft is in your Gmail with both files attached \u2713 I'll remind you to follow up in 5 days.", "8:42"]]], "fin": ["Finance", [["f", "Morning. On your watchlist (sample tickers): <b>ORBT</b> reports earnings Wednesday after close, and <b>KLMN</b> fell 6% yesterday after cutting its outlook.", "7:45"], ["m", "summarise KLMN's filing", "7:52"], ["d", "Revenue up 12% on last year, margin down 2 points on freight, full-year outlook lowered. Research only, not advice. Also: your card bill (<b>$1,240</b>) is due Friday.", "7:53"]]]};
+  const thread = document.getElementById("thread"), plugname = document.getElementById("plugname");
+  const tabs = [...document.querySelectorAll(".ptab")];
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const pause = (ms) => new Promise((r) => setTimeout(r, ms));
   let run = 0, visible = true;
-  const bubble = ([who, html, t]) => {
-    const el = document.createElement("div");
-    el.className = "wb" + (who === "m" ? " me" : "") + (who === "d" ? " done" : "");
-    el.innerHTML = `${html}<time>${t}</time>`;
-    return el;
-  };
-  const STORIES = [
-    { img: "/img/demo/wb-story-laundry.jpg", cap: "Soft on tiny clothes." },
-    { img: "/img/demo/wb-story-travel.jpg", cap: "Packed for the trip." },
-    { img: "/img/demo/wb-story-wipes.jpg", cap: "100% natural dry wipes." },
-    { img: "/img/demo/wb-post-giftset.jpg", post: "Just arrived: everything for the first weeks in one box. Plant-based, fragrance-free options, ready to gift. 🎁" },
-  ];
-  const sv = $("wstory"), track = sv.querySelector(".track"), barsBox = sv.querySelector(".bars"), liveBtn = sv.querySelector(".live");
-  track.innerHTML = STORIES.map((x) => x.post
-    ? `<div class="slide post"><div class="ph"><span class="av">wb</span>windmillbaby <small>· post draft</small></div><img src="${x.img}" alt=""><div class="acts">♡ <span>💬</span> <span>↗</span></div><p class="pcap"><b>windmillbaby</b> ${x.post}</p></div>`
-    : `<div class="slide"><img src="${x.img}" alt=""><p class="scap">${x.cap}</p></div>`).join("");
-  barsBox.innerHTML = STORIES.map(() => "<i><b></b></i>").join("");
-  const bars = [...barsBox.querySelectorAll("b")];
-  let at = 0, manual = false;
-  const go = (n, ms) => {
-    at = Math.max(0, Math.min(STORIES.length - 1, n));
-    track.style.transform = `translateX(-${at * 100}%)`;
-    sv.classList.toggle("onpost", Boolean(STORIES[at].post));
-    sv.querySelector(".kindl").textContent = STORIES[at].post ? "· post draft" : "· story draft";
-    bars.forEach((b, j) => { b.style.transition = "none"; b.style.width = j < at ? "100%" : "0"; });
-    const b = bars[at]; void b.offsetWidth;
-    if (ms) { b.style.transition = `width ${ms}ms linear`; } b.style.width = "100%";
-  };
-  const openViewer = (n, ms) => { sv.classList.add("open"); sv.setAttribute("aria-hidden", "false"); go(n, ms); };
-  const closeViewer = () => { sv.classList.remove("open"); sv.setAttribute("aria-hidden", "true"); liveBtn.classList.remove("press"); };
-  async function playViewer(token) {
-    const thumb = thread.querySelector(".st");
-    if (thumb) { thumb.classList.add("tapped"); await pause(650); }
-    if (token !== run) return false;
-    for (let n = 0; n < STORIES.length; n++) {
-      if (n === 0) openViewer(0, 2200); else go(n, 2200);
-      await pause(2400);
-      if (token !== run) { closeViewer(); return false; }
-    }
-    liveBtn.classList.add("press"); await pause(700);
-    closeViewer(); await pause(300);
-    return token === run;
-  }
-  thread.addEventListener("click", (e) => {
-    const st = e.target.closest(".st"); if (!st) return;
-    run++; manual = true; openViewer(Number(st.dataset.i), 0);
-  });
-  sv.querySelector(".prev").addEventListener("click", () => go(at - 1, 0));
-  sv.querySelector(".next").addEventListener("click", () => go(at + 1, 0));
-  sv.querySelector(".x").addEventListener("click", closeViewer);
-  sv.querySelector(".ghost").addEventListener("click", closeViewer);
-  liveBtn.addEventListener("click", () => {
-    if (!manual) return;
-    manual = false; closeViewer();
-    const last = SCENES[4];
-    thread.querySelectorAll(".wb.me, .wb.done").forEach((el) => el.remove());
-    thread.append(bubble(last[2])); thread.append(bubble(last[3]));
-  });
-  sv.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") go(at + 1, 0); else if (e.key === "ArrowLeft") go(at - 1, 0); else if (e.key === "Escape") closeViewer();
-  });
-  async function show(i, token) {
-    scenes.forEach((b, j) => { b.setAttribute("aria-pressed", String(j === i)); b.querySelector(".prog").style.width = "0"; });
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  const bubble = ([w, h, t]) => { const el = document.createElement("div"); el.className = "bub" + (w === "m" ? " me" : "") + (w === "d" ? " done" : ""); el.innerHTML = h + "<time>" + t + "</time>"; return el; };
+  async function show(key, token, auto) {
+    tabs.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.p === key)));
+    plugname.textContent = SCENES[key][0];
     thread.replaceChildren();
-    closeViewer(); manual = false;
-    if (still) { SCENES[i].filter((m) => m[0] !== "v").forEach((m) => thread.append(bubble(m))); return; }
-    const prog = scenes[i].querySelector(".prog"), steps = SCENES[i].length;
-    for (const [k, m] of SCENES[i].entries()) {
-      while (!visible) { await pause(400); if (token !== run) return; }
-      if (m[0] === "v") {
-        if (!(await playViewer(token))) return;
-        prog.style.transition = "width 1.6s linear"; prog.style.width = `${((k + 1) / steps) * 100}%`;
-        continue;
-      }
-      const dots = document.createElement("div");
-      dots.className = "wtyping" + (m[0] === "m" ? " me" : "");
-      dots.innerHTML = "<i></i><i></i><i></i>";
-      thread.append(dots);
-      const words = m[1].replace(/<[^>]+>/g, "").split(" ").length;
-      await pause(m[0] === "m" ? 900 : Math.min(2200, 600 + words * 45));
+    for (const m of SCENES[key][1]) {
+      while (!visible) { await wait(400); if (token !== run) return; }
       if (token !== run) return;
-      dots.replaceWith(bubble(m));
-      prog.style.transition = "width 1.6s linear"; prog.style.width = `${((k + 1) / steps) * 100}%`;
-      await pause(k === steps - 1 ? 3200 : Math.min(2600, 700 + words * 60));
-      if (token !== run) return;
+      thread.append(bubble(m));
+      if (!still) await wait(1200);
     }
-    show((i + 1) % SCENES.length, token);
+    if (auto && !still && true) {
+      await wait(3800);
+      if (token !== run) return;
+      const keys = Object.keys(SCENES), next = keys[(keys.indexOf(key) + 1) % keys.length];
+      show(next, token, true);
+    }
   }
-  scenes.forEach((b, i) => b.addEventListener("click", () => show(i, ++run)));
+  tabs.forEach((b) => b.addEventListener("click", () => show(b.dataset.p, ++run, false)));
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(thread);
-  show(0, ++run);
+  show("dtc", ++run, true);
 })();
 </script>
-<script>
-(() => {
-  const box = document.getElementById("autos");
-  const tabs = [...box.querySelectorAll(".acat")], panels = [...box.querySelectorAll(".apanel")];
-  const still = matchMedia("(prefers-reduced-motion: reduce)").matches, DWELL = 7000;
-  let idx = 0, timer = 0, started = 0, left = DWELL, hold = false, onScreen = false;
-  const bar = () => tabs[idx].querySelector(".abar i");
-  function run(ms) {
-    clearTimeout(timer); left = ms;
-    const b = bar(); b.style.transition = "none"; b.style.transform = `scaleX(${1 - ms / DWELL})`;
-    if (still || hold || !onScreen) return;
-    void b.offsetWidth;
-    b.style.transition = `transform ${ms}ms linear`; b.style.transform = "scaleX(1)";
-    started = performance.now();
-    timer = setTimeout(() => show((idx + 1) % tabs.length), ms);
-  }
-  function show(i, picked) {
-    bar().style.transition = "none"; bar().style.transform = "scaleX(0)";
-    idx = i;
-    tabs.forEach((t, j) => { t.setAttribute("aria-selected", j === i); t.tabIndex = j === i ? 0 : -1; });
-    panels.forEach((p, j) => { p.hidden = j !== i; p.classList.remove("deal"); });
-    if (!still) { void panels[i].offsetWidth; panels[i].classList.add("deal"); }
-    if (picked) tabs[i].scrollIntoView({ block: "nearest", inline: "nearest" });
-    run(DWELL);
-  }
-  function stop() {
-    if (hold) return; hold = true; clearTimeout(timer);
-    left = Math.max(0, left - (performance.now() - started));
-    const b = bar(), now = getComputedStyle(b).transform; b.style.transition = "none"; b.style.transform = now;
-  }
-  function go() { if (!hold) return; hold = false; run(left); }
-  tabs.forEach((t, i) => {
-    t.addEventListener("click", () => show(i, true));
-    t.addEventListener("keydown", (e) => {
-      const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
-      if (d) { e.preventDefault(); const n = (idx + d + tabs.length) % tabs.length; show(n, true); tabs[n].focus(); }
-    });
-  });
-  box.addEventListener("mouseenter", stop); box.addEventListener("mouseleave", go);
-  box.addEventListener("focusin", stop); box.addEventListener("focusout", (e) => { if (!box.contains(e.relatedTarget)) go(); });
-  new IntersectionObserver(([e]) => {
-    const was = onScreen; onScreen = e.isIntersecting;
-    if (onScreen && !was) show(idx); else if (!onScreen) { clearTimeout(timer); }
-  }, { threshold: 0.35 }).observe(box);
-  box.classList.add("live");
-  panels.forEach((p, j) => { p.hidden = j !== 0; });
-})();
-</script>
-</body>
-</html>
+</body></html>

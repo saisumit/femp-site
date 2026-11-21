@@ -4,7 +4,7 @@
 // After editing: Deploy → Manage deployments → edit → New version (the /exec URL stays the same).
 /** @OnlyCurrentDoc  (asks for access to this sheet only, not all of Drive) */
 const NOTIFY = "saisumit@femp.ai";
-const HEADERS = ["Joined", "Email", "Phone", "Store", "Platforms", "From", "Updated"];
+const HEADERS = ["Joined", "Email", "Phone", "Store", "Platforms", "From", "Updated", "Wants"];
 const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 function setup() {
@@ -38,6 +38,7 @@ function doPost(e) {
   if (body.consent !== true) return reply({ ok: false, error: "Tick the box so we can contact you about early access." });
   const store = clip(body.store, 300);
   const platforms = (Array.isArray(body.platforms) ? body.platforms : []).slice(0, 12).map((p) => clip(p, 30)).join(", ");
+  const wants = (Array.isArray(body.wants) ? body.wants : []).slice(0, 8).map((w) => clip(w, 120)).join(", ");
   const source = (flagged ? "flagged: hidden field filled · " : "") + clip(body.source, 100);
 
   const lock = LockService.getScriptLock();
@@ -45,14 +46,15 @@ function doPost(e) {
   let added = false;
   try {
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+    if (sheet.getRange(1, 8).getValue() !== "Wants") sheet.getRange(1, 8).setValue("Wants").setFontWeight("bold");
     const now = new Date();
     const last = sheet.getLastRow();
     const emails = last > 1 ? sheet.getRange(2, 2, last - 1, 1).getValues().map((r) => String(r[0]).toLowerCase()) : [];
     const at = emails.indexOf(email);
     if (at >= 0) {
-      sheet.getRange(at + 2, 3, 1, 5).setValues([[cell(phone), cell(store), cell(platforms), cell(source), now]]);
+      sheet.getRange(at + 2, 3, 1, 6).setValues([[cell(phone), cell(store), cell(platforms), cell(source), now, cell(wants)]]);
     } else {
-      sheet.appendRow([now, cell(email), cell(phone), cell(store), cell(platforms), cell(source), now]);
+      sheet.appendRow([now, cell(email), cell(phone), cell(store), cell(platforms), cell(source), now, cell(wants)]);
       added = true;
     }
   } finally {
@@ -61,7 +63,7 @@ function doPost(e) {
   if (added && !flagged) {
     try {
       MailApp.sendEmail(NOTIFY, `Femp waitlist: ${email}`,
-        `Email: ${email}\nPhone: ${phone}\nStore: ${store || "-"}\nPlatforms: ${platforms || "-"}\nFrom: ${source || "-"}\n\n${SpreadsheetApp.getActiveSpreadsheet().getUrl()}`);
+        `Email: ${email}\nPhone: ${phone}\nWants: ${wants || "-"}\nStore: ${store || "-"}\nPlatforms: ${platforms || "-"}\nFrom: ${source || "-"}\n\n${SpreadsheetApp.getActiveSpreadsheet().getUrl()}`);
     } catch (err) {
       console.error(err); // the signup is saved; a failed email shouldn't fail it
     }

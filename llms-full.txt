@@ -1,6 +1,6 @@
 # Femp
 
-> Femp (also called Femp AI, by Femp AI, Inc.) is an AI operations assistant for direct-to-consumer (DTC) brands selling on Shopify and Amazon. It watches the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks and the store's Gmail inbox, messages the owner on WhatsApp or in the Femp app when something needs them, and makes the fixes they approve. Free during the beta.
+> Femp (also called Femp AI, by Femp AI, Inc.) is an assistant you text on WhatsApp or use in the Femp app, extended with plugins. Femp for DTC brands (in beta) runs operations for Shopify and Amazon stores: the pixel, ad spend against real sales, search and AI-assistant rankings, stock, chargebacks, the store's Gmail inbox and social posts. Femp Job Hunter and Femp Finance are coming soon. Femp acts only after the person says yes. Free during the beta.
 
 Femp never changes prices, stock or checkout. Ads access is read-only. Product SEO and blog edits happen only after the owner says yes, and can be undone.
 
@@ -8,7 +8,7 @@ Femp never changes prices, stock or checkout. Ads access is read-only. Product S
 
 # What Femp does for your store
 
-URL: https://femp.ai/features/
+URL: https://femp.ai/dtc/features/
 
 Femp is an AI operations assistant for Shopify and Amazon brands. It watches the parts of the store that slip when you're busy and tells you on WhatsApp when something needs you, with the fix ready.
 
@@ -72,7 +72,7 @@ Add a teammate and they chat with Femp from their own WhatsApp: the person who p
 
 # How Femp works
 
-URL: https://femp.ai/how-it-works/
+URL: https://femp.ai/dtc/how-it-works/
 
 Femp lives where you already are: WhatsApp, or the Femp app. Setup takes a few minutes. Then you tell it what to automate.
 
@@ -120,7 +120,7 @@ Ask Femp about the store in plain words whenever you want: "how many orders toda
 
 # Integrations: what Femp connects to
 
-URL: https://femp.ai/integrations/
+URL: https://femp.ai/dtc/integrations/
 
 Every connection goes through the platform's own sign-in and consent screen. You choose what to connect, and you can disconnect any of it from the app at any time.
 
@@ -168,7 +168,7 @@ For social: Instagram and Facebook first, then TikTok, YouTube and Pinterest, so
 
 # Pricing
 
-URL: https://femp.ai/pricing/
+URL: https://femp.ai/dtc/pricing/
 
 Femp is free while we're in beta. You get everything: every automation, every connection and every feature.
 
@@ -202,7 +202,7 @@ Say hi on WhatsApp, connect your store, and your first stock check arrives a few
 
 # Security and ground rules
 
-URL: https://femp.ai/security/
+URL: https://femp.ai/dtc/security/
 
 Femp works for you, and you stay in charge. These are the rules it follows with your store and your customers' data.
 
@@ -244,7 +244,7 @@ The full policy is in the privacy policy. Questions: support@femp.ai.
 
 # Frequently asked questions
 
-URL: https://femp.ai/faq/
+URL: https://femp.ai/dtc/faq/
 
 Short answers to the questions store owners ask most. Something missing? Ask Femp on WhatsApp or email support@femp.ai.
 
