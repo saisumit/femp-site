@@ -49,6 +49,26 @@ SCENES = {
 }
 
 CSS = """
+
+/* Plugins dropdown in the nav */
+.pmenu { position: relative; }
+.pmenu summary { list-style: none; cursor: pointer; font: 500 0.78rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; padding: 6px 0; }
+.pmenu summary::-webkit-details-marker { display: none; }
+.pmenu summary::after { content: ""; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+.pmenu[open] summary, .pmenu summary:hover { color: var(--ink); }
+.pmenu[open] summary::after { transform: translateY(1px) rotate(-135deg); }
+.pmenu summary:focus-visible { outline: 2px solid var(--mint, #5cc596); outline-offset: 3px; border-radius: 4px; }
+.pdrop { position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%); width: 300px; background: var(--panel); border: 1px solid var(--rule); border-radius: 16px; padding: 8px; display: grid; gap: 2px; box-shadow: 0 24px 48px -24px rgba(12,21,16,.35); z-index: 20; animation: pdrop .18s ease-out; }
+@keyframes pdrop { from { opacity: 0; transform: translate(-50%, -4px); } to { opacity: 1; transform: translate(-50%, 0); } }
+.nav nav .pmenu .pdrop a { font: 400 0.9rem/1.3 var(--sans); text-transform: none; letter-spacing: 0; color: var(--ink); text-decoration: none; }
+.nav nav .pmenu .pdrop a.pm { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 8px; border-radius: 10px; }
+.nav nav .pmenu .pdrop a.pm:hover, .nav nav .pmenu .pdrop a.pm:focus-visible { background: var(--chat); outline: none; }
+.pdrop .pi { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; font-weight: 800; font-size: .9rem; color: var(--pc); background: color-mix(in srgb, var(--pc) 14%, transparent); }
+.pdrop .pt b { display: block; font-weight: 600; font-size: .9rem; }
+.pdrop .pt small { display: block; color: var(--muted); font-size: .78rem; }
+.pdrop em { font: 500 .62rem/1 var(--mono); font-style: normal; letter-spacing: .05em; text-transform: uppercase; color: var(--faint); }
+.nav nav .pmenu .pdrop a.pall { display: block; margin-top: 4px; padding: 10px 8px 6px; border-top: 1px solid var(--rule); font-weight: 600; color: var(--accent); font-size: .86rem; }
+@media (prefers-reduced-motion: reduce) { .pdrop { animation: none; } .pmenu summary::after { transition: none; } }
 :root {
   --paper: #f6f8f5; --panel: #ffffff; --ink: #0c1510; --muted: #56655d; --faint: #8a988f; --rule: #dfe6e0;
   --forest: #17694b; --accent: #146043; --tint: #e6f4ec; --mine: #d6f2e2; --chat: #ecf0ed; --mint: #5cc596;
@@ -303,8 +323,12 @@ def head(title: str, desc: str, path: str, schema: dict) -> str:
 </head>"""
 
 
+MENU = '''<details class="pmenu"><summary>Plugins</summary><div class="pdrop"><a class="pm" href="/dtc/"><span class="pi" style="--pc:#146043">D</span><span class="pt"><b>Femp for DTC brands</b><small>Your store's operations</small></span><em>Beta</em></a><a class="pm" href="/jobs/"><span class="pi" style="--pc:#3d6fb6">J</span><span class="pt"><b>Femp for Jobs</b><small>Your job search</small></span><em>Soon</em></a><a class="pm" href="/finance/"><span class="pi" style="--pc:#9a5b13">F</span><span class="pt"><b>Femp for Finance</b><small>Stocks and bills</small></span><em>Soon</em></a><a class="pall" href="/#plugins">All plugins →</a></div></details>'''
+MENU_JS = '''<script>(()=>{const m=[...document.querySelectorAll("details.pmenu")];document.addEventListener("click",e=>m.forEach(d=>{if(d.open&&!d.contains(e.target))d.open=false;}));document.addEventListener("keydown",e=>{if(e.key==="Escape")m.forEach(d=>{if(d.open){d.open=false;d.querySelector("summary").focus();}});});})();</script>'''
+
+
 def nav(current: str) -> str:
-    links = "".join(f'<a class="hide-sm" href="{h}">{t}</a>' for h, t in (("/#plugins", "Plugins"), ("/pricing/", "Pricing"), ("/faq/", "FAQ")))
+    links = MENU + "".join(f'<a class="hide-sm" href="{h}">{t}</a>' for h, t in (("/pricing/", "Pricing"), ("/faq/", "FAQ")))
     return f"""<div class="topbar"><span class="early">Early access</span><span>Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="">Femp</a>
@@ -571,6 +595,7 @@ def home() -> str:
   else new IntersectionObserver(([e]) => {{ if (e.isIntersecting) play(); }}, {{ threshold: 0.4 }}).observe(box);
 }})();
 </script>
+{MENU_JS}
 </body></html>
 """
 
@@ -607,6 +632,7 @@ def plugin_page(p: dict, h1: str, lede: str, feats: list[tuple[str, str]], note:
 </div></div></main>
 {FOOTER}
 {script([p["key"]], False)}
+{MENU_JS}
 </body></html>
 """
 

@@ -39,7 +39,10 @@ FONTS = (
 )
 
 # one nav for the whole site; each plugin is a single page (/dtc/, /jobs/, /finance/), the rest is shared
-NAV = [("/#plugins", "Plugins"), ("/pricing/", "Pricing"), ("/faq/", "FAQ")]
+NAV = [("/pricing/", "Pricing"), ("/faq/", "FAQ")]
+# the Plugins dropdown that opens the nav (same markup in build_home.py and dtc/index.html)
+PLUGINS_MENU = '''<details class="pmenu"><summary>Plugins</summary><div class="pdrop"><a class="pm" href="/dtc/"><span class="pi" style="--pc:#146043">D</span><span class="pt"><b>Femp for DTC brands</b><small>Your store's operations</small></span><em>Beta</em></a><a class="pm" href="/jobs/"><span class="pi" style="--pc:#3d6fb6">J</span><span class="pt"><b>Femp for Jobs</b><small>Your job search</small></span><em>Soon</em></a><a class="pm" href="/finance/"><span class="pi" style="--pc:#9a5b13">F</span><span class="pt"><b>Femp for Finance</b><small>Stocks and bills</small></span><em>Soon</em></a><a class="pall" href="/#plugins">All plugins →</a></div></details>'''
+MENU_JS = '''<script>(()=>{const m=[...document.querySelectorAll("details.pmenu")];document.addEventListener("click",e=>m.forEach(d=>{if(d.open&&!d.contains(e.target))d.open=false;}));document.addEventListener("keydown",e=>{if(e.key==="Escape")m.forEach(d=>{if(d.open){d.open=false;d.querySelector("summary").focus();}});});})();</script>'''
 # DTC pages that became part of /dtc/; their old addresses forward there
 MERGED_INTO_DTC = ["features", "how-it-works", "integrations"]
 
@@ -56,7 +59,7 @@ def nav(current: str = "") -> str:
     bar = "" if current == "/waitlist/" else GENERAL_BAR
     return f"""{bar}<header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="Femp" width="30" height="30">Femp</a>
-  <nav aria-label="Main">{links}<a href="/blog/"{blog}>Blog</a>
+  <nav aria-label="Main">{PLUGINS_MENU}{links}<a href="/blog/"{blog}>Blog</a>
   <a class="btn green" href="{WA}">Say hi on WhatsApp</a></nav>
 </div></header>"""
 
@@ -183,6 +186,7 @@ def article(p: dict, posts: list[dict]) -> str:
 {CLOSER}
 </div></div></main>
 {FOOTER}
+{MENU_JS}
 </body></html>
 """
 
@@ -230,6 +234,7 @@ def page(p: dict, pages: list[dict]) -> str:
 {CLOSER}
 </div></div></main>
 {FOOTER}
+{MENU_JS}
 </body></html>
 """
 
@@ -375,6 +380,7 @@ def waitlist() -> str:
   }});
 }})();
 </script>
+{MENU_JS}
 </body></html>
 """
 
@@ -404,6 +410,7 @@ def index(posts: list[dict]) -> str:
 {CLOSER}
 </div></div></main>
 {FOOTER}
+{MENU_JS}
 </body></html>
 """
 
