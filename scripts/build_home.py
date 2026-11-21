@@ -143,6 +143,84 @@ a.plugin:hover { transform: translateY(-2px); }
 footer { border-top: 1px solid var(--rule); }
 footer .frame { padding: 22px 40px; display: flex; flex-wrap: wrap; gap: 8px 22px; font: 400 .8rem/1.6 var(--mono); color: var(--muted); }
 footer a { color: var(--muted); }
+
+/* home: lock screen hero */
+.label .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--mint); margin-right: 4px; vertical-align: 1px; box-shadow: 0 0 0 4px color-mix(in srgb, var(--mint) 25%, transparent); }
+.uhero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 40px; padding: 64px 40px 56px; align-items: center; position: relative; overflow: hidden; }
+.uhero::before { content: ""; position: absolute; right: -120px; top: -80px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--mint) 22%, transparent), transparent 65%); pointer-events: none; }
+.uhero h1 { font-size: clamp(3rem, 7.4vw, 6rem); font-weight: 800; letter-spacing: -0.058em; line-height: .92; text-wrap: balance; margin-top: 14px; }
+.uhero h1 em { font-style: normal; color: var(--accent); }
+.plugs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 30px; }
+.plug { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 99px; border: 1px solid var(--rule); background: var(--panel); font-weight: 600; font-size: .9rem; }
+.plug i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+.plug[aria-pressed="true"] { background: var(--cb); border-color: var(--c); color: var(--c); }
+.plug:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+.lock { justify-self: center; width: 100%; max-width: 340px; aspect-ratio: 9 / 18.5; border: 10px solid var(--ink); border-radius: 50px; overflow: hidden; position: relative; z-index: 1; box-shadow: 0 40px 80px -40px rgba(12,21,16,.6); background: #0b1a13; }
+.lscreen { position: absolute; inset: 0; background: radial-gradient(120% 70% at 20% 0%, #2f8a64 0%, transparent 60%), radial-gradient(90% 60% at 100% 100%, #c9a26a 0%, transparent 55%), linear-gradient(170deg, #17694b, #0b2a1f 70%); display: grid; grid-template-rows: auto 1fr auto; padding: 22px 12px 14px; }
+.ltime { text-align: center; color: #fff; display: grid; gap: 2px; padding-top: 18px; }
+.ltime small { font-size: .82rem; font-weight: 600; opacity: .85; }
+.ltime span { font-size: 4.6rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+.lstack { display: flex; flex-direction: column; gap: 8px; align-self: end; margin-bottom: 10px; }
+.lnote { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: start; padding: 11px 12px; border-radius: 20px; background: rgba(245,248,246,.78); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); color: #0c1510; animation: drop .5s cubic-bezier(.2,.9,.2,1) both; opacity: calc(1 - var(--d, 0) * .18); transform-origin: top center; }
+.lnote img { width: 30px; height: 30px; border-radius: 8px; }
+.lnote small { display: flex; gap: 4px; font-size: .68rem; color: #4a5a51; text-transform: uppercase; letter-spacing: .03em; }
+.lnote small b { font-weight: 700; color: #0c1510; } .lnote small em { margin-left: auto; font-style: normal; text-transform: none; }
+.lnote strong { display: block; font-size: .86rem; margin-top: 2px; }
+.lnote span { display: block; font-size: .8rem; line-height: 1.35; color: #2b3a31; }
+.lnote.k-dtc strong { color: #146043; } .lnote.k-jobs strong { color: #2c5ea8; } .lnote.k-fin strong { color: #8a4f0e; }
+@keyframes drop { from { opacity: 0; transform: translateY(-18px) scale(.96); } to { transform: none; } }
+.lbar { justify-self: center; width: 120px; height: 5px; border-radius: 3px; background: rgba(255,255,255,.7); }
+
+/* home: photo cards */
+.shead { display: grid; gap: 8px; }
+.pcards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.pcard { position: relative; aspect-ratio: 4 / 5.2; border-radius: 22px; overflow: hidden; color: #fff; text-decoration: none; isolation: isolate; box-shadow: 0 24px 50px -36px rgba(12,21,16,.7); }
+.pcard > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.pcard::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,.05) 35%, rgba(6,18,12,.82) 100%); }
+.pcard:hover > img { transform: scale(1.05); }
+.pstat { position: absolute; top: 14px; left: 14px; font: 600 .66rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; background: rgba(255,255,255,.88); color: var(--c); padding: 6px 9px; border-radius: 99px; }
+.pnote { position: absolute; left: 14px; right: 14px; top: 46%; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 9px; padding: 10px 11px; border-radius: 16px; background: rgba(245,248,246,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #0c1510; transform: translateY(-50%); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.pcard:hover .pnote { transform: translateY(calc(-50% - 6px)); }
+.pnote img { width: 26px; height: 26px; border-radius: 7px; }
+.pnote small { display: block; font-size: .64rem; text-transform: uppercase; letter-spacing: .04em; color: #4a5a51; }
+.pnote b { display: block; font-size: .84rem; color: var(--c); }
+.pnote span { display: block; font-size: .76rem; color: #2b3a31; line-height: 1.3; }
+.pfoot { position: absolute; left: 18px; right: 18px; bottom: 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; align-items: end; }
+.pfoot h3 { font-size: 1.3rem; letter-spacing: -0.025em; grid-column: 1; }
+.pfoot p { font-size: .95rem; opacity: .9; grid-column: 1; }
+.parrow { grid-column: 2; grid-row: 1 / span 2; width: 40px; height: 40px; border-radius: 50%; background: #fff; color: #0c1510; display: grid; place-items: center; font-weight: 700; transition: transform .3s; }
+.pcard:hover .parrow { transform: translateX(3px); }
+.suggest { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 16px 20px; border: 1px dashed var(--rule); border-radius: 16px; color: var(--ink); text-decoration: none; }
+.suggest:hover { border-color: var(--accent); }
+.suggest .plus { width: 34px; height: 34px; border-radius: 10px; background: var(--chat); display: grid; place-items: center; font-weight: 700; color: var(--muted); }
+.suggest b { font-weight: 700; } .suggest span:nth-child(2) { color: var(--muted); } .suggest span:nth-child(2) b { color: var(--ink); }
+
+/* home: plugging in */
+.plugin-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 40px; }
+.pin-copy { display: grid; gap: 14px; }
+.flow { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 0; counter-reset: f; }
+.flow li { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: 2px 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); counter-increment: f; }
+.flow li::before { content: counter(f); grid-row: 1 / span 2; width: 26px; height: 26px; border-radius: 50%; background: var(--tint); color: var(--accent); display: grid; place-items: center; font: 600 .8rem/1 var(--mono); }
+.flow b { letter-spacing: -0.01em; } .flow span { color: var(--muted); font-size: .94rem; }
+.chatcard { justify-self: center; width: 100%; max-width: 400px; border-radius: 24px; overflow: hidden; background: var(--chat); border: 1px solid var(--rule); box-shadow: 0 30px 60px -40px rgba(12,21,16,.5); min-height: 360px; display: grid; grid-template-rows: auto 1fr; }
+.chead { background: var(--forest); color: #fff; display: flex; gap: 10px; align-items: center; padding: 12px 16px; font-weight: 600; }
+.chead img { width: 32px; height: 32px; border-radius: 50%; background: #fff; } .chead small { display: block; font-weight: 400; opacity: .75; font-size: .72rem; }
+.cthread { padding: 16px; display: flex; flex-direction: column; justify-content: flex-end; gap: 9px; }
+.cb { max-width: 85%; background: var(--panel); border-radius: 4px 16px 16px 16px; padding: 10px 13px; font-size: .92rem; line-height: 1.45; animation: pop .35s ease-out both; }
+.cb.me { align-self: flex-end; background: var(--mine); border-radius: 16px 4px 16px 16px; }
+.cb .file { display: block; background: var(--panel); border-radius: 10px; padding: 8px 10px; margin-bottom: 6px; font-weight: 600; font-size: .86rem; }
+
+/* home: trust + closer */
+.trust h2 { max-width: none; }
+.tgrid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--rule); }
+.tgrid li { padding: 18px 20px 4px 0; display: grid; gap: 6px; }
+.tgrid b { letter-spacing: -0.01em; } .tgrid span { color: var(--muted); font-size: .94rem; }
+.closer2 { justify-items: center; text-align: center; gap: 16px; padding-block: 72px; }
+.closer2 h2 { max-width: none; }
+.faces { display: flex; } .faces img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid var(--paper); margin-left: -14px; } .faces img:first-child { margin-left: 0; }
+@media (max-width: 1000px) { .uhero, .plugin-in { grid-template-columns: minmax(0, 1fr); } .pcards { grid-template-columns: minmax(0, 1fr); max-width: 460px; } .tgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .uhero { padding: 40px 18px; } .tgrid { grid-template-columns: minmax(0, 1fr); } .suggest { grid-template-columns: auto minmax(0, 1fr); } .suggest > span:last-child { display: none; } }
+@media (prefers-reduced-motion: reduce) { .lnote, .cb { animation: none; } .pcard > img, .pnote, .parrow { transition: none; } }
 @media (max-width: 1000px) { .hero { grid-template-columns: minmax(0, 1fr); } .plugins, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .feat { grid-template-columns: minmax(0, 1fr); } .ptab { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 620px) { .plugins, .steps { grid-template-columns: minmax(0, 1fr); } .hide-sm { display: none; } .hero, .sec, footer .frame { padding-left: 18px; padding-right: 18px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bub { animation: none; } .btn, a.plugin { transition: none; } }
@@ -235,6 +313,22 @@ def card(p: dict) -> str:
   <h3>{p['name']}</h3><p>{p['line']}</p><span class="go" aria-hidden="true">→</span></a>"""
 
 
+NOTES = [
+    {"k": "fin", "plug": "Finance", "title": "Card bill due Friday", "text": "$1,240 on your Visa. You also pay for 2 apps you haven't opened in 60 days."},
+    {"k": "dtc", "plug": "DTC brands", "title": "Pixel fixed ✓", "text": "Meta missed 18 orders after Tuesday's theme update. Tracking is back."},
+    {"k": "jobs", "plug": "Jobs", "title": "4 new roles match you", "text": "Best fit: Senior Product Designer, remote. Your tailored resume is ready."},
+    {"k": "dtc", "plug": "DTC brands", "title": "3 stories ready", "text": "Made from today's restock. Tap to preview and post everywhere."},
+    {"k": "fin", "plug": "Finance", "title": "ORBT reports Wednesday", "text": "Earnings after close. Summary of last quarter attached. Research only."},
+    {"k": "jobs", "plug": "Jobs", "title": "Follow up with Lumen Health?", "text": "It's been 5 days. A short follow-up is drafted in your Gmail."},
+]
+
+PHOTOS = {
+    "dtc": ("/img/home/dtc.jpg", "A skincare brand owner packing orders and checking her phone", "Pixel fixed ✓", "18 missed orders are back in Meta."),
+    "jobs": ("/img/home/jobs.jpg", "A man at a cafe smiling at his phone", "4 new roles match you", "Best fit is remote. Resume tailored."),
+    "fin": ("/img/home/fin.jpg", "A woman at her kitchen table checking her phone", "Card bill due Friday", "$1,240. Plus 2 apps you never open."),
+}
+
+
 def home() -> str:
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Femp AI, Inc.", "legalName": "Femp AI, Inc.", "url": f"{SITE}/", "logo": f"{SITE}/img/icon-512.png", "email": "support@femp.ai"},
@@ -242,44 +336,121 @@ def home() -> str:
         {"@type": "SoftwareApplication", "name": "Femp", "alternateName": "Femp AI", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, WhatsApp",
          "description": "An assistant you text on WhatsApp or use in the Femp app, extended with plugins for running a store, job hunting and personal finance.",
          "url": f"{SITE}/", "publisher": {"@id": f"{SITE}/#org"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free during the beta"}}]}
-    tabs = "".join(f'<li><button class="ptab k-{p["key"]}" type="button" data-p="{p["key"]}" aria-pressed="{"true" if i == 0 else "false"}"><b>{p["q"]}</b><span>{p["a"]}</span><small>{p["name"]} · {p["status"].lower()}</small></button></li>' for i, p in enumerate(PLUGINS))
-    cards = "".join(card(p) for p in PLUGINS) + '<a class="plugin more" href="/waitlist/?for=other&amp;from=home-suggest"><div class="top"><span class="ic">+</span></div><h3>Suggest a plugin</h3><p>Tell us the job you\'d hand to Femp.</p><span class="go" aria-hidden="true">→</span></a>'
-    return f"""{head("Femp AI: Your First Employee, With Plugins", "Femp is an assistant you text on WhatsApp. Install a plugin and it learns a job: running your store, finding your next role, keeping on top of your money.", "/", schema)}
+    plugs = "".join(f'<button class="plug k-{p["key"]}" type="button" data-k="{p["key"]}" aria-pressed="false"><i></i>{p["short"]}</button>' for p in PLUGINS)
+    cards = ""
+    for p in PLUGINS:
+        img, alt, t, d = PHOTOS[p["key"]]
+        cards += f"""<a class="pcard k-{p['key']}" href="{p['href']}">
+  <img src="{img}" alt="{escape(alt)}" loading="lazy">
+  <span class="pstat">{p['status']}</span>
+  <div class="pnote"><img src="/img/icon-512.png" alt=""><div><small>Femp · {p['short']}</small><b>{t}</b><span>{d}</span></div></div>
+  <div class="pfoot"><h3>{p['name']}</h3><p>{p['line']}</p><span class="parrow" aria-hidden="true">→</span></div>
+</a>"""
+    return f"""{head("Femp AI: Your First Employee, With Plugins", "Femp is an assistant you text on WhatsApp. Plug in a job and it gets to work: running your store, finding your next role, keeping on top of your money.", "/", schema)}
 <body>
 {nav("/")}
 <main><div class="wrap"><div class="frame">
-<section class="hero">
-  <div>
+<section class="uhero">
+  <div class="ucopy">
+    <p class="label"><b class="dot"></b> Early access · $100 in free credits</p>
     <h1>Hire your <em>first employee.</em></h1>
-    <p class="lede">Femp is an assistant you text on WhatsApp. Install a plugin and it learns a job: running your store, finding your next role, keeping on top of your money. It messages you when something needs you, and acts only after your yes.</p>
-    <ul class="ptabs" aria-label="Tap one to see Femp at work">{tabs}</ul>
+    <p class="lede">One assistant on WhatsApp. Plug in a job, and Femp gets to work. It messages you when something needs you, and acts only after your yes.</p>
     <div class="ctas"><a class="btn solid" href="/waitlist/?from=home-hero">Join the waitlist →</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
+    <div class="plugs" role="group" aria-label="Show one plugin"><span class="label">Plugged in:</span>{plugs}</div>
   </div>
-  {phone("dtc")}
+  <div class="lock" aria-label="Femp notifications on a phone lock screen">
+    <div class="lscreen">
+      <div class="ltime"><small>Saturday 22 November</small><span>8:15</span></div>
+      <div class="lstack" id="stack" aria-live="polite"></div>
+      <div class="lbar"></div>
+    </div>
+  </div>
 </section>
-<section class="sec" id="plugins">
-  <p class="label">Plugins</p>
-  <h2>One assistant. Install the jobs you need.</h2>
-  <div class="plugins">{cards}</div>
+
+<section class="sec">
+  <div class="shead"><p class="label">Plugins</p><h2>One employee. Many jobs.</h2></div>
+  <div class="pcards">{cards}</div>
+  <a class="suggest" href="/waitlist/?for=other&amp;from=home-suggest"><span class="plus">+</span><span><b>Got another job for Femp?</b> Wedding planning, a clinic's bookings, your rentals. Suggest a plugin.</span><span aria-hidden="true">→</span></a>
 </section>
-<section class="sec" id="how">
-  <p class="label">How it works</p>
-  <h2>Say hi, install a plugin, let it work.</h2>
-  <ol class="steps">
-    <li><b>Say hi on WhatsApp</b><p>Or download the Femp app. No forms.</p></li>
-    <li><b>Install a plugin</b><p>Text <code>install femp for jobs</code>, or pick one in the app.</p></li>
-    <li><b>Connect what it needs</b><p>Each connection uses the platform's own sign-in. Femp never sees your passwords.</p></li>
-    <li><b>It checks in, you approve</b><p>Daily automations run in your time zone. Anything that changes or sends waits for your yes.</p></li>
-  </ol>
-  <ul class="core" aria-label="Included with every plugin"><li>Approvals before any change</li><li>Remembers your preferences</li><li>Automations you set in one message</li><li>Team members on their own WhatsApp</li><li>Undo and a log of everything</li></ul>
+
+<section class="sec plugin-in">
+  <div class="pin-copy">
+    <p class="label">How it works</p>
+    <h2>Plugging in takes one message.</h2>
+    <ol class="flow">
+      <li><b>Say hi on WhatsApp</b><span>Or open the Femp app.</span></li>
+      <li><b>Ask for a plugin</b><span>“install femp for jobs”</span></li>
+      <li><b>Connect what it needs</b><span>Each app's own sign-in. No passwords shared.</span></li>
+      <li><b>Femp starts working</b><span>Checks in on a schedule. Waits for your yes.</span></li>
+    </ol>
+  </div>
+  <div class="chatcard" aria-label="Installing a plugin on WhatsApp">
+    <div class="chead"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div></div>
+    <div class="cthread" id="install"></div>
+  </div>
 </section>
-<section class="sec closer">
-  <div><h2>Get Femp first.</h2><p class="muted">Join once, pick the plugins you want, and get $100 in free credits when yours launches.</p></div>
-  <div class="ctas" style="margin:0"><a class="btn green" href="/waitlist/?from=home-closer">Join the waitlist</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
+
+<section class="sec trust">
+  <h2>It asks before it acts.</h2>
+  <ul class="tgrid">
+    <li><b>Your yes, every time</b><span>Nothing is sent, posted, paid or changed without it.</span></li>
+    <li><b>Remembers you</b><span>Preferences, people and past decisions, across every plugin.</span></li>
+    <li><b>Undo and a log</b><span>See everything Femp did, and take it back.</span></li>
+    <li><b>Your team, too</b><span>Add people who chat with Femp from their own WhatsApp.</span></li>
+  </ul>
+</section>
+
+<section class="sec closer2">
+  <div class="faces"><img src="/img/home/dtc.jpg" alt=""><img src="/img/home/jobs.jpg" alt=""><img src="/img/home/fin.jpg" alt=""></div>
+  <h2>Get Femp first.</h2>
+  <p class="muted">Join once, pick your plugins, and get $100 in free credits when yours launches.</p>
+  <div class="ctas"><a class="btn green" href="/waitlist/?from=home-closer">Join the waitlist</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
 </section>
 </div></div></main>
 {FOOTER}
-{script(["dtc", "jobs", "fin"], True)}
+<script>
+(() => {{
+  const NOTES = {json.dumps(NOTES)};
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const stack = document.getElementById("stack"), plugs = [...document.querySelectorAll(".plug")];
+  let filter = null, i = 0, timer = 0, onScreen = true;
+  const card = (n) => {{
+    const el = document.createElement("div");
+    el.className = "lnote k-" + n.k;
+    el.innerHTML = `<img src="/img/icon-512.png" alt=""><div><small><b>Femp</b> · ${{n.plug}}<em>now</em></small><strong>${{n.title}}</strong><span>${{n.text}}</span></div>`;
+    return el;
+  }};
+  const list = () => NOTES.filter((n) => !filter || n.k === filter);
+  function push() {{
+    const notes = list(); const n = notes[i % notes.length]; i++;
+    stack.prepend(card(n));
+    while (stack.children.length > 4) stack.lastElementChild.remove();
+    [...stack.children].forEach((c, j) => c.style.setProperty("--d", j));
+  }}
+  function seed() {{ stack.replaceChildren(); i = 0; const n = Math.min(3, list().length); for (let k = 0; k < n; k++) push(); }}
+  function loop() {{ clearInterval(timer); if (still) return; timer = setInterval(() => {{ if (onScreen) push(); }}, 2600); }}
+  plugs.forEach((b) => b.addEventListener("click", () => {{
+    const k = b.dataset.k; filter = filter === k ? null : k;
+    plugs.forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.k === filter)));
+    seed(); loop();
+  }}));
+  new IntersectionObserver(([e]) => {{ onScreen = e.isIntersecting; }}).observe(stack);
+  seed(); loop();
+
+  // install chat plays once when it scrolls into view
+  const box = document.getElementById("install");
+  const CHAT = [["me", "install femp for jobs"], ["f", "Done ✓ <b>Femp for Jobs</b> is plugged in. Send me your resume and tell me what you're looking for."],
+                ["me", "<span class='file'>📄 Resume_2026.pdf</span>senior product designer, remote"], ["f", "Got it. Your first matching roles arrive tomorrow at 8:30, each with a tailored resume."]];
+  const bub = ([w, h]) => {{ const el = document.createElement("div"); el.className = "cb" + (w === "me" ? " me" : ""); el.innerHTML = h; return el; }};
+  let played = false;
+  async function play() {{
+    if (played) return; played = true;
+    for (const m of CHAT) {{ box.append(bub(m)); if (!still) await new Promise((r) => setTimeout(r, 1100)); }}
+  }}
+  if (still) CHAT.forEach((m) => box.append(bub(m)));
+  else new IntersectionObserver(([e]) => {{ if (e.isIntersecting) play(); }}, {{ threshold: 0.4 }}).observe(box);
+}})();
+</script>
 </body></html>
 """
 
