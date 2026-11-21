@@ -200,7 +200,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .wb.me { align-self: flex-end; background: var(--mine); border-radius: 14px 4px 14px 14px; }
 .wb.done { border-left: 3px solid var(--accent); }
 .wb b { font-weight: 600; }
-.wb .stories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 8px 0 2px; }
+.wb .stories { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; margin: 8px 0 2px; }
 .wb .st { margin: 0; position: relative; aspect-ratio: 9 / 16; border-radius: 8px; overflow: hidden; background: #efe8f3; }
 .wb .st img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .wb .st.pack img { object-fit: contain; padding: 18% 6% 0; }
@@ -208,6 +208,56 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .wb .st.pack figcaption { color: #3b2a48; background: none; }
 .wb .st::after { content: ""; position: absolute; inset: 4px 6px auto; height: 2px; border-radius: 2px; background: rgba(255,255,255,.7); }
 .wb .st.pick { outline: 2px solid var(--accent); outline-offset: 1px; }
+.wphone { position: relative; }
+.wb .st { cursor: pointer; transition: transform .2s; }
+.wb .st:hover { transform: translateY(-2px); }
+.wb .st.tapped { animation: wtap .6s ease-out; }
+@keyframes wtap { 0% { box-shadow: 0 0 0 0 rgba(23,105,75,.55); transform: scale(1); } 40% { transform: scale(.94); } 100% { box-shadow: 0 0 0 14px rgba(23,105,75,0); transform: scale(1); } }
+.wb .hint { display: block; font: 500 .66rem/1.2 var(--mono); color: var(--faint); margin-top: 2px; }
+.wb .st .kind { position: absolute; left: 4px; bottom: 4px; font: 600 0.55rem/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: #fff; background: rgba(0,0,0,.5); padding: 3px 4px; border-radius: 4px; }
+.wb .st.post { background: #f3f0f5; display: grid; align-items: center; }
+.wb .st.post img { height: auto; aspect-ratio: 4 / 5; }
+.wb .st.post::after { display: none; }
+.wstory .slide.post { background: #fff; display: grid; align-content: start; gap: 0; color: #111; padding-top: 58px; }
+.wstory .slide.post .ph { display: none !important; }
+.wstory .slide.post .ph { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: .78rem; font-weight: 600; }
+.wstory .slide.post .ph .av { width: 26px; height: 26px; border-radius: 50%; background: #efe8f3; color: #5b4370; display: grid; place-items: center; font: 800 .62rem/1 var(--sans); }
+.wstory .slide.post .ph small { font-weight: 400; color: #777; }
+.wstory .slide.post img { height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.wstory .slide.post .acts { display: flex; gap: 14px; padding: 9px 12px 4px; font-size: 1.05rem; line-height: 1; }
+.wstory .slide.post .pcap { margin: 0; padding: 0 12px; font-size: .76rem; line-height: 1.4; }
+.wstory .slide.post .pcap b { font-weight: 600; }
+.wstory.onpost .top { color: #111; text-shadow: none; }
+.wstory.onpost .top .x { color: #111; }
+.wstory.onpost .bars i { background: rgba(0,0,0,.15); }
+.wstory.onpost .bars b { background: #111; }
+.wstory.onpost .foot { background: #fff; padding-top: 10px; }
+.wstory.onpost .foot .ghost { color: #111; border-color: #ccc; }
+.wstory .slide.post .pcap { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.wstory { position: absolute; inset: 0; z-index: 5; background: #000; overflow: hidden; opacity: 0; pointer-events: none; transform: scale(.96); transition: opacity .25s, transform .25s; }
+.wstory.open { opacity: 1; pointer-events: auto; transform: none; }
+.wstory .track { position: absolute; inset: 0; display: flex; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.wstory .slide { flex: 0 0 100%; position: relative; background: #111; }
+.wstory .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wstory .slide.pack { background: #efe8f3; }
+.wstory .slide.pack img { object-fit: contain; padding: 34% 10% 26%; }
+.wstory .scap { position: absolute; left: 18px; right: 18px; top: 78px; color: #fff; font: 800 1.7rem/1.04 var(--sans); letter-spacing: -0.035em; text-shadow: 0 1px 14px rgba(0,0,0,.35); }
+.wstory .slide.pack .scap { color: #3b2a48; text-shadow: none; }
+.wstory .bars { position: absolute; top: 12px; left: 12px; right: 12px; z-index: 2; display: flex; gap: 4px; }
+.wstory .bars i { flex: 1; height: 3px; border-radius: 3px; background: rgba(255,255,255,.35); overflow: hidden; }
+.wstory .bars b { display: block; height: 100%; width: 0; background: #fff; }
+.wstory .top { position: absolute; top: 24px; left: 12px; right: 12px; z-index: 2; display: flex; align-items: center; gap: 8px; color: #fff; font-size: .78rem; font-weight: 600; text-shadow: 0 1px 6px rgba(0,0,0,.4); }
+.wstory .top .av { width: 28px; height: 28px; border-radius: 50%; background: #fff; color: #5b4370; display: grid; place-items: center; font: 800 .7rem/1 var(--sans); text-shadow: none; }
+.wstory .top small { font-weight: 400; opacity: .85; }
+.wstory .top .x { margin-left: auto; all: unset; margin-left: auto; cursor: pointer; font-size: 1.2rem; line-height: 1; padding: 4px; color: #fff; }
+.wstory .tap { all: unset; position: absolute; top: 60px; bottom: 76px; width: 40%; z-index: 1; cursor: pointer; }
+.wstory .tap.prev { left: 0; } .wstory .tap.next { right: 0; }
+.wstory .foot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 30px 14px 16px; display: flex; gap: 8px; background: linear-gradient(transparent, rgba(0,0,0,.6)); }
+.wstory .foot button { all: unset; box-sizing: border-box; cursor: pointer; padding: 11px 14px; border-radius: 99px; font: 600 .85rem/1 var(--sans); text-align: center; }
+.wstory .foot .ghost { color: #fff; border: 1px solid rgba(255,255,255,.6); }
+.wstory .foot .live { flex: 1; background: var(--forest); color: #fff; }
+.wstory .foot .live.press { animation: wtap .6s ease-out; background: var(--accent); }
+.wstory button:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
 .wb time { display: block; text-align: right; font: 400 0.68rem/1 var(--mono); color: var(--faint); margin-top: 4px; }
 .wtyping { align-self: flex-start; background: var(--panel); border-radius: 4px 14px 14px 14px; padding: 12px 14px; display: flex; gap: 4px; animation: wpop .2s ease-out both; }
 .wtyping.me { align-self: flex-end; background: var(--mine); border-radius: 14px 4px 14px 14px; }
@@ -410,6 +460,13 @@ footer a { color: var(--muted); }
             <div class="wp-head"><img src="img/icon-512.png" alt=""><div><strong>Femp</strong><small>online</small></div></div>
             <div class="wthread" id="wthread"></div>
             <div class="wp-input">Message</div>
+            <div class="wstory" id="wstory" role="dialog" aria-label="Story preview" aria-hidden="true">
+              <div class="track"></div>
+              <div class="bars"></div>
+              <div class="top"><span class="av">wb</span><span>windmillbaby <small class="kindl">· story draft</small></span><button class="x" type="button" aria-label="Close preview">×</button></div>
+              <button class="tap prev" type="button" aria-label="Previous story"></button><button class="tap next" type="button" aria-label="Next story"></button>
+              <div class="foot"><button class="ghost" type="button">Edit</button><button class="live" type="button">Make it live</button></div>
+            </div>
           </div>
         </div>
       </section>
@@ -514,9 +571,10 @@ footer a { color: var(--muted); }
      ["f", "You did. UPS shows it delivered to her door on <b>Nov 3</b>, and she's ordered from you 4 times before. The proof is ready.", "2:17"],
      ["m", "send it 🙏", "2:18"],
      ["d", "Sent to Shopify Payments, <b>5 days before the deadline</b> ✓ I'll let you know what the bank decides.", "2:18"]],
-    [["f", "Morning! 3 stories ready for today, made from your store's photos:<div class=\"stories\"><figure class=\"st pick\"><img src=\"/img/demo/wb-story-laundry.jpg\" alt=\"\"><figcaption>Soft on tiny clothes.</figcaption></figure><figure class=\"st\"><img src=\"/img/demo/wb-story-travel.jpg\" alt=\"\"><figcaption>Packed for the trip.</figcaption></figure><figure class=\"st pack\"><img src=\"/img/demo/wb-wipes.jpg\" alt=\"\"><figcaption>100% natural dry wipes</figcaption></figure></div>", "8:15"],
-     ["m", "the first one is perfect. post it", "8:21"],
-     ["d", "Posted to Instagram and Facebook Stories, a Reel and a YouTube Short, each sized right ✓ I'll tell you tonight what it sold.", "8:22"]],
+    [["f", "Morning! 3 stories and a post ready for today, made from your store's photos:<div class=\"stories\"><figure class=\"st\" data-i=\"0\"><img src=\"/img/demo/wb-story-laundry.jpg\" alt=\"\"><figcaption>Soft on tiny clothes.</figcaption><span class=\"kind\">Story</span></figure><figure class=\"st\" data-i=\"1\"><img src=\"/img/demo/wb-story-travel.jpg\" alt=\"\"><figcaption>Packed for the trip.</figcaption><span class=\"kind\">Story</span></figure><figure class=\"st\" data-i=\"2\"><img src=\"/img/demo/wb-story-wipes.jpg\" alt=\"\"><figcaption>100% natural dry wipes.</figcaption><span class=\"kind\">Story</span></figure><figure class=\"st post\" data-i=\"3\"><img src=\"/img/demo/wb-post-giftset.jpg\" alt=\"\"><span class=\"kind\">Post</span></figure></div><span class=\"hint\">Tap to preview</span>", "8:15"],
+     ["v"],
+     ["m", "love them. make them live", "8:21"],
+     ["d", "Live ✓ 3 stories on Instagram and Facebook, the post in both feeds, plus a Reel and a YouTube Short, each sized right. I'll tell you tonight what they sold.", "8:22"]],
   ];
   const thread = $("wthread"), scenes = SCENES.map((_, i) => $("sc" + i));
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -528,13 +586,74 @@ footer a { color: var(--muted); }
     el.innerHTML = `${html}<time>${t}</time>`;
     return el;
   };
+  const STORIES = [
+    { img: "/img/demo/wb-story-laundry.jpg", cap: "Soft on tiny clothes." },
+    { img: "/img/demo/wb-story-travel.jpg", cap: "Packed for the trip." },
+    { img: "/img/demo/wb-story-wipes.jpg", cap: "100% natural dry wipes." },
+    { img: "/img/demo/wb-post-giftset.jpg", post: "Just arrived: everything for the first weeks in one box. Plant-based, fragrance-free options, ready to gift. 🎁" },
+  ];
+  const sv = $("wstory"), track = sv.querySelector(".track"), barsBox = sv.querySelector(".bars"), liveBtn = sv.querySelector(".live");
+  track.innerHTML = STORIES.map((x) => x.post
+    ? `<div class="slide post"><div class="ph"><span class="av">wb</span>windmillbaby <small>· post draft</small></div><img src="${x.img}" alt=""><div class="acts">♡ <span>💬</span> <span>↗</span></div><p class="pcap"><b>windmillbaby</b> ${x.post}</p></div>`
+    : `<div class="slide"><img src="${x.img}" alt=""><p class="scap">${x.cap}</p></div>`).join("");
+  barsBox.innerHTML = STORIES.map(() => "<i><b></b></i>").join("");
+  const bars = [...barsBox.querySelectorAll("b")];
+  let at = 0, manual = false;
+  const go = (n, ms) => {
+    at = Math.max(0, Math.min(STORIES.length - 1, n));
+    track.style.transform = `translateX(-${at * 100}%)`;
+    sv.classList.toggle("onpost", Boolean(STORIES[at].post));
+    sv.querySelector(".kindl").textContent = STORIES[at].post ? "· post draft" : "· story draft";
+    bars.forEach((b, j) => { b.style.transition = "none"; b.style.width = j < at ? "100%" : "0"; });
+    const b = bars[at]; void b.offsetWidth;
+    if (ms) { b.style.transition = `width ${ms}ms linear`; } b.style.width = "100%";
+  };
+  const openViewer = (n, ms) => { sv.classList.add("open"); sv.setAttribute("aria-hidden", "false"); go(n, ms); };
+  const closeViewer = () => { sv.classList.remove("open"); sv.setAttribute("aria-hidden", "true"); liveBtn.classList.remove("press"); };
+  async function playViewer(token) {
+    const thumb = thread.querySelector(".st");
+    if (thumb) { thumb.classList.add("tapped"); await pause(650); }
+    if (token !== run) return false;
+    for (let n = 0; n < STORIES.length; n++) {
+      if (n === 0) openViewer(0, 2200); else go(n, 2200);
+      await pause(2400);
+      if (token !== run) { closeViewer(); return false; }
+    }
+    liveBtn.classList.add("press"); await pause(700);
+    closeViewer(); await pause(300);
+    return token === run;
+  }
+  thread.addEventListener("click", (e) => {
+    const st = e.target.closest(".st"); if (!st) return;
+    run++; manual = true; openViewer(Number(st.dataset.i), 0);
+  });
+  sv.querySelector(".prev").addEventListener("click", () => go(at - 1, 0));
+  sv.querySelector(".next").addEventListener("click", () => go(at + 1, 0));
+  sv.querySelector(".x").addEventListener("click", closeViewer);
+  sv.querySelector(".ghost").addEventListener("click", closeViewer);
+  liveBtn.addEventListener("click", () => {
+    if (!manual) return;
+    manual = false; closeViewer();
+    const last = SCENES[4];
+    thread.querySelectorAll(".wb.me, .wb.done").forEach((el) => el.remove());
+    thread.append(bubble(last[2])); thread.append(bubble(last[3]));
+  });
+  sv.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") go(at + 1, 0); else if (e.key === "ArrowLeft") go(at - 1, 0); else if (e.key === "Escape") closeViewer();
+  });
   async function show(i, token) {
     scenes.forEach((b, j) => { b.setAttribute("aria-pressed", String(j === i)); b.querySelector(".prog").style.width = "0"; });
     thread.replaceChildren();
-    if (still) { SCENES[i].forEach((m) => thread.append(bubble(m))); return; }
+    closeViewer(); manual = false;
+    if (still) { SCENES[i].filter((m) => m[0] !== "v").forEach((m) => thread.append(bubble(m))); return; }
     const prog = scenes[i].querySelector(".prog"), steps = SCENES[i].length;
     for (const [k, m] of SCENES[i].entries()) {
       while (!visible) { await pause(400); if (token !== run) return; }
+      if (m[0] === "v") {
+        if (!(await playViewer(token))) return;
+        prog.style.transition = "width 1.6s linear"; prog.style.width = `${((k + 1) / steps) * 100}%`;
+        continue;
+      }
       const dots = document.createElement("div");
       dots.className = "wtyping" + (m[0] === "m" ? " me" : "");
       dots.innerHTML = "<i></i><i></i><i></i>";
