@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Femp for Jobs: New roles every morning, each application tailored</title>
-<meta name="description" content="New roles that match you every morning, a tailored resume and cover letter for each, an application tracker, follow-up emails and interview prep.">
+<title>Femp for Jobs: Your AI job agent on WhatsApp</title>
+<meta name="description" content="New roles every morning, a resume built and tailored for each one, applications sent when you say yes, and follow-ups handled. All on WhatsApp.">
 <link rel="canonical" href="https://femp.ai/jobs/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#17694b">
 <meta name="msvalidate.01" content="9630C390530A95D6B86886436D1FC7B5">
 <meta property="og:site_name" content="Femp"><meta property="og:type" content="website">
-<meta property="og:title" content="Femp for Jobs: New roles every morning, each application tailored"><meta property="og:description" content="New roles that match you every morning, a tailored resume and cover letter for each, an application tracker, follow-up emails and interview prep.">
+<meta property="og:title" content="Femp for Jobs: Your AI job agent on WhatsApp"><meta property="og:description" content="New roles every morning, a resume built and tailored for each one, applications sent when you say yes, and follow-ups handled. All on WhatsApp.">
 <meta property="og:url" content="https://femp.ai/jobs/"><meta property="og:image" content="https://femp.ai/img/og.jpg">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Femp for Jobs: New roles every morning, each application tailored"><meta name="twitter:description" content="New roles that match you every morning, a tailored resume and cover letter for each, an application tracker, follow-up emails and interview prep."><meta name="twitter:image" content="https://femp.ai/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Femp for Jobs: Your AI job agent on WhatsApp"><meta name="twitter:description" content="New roles every morning, a resume built and tailored for each one, applications sent when you say yes, and follow-ups handled. All on WhatsApp."><meta name="twitter:image" content="https://femp.ai/img/og.jpg">
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Femp for Jobs", "description": "New roles that match you every morning, a tailored resume and cover letter for each, an application tracker, follow-up emails and interview prep.", "url": "https://femp.ai/jobs/", "isPartOf": {"@type": "WebSite", "name": "Femp", "url": "https://femp.ai/"}, "inLanguage": "en-US"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Femp for Jobs", "description": "New roles every morning, a resume built and tailored for each one, applications sent when you say yes, and follow-ups handled. All on WhatsApp.", "url": "https://femp.ai/jobs/", "isPartOf": {"@type": "WebSite", "name": "Femp", "url": "https://femp.ai/"}, "inLanguage": "en-US"}</script>
 <style>
 
 /* Plugins dropdown in the nav */
@@ -321,11 +321,77 @@ footer a { color: var(--muted); }
 @keyframes swing { 0% { opacity: 0; transform: rotate(-10deg) translateY(-24px); } 35% { opacity: 1; } 60% { transform: rotate(4deg); } 80% { transform: rotate(calc(var(--tilt) - 1.5deg)); } 100% { opacity: 1; transform: rotate(var(--tilt)); } }
 @media (max-width: 900px) { .badges { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(78%, 300px); overflow-x: auto; scroll-snap-type: x mandatory; padding: 36px 4px 18px; margin: 0 -4px; scrollbar-width: none; } .badges::-webkit-scrollbar { display: none; } .badge { scroll-snap-align: center; } }
 @media (prefers-reduced-motion: reduce) { .badges.anim .badge, .badges.anim.in .badge { animation: none; opacity: 1; transform: rotate(var(--tilt)); } .badge { transition: none; } }
+/* jobs: day story */
+.story { gap: 10px; }
+.story-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 56px; align-items: start; }
+.beats { list-style: none; padding: 0; margin: 0; }
+.beat { padding: 40px 0 40px 26px; border-left: 2px solid var(--rule); opacity: .35; transition: opacity .4s, border-color .4s; display: grid; gap: 12px; }
+.beat h3 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1; text-wrap: balance; }
+.beat p { color: var(--muted); font-size: 1.02rem; max-width: 52ch; }
+.beat.on { opacity: 1; border-left-color: var(--jobs); }
+.beat .when { font: 600 .82rem/1 var(--mono); color: var(--jobs); display: flex; align-items: center; gap: 10px; }
+.beat .when i { font-style: normal; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--faint); }
+.dets { list-style: none; padding: 0; margin-top: 4px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 22px; }
+.dets li { display: grid; gap: 2px; padding-left: 14px; border-left: 2px solid var(--jobs-bg); }
+.beat.on .dets li { border-left-color: color-mix(in srgb, var(--jobs) 45%, transparent); }
+.dets b { font-size: .95rem; letter-spacing: -0.01em; }
+.dets span { color: var(--muted); font-size: .88rem; line-height: 1.45; }
+.srcs { display: flex; flex-wrap: wrap; gap: 6px; max-width: none; }
+.srcs span { font: 500 .74rem/1 var(--mono); padding: 6px 9px; border-radius: 6px; background: var(--panel); border: 1px solid var(--rule); color: var(--ink); }
+.srcs span:last-child { border-style: dashed; color: var(--muted); }
+@media (max-width: 620px) { .dets { grid-template-columns: minmax(0, 1fr); } }
+.tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li { font-size: .82rem; padding: 6px 11px; border-radius: 99px; border: 1px solid var(--rule); background: var(--panel); color: var(--muted); }
+.mchat { display: none; }
+.story-phone { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 92px); display: grid; gap: 14px; justify-items: center; }
+.story-phone .phone { height: 540px; }
+.rail { display: flex; gap: 6px; }
+.rail span { width: 34px; height: 4px; border-radius: 2px; background: var(--rule); transition: background .3s; }
+.rail span.on { background: var(--jobs); }
+.cb .file, .bub .file { display: block; background: var(--chat); border-radius: 10px; padding: 8px 10px; margin-bottom: 6px; font-weight: 600; font-size: .84rem; }
+.marquee { overflow: hidden; border-block: 1px solid var(--rule); margin-inline: -40px; padding: 18px 0; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.mtrack { display: flex; gap: 12px; width: max-content; animation: slide 40s linear infinite; }
+.marquee:hover .mtrack { animation-play-state: paused; }
+.mtrack span { display: inline-flex; align-items: baseline; gap: 10px; padding: 12px 18px; border-radius: 99px; background: var(--jobs-bg); color: var(--jobs); font-weight: 700; font-size: 1.05rem; white-space: nowrap; }
+.mtrack span small { font: 500 .78rem/1 var(--mono); color: var(--muted); font-weight: 500; }
+@keyframes slide { to { transform: translateX(-50%); } }
+.src { font: 400 .74rem/1.5 var(--mono); color: var(--faint); }
+.yesband { background: #0c1510; color: #e7f0ea; grid-template-columns: minmax(0, 1fr) minmax(0, 400px); align-items: center; gap: 48px; }
+.yesband .label { color: #8fa79a; }
+.yesband h2 { color: #fff; }
+.yeslist { list-style: none; padding: 0; display: grid; gap: 14px; margin-top: 8px; }
+.yeslist li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; }
+.yeslist li::before { content: "✓"; width: 26px; height: 26px; border-radius: 50%; background: #5cc596; color: #0c1510; display: grid; place-items: center; font-weight: 800; font-size: .8rem; }
+.yeslist b { display: block; color: #fff; } .yeslist span { color: #9db0a5; font-size: .95rem; }
+.ask { background: #17241d; border: 1px solid #24382d; border-radius: 22px; padding: 18px; display: grid; gap: 12px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+.ask .who { display: flex; align-items: center; gap: 10px; font-weight: 600; } .ask .who img { width: 30px; height: 30px; border-radius: 50%; background: #fff; }
+.ask .msg { background: #0f1b15; border-radius: 4px 16px 16px 16px; padding: 12px 14px; line-height: 1.5; }
+.ask .msg ol { margin: 8px 0 0; padding-left: 1.2rem; color: #9db0a5; font-size: .92rem; }
+.ask .acts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ask .acts span { text-align: center; padding: 12px; border-radius: 12px; font-weight: 700; font-size: .95rem; }
+.ask .acts .y { background: #5cc596; color: #0c1510; animation: nudge 2.4s ease-in-out infinite; } .ask .acts .n { border: 1px solid #2d4437; color: #cfe0d6; }
+@keyframes nudge { 50% { box-shadow: 0 0 0 8px rgba(92,197,150,.18); } }
+.ask small { color: #6d8075; font-size: .8rem; text-align: center; }
+.closer3 { justify-items: center; text-align: center; gap: 18px; padding-block: 80px; }
+.closer3 h2 { max-width: 16ch; font-size: clamp(2.4rem, 6vw, 4.4rem); }
+.closer3 h2 em { font-style: normal; color: var(--accent); }
+.closer3 .ctas { justify-content: center; margin-top: 6px; }
+.hero .ptabs { margin-top: 22px; }
+.hero .ptab { grid-template-columns: 13.5rem minmax(0, 1fr); }
+@media (max-width: 860px) {
+  .story-grid { grid-template-columns: minmax(0, 1fr); }
+  .story-phone { display: none; }
+  .beat { opacity: 1; border-left-color: var(--jobs); padding-block: 28px; }
+  .mchat { display: flex; flex-direction: column; gap: 8px; background: var(--chat); border-radius: 20px; padding: 14px; margin-top: 6px; max-width: 420px; }
+  .yesband { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 620px) { .hero .ptab { grid-template-columns: minmax(0, 1fr); } .marquee { margin-inline: -18px; } }
+@media (prefers-reduced-motion: reduce) { .mtrack, .ask .acts .y { animation: none; } .beat { transition: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bub { animation: none; } .btn, a.plugin { transition: none; } }
 </style>
 </head>
 <body>
-<div class="topbar"><span class="early">Early access</span><span class="tb-short">Get <b>$100 in free credits</b></span><span class="tb-long">Femp is your <b>F</b>irst <b>EMP</b>loyee. Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
+<div class="topbar"><span class="early">Early access</span><span class="tb-short">Get <b>$100 in free credits</b></span><span class="tb-long">Femp is your <b>F</b>irst <b>EMP</b>loyee. Try it free and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?for=femp-jobs&amp;from=jobs-bar">Try Femp free →</a></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="">Femp</a>
   <nav aria-label="Main"><details class="pmenu"><summary>Plugins</summary><div class="pdrop"><a class="pm" href="/dtc/"><span class="pi" style="--pc:#146043">D</span><span class="pt"><b>Femp for DTC brands</b><small>Grow your store</small></span><em>Beta</em></a><a class="pm" href="/jobs/"><span class="pi" style="--pc:#3d6fb6">J</span><span class="pt"><b>Femp for Jobs</b><small>Your job search</small></span><em>Soon</em></a><a class="pm" href="/finance/"><span class="pi" style="--pc:#9a5b13">F</span><span class="pt"><b>Femp for Finance</b><small>Stocks and bills</small></span><em>Soon</em></a><a class="pall" href="/#plugins">All plugins →</a></div></details><a class="hide-sm" href="/pricing/">Pricing</a><a class="hide-sm" href="/faq/">FAQ</a><a class="hide-sm" href="/blog/">Blog</a><a class="btn green" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></nav>
@@ -333,10 +399,17 @@ footer a { color: var(--muted); }
 <main><div class="wrap"><div class="frame">
 <section class="hero">
   <div>
-    <p class="label"><a href="/">Femp</a> / Femp for Jobs · coming soon</p>
+    <p class="label"><a href="/">Femp</a> / Femp for Jobs</p>
     <h1 style="margin-top:14px">Your job search, <em>on autopilot.</em></h1>
-    <p class="lede">Femp for Jobs finds roles that fit you every morning, tailors your resume and cover letter for each one, and keeps your search moving with follow-ups and interview prep. You decide what gets sent.</p>
-    <div class="ctas"><a class="btn solid" href="/waitlist/?for=femp-jobs&amp;from=jobs-hero">Join the waitlist →</a><a class="btn line" href="/">All plugins</a></div>
+    <p class="lede">Femp finds new roles every morning, builds and tailors your resume for each one, applies when you say yes, and follows up for you. All on WhatsApp.</p>
+    <ul class="ptabs" aria-label="Tap one to see Femp handle it">
+      <li><button class="ptab k-jobs" type="button" data-p="search" aria-pressed="true"><b>Tired of job boards?</b><span>New roles every morning.</span></button></li>
+      <li><button class="ptab k-jobs" type="button" data-p="resume" aria-pressed="false"><b>No resume yet?</b><span>Built from a quick chat.</span></button></li>
+      <li><button class="ptab k-jobs" type="button" data-p="tailor" aria-pressed="false"><b>No replies?</b><span>A resume tailored to each job.</span></button></li>
+      <li><button class="ptab k-jobs" type="button" data-p="apply" aria-pressed="false"><b>Applying takes hours?</b><span>Femp applies when you say yes.</span></button></li>
+      <li><button class="ptab k-jobs" type="button" data-p="follow" aria-pressed="false"><b>Ghosted after applying?</b><span>Follow-ups drafted for you.</span></button></li>
+    </ul>
+    <div class="ctas"><a class="btn solid" href="/waitlist/?for=femp-jobs&amp;from=jobs-hero">Try Femp free →</a><a class="btn line" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></div>
   </div>
   <div class="phone" aria-live="polite">
   <div class="p-head"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div><span class="plug" id="plugname">Jobs</span></div>
@@ -345,15 +418,34 @@ footer a { color: var(--muted); }
 </div>
 </section>
 <section class="sec">
-  <p class="label">What it does</p>
-  <h2>What Femp for Jobs does for you</h2>
-  <ul class="feat"><li><b>New roles every morning</b><p>Fresh openings that match your role, level and locations, ranked by how well you fit.</p></li><li><b>A tailored application each time</b><p>Your resume and cover letter rewritten for the role, using only what&#x27;s true about you.</p></li><li><b>Follow-ups that don&#x27;t slip</b><p>An application tracker, and follow-up emails drafted in your Gmail when it&#x27;s time.</p></li><li><b>Interview prep</b><p>What the company does, likely questions, and stories from your experience to tell.</p></li><li><b>Calendar handled</b><p>Interview times added to Google Calendar, with a reminder and notes the day before.</p></li><li><b>You stay in charge</b><p>Femp never applies or emails on its own. Every send waits for your yes.</p></li></ul>
-  
-  <p class="muted">Connects: Your resume · Gmail · Google Calendar. Each connection uses the platform's own sign-in, and nothing is sent without your yes.</p>
+  <p class="label">How it works</p>
+  <h2>Say hi. Femp does the rest.</h2>
+  <ol class="steps">
+    <li><b>Say hi on WhatsApp</b><p>No app to download and no account to set up.</p></li>
+    <li><b>Tell Femp what you want</b><p>Your role, level and city. Send your resume, or build one together in a few minutes.</p></li>
+    <li><b>Get roles every morning</b><p>Fresh openings that fit you, each with a line on why. Reply with the ones you like.</p></li>
+    <li><b>Say yes, Femp applies</b><p>A tailored resume and cover letter for each role, sent only after you approve.</p></li>
+  </ol>
 </section>
-<section class="sec closer">
-  <div><h2>Get Femp for Jobs first.</h2><p class="muted">Join the waitlist and get $100 in free credits when it launches.</p></div>
-  <div class="ctas" style="margin:0"><a class="btn green" href="/waitlist/?for=femp-jobs&amp;from=jobs-closer">Join the waitlist</a></div>
+<section class="sec story" id="usecases">
+  <p class="label">A day with Femp</p>
+  <h2>From your first coffee to your first reply.</h2>
+  <div class="story-grid">
+    <ol class="beats">
+      <li class="beat on" data-k="find"><span class="when">8:30 am <i>Find</i></span><h3>Roles find you.</h3><p>Every morning Femp reads thousands of company career pages and job boards, so you only see the roles worth your time.</p><p class="srcs"><span>Greenhouse</span><span>Lever</span><span>Ashby</span><span>Workday</span><span>Rippling</span><span>SmartRecruiters</span><span>Workable</span><span>iCIMS</span><span>Google Jobs</span><span>+ thousands of company sites</span></p><ul class="dets"><li><b>Thousands of career pages</b><span>Checked daily, straight from the systems companies post on.</span></li><li><b>Every posting read in full</b><span>Level, pay, location, remote rules and must-have skills.</span></li><li><b>Duplicates and stale ads removed</b><span>No reposts, expired roles or agency copies.</span></li><li><b>Ranked against your resume</b><span>Best fits first, each with the reason it fits.</span></li><li><b>Dream-company alerts</b><span>Hear within hours when a company you name posts.</span></li><li><b>Before the crowd</b><span>Many roles reach you before the big job boards list them.</span></li></ul><div class="mchat" aria-hidden="true"></div></li>
+      <li class="beat" data-k="resume"><span class="when">8:40 am <i>Resume</i></span><h3>A resume that wins the screen.</h3><p>Send your old resume or build one from a chat. Femp cleans it up, then rewrites and scores it for every job you go for.</p><ul class="dets"><li><b>From any starting point</b><span>Old PDF, Word file, LinkedIn export, or a voice note about your jobs.</span></li><li><b>Cleaned up</b><span>Consistent dates, tighter bullets, no tables or columns screening software can't read.</span></li><li><b>Tailored per job</b><span>Reordered and reworded around what each posting asks for, with your real numbers.</span></li><li><b>Scored like an ATS</b><span>Keyword match, sections, formatting and length, before a recruiter ever sees it.</span></li><li><b>Clear fixes</b><span>Missing skills you actually have, weak bullets, gaps to explain.</span></li><li><b>Ready-to-send files</b><span>A clean PDF or Word resume and a matching cover letter.</span></li></ul><div class="mchat" aria-hidden="true"></div></li>
+      <li class="beat" data-k="apply"><span class="when">9:05 am <i>Apply</i></span><h3>You say yes. Femp applies.</h3><p>Reply with the numbers you like. Femp does the forms, the uploads and the screening questions on each company's own site.</p><ul class="dets"><li><b>Forms filled for you</b><span>Contact details, work history and uploads on Greenhouse, Lever, Workday and company sites.</span></li><li><b>Screening questions answered</b><span>From your profile. If Femp isn't sure, it asks you first.</span></li><li><b>A look before it goes</b><span>See each application, then send with one yes.</span></li><li><b>Every application logged</b><span>Role, date, resume version and status, in one list.</span></li></ul><div class="mchat" aria-hidden="true"></div></li>
+      <li class="beat" data-k="follow"><span class="when">Day 5 <i>Follow up</i></span><h3>Nothing slips through.</h3><p>Femp keeps every application moving after you hit send.</p><ul class="dets"><li><b>Inbox watch</b><span>Replies, rejections and interview requests spotted in your Gmail.</span></li><li><b>Follow-ups on time</b><span>Drafted after 5 to 7 days of silence, ready for your yes.</span></li><li><b>The right person</b><span>Finds the recruiter or hiring manager and drafts a short note.</span></li><li><b>A weekly scorecard</b><span>Applied, replies, and which roles and resumes work best.</span></li></ul><div class="mchat" aria-hidden="true"></div></li>
+      </ol>
+    <div class="story-phone" aria-hidden="true">
+      <div class="phone">
+        <div class="p-head"><img src="/img/icon-512.png" alt=""><div>Femp<small>online</small></div><span class="plug" id="splug">8:30 am</span></div>
+        <div class="p-thread" id="sthread"></div>
+        <div class="p-input">Message</div>
+      </div>
+      <div class="rail"><span class="on"></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
 </section>
 </div></div></main>
 <footer><div class="wrap"><div class="frame">
@@ -362,7 +454,7 @@ footer a { color: var(--muted); }
 </div></div></footer>
 <script>
 (() => {
-  const SCENES = {"jobs": ["Jobs", [["f", "Morning! <b>4 new roles</b> match you. Best fit: Senior Product Designer at Lumen Health, remote, posted 6 hours ago. Your design-systems work is exactly what they list.", "8:30"], ["f", "Tailored resume and cover letter are ready. Want me to draft the email to the hiring manager?", "8:30"], ["m", "yes, send me the draft", "8:41"], ["d", "Draft is in your Gmail with both files attached \u2713 I'll remind you to follow up in 5 days.", "8:42"]]]};
+  const SCENES = {"search": ["Jobs", [["f", "Morning! <b>6 new roles</b> match you. Best fit: Account Executive at Brightline, Chicago, posted 3 hours ago.", "8:30"], ["f", "2 of them came straight from company career pages. They aren't on job boards yet.", "8:30"], ["m", "show me the top 3", "8:34"], ["d", "Here they are, each with why it fits you and the pay range \u2713", "8:34"]]], "resume": ["Jobs", [["m", "I don't have a resume yet", "19:02"], ["f", "No problem. Tell me about your last 2 jobs and what you're proud of. A voice note works.", "19:02"], ["m", "\u25b6 Voice note \u00b7 0:48", "19:05"], ["d", "Your resume is ready: <b>Priya_Resume.pdf</b>, one page \u2713", "19:07"]]], "tailor": ["Jobs", [["f", "Brightline wants <b>mid-market SaaS</b> and Salesforce. Your resume mentions neither up top.", "8:40"], ["f", "I moved your $1.2M closed-won and Salesforce to the top. Match: 61% \u2192 89%.", "8:40"], ["m", "looks good", "8:43"], ["d", "Tailored resume and cover letter saved \u2713", "8:43"]]], "apply": ["Jobs", [["f", "3 applications ready: Brightline, Corvid Data, Lumen Freight. Each has its own resume and cover letter.", "9:02"], ["m", "apply to all 3", "9:05"], ["f", "Filling in the forms on each company's site now.", "9:05"], ["d", "Applied to all 3 \u2713 I'll track replies and follow up in 5 days.", "9:11"]]], "follow": ["Jobs", [["f", "No reply from Corvid Data in 5 days. A follow-up is drafted in your Gmail.", "10:00"], ["m", "send it", "10:04"], ["d", "Sent \u2713 I'll keep an eye on your inbox.", "10:04"], ["f", "Brightline just replied! They want a call this week.", "15:47"]]]};
   const thread = document.getElementById("thread"), plugname = document.getElementById("plugname");
   const tabs = [...document.querySelectorAll(".ptab")];
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -379,7 +471,7 @@ footer a { color: var(--muted); }
       thread.append(bubble(m));
       if (!still) await wait(1200);
     }
-    if (auto && !still && false) {
+    if (auto && !still) {
       await wait(3800);
       if (token !== run) return;
       const keys = Object.keys(SCENES), next = keys[(keys.indexOf(key) + 1) % keys.length];
@@ -388,7 +480,32 @@ footer a { color: var(--muted); }
   }
   tabs.forEach((b) => b.addEventListener("click", () => show(b.dataset.p, ++run, false)));
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(thread);
-  show("jobs", ++run, true);
+  show("search", ++run, true);
+})();
+</script>
+<script>
+(() => {
+  const STORY = {
+    find: ["8:30 am", [["f", "Morning! <b>6 new roles</b> match you. Best fit: Account Executive at Brightline, Chicago, posted 3 hours ago."], ["f", "Stripe just posted a <b>Mid-Market AE</b> role. It fits you."], ["m", "show me the top 3"]]],
+    resume: ["8:40 am", [["m", "<span class=\"file\">Priya_Resume_2022.docx</span>here's my old one"], ["f", "Cleaned it up. <b>ATS score 58 \u2192 91</b>: removed a table screeners can't read, tightened 4 bullets, added Salesforce from your Acme role."], ["f", "One gap: Brightline asks for <b>forecasting</b>. You did this at Acme. Add it?"], ["m", "yes"], ["d", "<span class=\"file\">Priya_Resume_Brightline.pdf</span>Tailored for Brightline, with a cover letter \u2713"]]],
+    apply: ["9:05 am", [["f", "3 applications ready: Brightline, Corvid Data, Lumen Freight. <b>Send all 3?</b>"], ["m", "yes, send"], ["d", "Applied to all 3 \u2713 I'll track replies for you."]]],
+    follow: ["Day 5", [["f", "No reply from Corvid in 5 days. Follow-up drafted in your Gmail. <b>Send it?</b>"], ["m", "send"], ["d", "Sent \u2713"], ["f", "Brightline just replied! They want a call this week."]]]
+  };
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const mk = ([w, h]) => { const el = document.createElement("div"); el.className = "bub" + (w === "m" ? " me" : "") + (w === "d" ? " done" : ""); el.innerHTML = h; return el; };
+  const beats = [...document.querySelectorAll(".beat")], rail = [...document.querySelectorAll(".rail span")];
+  const thread = document.getElementById("sthread"), plug = document.getElementById("splug");
+  beats.forEach((b) => { const box = b.querySelector(".mchat"); STORY[b.dataset.k][1].forEach((m) => { const el = mk(m); el.style.animation = "none"; box.append(el); }); });
+  let cur = "", token = 0;
+  async function play(k) {
+    if (k === cur) return; cur = k; const t = ++token;
+    beats.forEach((b, i) => { const on = b.dataset.k === k; b.classList.toggle("on", on); rail[i].classList.toggle("on", on); });
+    plug.textContent = STORY[k][0]; thread.replaceChildren();
+    for (const m of STORY[k][1]) { if (t !== token) return; thread.append(mk(m)); if (!still) await new Promise((r) => setTimeout(r, 650)); }
+  }
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) play(e.target.dataset.k); }), { rootMargin: "-40% 0px -50% 0px" });
+  beats.forEach((b) => io.observe(b));
+  play("find");
 })();
 </script>
 <script>(()=>{const m=[...document.querySelectorAll("details.pmenu")];document.addEventListener("click",e=>m.forEach(d=>{if(d.open&&!d.contains(e.target))d.open=false;}));document.addEventListener("keydown",e=>{if(e.key==="Escape")m.forEach(d=>{if(d.open){d.open=false;d.querySelector("summary").focus();}});});})();</script>
