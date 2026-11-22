@@ -283,6 +283,14 @@ footer a { color: var(--muted); }
 .lnote.k-fin strong { color: #8a4f0e; }
 @media (max-width: 1000px) { .uhero, .plugin-in { grid-template-columns: minmax(0, 1fr); } .pcards { grid-template-columns: minmax(0, 1fr); max-width: 460px; } .tgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .uhero { padding: 40px 18px; } .tgrid { grid-template-columns: minmax(0, 1fr); } .suggest { grid-template-columns: auto minmax(0, 1fr); } .suggest > span:last-child { display: none; } }
+.pstack { position: absolute; left: 14px; right: 14px; top: 46%; height: 74px; transform: translateY(-50%); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.pcard:hover .pstack { transform: translateY(calc(-50% - 6px)); }
+.pstack .pnote, .pcard:hover .pstack .pnote { left: 0; right: 0; top: 0; transform: translateY(var(--y, 0)) scale(var(--s, 1)); opacity: var(--o, 1); z-index: var(--z, 3); transition: transform .6s cubic-bezier(.2,.8,.2,1), opacity .5s; }
+.pstack .pnote[data-pos="1"] { --y: 11px; --s: .94; --o: .75; --z: 2; }
+.pstack .pnote[data-pos="2"] { --y: 21px; --s: .88; --o: .45; --z: 1; }
+.pstack .pnote[data-pos="3"] { --y: 21px; --s: .88; --o: 0; --z: 0; }
+.pstack .pnote[data-pos="out"] { --y: -26px; --s: 1; --o: 0; --z: 4; }
+.pstack .pnote[data-pos="1"] > div, .pstack .pnote[data-pos="2"] > div, .pstack .pnote[data-pos="3"] > div { visibility: hidden; }
 @media (prefers-reduced-motion: reduce) { .lnote, .cb { animation: none; } .pcard > img, .pnote, .parrow { transition: none; } }
 @media (max-width: 1000px) { .hero { grid-template-columns: minmax(0, 1fr); } .plugins, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .feat { grid-template-columns: minmax(0, 1fr); } .ptab { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 620px) { .plugins, .steps { grid-template-columns: minmax(0, 1fr); } .hide-sm { display: none; } .hero, .sec, footer .frame { padding-left: 18px; padding-right: 18px; } }
@@ -410,17 +418,17 @@ footer a { color: var(--muted); }
   <div class="pcards"><a class="pcard k-dtc" href="/dtc/">
   <img src="/img/home/dtc.jpg" alt="A skincare brand owner packing orders and checking her phone" loading="lazy">
   <span class="pstat">In beta</span>
-  <div class="pnote"><img src="/img/icon-512.png" alt=""><div><small>Femp · DTC brands</small><b>Pixel fixed ✓</b><span>18 missed orders are back in Meta.</span></div></div>
+  <div class="pstack" aria-live="off"><div class="pnote" data-pos="0"><img src="/img/icon-512.png" alt=""><div><small>Femp · DTC brands</small><b>Pixel fixed ✓</b><span>18 missed orders are back in Meta.</span></div></div><div class="pnote" data-pos="1"><img src="/img/icon-512.png" alt=""><div><small>Femp · DTC brands</small><b>Yesterday: $4,820</b><span>92 orders, up 14%. Best seller: Night Serum.</span></div></div><div class="pnote" data-pos="2"><img src="/img/icon-512.png" alt=""><div><small>Femp · DTC brands</small><b>Story ready to post</b><span>3 frames from today's restock. Tap to approve.</span></div></div><div class="pnote" data-pos="3"><img src="/img/icon-512.png" alt=""><div><small>Femp · DTC brands</small><b>Chargeback answered</b><span>Evidence sent for order #1042, 4 days early.</span></div></div><div class="pnote" data-pos="3"><img src="/img/icon-512.png" alt=""><div><small>Femp · DTC brands</small><b>Restock Night Serum</b><span>9 days of cover left at this pace.</span></div></div></div>
   <div class="pfoot"><h3>Femp for DTC brands</h3><p>Grows your store, every day.</p><span class="parrow" aria-hidden="true">→</span></div>
 </a><a class="pcard k-jobs" href="/jobs/">
   <img src="/img/home/jobs.jpg" alt="A man at a cafe smiling at his phone" loading="lazy">
   <span class="pstat">Coming soon</span>
-  <div class="pnote"><img src="/img/icon-512.png" alt=""><div><small>Femp · Jobs</small><b>4 new roles match you</b><span>Best fit is remote. Resume tailored.</span></div></div>
+  <div class="pstack" aria-live="off"><div class="pnote" data-pos="0"><img src="/img/icon-512.png" alt=""><div><small>Femp · Jobs</small><b>Searching 2,400 new roles</b><span>Remote product roles in your salary range.</span></div></div><div class="pnote" data-pos="1"><img src="/img/icon-512.png" alt=""><div><small>Femp · Jobs</small><b>4 new roles match you</b><span>Best fit is remote. Resume tailored.</span></div></div><div class="pnote" data-pos="2"><img src="/img/icon-512.png" alt=""><div><small>Femp · Jobs</small><b>Custom resume ready</b><span>Tailored to the Lumen Health post. 92% match.</span></div></div><div class="pnote" data-pos="3"><img src="/img/icon-512.png" alt=""><div><small>Femp · Jobs</small><b>Application ready to submit</b><span>Cover letter written. Tap once to send.</span></div></div><div class="pnote" data-pos="3"><img src="/img/icon-512.png" alt=""><div><small>Femp · Jobs</small><b>Interview Thursday, 3 pm</b><span>On your calendar, with prep notes.</span></div></div></div>
   <div class="pfoot"><h3>Femp for Jobs</h3><p>Your job search, on autopilot.</p><span class="parrow" aria-hidden="true">→</span></div>
 </a><a class="pcard k-fin" href="/finance/">
   <img src="/img/home/fin.jpg" alt="A woman at her kitchen table checking her phone" loading="lazy">
   <span class="pstat">Coming soon</span>
-  <div class="pnote"><img src="/img/icon-512.png" alt=""><div><small>Femp · Finance</small><b>Card bill due Friday</b><span>$1,240. Plus 2 apps you never open.</span></div></div>
+  <div class="pstack" aria-live="off"><div class="pnote" data-pos="0"><img src="/img/icon-512.png" alt=""><div><small>Femp · Finance</small><b>Card bill due Friday</b><span>$1,240. Plus 2 apps you never open.</span></div></div><div class="pnote" data-pos="1"><img src="/img/icon-512.png" alt=""><div><small>Femp · Finance</small><b>IPO watch: Anthropic</b><span>Tracking filing news. You'll hear first.</span></div></div><div class="pnote" data-pos="2"><img src="/img/icon-512.png" alt=""><div><small>Femp · Finance</small><b>ORBT reports Wednesday</b><span>Earnings after close. Last quarter summed up.</span></div></div><div class="pnote" data-pos="3"><img src="/img/icon-512.png" alt=""><div><small>Femp · Finance</small><b>2 unused subscriptions</b><span>$27 a month on apps idle for 60 days.</span></div></div><div class="pnote" data-pos="3"><img src="/img/icon-512.png" alt=""><div><small>Femp · Finance</small><b>Your week in money</b><span>Spent $640, $120 less than last week.</span></div></div></div>
   <div class="pfoot"><h3>Femp for Finance</h3><p>Your stocks and bills, summed up.</p><span class="parrow" aria-hidden="true">→</span></div>
 </a></div>
   <a class="suggest" href="/waitlist/?for=other&amp;from=home-suggest"><span class="plus">+</span><span><b>Got another job for Femp?</b> Wedding planning, a clinic's bookings, your rentals. Suggest a plugin.</span><span aria-hidden="true">→</span></a>
@@ -529,5 +537,19 @@ footer a { color: var(--muted); }
 <script>
 (() => { const b = document.querySelector(".badges"); if (!b || !("IntersectionObserver" in window)) return; b.classList.add("anim");
   new IntersectionObserver((es, o) => { if (es.some(e => e.isIntersecting)) { b.classList.add("in"); o.disconnect(); } }, { threshold: .25 }).observe(b); })();
+</script>
+<script>
+(() => { if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelectorAll(".pstack").forEach((st, k) => {
+    const ns = [...st.children]; let top = 0;
+    setTimeout(() => setInterval(() => {
+      if (document.hidden) return;
+      const out = ns[top]; out.dataset.pos = "out";
+      top = (top + 1) % ns.length;
+      ns.forEach((n, i) => { if (n !== out) n.dataset.pos = Math.min((i - top + ns.length) % ns.length, 3); });
+      setTimeout(() => { out.dataset.pos = 3; }, 650);
+    }, 3200), k * 900);
+  });
+})();
 </script>
 </body></html>

@@ -317,6 +317,14 @@ footer a { color: var(--muted); }
 .lnote.k-fin strong { color: #8a4f0e; }
 @media (max-width: 1000px) { .uhero, .plugin-in { grid-template-columns: minmax(0, 1fr); } .pcards { grid-template-columns: minmax(0, 1fr); max-width: 460px; } .tgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .uhero { padding: 40px 18px; } .tgrid { grid-template-columns: minmax(0, 1fr); } .suggest { grid-template-columns: auto minmax(0, 1fr); } .suggest > span:last-child { display: none; } }
+.pstack { position: absolute; left: 14px; right: 14px; top: 46%; height: 74px; transform: translateY(-50%); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.pcard:hover .pstack { transform: translateY(calc(-50% - 6px)); }
+.pstack .pnote, .pcard:hover .pstack .pnote { left: 0; right: 0; top: 0; transform: translateY(var(--y, 0)) scale(var(--s, 1)); opacity: var(--o, 1); z-index: var(--z, 3); transition: transform .6s cubic-bezier(.2,.8,.2,1), opacity .5s; }
+.pstack .pnote[data-pos="1"] { --y: 11px; --s: .94; --o: .75; --z: 2; }
+.pstack .pnote[data-pos="2"] { --y: 21px; --s: .88; --o: .45; --z: 1; }
+.pstack .pnote[data-pos="3"] { --y: 21px; --s: .88; --o: 0; --z: 0; }
+.pstack .pnote[data-pos="out"] { --y: -26px; --s: 1; --o: 0; --z: 4; }
+.pstack .pnote[data-pos="1"] > div, .pstack .pnote[data-pos="2"] > div, .pstack .pnote[data-pos="3"] > div { visibility: hidden; }
 @media (prefers-reduced-motion: reduce) { .lnote, .cb { animation: none; } .pcard > img, .pnote, .parrow { transition: none; } }
 @media (max-width: 1000px) { .hero { grid-template-columns: minmax(0, 1fr); } .plugins, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .feat { grid-template-columns: minmax(0, 1fr); } .ptab { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 620px) { .plugins, .steps { grid-template-columns: minmax(0, 1fr); } .hide-sm { display: none; } .hero, .sec, footer .frame { padding-left: 18px; padding-right: 18px; } }
@@ -454,9 +462,27 @@ NOTES = [
 ]
 
 PHOTOS = {
-    "dtc": ("/img/home/dtc.jpg", "A skincare brand owner packing orders and checking her phone", "Pixel fixed ✓", "18 missed orders are back in Meta."),
-    "jobs": ("/img/home/jobs.jpg", "A man at a cafe smiling at his phone", "4 new roles match you", "Best fit is remote. Resume tailored."),
-    "fin": ("/img/home/fin.jpg", "A woman at her kitchen table checking her phone", "Card bill due Friday", "$1,240. Plus 2 apps you never open."),
+    "dtc": ("/img/home/dtc.jpg", "A skincare brand owner packing orders and checking her phone", [
+        ("Pixel fixed ✓", "18 missed orders are back in Meta."),
+        ("Yesterday: $4,820", "92 orders, up 14%. Best seller: Night Serum."),
+        ("Story ready to post", "3 frames from today's restock. Tap to approve."),
+        ("Chargeback answered", "Evidence sent for order #1042, 4 days early."),
+        ("Restock Night Serum", "9 days of cover left at this pace."),
+    ]),
+    "jobs": ("/img/home/jobs.jpg", "A man at a cafe smiling at his phone", [
+        ("Searching 2,400 new roles", "Remote product roles in your salary range."),
+        ("4 new roles match you", "Best fit is remote. Resume tailored."),
+        ("Custom resume ready", "Tailored to the Lumen Health post. 92% match."),
+        ("Application ready to submit", "Cover letter written. Tap once to send."),
+        ("Interview Thursday, 3 pm", "On your calendar, with prep notes."),
+    ]),
+    "fin": ("/img/home/fin.jpg", "A woman at her kitchen table checking her phone", [
+        ("Card bill due Friday", "$1,240. Plus 2 apps you never open."),
+        ("IPO watch: Anthropic", "Tracking filing news. You'll hear first."),
+        ("ORBT reports Wednesday", "Earnings after close. Last quarter summed up."),
+        ("2 unused subscriptions", "$27 a month on apps idle for 60 days."),
+        ("Your week in money", "Spent $640, $120 less than last week."),
+    ]),
 }
 
 
@@ -470,11 +496,12 @@ def home() -> str:
     plugs = "".join(f'<button class="plug k-{p["key"]}" type="button" data-k="{p["key"]}" aria-pressed="false"><i></i>{p["short"]}</button>' for p in PLUGINS)
     cards = ""
     for p in PLUGINS:
-        img, alt, t, d = PHOTOS[p["key"]]
+        img, alt, notes = PHOTOS[p["key"]]
+        stack = "".join(f'<div class="pnote" data-pos="{min(n, 3)}"><img src="/img/icon-512.png" alt=""><div><small>Femp · {p['short']}</small><b>{t}</b><span>{d}</span></div></div>' for n, (t, d) in enumerate(notes))
         cards += f"""<a class="pcard k-{p['key']}" href="{p['href']}">
   <img src="{img}" alt="{escape(alt)}" loading="lazy">
   <span class="pstat">{p['status']}</span>
-  <div class="pnote"><img src="/img/icon-512.png" alt=""><div><small>Femp · {p['short']}</small><b>{t}</b><span>{d}</span></div></div>
+  <div class="pstack" aria-live="off">{stack}</div>
   <div class="pfoot"><h3>{p['name']}</h3><p>{p['line']}</p><span class="parrow" aria-hidden="true">→</span></div>
 </a>"""
     return f"""{head("Femp AI: Your First Employee, With Plugins", "Femp is a general AI assistant you text on WhatsApp. Give it a job, like running your store, finding your next role or keeping on top of your money, and it becomes your employee for it.", "/", schema)}
@@ -669,6 +696,20 @@ def home() -> str:
 <script>
 (() => {{ const b = document.querySelector(".badges"); if (!b || !("IntersectionObserver" in window)) return; b.classList.add("anim");
   new IntersectionObserver((es, o) => {{ if (es.some(e => e.isIntersecting)) {{ b.classList.add("in"); o.disconnect(); }} }}, {{ threshold: .25 }}).observe(b); }})();
+</script>
+<script>
+(() => {{ if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelectorAll(".pstack").forEach((st, k) => {{
+    const ns = [...st.children]; let top = 0;
+    setTimeout(() => setInterval(() => {{
+      if (document.hidden) return;
+      const out = ns[top]; out.dataset.pos = "out";
+      top = (top + 1) % ns.length;
+      ns.forEach((n, i) => {{ if (n !== out) n.dataset.pos = Math.min((i - top + ns.length) % ns.length, 3); }});
+      setTimeout(() => {{ out.dataset.pos = 3; }}, 650);
+    }}, 3200), k * 900);
+  }});
+}})();
 </script>
 </body></html>
 """
