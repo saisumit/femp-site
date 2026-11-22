@@ -445,8 +445,8 @@ def home() -> str:
   <div class="ucopy">
     <p class="fname"><b>F</b>irst <b>EMP</b>loyee <span>= Femp</span></p>
     <p class="label"><b class="dot"></b> A general AI assistant on WhatsApp · early access</p>
-    <h1>From assistant to employee.<br><em>In one message.</em></h1>
-    <p class="lede">Femp is an AI assistant on WhatsApp. Give it a job, and it works like a pro: daily, and only with your yes.</p>
+    <h1>Your assistant for anything.<br><em>Your employee for the jobs you add.</em></h1>
+    <p class="lede">Femp is a general AI assistant on WhatsApp: ask it anything. Add a plugin, like DTC brands, Jobs or Finance, and it picks up the skills to do that job for you every day, only with your yes.</p>
     <div class="ctas"><a class="btn solid" href="/waitlist/?from=home-hero">Join the waitlist →</a><a class="btn line" href="{WA}">Say hi on WhatsApp</a></div>
     <ol class="steps4" aria-label="What's happening on the phone">
       <li><button type="button" data-step="0" aria-pressed="true"><i>1</i>Ask anything</button></li>
