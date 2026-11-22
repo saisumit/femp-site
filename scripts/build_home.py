@@ -96,6 +96,10 @@ a { color: var(--accent); text-underline-offset: 3px; }
 .topbar { background: var(--forest); color: #fff; text-align: center; font-size: .85rem; padding: 8px 12px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; align-items: center; }
 .topbar b { font-weight: 700; } .topbar a { color: #fff; font-weight: 600; }
 .topbar .early { font: 500 .66rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; background: rgba(255,255,255,.18); padding: 4px 8px; border-radius: 99px; }
+.tb-short { display: none; }
+@media (max-width: 620px) { header.nav nav, .nav .wrap nav { gap: 14px; } header.nav .wrap, .nav div.wrap { gap: 10px; } }
+@media (max-width: 420px) { .nav nav > a:not(.btn) { display: none; } }
+@media (max-width: 620px) { .topbar { flex-wrap: nowrap; white-space: nowrap; padding-top: 7px; padding-bottom: 7px; font-size: .82rem; gap: 10px; } .topbar .early, .topbar .tb-long { display: none; } .tb-short { display: inline; } }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
 .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 6; background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
 .nav .wrap { display: flex; align-items: center; gap: 22px; padding-block: 12px; }
@@ -318,6 +322,7 @@ footer a { color: var(--muted); }
 @media (max-width: 620px) { .plugins, .steps { grid-template-columns: minmax(0, 1fr); } .hide-sm { display: none; } .hero, .sec, footer .frame { padding-left: 18px; padding-right: 18px; } }
 @media (max-width: 1000px) { .uhero { gap: 56px; } .uhero .ucopy { max-width: 640px; } }
 @media (max-width: 620px) { .uhero { padding-top: 36px; padding-bottom: 44px; gap: 44px; } .uhero h1 { font-size: clamp(2.2rem, 10.4vw, 3rem); line-height: 1.06; letter-spacing: -0.04em; margin-top: 14px; } .uhero .lede { font-size: 1.05rem; margin-top: 18px; } .uhero .ctas { margin-top: 24px; } .uhero .ctas .btn { flex: 1 1 100%; justify-content: center; text-align: center; } .steps4 { display: flex !important; flex-wrap: wrap; gap: 8px; margin-top: 26px; } .steps4 button { width: auto; } .uhero .label { line-height: 1.6; } .nav nav .btn { white-space: nowrap; padding: 9px 12px; font-size: .84rem; } }
+@media (max-width: 420px) { .sec.becomes { grid-template-columns: minmax(0, 1fr); } .eq { padding: 12px; column-gap: 8px; } .eq-plug { min-width: 0; padding: 8px 12px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bub { animation: none; } .btn, a.plugin { transition: none; } }
 """
 
@@ -351,7 +356,7 @@ MENU_JS = '''<script>(()=>{const m=[...document.querySelectorAll("details.pmenu"
 
 def nav(current: str) -> str:
     links = MENU + "".join(f'<a class="hide-sm" href="{h}">{t}</a>' for h, t in (("/pricing/", "Pricing"), ("/faq/", "FAQ")))
-    return f"""<div class="topbar"><span class="early">Early access</span><span>Femp is your <b>F</b>irst <b>EMP</b>loyee. Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
+    return f"""<div class="topbar"><span class="early">Early access</span><span class="tb-short">Get <b>$100 in free credits</b></span><span class="tb-long">Femp is your <b>F</b>irst <b>EMP</b>loyee. Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/"><img src="/img/icon-512.png" alt="">Femp</a>
   <nav aria-label="Main">{links}<a class="hide-sm" href="/blog/">Blog</a><a class="btn green" href="{WA}">Say hi on WhatsApp</a></nav>

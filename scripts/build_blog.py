@@ -49,7 +49,7 @@ MENU_JS = '''<script>(()=>{const m=[...document.querySelectorAll("details.pmenu"
 MERGED_INTO_DTC = ["features", "how-it-works", "integrations"]
 
 
-BAR = """<div class="topbar"><span class="early">Early access</span><span>Femp is your <b>F</b>irst <b>EMP</b>loyee. Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>"""
+BAR = """<div class="topbar"><span class="early">Early access</span><span class="tb-short">Get <b>$100 in free credits</b></span><span class="tb-long">Femp is your <b>F</b>irst <b>EMP</b>loyee. Join the waitlist and get <b>$100 in free credits</b> for any plugin.</span><a href="/waitlist/?from=bar">Join the waitlist →</a></div>"""
 
 
 def nav(current: str = "") -> str:
