@@ -552,7 +552,7 @@ def home() -> str:
 
 <section class="sec becomes">
   <div class="shead"><p class="label">How it becomes your employee</p><h2>Add a plugin.<br>Get a specialist on your team.</h2>
-  <p class="muted" style="max-width:62ch">Out of the box, Femp answers anything. Each plugin turns it into a trained professional for one job: it connects the right accounts, keeps watch, and reports to you every day. Installing one takes a single message.</p></div>
+  <p class="muted" style="max-width:62ch">Femp stays your everyday assistant for anything. Each plugin stacks job-specific skills on top, so it can run that job like a pro: it connects the right accounts, keeps watch, and reports to you daily. Install one with a single message.</p></div>
   <ol class="badges">
     <li class="badge k-dtc">
       <span class="slot" aria-hidden="true"></span>
