@@ -229,6 +229,11 @@ footer a { color: var(--muted); }
 .fname { font: 600 1rem/1 var(--sans); color: var(--muted); letter-spacing: .01em; margin-bottom: 10px; }
 .fname b { color: var(--accent); font-weight: 800; font-size: 1.15em; }
 .fname span { color: var(--faint); font-weight: 500; margin-left: 4px; }
+.uhero .fname { display: flex; align-items: center; gap: 12px; }
+.fname .fn { color: var(--muted); margin: 0; }
+.fbob { width: 40px; height: 40px; border-radius: 11px; filter: drop-shadow(0 8px 10px rgba(23,105,75,.28)); animation: fbob 3.4s ease-in-out infinite; }
+@keyframes fbob { 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .fbob { animation: none; } }
 .steps4 { list-style: none; padding: 0; margin: 30px 0 0; display: grid; grid-template-columns: repeat(2, max-content); gap: 6px; }
 .steps4 button { width: 100%; }
 .steps4 button { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px 6px 6px; white-space: nowrap; border-radius: 99px; border: 1px solid var(--rule); background: var(--panel); font-weight: 600; font-size: .82rem; color: var(--muted); transition: background .2s, color .2s; }
@@ -291,8 +296,7 @@ footer a { color: var(--muted); }
 <main><div class="wrap"><div class="frame">
 <section class="uhero">
   <div class="ucopy">
-    <p class="fname"><b>F</b>irst <b>EMP</b>loyee <span>= Femp</span></p>
-    <p class="label"><b class="dot"></b> A general AI assistant on WhatsApp · early access</p>
+    <p class="fname"><img class="fbob" src="/img/icon-512.png" alt="" width="40" height="40"><span class="fn"><b>F</b>irst <b>EMP</b>loyee <span>= Femp</span></span></p>
     <h1>Your assistant for anything.<br><em>Your employee for the jobs you add.</em></h1>
     <p class="lede">Femp is a general AI assistant on WhatsApp: ask it anything. Add a plugin, like DTC brands, Jobs or Finance, and it picks up the skills to do that job for you every day, only with your yes.</p>
     <div class="ctas"><a class="btn solid" href="/waitlist/?from=home-hero">Join the waitlist →</a><a class="btn line" href="https://wa.me/918073735097?text=Hi%20Femp">Say hi on WhatsApp</a></div>

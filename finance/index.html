@@ -229,6 +229,11 @@ footer a { color: var(--muted); }
 .fname { font: 600 1rem/1 var(--sans); color: var(--muted); letter-spacing: .01em; margin-bottom: 10px; }
 .fname b { color: var(--accent); font-weight: 800; font-size: 1.15em; }
 .fname span { color: var(--faint); font-weight: 500; margin-left: 4px; }
+.uhero .fname { display: flex; align-items: center; gap: 12px; }
+.fname .fn { color: var(--muted); margin: 0; }
+.fbob { width: 40px; height: 40px; border-radius: 11px; filter: drop-shadow(0 8px 10px rgba(23,105,75,.28)); animation: fbob 3.4s ease-in-out infinite; }
+@keyframes fbob { 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .fbob { animation: none; } }
 .steps4 { list-style: none; padding: 0; margin: 30px 0 0; display: grid; grid-template-columns: repeat(2, max-content); gap: 6px; }
 .steps4 button { width: 100%; }
 .steps4 button { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px 6px 6px; white-space: nowrap; border-radius: 99px; border: 1px solid var(--rule); background: var(--panel); font-weight: 600; font-size: .82rem; color: var(--muted); transition: background .2s, color .2s; }
