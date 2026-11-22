@@ -168,7 +168,11 @@ footer a { color: var(--muted); }
 .label .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--mint); margin-right: 4px; vertical-align: 1px; box-shadow: 0 0 0 4px color-mix(in srgb, var(--mint) 25%, transparent); }
 .uhero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 40px; padding: 64px 40px 56px; align-items: center; position: relative; overflow: hidden; }
 .uhero::before { content: ""; position: absolute; right: -120px; top: -80px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--mint) 22%, transparent), transparent 65%); pointer-events: none; }
-.uhero h1 { font-size: clamp(2.6rem, 5.6vw, 4.7rem); font-weight: 800; letter-spacing: -0.058em; line-height: .92; text-wrap: balance; margin-top: 14px; }
+.uhero h1 { font-size: clamp(2.4rem, 4.4vw, 4.1rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1.04; text-wrap: balance; margin-top: 18px; }
+.uhero h1 em { display: inline-block; margin-top: .12em; }
+.uhero .lede { margin-top: 24px; line-height: 1.6; }
+.uhero .ctas { margin-top: 30px; }
+.uhero .fname { margin-bottom: 14px; }
 .uhero h1 em { font-style: normal; color: var(--accent); }
 .plugs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 30px; }
 .plug { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 99px; border: 1px solid var(--rule); background: var(--panel); font-weight: 600; font-size: .9rem; }
@@ -307,6 +311,8 @@ footer a { color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .lnote, .cb { animation: none; } .pcard > img, .pnote, .parrow { transition: none; } }
 @media (max-width: 1000px) { .hero { grid-template-columns: minmax(0, 1fr); } .plugins, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .feat { grid-template-columns: minmax(0, 1fr); } .ptab { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 620px) { .plugins, .steps { grid-template-columns: minmax(0, 1fr); } .hide-sm { display: none; } .hero, .sec, footer .frame { padding-left: 18px; padding-right: 18px; } }
+@media (max-width: 1000px) { .uhero { gap: 56px; } .uhero .ucopy { max-width: 640px; } }
+@media (max-width: 620px) { .uhero { padding-top: 36px; padding-bottom: 44px; gap: 44px; } .uhero h1 { font-size: clamp(2.2rem, 10.4vw, 3rem); line-height: 1.06; letter-spacing: -0.04em; margin-top: 14px; } .uhero .lede { font-size: 1.05rem; margin-top: 18px; } .uhero .ctas { margin-top: 24px; } .uhero .ctas .btn { flex: 1 1 100%; justify-content: center; text-align: center; } .steps4 { display: flex !important; flex-wrap: wrap; gap: 8px; margin-top: 26px; } .steps4 button { width: auto; } .uhero .label { line-height: 1.6; } .nav nav .btn { white-space: nowrap; padding: 9px 12px; font-size: .84rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bub { animation: none; } .btn, a.plugin { transition: none; } }
 """
 

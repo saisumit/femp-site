@@ -197,3 +197,4 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
 .pdrop em { font: 500 .62rem/1 var(--mono); font-style: normal; letter-spacing: .05em; text-transform: uppercase; color: var(--faint); }
 .nav nav .pmenu .pdrop a.pall { display: block; margin-top: 4px; padding: 10px 8px 6px; border-top: 1px solid var(--rule); font-weight: 600; color: var(--accent); font-size: .86rem; }
 @media (prefers-reduced-motion: reduce) { .pdrop { animation: none; } .pmenu summary::after { transition: none; } }
+@media (max-width: 620px) { .nav .btn { white-space: nowrap; padding: 9px 12px; font-size: .84rem; } }
