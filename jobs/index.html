@@ -389,6 +389,21 @@ footer a { color: var(--muted); }
 @media (max-width: 620px) { .hero .ptab { grid-template-columns: minmax(0, 1fr); } .marquee { margin-inline: -18px; } }
 @media (prefers-reduced-motion: reduce) { .mtrack, .ask .acts .y { animation: none; } .beat { transition: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bub { animation: none; } .btn, a.plugin { transition: none; } }
+.tmon { gap: 18px; overflow: hidden; }
+.tnote { color: var(--muted); font-size: .92rem; max-width: 62ch; }
+.trow { overflow: hidden; margin-inline: -40px; padding-block: 4px; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.ttrack { display: flex; gap: 14px; width: max-content; animation: tslide 70s linear infinite; }
+.trow.rev .ttrack { animation-direction: reverse; animation-duration: 80s; }
+.trow:hover .ttrack, .trow:focus-within .ttrack { animation-play-state: paused; }
+@keyframes tslide { to { transform: translateX(-50%); } }
+.tcard { margin: 0; width: 330px; background: var(--panel); border: 1px solid var(--rule); border-radius: 16px; padding: 16px 18px; display: grid; gap: 12px; align-content: space-between; }
+.tcard blockquote { margin: 0; font-size: .98rem; line-height: 1.5; }
+.tcard figcaption { display: flex; align-items: center; gap: 10px; }
+.tcard figcaption b { display: block; font-size: .92rem; } .tcard figcaption small { color: var(--muted); font-size: .8rem; }
+.tav { width: 34px; height: 34px; flex: 0 0 auto; border-radius: 50%; background: var(--jobs-bg); color: var(--jobs); display: grid; place-items: center; font: 700 .8rem/1 var(--sans); }
+.aitag { justify-self: start; font: 500 .66rem/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: var(--chat); padding: 5px 8px; border-radius: 99px; }
+@media (max-width: 620px) { .trow { margin-inline: -18px; } .tcard { width: 280px; } }
+@media (prefers-reduced-motion: reduce) { .ttrack { animation: none; } .trow { overflow-x: auto; mask-image: none; } }
 </style>
 </head>
 <body>
@@ -417,6 +432,13 @@ footer a { color: var(--muted); }
   <div class="p-thread" id="thread"></div>
   <div class="p-input">Message</div>
 </div>
+</section>
+<section class="sec tmon" aria-labelledby="tmon-h" data-nosnippet>
+  <p class="label">Built for every kind of job hunter</p>
+  <h2 id="tmon-h">Your first week with Femp.</h2>
+  <p class="tnote">These are AI-generated examples of how Femp works for different job hunters, not reviews from real customers. Femp is in early access.</p>
+  <div class="trow"><div class="ttrack"></div></div>
+  <div class="trow rev"><div class="ttrack"></div></div>
 </section>
 <section class="sec">
   <p class="label">How it works</p>
@@ -510,4 +532,32 @@ footer a { color: var(--muted); }
 })();
 </script>
 <script>(()=>{const m=[...document.querySelectorAll("details.pmenu")];document.addEventListener("click",e=>m.forEach(d=>{if(d.open&&!d.contains(e.target))d.open=false;}));document.addEventListener("keydown",e=>{if(e.key==="Escape")m.forEach(d=>{if(d.open){d.open=false;d.querySelector("summary").focus();}});});})();</script>
+<script>
+// Example cards for "Your first week with Femp" come from /jobs/examples.json (AI-generated, labelled on every card).
+(async () => {
+  const rows = document.querySelectorAll(".tmon .ttrack");
+  let list = [];
+  try { list = (await (await fetch("/jobs/examples.json")).json()).examples || []; } catch (e) { return; }
+  const card = (x, hidden) => {
+    const f = document.createElement("figure"); f.className = "tcard"; if (hidden) f.setAttribute("aria-hidden", "true");
+    const ai = x.aiGenerated !== false;  // missing counts as AI-generated, so a card never loses its badge by mistake
+    const tag = document.createElement("span"); tag.className = "aitag"; tag.textContent = "AI-generated example";
+    const q = document.createElement("blockquote"); q.textContent = x.quote;
+    const cap = document.createElement("figcaption");
+    const av = document.createElement("span"); av.className = "tav"; av.setAttribute("aria-hidden", "true");
+    av.textContent = x.name.replace(/\./g, "").split(/\s+/).map(w => w[0]).join("").slice(0, 2);
+    const who = document.createElement("span"); const b = document.createElement("b"); b.textContent = x.name;
+    const sm = document.createElement("small"); sm.textContent = `${x.role} · ${x.location}`;
+    who.append(b, sm); cap.append(av, who); if (ai) f.append(tag); f.append(q, cap); return f;
+  };
+  const note = document.querySelector(".tmon .tnote");
+  if (note) note.hidden = !list.some(x => x.aiGenerated !== false);
+  const half = Math.ceil(list.length / 2);
+  [list.slice(0, half), list.slice(half)].forEach((items, i) => {
+    if (!rows[i]) return;
+    items.forEach(x => rows[i].appendChild(card(x, false)));
+    items.forEach(x => rows[i].appendChild(card(x, true)));  // duplicate set for the seamless loop
+  });
+})();
+</script>
 </body></html>
