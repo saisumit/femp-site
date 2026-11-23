@@ -94,6 +94,7 @@ def head(title: str, description: str, url: str, kind: str = "website", extra: s
     t, d = escape(title), escape(description)
     return f"""<!doctype html>
 <html lang="en"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18590404467"></script><script src="/assets/ads.js?v=1"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{t}</title>
 <meta name="description" content="{d}">
@@ -374,6 +375,7 @@ def waitlist() -> str:
       }}
       if (out.ok === false) throw new Error(out.error || "Something went wrong. Try again in a minute.");
       form.hidden = true; $("done").hidden = false; $("done-title").focus();
+      if (window.fempAds) fempAds.signup(email, phone); // Google Ads sign-up conversion (assets/ads.js)
     }} catch (problem) {{
       show(problem instanceof TypeError ? "Couldn't reach Femp. Check your connection and try again." : problem.message);
       go.disabled = false; go.textContent = "Join and claim $100 in credits";

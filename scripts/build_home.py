@@ -364,6 +364,7 @@ def head(title: str, desc: str, path: str, schema: dict) -> str:
     t, d = escape(title), escape(desc)
     return f"""<!doctype html>
 <html lang="en"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18590404467"></script><script src="/assets/ads.js?v=1"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{t}</title>
 <meta name="description" content="{d}">
