@@ -322,6 +322,40 @@ footer a { color: var(--muted); }
 @keyframes swing { 0% { opacity: 0; transform: rotate(-10deg) translateY(-24px); } 35% { opacity: 1; } 60% { transform: rotate(4deg); } 80% { transform: rotate(calc(var(--tilt) - 1.5deg)); } 100% { opacity: 1; transform: rotate(var(--tilt)); } }
 @media (max-width: 900px) { .badges { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(78%, 300px); overflow-x: auto; scroll-snap-type: x mandatory; padding: 36px 4px 18px; margin: 0 -4px; scrollbar-width: none; } .badges::-webkit-scrollbar { display: none; } .badge { scroll-snap-align: center; } }
 @media (prefers-reduced-motion: reduce) { .badges.anim .badge, .badges.anim.in .badge { animation: none; opacity: 1; transform: rotate(var(--tilt)); } .badge { transition: none; } }
+/* jobs: how it works, one chat in four compact steps. Femp AI on the left, you on the right */
+.bento { list-style: none; margin: 0; padding: 0; min-width: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: auto auto; }
+.tile { grid-row: 1 / -1; display: grid; grid-template-rows: subgrid; row-gap: 18px; padding: 2px 20px; border-left: 1px solid var(--rule); min-width: 0; }
+.tile:first-child { padding-left: 0; border-left: 0; } .tile:last-child { padding-right: 0; }
+.thead { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; align-content: start; }
+.num { font: 600 .95rem/1.5 var(--mono); color: var(--accent); }
+.tile h3 { font-size: 1.12rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; }
+.tl { grid-column: 1 / -1; color: var(--muted); line-height: 1.4; font-size: .9rem; }
+.chat2 { display: flex; flex-direction: column; gap: 9px; }
+.chat2 small { display: block; font-size: .7rem; line-height: 1; color: var(--muted); margin-bottom: 4px; }
+.cy { align-self: flex-end; text-align: right; max-width: 92%; }
+.cy > span { display: inline-block; text-align: left; background: #17694b; color: #fff; font-size: .92rem; font-weight: 600; line-height: 1.35; padding: 8px 13px; border-radius: 15px 15px 4px 15px; }
+.cy em { display: block; width: max-content; font: 500 .7rem/1 var(--mono); background: rgba(255,255,255,.16); border-radius: 6px; padding: 5px 7px; margin: 0 0 5px -4px; }
+.cf { max-width: 100%; }
+.cf span { display: inline-block; background: var(--panel); border: 1px solid var(--rule); font-size: .92rem; line-height: 1.4; padding: 8px 13px; border-radius: 15px 15px 15px 4px; }
+.cf .ok { font-weight: 700; color: var(--accent); }
+.cf ul { list-style: none; margin: 0; padding: 3px 13px; background: var(--panel); border: 1px solid var(--rule); border-radius: 15px 15px 15px 4px; }
+.cf li { display: flex; align-items: center; gap: 8px; padding: 5px 0; line-height: 1.3; font-size: .9rem; font-weight: 600; white-space: nowrap; }
+.cf li b { font: 500 .75rem/1 var(--mono); color: var(--muted); } .cf li i { margin-left: auto; font: 500 .74rem/1 var(--mono); color: var(--jobs); }
+.tile.wait .chat2 > * { opacity: 0; }
+.tile.play .chat2 > * { animation: tpop .4s cubic-bezier(.2,.9,.25,1.15) calc(var(--i) * .9s + var(--n, 0) * .4s + .1s) both; }
+.chat2 > :nth-child(2) { --n: 1; } .chat2 > :nth-child(3) { --n: 2; }
+.tile:nth-child(1) { --i: 0; } .tile:nth-child(2) { --i: 1; } .tile:nth-child(3) { --i: 2; } .tile:nth-child(4) { --i: 3; }
+@keyframes tpop { from { opacity: 0; transform: translateY(10px) scale(.97); } to { opacity: 1; transform: none; } }
+@media (max-width: 1000px) {
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; gap: 34px 0; }
+  .tile { grid-row: auto; grid-template-rows: auto 1fr; } .tile:nth-child(odd) { padding-left: 0; border-left: 0; } .tile:nth-child(even) { padding-right: 0; }
+}
+@media (max-width: 620px) {
+  .bento { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .tile, .tile:first-child, .tile:last-child { --i: 0 !important; padding: 24px 0 0; border-left: 0; border-top: 1px solid var(--rule); row-gap: 14px; }
+  .tile:first-child { padding-top: 0; border-top: 0; }
+  .cf ul { width: 260px; max-width: 100%; }
+}
 /* jobs: day tabs, same as the automations on /dtc/ */
 .autos { min-width: 0; display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 28px; align-items: start; }
 .acats { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; position: sticky; top: 88px; }
@@ -459,14 +493,14 @@ footer a { color: var(--muted); }
   <div class="trow"><div class="ttrack"></div></div>
   <div class="trow rev"><div class="ttrack"></div></div>
 </section>
-<section class="sec">
+<section class="sec how" id="how">
   <p class="label">How it works</p>
   <h2>Say hi. Femp AI does the rest.</h2>
-  <ol class="steps">
-    <li><b>Say hi on WhatsApp</b><p>No app to download and no account to set up.</p></li>
-    <li><b>Tell Femp AI what you want</b><p>Your role, level and city. Send your resume, or build one together in a few minutes.</p></li>
-    <li><b>Get roles every morning</b><p>Fresh openings that fit you, each with a line on why. Reply with the ones you like.</p></li>
-    <li><b>Say yes, Femp AI applies</b><p>A tailored resume and cover letter for each role, sent only after you approve.</p></li>
+  <ol class="bento">
+    <li class="tile t1"><div class="thead"><span class="num" aria-hidden="true">1</span><h3>Say hi</h3><p class="tl">No app, no account.</p></div><div class="chat2"><p class="cy"><small>You</small><span>hi</span></p><div class="cf"><div><small>Femp AI</small><span>Hi! What job are you looking for?</span></div></div></div></li>
+    <li class="tile t2"><div class="thead"><span class="num" aria-hidden="true">2</span><h3>Say what you want</h3><p class="tl">Send a resume, or build one.</p></div><div class="chat2"><p class="cy"><small>You</small><span><em>resume.pdf</em>Account Executive, Chicago</span></p><div class="cf"><div><small>Femp AI</small><span>Got it. I&#x27;ll look every morning.</span></div></div></div></li>
+    <li class="tile t3"><div class="thead"><span class="num" aria-hidden="true">3</span><h3>Pick your matches</h3><p class="tl">Every morning, best fit first.</p></div><div class="chat2"><div class="cf"><div><small>Femp AI</small><ul><li><b>1</b>Brightline<i>96% fit</i></li><li><b>2</b>Corvid Data<i>93% fit</i></li><li><b>3</b>Lumen Freight<i>91% fit</i></li></ul></div></div><p class="cy"><small>You</small><span>Apply to 1 and 3</span></p></div></li>
+    <li class="tile t4"><div class="thead"><span class="num" aria-hidden="true">4</span><h3>Say yes, it applies</h3><p class="tl">Nothing is sent without your yes.</p></div><div class="chat2"><div class="cf"><div><small>Femp AI</small><span>Resumes tailored, forms filled. Send both?</span></div></div><p class="cy"><small>You</small><span>yes</span></p><div class="cf"><div><small>Femp AI</small><span class="ok">&#10003; 2 applications sent</span></div></div></div></li>
   </ol>
 </section>
 <section class="sec" id="usecases">
@@ -509,6 +543,17 @@ footer a { color: var(--muted); }
   <span>Made by Femp AI, Inc. · <a href="mailto:support@femp.ai">support@femp.ai</a></span>
   <a href="/dtc/">DTC brands</a><a href="/jobs/">Jobs</a><a href="/finance/">Finance</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/security/">Security</a><a href="/blog/">Blog</a><a href="https://auth.femp.ai/support">Support</a><a href="https://auth.femp.ai/privacy">Privacy</a>
 </div></div></footer>
+<script>
+(() => {
+  const steps = [...document.querySelectorAll(".tile")];
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  steps.forEach((el) => el.classList.add("wait"));
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting) { io.unobserve(e.target); e.target.classList.replace("wait", "play"); }
+  }), { rootMargin: "0px 0px -20% 0px" });
+  steps.forEach((el) => io.observe(el));
+})();
+</script>
 <script>
 (() => {
   const SCENES = {"search": ["Jobs", [["f", "Morning! <b>6 new roles</b> match you. Best fit: Account Executive at Brightline, Chicago, posted 3 hours ago.", "8:30"], ["f", "2 of them came straight from company career pages. They aren't on job boards yet.", "8:30"], ["m", "show me the top 3", "8:34"], ["d", "Here they are, each with why it fits you and the pay range \u2713", "8:34"]]], "resume": ["Jobs", [["m", "I don't have a resume yet", "19:02"], ["f", "No problem. Tell me about your last 2 jobs and what you're proud of. A voice note works.", "19:02"], ["m", "\u25b6 Voice note \u00b7 0:48", "19:05"], ["d", "Your resume is ready: <b>Priya_Resume.pdf</b>, one page \u2713", "19:07"]]], "tailor": ["Jobs", [["f", "Brightline wants <b>mid-market SaaS</b> and Salesforce. Your resume mentions neither up top.", "8:40"], ["f", "I moved your $1.2M closed-won and Salesforce to the top. Match: 61% \u2192 89%.", "8:40"], ["m", "looks good", "8:43"], ["d", "Tailored resume and cover letter saved \u2713", "8:43"]]], "apply": ["Jobs", [["f", "3 applications ready: Brightline, Corvid Data, Lumen Freight. Each has its own resume and cover letter.", "9:02"], ["m", "apply to all 3", "9:05"], ["f", "Filling in the forms on each company's site now.", "9:05"], ["d", "Applied to all 3 \u2713 I'll track replies and follow up in 5 days.", "9:11"]]], "follow": ["Jobs", [["f", "No reply from Corvid Data in 5 days. A follow-up is drafted in your Gmail.", "10:00"], ["m", "send it", "10:04"], ["d", "Sent \u2713 I'll keep an eye on your inbox.", "10:04"], ["f", "Brightline just replied! They want a call this week.", "15:47"]]]};
